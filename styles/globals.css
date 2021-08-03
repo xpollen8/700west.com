@@ -276,8 +276,15 @@ a[target="new"] {
 .addendum li {
 	list-style-type: square;
 }
+.single {
+	margin: 0;
+	padding: 2px;
+}
+.singles li:nth-of-type(even) {
+	background-color: #ddd;
+}
 .singles li:nth-of-type(odd) {
-	background-color: #fff;
+	background-color: #eee;
 }
 .singles li {
 	list-style-type: none;
@@ -290,12 +297,6 @@ a[target="new"] {
 .single.sideB {
 	margin-left: 1em;
 	font-size: 0.8em;
-}
-.single.sideA:before {
-	content: "A: ";
-}
-.single.sideB:before {
-	content: "B: ";
 }
 .single.cover {
 	width: minmax(auto, 200px);

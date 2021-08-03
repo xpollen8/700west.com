@@ -18,12 +18,12 @@ const makeSingleBlurb = (item, key) => {
 				height={item.image[0].height}
 			/>
 		}
-		<a className="single artist" href={`/releases/${href}`}>{artistA}</a>
-		<div className="single sideA">{item.tracks[0].title}</div>
+		<a className="single artist" href={`/releases/${href}`}>{artistA}</a><span className="date ago">{item.published}</span>
+		<div className="single sideA">A: "{item.tracks[0].title}"</div>
 		{(artistA !== artistB) &&
 			<div className="single artist">{artistB}</div>
 		}
-		<div className="single sideB">{item.tracks[1].title}</div>
+		<div className="single sideB">B: "{item.tracks[1].title}"</div>
 	</li>
 }
 
