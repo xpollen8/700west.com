@@ -13,7 +13,7 @@ const makeSingleBlurb = (item, key) => {
 	return <li className="single">
 		{item.image && item.image[0] && item.image[0].thumb &&
 			<img className="single cover"
-				src={`http://700west.com/images/covers/${item.image[0].thumb}`} alt="cover"
+				src={`/images/covers/${item.image[0].thumb}`} alt="cover"
 				width={item.image[0].width}
 				height={item.image[0].height}
 			/>

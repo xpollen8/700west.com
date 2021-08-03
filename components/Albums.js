@@ -93,7 +93,7 @@ const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
 	return <a className="cover" key={key} href={`/releases/${href}`}><img
-		border="1" src={`http://700west.com/images/covers/${item.image[0].thumb}`}
+		border="1" src={`/images/covers/${item.image[0].thumb}`}
 		alt={`${item.artist} - ${item.image[0].name}`}
 		width={item.image[0].width}
 		height={item.image[0].height} /></a>
