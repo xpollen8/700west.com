@@ -11,19 +11,22 @@ const makeSingleBlurb = (item, key) => {
 	const artistA = item.tracks[0].artist;
 	const artistB = item.tracks[1].artist;
 	return <li className="single">
-		{item.image && item.image[0] && item.image[0].thumb &&
-			<img className="single cover"
-				src={`/images/covers/${item.image[0].thumb}`} alt="cover"
-				width={item.image[0].width}
-				height={item.image[0].height}
-			/>
-		}
-		<a className="single artist" href={`/releases/${href}`}>{artistA}</a><span className="date ago">{item.published}</span>
-		<div className="single sideA">A: "{item.tracks[0].title}"</div>
-		{(artistA !== artistB) &&
-			<div className="single artist">{artistB}</div>
-		}
-		<div className="single sideB">B: "{item.tracks[1].title}"</div>
+		<div className="single cover">
+			{item.image && item.image[0] && item.image[0].thumb &&
+					<img src={`/images/covers/${item.image[0].thumb}`} alt="cover"
+					width={60}
+					height={60}
+				/>
+			}
+		</div>
+		<div className="single details">
+			<a className="single artist" href={`/releases/${href}`}>{artistA}</a><span className="date ago">{item.published}</span>
+			<div className="single sideA">A: "{item.tracks[0].title}"</div>
+			{(artistA !== artistB) &&
+				<div className="single artist">{artistB}</div>
+			}
+			<div className="single sideB">B: "{item.tracks[1].title}"</div>
+		</div>
 	</li>
 }
 

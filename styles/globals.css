@@ -287,8 +287,10 @@ a[target="new"] {
 	background-color: #eee;
 }
 .singles li {
+	display: flex;
+	border-radius: 10px;
 	list-style-type: none;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .single.sideA {
 	margin-left: 1em;
@@ -299,9 +301,11 @@ a[target="new"] {
 	font-size: 0.8em;
 }
 .single.cover {
-	width: minmax(auto, 200px);
-	height: minmax(auto, 200px);
-	display: block;
+	width: 60px;
+	height: 60px;
+	margin-right: 5px;
+}
+.single.details {
 }
 .artist {
 	font-weight: 900;
@@ -316,4 +320,7 @@ a[target="new"] {
 }
 .datum {
 	display: inline;
+}
+.album.cover {
+	padding: 1px;
 }
