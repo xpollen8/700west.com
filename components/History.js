@@ -1,4 +1,4 @@
-import Image from 'nexi/Image';
+import Image from 'ntxI/Image';
 
 const History = () => (
 	<>
