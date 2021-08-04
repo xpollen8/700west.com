@@ -17,7 +17,6 @@ const Tributes = () => {
 			}
 		});
 	});
-	console.log("RET", ret);
 	return (
 		<div className="tributes">
 			{ret.map(makeTribute)}
