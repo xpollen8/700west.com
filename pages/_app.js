@@ -18,7 +18,7 @@ const links = [
 	{ href: '/moe', text: 'Moe Whittemore' },
 	{ href: '/tributes', text: 'Tributes' },
 	{ href: '/memoriam', text: 'In Memoriam' },
-	{ href: '/feedback', text: 'Comments' },
+	{ href: '/feedback', text: 'Comments', style: { paddingTop: '20px' } },
 	{ href: '/contact', text: 'Contact' },
 ];
 
@@ -30,11 +30,11 @@ const Navigation = ({ link = '' }) => {
 			<a href="/"><img width="168" height="90" src="/images/logoModern.gif" alt="logo" /></a>
 			<SectionHeader text="Choose" />
 			<ul>
-				{links.map(({ href, text }, i) => {
+				{links.map(({ href, text, style }, i) => {
 					const X = (href === `/${link}`) ? 'navActive' : 'navInactive';
 					return (
 						<li key={i}>
-							<span className={X}></span><a href={href}>{text}</a>
+							<span className={X} style={style}></span><a href={href}>{text}</a>
 						</li>
 					)
 				})}
