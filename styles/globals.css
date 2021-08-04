@@ -324,3 +324,9 @@ a[target="new"] {
 .album.cover {
 	padding: 1px;
 }
+.row:nth-of-type(odd) {
+	background-color: #eee;
+}
+.row:nth-of-type(even) {
+	background-color: #ddd;
+}
