@@ -167,18 +167,24 @@ a[target="new"]:after {
 	background-repeat: no-repeat;
 	padding-right: 5px;
 }
-.audio:before {
-	content: url(/images/lilspeaker.gif);
-	background-position: center left;
-	background-repeat: no-repeat;
-	padding-right: 5px;
+.audio.title {
+	display: inline-block;
+}
+.audio.time {
+}
+.audio.date {
+}
+.audio.comment {
 }
 .player {
-	display: inline-block;
+	list-style-type: none;
 }
-.player.details {
+.title {
+	display: inline;
+}
+.details {
+	display: inline;
 	margin-left: 5px;
-	display: inline-block;
 	color: #aaa;
 	font-size: .8rem;
 }
@@ -309,7 +315,6 @@ a[target="new"] {
 }
 .artist {
 	font-weight: 900;
-	display: inline;
 }
 .subject {
 	font-weight: 900;
@@ -328,5 +333,11 @@ a[target="new"] {
 	background-color: #eee;
 }
 .row:nth-of-type(even) {
+	background-color: #ddd;
+}
+.player li:nth-of-type(odd) {
+	background-color: #eee;
+}
+.player li:nth-of-type(even) {
 	background-color: #ddd;
 }

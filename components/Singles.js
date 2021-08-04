@@ -1,10 +1,7 @@
 import News from '../components/News';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
-
-const cleanName = (value) => value.replace(/['"?,/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_");
-
-const makeReleaseLink = (artist, title) => `${cleanName(artist)}-${cleanName(title)}`;
+import { makeReleaseLink } from '../lib/helpers';
 
 const makeSingleBlurb = (item, key) => {
 	const href = makeReleaseLink(item.tracks[0].artist, item.tracks[0].title);

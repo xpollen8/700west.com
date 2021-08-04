@@ -1,5 +1,6 @@
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
+import { makeReleaseLink } from '../lib/helpers';
 
 const FormatDate = (date = new Date()) => {
 	const dt = new Date(date).toISOString().slice(0,10);
@@ -83,10 +84,6 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 		{makeOriginal(original)}
 	</>
 )
-
-const cleanName = (value) => value.replace(/['"?,/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_");
-
-const makeReleaseLink = (artist, title) => `/releases/${cleanName(artist)}-${cleanName(title)}`;
 
 const AddendumItem = (item, key) => {
 	const data = {

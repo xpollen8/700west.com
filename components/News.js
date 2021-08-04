@@ -1,4 +1,5 @@
 import { SectionHeader } from '../pages/_app';
+import { AudioPlayer } from '../lib/helpers.js';
 
 const newsItems = [
 	{
@@ -79,11 +80,11 @@ const newsItems = [
 		<li> Added images and audio excerpt to <a href="/releases/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
 		<li> Updated <a href="/photos.html">Photos section</a></li>
 		<li> Added <a href="/releases/Dan_Mobley-Walk_In_the_Wind_and_the_Rain.html">Dan Mobley track listing</a></li>
-		<li> Uploaded audio for <LinkSong mp3='/audio/DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
+		<li> Uploaded audio for <AudioPlayer mp3='/audio/DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
 			band='Dan Mobley'
 			title='Colorado' /></li>
 		<li> Added <a href="/moe/2013interview.html">Moe Whittemore 2013 Interview</a></li>
-		<li> Added <LinkSong mp3='/audio/2010_DanModlin_700West_Interview.mp3'
+		<li> Added <AudioPlayer mp3='/audio/2010_DanModlin_700West_Interview.mp3'
 			title='Interview'
 			time='12.51'
 			comment='Dan Modlin interviews Moe Whittemore'
@@ -162,38 +163,6 @@ const newsItems = [
 			</>
 	},
 ];
-
-const LinkSong = (props) => {
-	const getLink = ({ title, band, href, audio, mp3, author, comment, date, time }) => {
-		const ShowExtra = ({ time, date, author, comment }) => (
-			<div className="player details">
-				{time && <>({time})</> }
-				{author && <>({author})</> }
-				{comment && <>- {comment}</> }
-				{date && <>({date})</> }
-			</div>
-		);
-		if (mp3 && href) {
-			return <><a className="mp3" href={mp3} href={href}><b>{band}</b> - <i>{title}</i></a>{ShowExtra({ time, date, author, comment })}</>
-		} else if (mp3 && title) {
-			return <><a className="mp3" href={mp3}></a><b>{band}</b> - <i>{title}</i>{ShowExtra({ time, date, author, comment })}</>
-		} else if (audio && href) {
-			return <><a className="audio" href={audio}></a><a href={href}><b>{band}</b> - <i>{title}</i></a>{ShowExtra({ time, date, author, comment })}</>
-		} else if (audio && title) {
-			return <><a className="audio" href={audio}></a><b>{band}</b> - <i>{title}</i>{ShowExtra({ time, date, author, comment })}</>
-		} else if (href) {
-			return <><a href={href}><b>{band}</b> - <i>{title}</i></a>{ShowExtra({ time, date, author, comment })}</>
-		} else {
-			return <><i>{title}</i>{ShowExtra({ time, date, author, comment })}</>
-		}
-	}
-
-	return(
-		<div className="player">
-			{getLink(props)}
-		</div>
-	);
-}
 
 const Tag = (tag, key) => (
 	<div className="news tag" key={key}>{tag}</div>
