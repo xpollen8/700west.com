@@ -70,25 +70,25 @@ const data = [
 	{
 	name: 'Larry Bryant',
 	played: 'Multi-inst; vocals;songwriter',
-	for: "'Broken Glass' (gospel)",
+	for: 'Broken Glass (gospel)',
 	date: '1990s (mid)',
 	},
 	{
 	name: 'Charlie Smith',
 	played: 'Guitar; vocals',
-	for: "'Jubal'; (+ others out of the area)",
+	for: 'Jubal; (+ others out of the area)',
 	date: '2008-02',
 	},
 	{
 	name: 'Jeff Cobb',
 	played: 'Guitar, vocals, songwriter',
-	for: "'Aaron' (+ others in area); Beatlesque original material",
+	for: 'Aaron (+ others in area); Beatlesque original material',
 	date: '2007, Summer, cancer',
 	},
 	{
 	name: 'Calvin Williams',
 	played: 'Guitar',
-	for: "'Amnesty', Ultimate Force'",
+	for: 'Amnesty, Ultimate Force',
 	date: '2013-03',
 	},
 	{
