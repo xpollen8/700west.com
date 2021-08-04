@@ -163,11 +163,6 @@ const newsItems = [
 	},
 ];
 
-
-
-
-
-
 const LinkSong = (props) => {
 	const getLink = ({ title, band, href, audio, mp3, author, comment, date, time }) => {
 		const ShowExtra = ({ time, date, author, comment }) => (
