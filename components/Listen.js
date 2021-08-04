@@ -2,8 +2,8 @@ import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
 import { makeReleaseLink, AudioPlayer } from '../lib/helpers';
 
-const makeListenAlbum = ({ artist, title, tracks }) => (
-	<>
+const makeListenAlbum = ({ artist, title, tracks }, key) => (
+	<div key={key}>
 		<span className="artist">{artist}</span>
 		<span>
 			- <a href={makeReleaseLink(artist, title)}>{title}</a>
@@ -15,7 +15,7 @@ const makeListenAlbum = ({ artist, title, tracks }) => (
 			</li>
 			))}
 		</ul>
-	</>
+	</div>
 )
 
 const makeListenSingle = ({ tracks }) => {

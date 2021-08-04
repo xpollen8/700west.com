@@ -83,7 +83,7 @@ const newsItems = [
 		<li> Uploaded audio for <AudioPlayer mp3='/audio/DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
 			band='Dan Mobley'
 			title='Colorado' /></li>
-		<li> Added <a href="/moe/2013interview.html">Moe Whittemore 2013 Interview</a></li>
+		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Moe Whittemore 2013 Interview</a></li>
 		<li> Added <AudioPlayer mp3='/audio/2010_DanModlin_700West_Interview.mp3'
 			title='Interview'
 			time='12.51'
@@ -96,7 +96,7 @@ const newsItems = [
 		date: 'Sat Mar  3 07:55:46 PST 2012',
 		author: 'Moe Whittemore',
 		title: 'Email Message',
-		linkInternal: '/articles/nuvo2012.html',
+		linkInternal: '/releases/Mo-First_Album?addendum=6',
 		linkInternalTitle: 'Local copy of the 2012 Nuvo article',
 		body: () =>
 			<>
