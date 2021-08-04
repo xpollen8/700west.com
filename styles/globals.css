@@ -24,7 +24,7 @@ p:first-of-type:first-letter{
 }
 .centerWrapper {	/* wraps everything */
 	 display: grid;
-	 grid-template-columns: minmax(auto, 1200px);
+	 grid-template-columns: minmax(auto, 1020px);
 	justify-content: center;
 }
 
