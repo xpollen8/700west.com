@@ -228,7 +228,7 @@ const Track = (data) => (
 		<Title title={data.title} time={data.time} />
 		<hr/>
 		{exists(data.audio) && <div>
-			<a href={`/audio/${data.audio}`}><img
+			<a href={`${process.env.NEXT_PUBLIC_AUDIO}/${data.audio}`}><img
 			src={`${process.env.NEXT_PUBLIC_IMAGES}/iconMP3.gif`} alt="download" /></a><span className="release teaser">Download</span>
 			</div>}
 		<Datum k="Mastering" v={data.mastering} />
