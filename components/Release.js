@@ -267,9 +267,9 @@ const MakeSingle = (single) => (
 					<div className="release artist">{single.tracks[1].artist}</div>
 				}
 				<div className="release title">"{single.tracks[1].title}"</div>
-				<div className="release year">Published: {single.published}</div>
-				<div className="release label">Label: {single.label}</div>
-				<div className="release id">Serial: {single.id}</div>
+				{exists(single.published) && <div className="release year">Published: {single.published}</div>}
+				{exists(single.label) && <div className="release label">Label: {single.label}</div>}
+				{exists(single.id) && <div className="release id">Serial: {single.id}</div>}
 				<AudioTeaser {...single} />
 			</div>
 			{!!(single.image && single.image.length) &&
@@ -290,9 +290,10 @@ const Header = (release) => (
 		<div className="release panel">
 			<div className="release artist">{release.artist}</div>
 			<div className="release title">"{release.title}"</div>
-			<div className="release year">Published: {release.published}</div>
-			<div className="release label">Label: {release.label}</div>
-			<div className="release id">Serial: {release.id}</div>
+			{exists(release.published) && <div className="release year">Published: {release.published}</div>}
+			{exists(release.label) && <div className="release label">Label: {release.label}</div>}
+			{exists(release.id) && <div className="release id">Serial: {release.id}</div>}
+			{exists(release.url) && <div className="release id">Contact: {makeContact(release.url)}</div>}
 			<AudioTeaser {...release} />
 		</div>
 		{exists(release.image) &&
@@ -374,9 +375,9 @@ const Comments = ({ comments }) => {
 			<SectionHeader text="Comments" />
 			<ul>
 			{comments.map(({ who, whoLink, date, said, type }, key) => (
-				<li key={key} style={{ display: 'flex' }}>
+				<li key={key} style={{ display: 'flex', padding: '3px' }} className="row">
 					<div style={{ width: '50%' }}>
-						{said}
+						<i>{said}</i>
 					</div>
 					<div style={{ width: '50%' }}>
 						<Who who={who} whoLink={whoLink} />
