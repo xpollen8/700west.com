@@ -1,7 +1,7 @@
 import { SectionHeader, Page } from './_app';
 
 const Photos = () => (
-	<Page title="Photos" link="" description="Period Studio Photographs">
+	<Page title="Photos" link="photos" description="Period Studio Photographs">
 	<p>
 	<a href={`/images/studio_1976.jpg`}><img
 		src={`/images/studio_1976_500.jpg`}
