@@ -3,7 +3,7 @@ import { SectionHeader, Page } from './_app';
 const App = (props) => {
 	return <Page title="Moe" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
 		<center>
-		<table border="0" cellpadding="5" cellspacing="0">
+		<table border="0" cellPadding="5" cellSpacing="0">
 		<tr>
 		<td>
 		<img src="/images/mo.gif" border="3" width="170" height="233" />
