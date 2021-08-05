@@ -2,6 +2,7 @@ import { Page } from '../pages/_app';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
 import { makeReleaseLink } from '../lib/helpers';
+import Albums from './Albums';
 
 const FormatDate = (date = new Date()) => {
 	const dt = new Date(date).toISOString().slice(0,10);
@@ -148,7 +149,10 @@ const Release = ({ url, addendum }) => {
 		}
 		return makeRelease(item)
 	}
-	return <>No such release "{url}"</>;
+	// fallback
+	return <Page title="Albums" link="albums" description="The Albums">
+		<Albums />
+	</Page>
 }
 
 export default Release
