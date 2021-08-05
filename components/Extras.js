@@ -87,8 +87,8 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 
 const AddendumItem = (item, key) => {
 	const data = {
-		artist: item.artist || item.tracks[0].artist,
-		title: item.title || item.tracks[0].title,
+		artist: item.artist || item.tracks[0]?.artist || 'ARTIST',
+		title: item.title || item.tracks[0]?.title || 'TITLE',
 	};
 	data.releaseLink = makeReleaseLink(data.artist, data.title);
 
@@ -117,7 +117,7 @@ const AddendumItem = (item, key) => {
 
 const Extras = (props) => (
 	<ul className="addendums">
-		{releases.filter(r => r.type === 'single' && r.addendum && r.addendum.length).map(AddendumItem)}
+		{releases.filter(r => r.addendum && r.addendum.length).map(AddendumItem)}
 	</ul>
 )
 
