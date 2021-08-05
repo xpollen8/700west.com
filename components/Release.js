@@ -224,8 +224,9 @@ const Published = ({ publisher, affiliation }) => {
 }
 
 const Track = (data) => (
-	<li value={data.tracknum} className="row">
+	<li value={data.tracknum} className="row" style={{ margin: "3px" }}>
 		<Title title={data.title} time={data.time} />
+		<hr/>
 		{exists(data.audio) && <div>
 			<a href={`/audio/${data.audio}`}><img
 			src="/images/iconMP3.gif" alt="download" /></a><span className="release teaser">Download</span>
