@@ -104,14 +104,15 @@ const AddendumItem = (item, key) => {
 				{item.published}
 			</span>
 		</>
-		{/*<ul>
+		<ul>
 			{item.addendum.map(({ location, original, source, credit, date, type, author, authorContact, title, body }, key2) => (
-					<li className="addendum subject" key={key2}}>
-						{makeSubject(title, location, source, date, type, data.releaseLink, key2)}
+					<li className="addendum subject" key={key2}>
+						{title}{location}{source}{date}{type}{data.releaseLink}{key2}
+						{/*makeSubject(title, location, source, date, type, data.releaseLink, key2)*/}
 					</li>
 				)
 			)}
-		</ul>*/}
+		</ul>
 	</li>
 }
 
