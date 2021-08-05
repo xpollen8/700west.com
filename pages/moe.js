@@ -6,13 +6,13 @@ const App = (props) => {
 		<table border="0" cellPadding="5" cellSpacing="0">
 		<tr>
 		<td>
-		<img src={`${process.env.NEXT_PUBLIC_IMAGES}/mo.gif`} border="3" width="170" height="233" />
+		<img src={`/images/mo.gif`} border="3" width="170" height="233" />
 		</td>
 		<td valign="middle">
 		<b> Maurice J. ('Mo') Whittemore. Jr.</b>
 		<p>
-		<a href={`${process.env.NEXT_PUBLIC_IMAGES}/business_card.jpg`}><img
-		        src={`${process.env.NEXT_PUBLIC_IMAGES}/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
+		<a href={`/images/business_card.jpg`}><img
+		        src={`/images/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
 		</p>
 		(Recent contact info available
 		<a href="mailto:moe@700west.com">upon request</a>)

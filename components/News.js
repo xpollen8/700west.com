@@ -80,11 +80,11 @@ const newsItems = [
 		<li> Added images and audio excerpt to <a href="/releases/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
 		<li> Updated <a href="/photos.html">Photos section</a></li>
 		<li> Added <a href="/releases/Dan_Mobley-Walk_In_the_Wind_and_the_Rain.html">Dan Mobley track listing</a></li>
-		<li> Uploaded audio for <AudioPlayer mp3='/audio/DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
+		<li> Uploaded audio for <AudioPlayer mp3='DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
 			band='Dan Mobley'
 			title='Colorado' /></li>
 		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Moe Whittemore 2013 Interview</a></li>
-		<li> Added <AudioPlayer mp3='/audio/2010_DanModlin_700West_Interview.mp3'
+		<li> Added <AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
 			title='Interview'
 			time='12.51'
 			comment='Dan Modlin interviews Moe Whittemore'

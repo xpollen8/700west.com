@@ -102,7 +102,7 @@ const Listen = (props) => (
 			date='December 2003' /></li>
 	</ol>
 	<p>
-		<img src={`${process.env.NEXT_PUBLIC_IMAGES}/Moconcert3.jpg`} width="288" height="432" />
+		<img src={`/images/Moconcert3.jpg`} width="288" height="432" />
 		<br/>
 		<b>Wright Now!</b> (November 2003)
 	</p>

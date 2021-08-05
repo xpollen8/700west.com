@@ -166,8 +166,10 @@ a[target="new"]:after {
 	background-repeat: no-repeat;
 	padding-right: 5px;
 }
+.audio {
+	width: 100%;
+}
 .audio.title {
-	display: inline-block;
 }
 .audio.time {
 }
@@ -177,15 +179,18 @@ a[target="new"]:after {
 }
 .player {
 	list-style-type: none;
+	margin: 5px;
+	margin-left: 30px;
+	padding: 5px;
 }
 .title {
 	display: inline;
 }
 .details {
-	display: inline;
+	display: inline-block;
 	margin-left: 5px;
 	color: #aaa;
-	font-size: .8rem;
+	font-size: 1rem;
 }
 .video {
   overflow: hidden;
@@ -335,7 +340,7 @@ a[target="new"] {
 	background-color: #ddd;
 }
 .player li:nth-of-type(odd) {
-	background-color: #eee;
+	background-color: #ccc;
 }
 .player li:nth-of-type(even) {
 	background-color: #ddd;

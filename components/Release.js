@@ -1,7 +1,7 @@
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
-import { makeReleaseLink } from '../lib/helpers';
+import { makeReleaseLink, AudioPlayer } from '../lib/helpers';
 import Albums from './Albums';
 
 const FormatDate = ({ date = new Date() }) => {
@@ -99,7 +99,7 @@ const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
 	return <a className="cover" key={key} href={href}><img
-		border="1" src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${item.image[0].thumb}`}
+		border="1" src={`/images/covers/${item.image[0].thumb}`}
 		alt={`${item.artist} - ${item.image[0].name}`}
 		width={item.image[0].width}
 		height={item.image[0].height} /></a>
@@ -118,8 +118,8 @@ const makeAddendum = (item, addendum = 0) => {
 
 const Covers = (release) => {
 	return release.image.map((i, key) => (
-		<a key={key} href={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${i.file}`}><img
-			src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${i.thumb}`}
+		<a key={key} href={`/images/covers/${i.file}`}><img
+			src={`/images/covers/${i.thumb}`}
 			height="125"
 			width="125"
 			alt="image" /></a>
@@ -227,10 +227,9 @@ const Track = (data) => (
 	<li value={data.tracknum} className="row" style={{ margin: "3px" }}>
 		<Title title={data.title} time={data.time} />
 		<hr/>
-		{exists(data.audio) && <div>
-			<a href={`${process.env.NEXT_PUBLIC_AUDIO}/${data.audio}`}><img
-			src={`${process.env.NEXT_PUBLIC_IMAGES}/iconMP3.gif`} alt="download" /></a><span className="release teaser">Download</span>
-			</div>}
+		{exists(data.audio) && 
+			<AudioPlayer mp3={data.audio} />
+			}
 		<Datum k="Mastering" v={data.mastering} />
 		<Datum k="Writer" v={data.writer} />
 		<Published publisher={data.publisher} affiliation={data.affiliation} />
@@ -306,21 +305,22 @@ const Header = (release) => (
 )
 
 const MakeAlbum = (album) => {
-		const hasSides = album.tracks[0].side.length;
-		if (hasSides) {
-			return <>
-				<Header {...album} />
-				<div className="release sides">
-					<Panel side='A' tracks={album.tracks} />
-					<Panel side='B' tracks={album.tracks} />
-				</div>
-			</>
-		} else {
-			return <>
-				<Header {...album} />
-				<Panel tracks={album.tracks} />
-			</>
-		}
+	const hasTracks = album.tracks[0];
+	const hasSides = album.tracks[0]?.side.length;
+	if (hasSides) {
+		return <>
+			<Header {...album} />
+			<div className="release sides">
+				<Panel side='A' tracks={album.tracks} />
+				<Panel side='B' tracks={album.tracks} />
+			</div>
+		</>
+	} else if (hasTracks) {
+		return <>
+			<Panel tracks={album.tracks} />
+		</>
+	}
+	return <Header {...album} />
 }
 
 const Credits = ({ credits }) => {
@@ -358,8 +358,8 @@ const Promo = ({ publicity }) => {
 			<ul>
 			{publicity.map(({ image, width, height }, key) => (
 				<li key={key}>
-					<a href={`${process.env.NEXT_PUBLIC_IMAGES}/publicity/${image}.jpg`}><img
-						src={`${process.env.NEXT_PUBLIC_IMAGES}/publicity/${image}.gif`}
+					<a href={`/images/publicity/${image}.jpg`}><img
+						src={`/images/publicity/${image}.gif`}
 						alt="publicity shot"
 						width={width} height={height} /></a>
 				</li>
