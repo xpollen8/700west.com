@@ -23,7 +23,9 @@ const typeToDisplay = (type) => {
 
 const displayDate = (date) => {
 	if (date) {
-		return new Date(date).toISOString().slice(0,10);
+		return <span className="date ago">
+			{new Date(date).toISOString().slice(0,10)}
+		</span>
 	}
 	return <></>;
 }
@@ -33,7 +35,7 @@ const	makeSubject = (title, location, source, date, type, href, number) => {
 	const display = title || [source, typeToDisplay(type), location].filter(x => x).join(' - ');
 	return <>
 		<a href={`${href}?addendum=${number + 1}`}>{display}</a>
-		{/*date && <span className="date ago">{displayDate(date)}</span>*/}
+		{date && displayDate(date)}
 	</>
 }
 
