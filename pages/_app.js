@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import Head from 'next/head';
-import Link from 'next/link';
 
 const Topper = ({ className, text }) => <div className={className}>&lt;&lt; {text} &gt;&gt;</div>
 
