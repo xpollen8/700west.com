@@ -87,8 +87,8 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 
 const AddendumItem = (item, key) => {
 	const data = {
-		artist: item.artist || item.tracks[0]?.artist || 'ARTIST',
-		title: item.title || item.tracks[0]?.title || 'TITLE',
+		artist: item.artist || item.tracks[0].artist,
+		title: item.title || item.tracks[0].title,
 	};
 	data.releaseLink = makeReleaseLink(data.artist, data.title);
 
@@ -104,14 +104,14 @@ const AddendumItem = (item, key) => {
 				{item.published}
 			</span>
 		</>
-		<ul>
+		{/*<ul>
 			{item.addendum.map(({ location, original, source, credit, date, type, author, authorContact, title, body }, key2) => (
-					<li className="addendum subject" key={`${key}${key2}`}>
+					<li className="addendum subject" key={key2}}>
 						{makeSubject(title, location, source, date, type, data.releaseLink, key2)}
 					</li>
 				)
 			)}
-		</ul>
+		</ul>*/}
 	</li>
 }
 
