@@ -117,7 +117,7 @@ const AddendumItem = (item, key) => {
 
 const Extras = (props) => (
 	<ul className="addendums">
-		{releases.filter(r => r.addendum && r.addendum.length).map(AddendumItem)}
+		{releases.filter(r => r.type === 'album' && r.addendum && r.addendum.length).map(AddendumItem)}
 	</ul>
 )
 
