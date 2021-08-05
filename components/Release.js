@@ -229,7 +229,7 @@ const Track = (data) => (
 		<hr/>
 		{exists(data.audio) && <div>
 			<a href={`/audio/${data.audio}`}><img
-			src={`${process.env.NEXT_PUBLIC_IMAGES/iconMP3.gif`} alt="download" /></a><span className="release teaser">Download</span>
+			src={`${process.env.NEXT_PUBLIC_IMAGES}/iconMP3.gif`} alt="download" /></a><span className="release teaser">Download</span>
 			</div>}
 		<Datum k="Mastering" v={data.mastering} />
 		<Datum k="Writer" v={data.writer} />
