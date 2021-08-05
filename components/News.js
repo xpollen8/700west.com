@@ -205,14 +205,14 @@ const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInt
 
 const News = ({ slug, num }) => {
 	if (slug) {
-		return NewsItem(newsItems.find(i => i.slug === slug));
+		return <ul>{NewsItem(newsItems.find(i => i.slug === slug))}</ul>;
 	} else if (num) {
-		return NewsItem(newsItems[num - 1]);
+		return <ul>{NewsItem(newsItems[num - 1])}</ul>
 	} else {
 		return (
-			<>
+			<ul>
 			{newsItems.map(NewsItem)}
-			</>
+			</ul>
 		)
 	}
 }
