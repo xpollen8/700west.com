@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SectionHeader, Page } from './_app';
 
 const App = (props) => {
@@ -6,12 +7,12 @@ const App = (props) => {
 		<table border="0" cellPadding="5" cellSpacing="0">
 		<tr>
 		<td>
-		<img src={`/images/mo.gif`} border="3" width="170" height="233" />
+		<Image src={`/images/mo.gif`} border="3" width="170" height="233" />
 		</td>
 		<td valign="middle">
 		<b> Maurice J. ('Mo') Whittemore. Jr.</b>
 		<p>
-		<a href={`/images/business_card.jpg`}><img
+		<a href={`/images/business_card.jpg`}><Image
 		        src={`/images/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
 		</p>
 		(Recent contact info available

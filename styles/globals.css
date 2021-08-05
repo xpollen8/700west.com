@@ -1,3 +1,11 @@
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+li {
+	margin: 0px;
+	padding: 1px;
+}
 body {
 	background: #9c6b47;
 	color: #333;
@@ -38,8 +46,11 @@ p:first-of-type:first-letter{
 
   /height: 100vh;
 }
-
+.albums {
+	text-align: center;
+}
 .sectionHeader {
+	margin-bottom: 5px;
 	padding: 2px;
 	background: #333;
 	color: #fff;
@@ -180,17 +191,17 @@ a[target="new"]:after {
 .player {
 	list-style-type: none;
 	margin: 5px;
-	margin-left: 30px;
+	margin-left: 10px;
 	padding: 5px;
 }
 .title {
 	display: inline;
 }
 .details {
-	display: inline-block;
+	display: block;
 	margin-left: 5px;
 	color: #aaa;
-	font-size: 1rem;
+	font-size: .8rem;
 }
 .video {
   overflow: hidden;
@@ -320,9 +331,10 @@ a[target="new"] {
 .artist {
 	font-weight: 900;
 }
-.subject {
-	font-weight: 900;
+.addendum.subject {
 	display: block;
+	margin-bottom: 4px;
+	list-style-type: none;
 }
 .header div {
 	padding: 5px;

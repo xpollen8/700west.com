@@ -87,7 +87,7 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 		</div>
 		<hr/>
 		{title &&
-			<div className="subject">
+			<div className="addendum subject">
 				{title}
 			</div>
 		}

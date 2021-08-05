@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
 import { makeReleaseLink, AudioPlayer } from '../lib/helpers';
@@ -87,7 +88,7 @@ const Listen = (props) => (
 	<SectionHeader text="M. J. Whittemore, Jr.'s Classical Compositions" />
 	<p>
 		In 2003, Moe Whittemore returned to graduate school at Butler University
-		to complete the music degree had had started back in the 50's!
+		to complete the music degree he had started back in the 50's!
 		Here are his MIDI representations of the classical composition class assigments
 		- on which he received all A's
 	</p>
@@ -101,8 +102,8 @@ const Listen = (props) => (
 		<li><AudioPlayer mp3='ButlerStudentVolumeOne/3-VoiceFugue.mp3' title='3-Voice Fugue'
 			date='December 2003' /></li>
 	</ol>
-	<p>
-		<img src={`/images/Moconcert3.jpg`} width="288" height="432" />
+	<p style={{ textAlign: 'center' }}>
+		<Image src={`/images/Moconcert3.jpg`} width="288" height="432" />
 		<br/>
 		<b>Wright Now!</b> (November 2003)
 	</p>
@@ -114,6 +115,7 @@ const Listen = (props) => (
 	</ol>
 	<p>
 	<AudioPlayer mp3='ButlerStudentVolumeOne/Our4FeralKittens.mp3' title='Our 4 Feral Kittens'
+		time="4:52"
 		comment='Not really a classical composition...'
 		date='December 2003' />
 	</p>
