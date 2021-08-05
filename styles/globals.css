@@ -75,6 +75,9 @@ p:first-of-type:first-letter{
   grid-area: nav;
 	border: 1px solid;
 }
+.nav li:nth-last-child(1) {
+	margin-top: 10px;
+}
 .nav ul {
 	margin-top: 0px;
 	list-style-type: none;
@@ -123,7 +126,7 @@ p:first-of-type:first-letter{
 	.nav li { /* turn list into horizontal items */
 		display: inline-block;
 	}
-	.nav li:after {
+	.nav li:not(:nth-last-child(1)):after {
 		content: ' - ';
 	}
 }
