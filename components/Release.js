@@ -1,6 +1,7 @@
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
+import { makeReleaseLink } from '../lib/helpers';
 
 const FormatDate = (date = new Date()) => {
 	const dt = new Date(date).toISOString().slice(0,10);
@@ -93,10 +94,6 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 	</>
 )
 
-const cleanName = (value) => value.replace(/['"?,/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_");
-
-const makeReleaseLink = (artist, title) => `${cleanName(artist)}-${cleanName(title)}`;
-
 const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
@@ -107,31 +104,51 @@ const makeAlbumBlurb = (item, key) => {
 		height={item.image[0].height} /></a>
 }
 
-const makeAddendum = (item, addendum) => {
+const makeAddendum = (item, addendum = 0) => {
 	const add = item.addendum && item.addendum.find((x, i) => i === addendum - 1);
 	const link = (item.type === 'album') ? 'albums' : 'singles';
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
-		
 
 	return <Page title="Releases" link={link} description={makeSubject(add)} >
 		{add && <Addendum {...add} artist={artist} release={release} releaseLink={makeReleaseLink(artist, release)} number={addendum} />}
 	</Page>
 }
 
-const makeRelease = (item, title) => {
-	return <>
-		{title}
-	</>
+const makeSingle = (single) => {
+}
+
+const makeAlbum = (album) => {
+}
+
+const makeRelease = (item) => {
+	const link = (item.type === 'album') ? 'albums' : 'singles';
+	const artist = item.artist || item.tracks[0].artist;
+	const release = item.title || item.tracks[0].title;
+	return <Page title="Releases" link={link} description={`The "${release}" ${item.type} from ${artist}`} >
+		{(item.type === 'album') ? <makeAlbum {...item} /> : <makeSingle {...item } />}
+	</Page>
+}
+
+const matchReleaseName = (url = '', artist = '', title = '') => {
+	const useUrl = url.split('_').join('').toLowerCase();
+	const useTest = (makeReleaseLink(artist, title) || '').split('_').join('').toLowerCase();
+	return (useUrl === useTest);
 }
 
 const Release = ({ url, addendum }) => {
-	const item = releases.find(r => url === makeReleaseLink(r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
-	if (addendum) {
-		return makeAddendum(item, addendum)
-	} else {
+	const item = releases.find(r => matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+	if (item) {
+		if (addendum) {
+			const i = parseInt(addendum, 10);
+			const add = i && item.addendum.find((x, i) => i === i - 1);
+			if (add) {
+				return makeAddendum(item, addendum)
+			}
+		}
 		return makeRelease(item)
 	}
+	return <>No such release "{url}"</>;
 }
 
 export default Release
