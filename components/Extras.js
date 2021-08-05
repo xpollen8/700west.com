@@ -25,14 +25,14 @@ const displayDate = (date) => {
 	if (date) {
 		return new Date(date).toISOString().slice(0,10);
 	}
+	return <></>;
 }
 
 const	makeSubject = (title, location, source, date, type, href, number) => {
 	
 	const display = title || [source, typeToDisplay(type), location].filter(x => x).join(' - ');
-	return <div>{display}</div>;
 	return <>
-		{/*<a href={`${href}?addendum=${number + 1}`}>{display}</a>*/}
+		<a href={`${href}?addendum=${number + 1}`}>{display}</a>
 		{/*date && <span className="date ago">{displayDate(date)}</span>*/}
 	</>
 }
