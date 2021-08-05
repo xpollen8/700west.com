@@ -4,7 +4,7 @@ import { SectionHeader } from '../pages/_app';
 import { makeReleaseLink } from '../lib/helpers';
 import Albums from './Albums';
 
-const FormatDate = (date = new Date()) => {
+const FormatDate = ({ date = new Date() }) => {
 	const dt = new Date(date).toISOString().slice(0,10);
 	return <>{dt}</>
 }
@@ -116,10 +116,297 @@ const makeAddendum = (item, addendum = 0) => {
 	</Page>
 }
 
-const makeSingle = (single) => {
+const Covers = (release) => {
+	return release.image.map((i, key) => (
+		<a key={key} href={`/images/covers/${i.file}`}><img
+			src={`/images/covers/${i.thumb}`}
+			height="125"
+			width="125"
+			alt="image" /></a>
+	));
 }
 
-const makeAlbum = (album) => {
+const exists = (v) => v && v.length;
+
+const AudioTeaser = (release) => {
+	const haveAudio = release.tracks.filter(t => exists(t.audio));
+	if (haveAudio.length) {
+		return <div className="release teaser">{haveAudio.length} audio sample{haveAudio.length > 1 ? 's' : ''} available below!</div>
+	} else {
+		return <></>
+	}
+}
+
+const Datum = ({ k, v }) => {
+	if (exists(v)) {
+		return <div>
+			<span className="track datum"> {k} </span>:
+			<span> {v} </span>
+		</div>
+	} else {
+		return <></>
+	}
+}
+
+const Who = ({ who, whoLink }) => {
+	if (exists(who)) {
+		if (exists(whoLink)) {
+			return <>
+				<a href={whoLink} target="new">{who}</a> -
+			</>
+		} else {
+			return <>
+				{who} -
+			</>
+		}
+	} else {
+		return <></>;
+	}
+}
+
+const TrackCredits = ({ credits }) => {
+	if (exists(credits)) {
+		return <>
+			<div className="track datum">Song Credits</div>
+			<ul>
+				{credits.map((c, key) => {
+					return <li key={key}>
+						<Who {...c} /> <span>{c.did.join(', ')}</span>
+					</li>
+				})}
+			</ul>
+		</>
+	} else {
+		return <></>
+	}
+}
+
+const TrackComments = ({ comments }) => {
+	if (exists(comments)) {
+		return <>
+			<div className="track datum">Comments</div>
+			<ul>
+				{comments.map((c, key) => {
+					return <li key={key}>
+						{exists(c.who) && <>{c.who} -</>}
+						<i>{c.said}</i>
+						{exists(c.date) && <span className="date ago">{c.date}</span>}
+					</li>
+				})}
+			</ul>
+		</>
+	} else {
+		return <></>
+	}
+}
+
+const Title = ({ title, time }) => {
+	if (title && exists(time)) {
+		return <div>
+			<span className="artist">{title}</span>
+			<span className="date ago">{time}</span>
+		</div>
+	} else {
+			return <div className="artist">{title}</div>
+	}
+}
+
+const Published = ({ publisher, affiliation }) => {
+	if (exists(publisher) && exists(affiliation)) {
+		return <Datum k="Publisher" v={`${publisher} (${affiliation})`}/>;
+	} else if (exists(publisher)) {
+		return <Datum k="Publisher" v={publisher} />;
+	} else if (exists(affiliation)) {
+		return <Datum k="Affiliation" v={affiliation} />;
+	} else {
+		return <></>;
+	}
+}
+
+const Track = (data) => (
+	<li value={data.tracknum}>
+		<Title title={data.title} time={data.time} />
+		{exists(data.audio) && <div>
+			<a href={`/audio/${data.audio}`}><img
+			src="/images/iconMP3.gif" alt="download" /></a><span className="release teaser">Download</span>
+			</div>}
+		<Datum k="Mastering" v={data.mastering} />
+		<Datum k="Writer" v={data.writer} />
+		<Published publisher={data.publisher} affiliation={data.affiliation} />
+		<TrackComments comments={data.comments} />
+		<TrackCredits credits={data.credits} />
+	</li>
+)
+
+const Panel = ({ side, tracks }) => {
+	if (side) {
+		return <div className="release panel">
+			<SectionHeader text={`${side} Side`} />
+			<ol>
+				{tracks.filter(t => t.side === side).map(Track)}
+			</ol>
+			</div>
+	} else {
+		return <>
+			<SectionHeader text="Tracks" />
+			<ol>
+				{tracks.map(Track)}
+			</ol>
+			</>
+	}
+}
+
+const MakeSingle = (single) => (
+	<>
+		<div className="release sides">
+			<div className="release panel">
+				<div className="release artist">{single.tracks[0].artist}</div>
+				<div className="release title">"{single.tracks[0].title}"</div>
+				<div><i>b/w</i></div>
+				{!!(single.tracks[0].artist !== single.tracks[1].artist) &&
+					<div className="release artist">{single.tracks[1].artist}</div>
+				}
+				<div className="release title">"{single.tracks[1].title}"</div>
+				<div className="release year">Published: {single.published}</div>
+				<div className="release label">Label: {single.label}</div>
+				<div className="release id">Serial: {single.id}</div>
+				<AudioTeaser {...single} />
+			</div>
+			{!!(single.image && single.image.length) &&
+				<div className="release panel">
+					<Covers {...single } />
+				</div>
+			}
+		</div>
+		<div className="release sides">
+			<Panel side='A' tracks={single.tracks} />
+			<Panel side='B' tracks={single.tracks} />
+		</div>
+	</>
+)
+
+const Header = (release) => (
+		<div className="release sides">
+		<div className="release panel">
+			<div className="release artist">{release.artist}</div>
+			<div className="release title">"{release.title}"</div>
+			<div className="release year">Published: {release.published}</div>
+			<div className="release label">Label: {release.label}</div>
+			<div className="release id">Serial: {release.id}</div>
+			<AudioTeaser {...release} />
+		</div>
+		{exists(release.image) &&
+			<div className="release panel">
+				<Covers {...release } />
+			</div>
+		}
+	</div>
+)
+
+const MakeAlbum = (album) => {
+		const hasSides = album.tracks[0].side.length;
+		if (hasSides) {
+			return <>
+				<Header {...album} />
+				<div className="release sides">
+					<Panel side='A' tracks={album.tracks} />
+					<Panel side='B' tracks={album.tracks} />
+				</div>
+			</>
+		} else {
+			return <>
+				<Header {...album} />
+				<Panel tracks={album.tracks} />
+			</>
+		}
+}
+
+const Credits = ({ credits }) => {
+	if (exists(credits)) {
+		return <>
+			<SectionHeader text="Credits" />
+			<ul>
+			{credits.map(({ who, whoLink, did }, key) => (
+				<li key={key}>
+					<b><Who who={who} whoLink={whoLink} /></b> {did.join(', ')}
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
+
+const LinerNotes = ({ liner }) => {
+	if (exists(liner)) {
+		return <>
+			<SectionHeader text="Liner Notes" />
+			<blockquote>
+				{liner}
+			</blockquote>
+		</>
+	}
+	return <></>;
+}
+
+const Promo = ({ publicity }) => {
+	if (exists(publicity)) {
+		return <>
+			<SectionHeader text="Original Promotional Material " />
+			<ul>
+			{publicity.map(({ image, width, height }, key) => (
+				<li key={key}>
+					<a href={`/images/publicity/${image}.jpg`}><img
+						src={`/images/publicity/${image}.gif`}
+						alt="publicity shot"
+						width={width} height={height} /></a>
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
+
+const Comments = ({ comments }) => {
+	if (exists(comments)) {
+		return <>
+			<SectionHeader text="Comments" />
+			<ul>
+			{comments.map(({ who, whoLink, date, said, type }, key) => (
+				<li key={key} style={{ display: 'flex' }}>
+					<div style={{ width: '50%' }}>
+						{said}
+					</div>
+					<div style={{ width: '50%' }}>
+						<Who who={who} whoLink={whoLink} />
+						{exists(date) && <FormatDate date={date} />}
+					</div>
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
+
+const Extra = ({ type, artist, title, tracks, addendum }) => {
+	if (exists(addendum)) {
+		const href = makeReleaseLink(artist || tracks[0].artist, title || item.tracks[0].title);
+		return <>
+			<SectionHeader text="Auxiliary Materials)" />
+			<ul>
+			{addendum.map((props, key) => (
+				<li key={key}>
+					<a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
+				</li>
+			))}
+			</ul>
+			<p>
+			</p>
+		</>
+	}
+	return <></>;
 }
 
 const makeRelease = (item) => {
@@ -127,7 +414,12 @@ const makeRelease = (item) => {
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 	return <Page title="Releases" link={link} description={`The "${release}" ${item.type} from ${artist}`} >
-		{(item.type === 'album') ? <makeAlbum {...item} /> : <makeSingle {...item } />}
+		{(item.type === 'album') ? <MakeAlbum {...item} /> : <MakeSingle {...item } />}
+		<Credits {...item} />
+		<LinerNotes {...item} />
+		<Promo {...item} />
+		<Comments {...item} />
+		<Extra {...item} />
 	</Page>
 }
 
@@ -141,10 +433,10 @@ const Release = ({ url, addendum }) => {
 	const item = releases.find(r => matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 	if (item) {
 		if (addendum) {
-			const i = parseInt(addendum, 10);
-			const add = i && item.addendum.find((x, i) => i === i - 1);
+			const X = parseInt(addendum, 10);
+			const add = item.addendum[X - 1];
 			if (add) {
-				return makeAddendum(item, addendum)
+				return makeAddendum(item, X)
 			}
 		}
 		return makeRelease(item)

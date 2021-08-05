@@ -116,7 +116,6 @@ p:first-of-type:first-letter{
 		content: ' - ';
 	}
 }
-
 .news.item {
 	//margin-top: 20px;
 	padding-bottom: 20px;
@@ -340,4 +339,24 @@ a[target="new"] {
 }
 .player li:nth-of-type(even) {
 	background-color: #ddd;
+}
+.release.sides{
+	margin-top: 10px;
+	display: flex;
+}
+.release.time {
+	display: inline;
+}
+.release.panel {
+	width: 50%;
+}
+.release.year {
+	margin-top: 10px;
+}
+.release.teaser {
+	color: red;
+	font-weight: 900;
+}
+.track.datum {
+	color: blue;
 }
