@@ -30,8 +30,8 @@ const newsItems = [
 		date: '2019-05-18',
 		body: () => (
 			<div style={{padding: "10px", width: '95%' }}>
-				<iframe style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-				<iframe style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
 			</div>
 		)
 	},
@@ -158,7 +158,7 @@ const newsItems = [
 					M.J. Whittemore Jr and the studio interior appears at 6:10 (yeah, that's a U47!)
 				</p>
 				<div className="video">
-					<iframe src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen />
+					<iframe title="TV interview" src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen />
 				</div>
 			</>
 	},
