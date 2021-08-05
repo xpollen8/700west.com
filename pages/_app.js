@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Topper = ({ className, text }) => <div className={className}>&lt;&lt; {text} &gt;&gt;</div>
 
@@ -26,7 +27,7 @@ const getNavFromLink = (link) => links.find(l => l.href === `/${link}`).text || 
 const Navigation = ({ link = '' }) => {
 	return (
 		<div className="nav">
-			<a href="/"><img width="168" height="90" src={`/images/logoModern.gif`} alt="logo" /></a>
+			<a href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" className="logo" /></a>
 			<SectionHeader text="Choose" />
 			<ul>
 				{links.map(({ href, text, style }, i) => {

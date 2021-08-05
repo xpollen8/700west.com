@@ -83,8 +83,9 @@ p:first-of-type:first-letter{
 	list-style-type: none;
 	padding: 0.5rem;
 }
-.nav img {	/* center the logo */
-	display: block;
+.logo {	/* center the logo */
+	text-align: center;
+	display: none;
   margin-left: auto;
   margin-right: auto;
 }

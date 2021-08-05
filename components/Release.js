@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
@@ -95,16 +96,6 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 	</>
 )
 
-const makeAlbumBlurb = (item, key) => {
-	const href = makeReleaseLink(item.artist, item.title);
-
-	return <a className="cover" key={key} href={href}><img
-		border="1" src={`/images/covers/${item.image[0].thumb}`}
-		alt={`${item.artist} - ${item.image[0].name}`}
-		width={item.image[0].width}
-		height={item.image[0].height} /></a>
-}
-
 const makeAddendum = (item, addendum = 0) => {
 	const add = item.addendum && item.addendum.find((x, i) => i === addendum - 1);
 	const link = (item.type === 'album') ? 'albums' : 'singles';
@@ -118,7 +109,7 @@ const makeAddendum = (item, addendum = 0) => {
 
 const Covers = (release) => {
 	return release.image.map((i, key) => (
-		<a key={key} href={`/images/covers/${i.file}`}><img
+		<a key={key} href={`/images/covers/${i.file}`}><Image
 			src={`/images/covers/${i.thumb}`}
 			height="125"
 			width="125"
@@ -358,7 +349,7 @@ const Promo = ({ publicity }) => {
 			<ul>
 			{publicity.map(({ image, width, height }, key) => (
 				<li key={key}>
-					<a href={`/images/publicity/${image}.jpg`}><img
+					<a href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}.gif`}
 						alt="publicity shot"
 						width={width} height={height} /></a>

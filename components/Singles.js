@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import News from '../components/News';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
@@ -10,7 +11,7 @@ const makeSingleBlurb = (item, key) => {
 	return <li className="single" key={key}>
 		<div className="single cover">
 			{item.image && item.image[0] && item.image[0].thumb &&
-					<img src={`/images/covers/${item.image[0].thumb}`} alt="cover"
+					<Image src={`/images/covers/${item.image[0].thumb}`} alt="cover"
 					width={60}
 					height={60}
 				/>

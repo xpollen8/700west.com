@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import News from '../components/News';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
@@ -6,7 +7,7 @@ import { makeReleaseLink } from '../lib/helpers';
 const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
-	return <a className="album cover" key={key} href={href}><img
+	return <a className="album cover" key={key} href={href}><Image
 		border="1" src={`/images/covers/${item.image[0].thumb}`}
 		border={0}
 		alt={`${item.artist} - ${item.image[0].name}`}
@@ -28,7 +29,7 @@ const Albums = () => (
 		Today, many of these records sell amongst collectors for hundreds of dollars!
 	</p>
 	<p>
-		We're currently working on tizing and re-releasing some 700 West material.
+		We're currently working on digitizing and re-releasing some 700 West material.
 	</p>
 	<p>
 		Get in <a href="/contact">touch with us</a> if you have specific requests.
