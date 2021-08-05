@@ -28,10 +28,12 @@ const displayDate = (date) => {
 }
 
 const	makeSubject = (title, location, source, date, type, href, number) => {
+	
 	const display = title || [source, typeToDisplay(type), location].filter(x => x).join(' - ');
+	return <div>{display}</div>;
 	return <>
-		<a href={`${href}?addendum=${number + 1}`}>{display}</a>
-		{date && <span className="date ago">{displayDate(date)}</span>}
+		{/*<a href={`${href}?addendum=${number + 1}`}>{display}</a>*/}
+		{/*date && <span className="date ago">{displayDate(date)}</span>*/}
 	</>
 }
 
@@ -107,8 +109,7 @@ const AddendumItem = (item, key) => {
 		<ul>
 			{item.addendum.map(({ location, original, source, credit, date, type, author, authorContact, title, body }, key2) => (
 					<li className="addendum subject" key={key2}>
-						{title}{location}{source}{date}{type}{data.releaseLink}{key2}
-						{/*makeSubject(title, location, source, date, type, data.releaseLink, key2)*/}
+						{makeSubject(title, location, source, date, type, data.releaseLink, key2)}
 					</li>
 				)
 			)}
