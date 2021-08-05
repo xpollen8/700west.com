@@ -6,7 +6,7 @@ import { makeReleaseLink } from '../lib/helpers';
 const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
-	return <a className="album cover" key={key} href={`/releases/${href}`}><img
+	return <a className="album cover" key={key} href={href}><img
 		border="1" src={`/images/covers/${item.image[0].thumb}`}
 		border={0}
 		alt={`${item.artist} - ${item.image[0].name}`}
