@@ -40,7 +40,7 @@ const Home = () => (
 			<li>
 			700west 4 X 4 'consolette', with hyper-quiet mic amps for distant-mic jobs
 			</li>
-			<a href="/images/equipment/20150503_Console.jpg"><img src="/images/equipment/20150503_Console_500.jpg" width="500" height="334" /></a>
+			<a href={`${process.env.NEXT_PUBLIC_IMAGES}/equipment/20150503_Console.jpg`}><img src={`${process.env.NEXT_PUBLIC_IMAGES}/equipment/20150503_Console_500.jpg`} width="500" height="334" /></a>
 			</ul>
 		<SectionHeader text="Commercial Electronics" />
 			<ul>
@@ -74,7 +74,7 @@ const Home = () => (
 			<li>
 			Delay lines: Southwest Tech Ambience Synthesizer 2AS-A
 			</li>
-			<a href="/images/equipment/20150505_SWT2ASA.jpg"><img src="/images/equipment/20150505_SWT2ASA_500.jpg" width="500" height="282" /></a>
+			<a href={`${process.env.NEXT_PUBLIC_IMAGES}/equipment/20150505_SWT2ASA.jpg`}><img src={`${process.env.NEXT_PUBLIC_IMAGES}/equipment/20150505_SWT2ASA_500.jpg`} width="500" height="282" /></a>
 			</ul>
 		<SectionHeader text="Microphones" />
 			<ul>

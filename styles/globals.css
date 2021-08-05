@@ -344,11 +344,11 @@ a[target="new"] {
 	margin-top: 10px;
 	display: flex;
 }
-.release.time {
-	display: inline;
-}
 .release.panel {
 	width: 50%;
+}
+.release.time {
+	display: inline;
 }
 .release.year {
 	margin-top: 10px;

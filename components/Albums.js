@@ -7,7 +7,7 @@ const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
 	return <a className="album cover" key={key} href={href}><img
-		border="1" src={`/images/covers/${item.image[0].thumb}`}
+		border="1" src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${item.image[0].thumb}`}
 		border={0}
 		alt={`${item.artist} - ${item.image[0].name}`}
 		width={150}

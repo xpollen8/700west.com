@@ -10,7 +10,7 @@ const makeSingleBlurb = (item, key) => {
 	return <li className="single" key={key}>
 		<div className="single cover">
 			{item.image && item.image[0] && item.image[0].thumb &&
-					<img src={`/images/covers/${item.image[0].thumb}`} alt="cover"
+					<img src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${item.image[0].thumb}`} alt="cover"
 					width={60}
 					height={60}
 				/>

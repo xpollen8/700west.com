@@ -99,7 +99,7 @@ const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
 
 	return <a className="cover" key={key} href={href}><img
-		border="1" src={`/images/covers/${item.image[0].thumb}`}
+		border="1" src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${item.image[0].thumb}`}
 		alt={`${item.artist} - ${item.image[0].name}`}
 		width={item.image[0].width}
 		height={item.image[0].height} /></a>
@@ -118,8 +118,8 @@ const makeAddendum = (item, addendum = 0) => {
 
 const Covers = (release) => {
 	return release.image.map((i, key) => (
-		<a key={key} href={`/images/covers/${i.file}`}><img
-			src={`/images/covers/${i.thumb}`}
+		<a key={key} href={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${i.file}`}><img
+			src={`${process.env.NEXT_PUBLIC_IMAGES}/covers/${i.thumb}`}
 			height="125"
 			width="125"
 			alt="image" /></a>
@@ -229,7 +229,7 @@ const Track = (data) => (
 		<hr/>
 		{exists(data.audio) && <div>
 			<a href={`/audio/${data.audio}`}><img
-			src="/images/iconMP3.gif" alt="download" /></a><span className="release teaser">Download</span>
+			src={`${process.env.NEXT_PUBLIC_IMAGES/iconMP3.gif`} alt="download" /></a><span className="release teaser">Download</span>
 			</div>}
 		<Datum k="Mastering" v={data.mastering} />
 		<Datum k="Writer" v={data.writer} />
@@ -358,8 +358,8 @@ const Promo = ({ publicity }) => {
 			<ul>
 			{publicity.map(({ image, width, height }, key) => (
 				<li key={key}>
-					<a href={`/images/publicity/${image}.jpg`}><img
-						src={`/images/publicity/${image}.gif`}
+					<a href={`${process.env.NEXT_PUBLIC_IMAGES}/publicity/${image}.jpg`}><img
+						src={`${process.env.NEXT_PUBLIC_IMAGES}/publicity/${image}.gif`}
 						alt="publicity shot"
 						width={width} height={height} /></a>
 				</li>
