@@ -27,7 +27,9 @@ const getNavFromLink = (link) => links.find(l => l.href === `/${link}`).text || 
 const Navigation = ({ link = '' }) => {
 	return (
 		<div className="nav">
-			<a href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" className="logo" /></a>
+			<div style={{ textAlign: 'center' }}>
+				<a href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" /></a>
+			</div>
 			<SectionHeader text="Choose" />
 			<ul>
 				{links.map(({ href, text, style }, i) => {

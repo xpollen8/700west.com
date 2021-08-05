@@ -83,12 +83,6 @@ p:first-of-type:first-letter{
 	list-style-type: none;
 	padding: 0.5rem;
 }
-.logo {	/* center the logo */
-	text-align: center;
-	display: none;
-  margin-left: auto;
-  margin-right: auto;
-}
 .navInactive {	/* no caret, but space */
 	width: 0;
 	height: 0;
