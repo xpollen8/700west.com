@@ -18,7 +18,7 @@ const links = [
 	{ href: '/moe', text: 'Moe Whittemore' },
 	{ href: '/tributes', text: 'Tributes' },
 	{ href: '/memoriam', text: 'In Memoriam' },
-	// NOT YET { href: '/feedback', text: 'Comments' },
+	{ href: '/feedback', text: 'Comments' },
 	{ href: '/contact', text: 'Contact Us' },
 ];
 
