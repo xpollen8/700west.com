@@ -19,7 +19,7 @@ module.exports = {
 				permanent: false,
 			},
 			{
-				source: '/htdb/:path*.html',
+				source: '/:path*.html',
 				destination: '/:path*',
 				permanent: false,
 			},
