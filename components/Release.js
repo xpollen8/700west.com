@@ -219,7 +219,7 @@ const Published = ({ publisher, affiliation }) => {
 const Track = (data) => (
 	<li value={data.tracknum} className="row" style={{ margin: "3px" }}>
 		<Title title={data.title} time={data.time} />
-		<hr/>
+		{!!(exists(data.audio) || exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation) || exists(data.comments) || exists(data.credits)) && <hr/>}
 		{exists(data.audio) && 
 			<AudioPlayer mp3={data.audio} />
 			}
@@ -385,21 +385,14 @@ const Comments = ({ comments }) => {
 					const data = [
 						original, reissue
 					];
-					console.log("ORIG", original);
-					console.log("REISS", reissue);
 					return <>
 						<SectionHeader text="Sales History" />
 						<LineChart adapter="chartjs" data={data} />
 						<ul>
 						{sorted.map(({ who, whoLink, date, said, type }, key) => (
-							<li key={key} style={{ display: 'flex', padding: '3px' }} className="row">
-								<div style={{ width: '50%' }}>
-									<i>{said}</i>
-								</div>
-								<div style={{ width: '50%' }}>
-									{exists(date) && <FormatDate date={date} />}
-								</div>
-							</li>
+							<p key={key} className="row">
+									{exists(date) && <FormatDate date={date} />} - <i>{said}</i>
+							</p>
 						))}
 						</ul>
 					</>
@@ -429,24 +422,6 @@ const Comments = ({ comments }) => {
 			{getComments()}
 			{getSales()}
 		</>
-		/*
-		return <>
-			<SectionHeader text="Comments" />
-			<ul>
-			{comments.map(({ who, whoLink, date, said, type }, key) => (
-				<li key={key} style={{ display: 'flex', padding: '3px' }} className="row">
-					<div style={{ width: '50%' }}>
-						<i>{said}</i>
-					</div>
-					<div style={{ width: '50%' }}>
-						<Who who={who} whoLink={whoLink} />
-						{exists(date) && <FormatDate date={date} />}
-					</div>
-				</li>
-			))}
-			</ul>
-		</>
-		*/
 	}
 	return <></>;
 }
