@@ -4,6 +4,8 @@ import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
 import { makeReleaseLink, AudioPlayer } from '../lib/helpers';
 import Albums from './Albums';
+import { LineChart } from 'react-chartkick'
+import 'chartkick/chart.js'
 
 const FormatDate = ({ date = new Date() }) => {
 	const dt = new Date(date).toISOString().slice(0,10);
@@ -367,9 +369,27 @@ const Comments = ({ comments }) => {
 		const other = comments.filter(c => c.type !== 'sale');
 		const getSales = () => {
 			if (exists(sales)) {
-					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
+					const original = { name: 'Original', data: {} };
+					const reissue = { name: 'Re-Issue', data: {} };
+					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, said }) => {
+						const price = said.match(/\$([(0-9,)+.?(0-9)*]+)/);
+						if (price && price[1]) {
+							if (said.match(/issue/i)) {
+								reissue.data[date] = price[1];
+							} else {
+								original.data[date] = price[1].replace(',', '');
+							}
+						}
+						return { date, said };
+					})
+					const data = [
+						original, reissue
+					];
+					console.log("ORIG", original);
+					console.log("REISS", reissue);
 					return <>
 						<SectionHeader text="Sales History" />
+						<LineChart adapter="chartjs" data={data} />
 						<ul>
 						{sorted.map(({ who, whoLink, date, said, type }, key) => (
 							<li key={key} style={{ display: 'flex', padding: '3px' }} className="row">
