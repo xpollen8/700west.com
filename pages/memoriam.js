@@ -157,20 +157,17 @@ const data = [
 	}
 ];
 
-const Memoriam = (mem) => (
-		<tr className="row">
-			<td>{mem.name}</td>
-			<td>{mem.played}</td>
-			<td>{mem.for}</td>
-			<td>{mem.date}</td>
-		</tr>
+const Memoriam = (mem, key) => (
+		<p className="row" key={key} style={{ borderRadius: '20px', padding: '10px' }}>
+			<div><b>{mem.name}</b> <span className="date ago">{mem.date}</span></div>
+			<div>Played: {mem.played}</div>
+			<div>For: {mem.for}</div>
+		</p>
 )
 
 const App = (props) => (
 	<Page link="memoriam" description="Memoriam">
-		<table>
 		{data.map(Memoriam)}
-		</table>
 	</Page>
 )
 
