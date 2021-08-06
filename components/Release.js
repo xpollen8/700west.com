@@ -68,9 +68,9 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 		</div>
 		<hr/>
 		{title &&
-			<div className="addendum subject">
-				{title}
-			</div>
+			<p>
+				<b>{title}</b>
+			</p>
 		}
 		{makeBody(body)}
 	</>
@@ -157,9 +157,9 @@ const TrackComments = ({ comments = [] }) => {
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
 					return <blockquote key={key} className="row">
-						{exists(c.who) && <>{c.who} -</>}
 						<i>{c.said}</i>
-						{exists(c.date) && <span className="date ago">{c.date}</span>}
+						<Who who={c.who} whoLink={c.whoLink} />
+						{exists(c.date) && makeDate(c.date)}
 					</blockquote>
 				})}
 		</>
@@ -296,7 +296,7 @@ const Credits = ({ credits = [] }) => {
 			<blockquote>
 			{credits.map(({ who, whoLink, did }, key) => (
 				<p key={key}>
-					<b><Who who={who} whoLink={whoLink} /></b> {did.join(', ')}
+					<Who who={who} whoLink={whoLink} /> {did.join(', ')}
 				</p>
 			))}
 			</blockquote>
