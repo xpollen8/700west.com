@@ -14,6 +14,16 @@ module.exports = {
 			},
 			*/
 			{
+				source: '/feed',
+				destination: 'http://old.700west.com/htdb/feed',
+				permanent: false,
+			},
+			{
+				source: '/tapes',
+				destination: 'http://old.700west.com/tapes',
+				permanent: false,
+			},
+			{
 				source: '/htdb/releases/singles.html',
 				destination: '/singles',
 				permanent: false,
