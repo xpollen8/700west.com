@@ -75,6 +75,7 @@ const newsItems = [
 	title: 'Site Updates',
 	author: 'David Whittemore',
 	body: () =>
+		<blockquote>
 		<ul>
 		<li> Added track listing and updated audio to Amnesty's <a href="/releases/Amnesty-Free_Your_Mind.html">Free Your Mind</a></li>
 		<li> Added images and audio excerpt to <a href="/releases/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
@@ -91,6 +92,7 @@ const newsItems = [
 			date='2010' />
 		</li>
 		</ul>
+		</blockquote>
 	},
 	{
 		date: 'Sat Mar  3 07:55:46 PST 2012',

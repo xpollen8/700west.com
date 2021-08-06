@@ -322,8 +322,8 @@ a[target="new"] {
 	margin-bottom: 4px;
 	list-style-type: none;
 }
-.header div {
-	padding: 5px;
+.header {
+	margin: 10px;
 }
 .datum {
 	display: inline;
@@ -362,4 +362,7 @@ a[target="new"] {
 }
 .track.datum {
 	color: blue;
+}
+.who {
+	font-weight: bold;
 }

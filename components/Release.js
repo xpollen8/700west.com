@@ -2,40 +2,33 @@ import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
 import { SectionHeader } from '../pages/_app';
-import { makeReleaseLink, AudioPlayer } from '../lib/helpers';
+import { makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject } from '../lib/helpers';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 
-const FormatDate = ({ date = new Date() }) => {
-	const dt = new Date(date).toISOString().slice(0,10);
-	return <>{dt}</>
-}
+const FormatDate = (date = new Date()) => new Date(date).toISOString().slice(0,10);
 
-const typeToDisplay = (type) => {
-	const	types = [
-		[ 'interview', 'Interview' ],
-		[ 'liner', 'Liner Notes' ],
-		[ 'auction', 'Auction Review' ],
-		[ 'review', 'Review' ],
-		[ 'session', 'Session Notes' ],
-		[ 'reminiscence', 'Reminiscence' ],
-		[ 'photos', 'Photographs' ],
-	];
-	const item = types.find(t => t[0] === type);
-	return (item) ? item[1] : '';
-}
-
-const displayDate = (date) => {
+const makeDate = (date) => {
 	if (date) {
-		return new Date(date).toISOString().slice(0,10);
+		const ret = FormatDate(date);
+		const Difference_In_Time = new Date().getTime() - new Date(date).getTime();
+		const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+		const Difference_In_Years = Difference_In_Days / (365.25);
+
+		const ago = ((Difference_In_Years > 1) ? `${Math.floor(Difference_In_Years)} yrs` : `${Math.ceil(Difference_In_Days)} days`) + ` ago`;
+		return <span className="date">{ret}<span className="date ago">{ago}</span></span>
 	}
 }
 
-const	makeSubject = (props) => {
-	const { title, location, source, type } = props;
-	const display = title || [source, typeToDisplay(type), location].filter(x => x).join(' - ');
-	return display;
+const makeAuthor = (author, authorContact) => {
+	if (authorContact) {
+		return <>
+			{author} {makeContact(authorContact)}
+		</>
+	} else {
+		return author;
+	}
 }
 
 const makeContact = (authorContact) => {
@@ -47,18 +40,6 @@ const makeContact = (authorContact) => {
 	}
 }
 
-const makeDate = (date) => {
-	if (date) {
-		const ret = new Date(date).toISOString().slice(0,10);
-		const Difference_In_Time = new Date().getTime() - new Date(date).getTime();
-		const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-		const Difference_In_Years = Difference_In_Days / (365.25);
-
-		const ago = ((Difference_In_Years > 1) ? `${Math.floor(Difference_In_Years)} yrs` : `${Math.ceil(Difference_In_Days)} days`) + ` ago`;
-		return <span className="date">{ret}<span className="date ago">{ago}</span></span>
-	}
-}
-
 const makeBody = (body) => {
 	if (body) {
 		return <>{body}</>
@@ -67,26 +48,23 @@ const makeBody = (body) => {
 
 const makeOriginal = (original) => {
 	if (original) {
-		return <div className="original">
-			Swiped from:
+		return <span className="original">
 			<a href={original} target="new">{original}</a>
-		</div>
+		</span>
 	}
 }
 
 const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, artist, release, releaseLink, number }) => (
 	<>
-		<div className="header">
-		<div className="artist">{artist}</div>
-		:
-		<a href={releaseLink} className="title">{release}</a>
+		<span className="artist">{artist}</span> : <a href={releaseLink} className="title">{release}</a>
 		<hr/>
-		{source && <div>Source: <div className="datum">{source}</div></div>}
-		{location && <div>Location: <div className="datum">{location}</div></div>}
-		{type && <div>Type: <div className="datum">{typeToDisplay(type)}</div></div>}
-		{author && <div>Author: <div className="datum">{author}{makeContact(authorContact)}</div></div>}
-		{date && <div>Published: <div className="datum">{makeDate(date)}</div></div>}
-		{makeOriginal(original)}
+		<div className="header">
+			<Datum k="Source" v={source} />
+			<Datum k="Location" v={location} />
+			<Datum k="Type" v={typeToDisplay(type)} />
+			<Datum k="Author" v={makeAuthor(author, authorContact)} />
+			<Datum k="Published" v={makeDate(date)} />
+			<Datum k="Original" v={makeOriginal(original)} />
 		</div>
 		<hr/>
 		{title &&
@@ -110,19 +88,21 @@ const makeAddendum = (item, addendum = 0) => {
 }
 
 const Covers = (release) => {
-	return release.image.map((i, key) => (
+	return <div className="release panel">
+		{release.image.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
 			src={`/images/covers/${i.thumb}`}
 			height="125"
 			width="125"
 			alt="image" /></a>
-	));
+		))}
+	</div>
 }
 
 const exists = (v) => v && v.length;
 
-const AudioTeaser = (release) => {
-	const haveAudio = release.tracks.filter(t => exists(t.audio));
+const AudioTeaser = ({ tracks = [] }) => {
+	const haveAudio = tracks.filter(t => (t.audio && t.audio.length));
 	if (haveAudio.length) {
 		return <div className="release teaser">{haveAudio.length} audio sample{haveAudio.length > 1 ? 's' : ''} available below!</div>
 	} else {
@@ -130,71 +110,65 @@ const AudioTeaser = (release) => {
 	}
 }
 
-const Datum = ({ k, v }) => {
-	if (exists(v)) {
+const Datum = ({ k, v, className }) => {
+	if (exists(v) || typeof v === 'object') {
 		return <div>
 			<span className="track datum"> {k} </span>:
-			<span> {v} </span>
+			<span className={className}> {v} </span>
 		</div>
-	} else {
-		return <></>
 	}
+	return <>{v}</>
 }
 
-const Who = ({ who, whoLink }) => {
-	if (exists(who)) {
-		if (exists(whoLink)) {
-			return <>
-				<a href={whoLink} target="new">{who}</a> -
-			</>
+const Who = ({ who = '', whoLink = '' }) => {
+	if (who.length) {
+		if (whoLink.length) {
+			return <div className="who">
+				<a href={whoLink} target="new">{who}</a>
+			</div>
 		} else {
-			return <>
-				{who} -
-			</>
+			return <div className="who">
+				{who}
+			</div>
 		}
-	} else {
-		return <></>;
 	}
+	return <></>;
 }
 
-const TrackCredits = ({ credits }) => {
-	if (exists(credits)) {
+const TrackCredits = ({ credits = [] }) => {
+	if (credits.length) {
 		return <>
 			<div className="track datum">Song Credits</div>
 			<blockquote>
 				{credits.map((c, key) => {
 					return <p key={key}>
-						<Who {...c} /> <span>{c.did.join(', ')}</span>
+						<Who {...c} /> <p>{c.did.join(', ')}</p>
 					</p>
 				})}
 			</blockquote>
 		</>
-	} else {
-		return <></>
 	}
+	return <></>
 }
 
-const TrackComments = ({ comments }) => {
-	if (exists(comments)) {
+const TrackComments = ({ comments = [] }) => {
+	if (comments.length) {
 		return <>
 			<div className="track datum">Comments</div>
-			<ul>
 				{comments.map((c, key) => {
-					return <li key={key}>
+					return <blockquote key={key} className="row">
 						{exists(c.who) && <>{c.who} -</>}
 						<i>{c.said}</i>
 						{exists(c.date) && <span className="date ago">{c.date}</span>}
-					</li>
+					</blockquote>
 				})}
-			</ul>
 		</>
-	} else {
-		return <></>
 	}
+	return <></>;
 }
 
-const Title = ({ title, time }) => {
-	if (title && exists(time)) {
+const Title = ({ title = '', time = '' }) => {
+	if (title.length && time.length) {
 		return <div>
 			<span className="artist">{title}</span>
 			<span className="date ago">{time}</span>
@@ -204,27 +178,26 @@ const Title = ({ title, time }) => {
 	}
 }
 
-const Published = ({ publisher, affiliation }) => {
-	if (exists(publisher) && exists(affiliation)) {
+const Published = ({ publisher = '', affiliation = '' }) => {
+	if (publisher.length && affiliation.length) {
 		return <Datum k="Publisher" v={`${publisher} (${affiliation})`}/>;
-	} else if (exists(publisher)) {
+	} else if (publisher.length) {
 		return <Datum k="Publisher" v={publisher} />;
-	} else if (exists(affiliation)) {
+	} else if (affiliation.length) {
 		return <Datum k="Affiliation" v={affiliation} />;
-	} else {
-		return <></>;
 	}
+	return <></>;
 }
 
-const Track = (data) => (
-	<li value={data.tracknum} className="row" style={{ margin: "3px" }}>
+const Track = (data, key) => (
+	<li value={data.tracknum} className="row" style={{ margin: "3px" }} key={key}>
 		<Title title={data.title} time={data.time} />
 		{!!(exists(data.audio) || exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation) || exists(data.comments) || exists(data.credits)) && <hr/>}
 		{exists(data.audio) && 
 			<AudioPlayer mp3={data.audio} />
 			}
 		<Datum k="Mastering" v={data.mastering} />
-		<Datum k="Writer" v={data.writer} />
+		<Datum k="Writer" v={data.writer} className='who' />
 		<Published publisher={data.publisher} affiliation={data.affiliation} />
 		<TrackComments comments={data.comments} />
 		<TrackCredits credits={data.credits} />
@@ -249,6 +222,18 @@ const Panel = ({ side, tracks }) => {
 	}
 }
 
+const HeaderData = (release) => (
+	<>
+		<div className="header">
+			<Datum k="Published" v={release.published} />
+			<Datum k="Label" v={release.label} />
+			<Datum k="Serial" v={release.id} />
+			<Datum k="Contact" v={release.url} />
+		</div>
+		<AudioTeaser {...release} />
+	</>
+)
+
 const MakeSingle = (single) => (
 	<>
 		<div className="release sides">
@@ -260,41 +245,28 @@ const MakeSingle = (single) => (
 					<div className="release artist">{single.tracks[1].artist}</div>
 				}
 				<div className="release title">"{single.tracks[1].title}"</div>
-				{exists(single.published) && <div className="release year">Published: {single.published}</div>}
-				{exists(single.label) && <div className="release label">Label: {single.label}</div>}
-				{exists(single.id) && <div className="release id">Serial: {single.id}</div>}
-				<AudioTeaser {...single} />
+				<HeaderData {...single} />
 			</div>
-			{!!(single.image && single.image.length) &&
-				<div className="release panel">
-					<Covers {...single } />
-				</div>
-			}
+			<Covers {...single } />
 		</div>
 		<div className="release sides">
-			<Panel side='A' tracks={single.tracks} />
-			<Panel side='B' tracks={single.tracks} />
+			<Panel side='A' tracks={single.tracks} key={1} />
+			<Panel side='B' tracks={single.tracks} key={2} />
 		</div>
 	</>
 )
 
-const Header = (release) => (
-		<div className="release sides">
+const AlbumHeader = (release) => (
+	<>
+	<div className="release sides">
 		<div className="release panel">
 			<div className="release artist">{release.artist}</div>
 			<div className="release title">"{release.title}"</div>
-			{exists(release.published) && <div className="release year">Published: {release.published}</div>}
-			{exists(release.label) && <div className="release label">Label: {release.label}</div>}
-			{exists(release.id) && <div className="release id">Serial: {release.id}</div>}
-			{exists(release.url) && <div className="release id">Contact: {makeContact(release.url)}</div>}
-			<AudioTeaser {...release} />
+			<HeaderData {...release} />
 		</div>
-		{exists(release.image) &&
-			<div className="release panel">
-				<Covers {...release } />
-			</div>
-		}
+		<Covers {...release } />
 	</div>
+	</>
 )
 
 const MakeAlbum = (album) => {
@@ -302,22 +274,23 @@ const MakeAlbum = (album) => {
 	const hasSides = album.tracks[0]?.side.length;
 	if (hasSides) {
 		return <>
-			<Header {...album} />
+			<AlbumHeader {...album} />
 			<div className="release sides">
-				<Panel side='A' tracks={album.tracks} />
-				<Panel side='B' tracks={album.tracks} />
+				<Panel side='A' tracks={album.tracks} key={1} />
+				<Panel side='B' tracks={album.tracks} key={2} />
 			</div>
 		</>
 	} else if (hasTracks) {
 		return <>
+			<AlbumHeader {...album} />
 			<Panel tracks={album.tracks} />
 		</>
 	}
-	return <Header {...album} />
+	return <AlbumHeader {...album} />
 }
 
-const Credits = ({ credits }) => {
-	if (exists(credits)) {
+const Credits = ({ credits = [] }) => {
+	if (credits.length) {
 		return <>
 			<SectionHeader text="Credits" />
 			<blockquote>
@@ -332,8 +305,8 @@ const Credits = ({ credits }) => {
 	return <></>;
 }
 
-const LinerNotes = ({ liner }) => {
-	if (exists(liner)) {
+const LinerNotes = ({ liner = '' }) => {
+	if (liner.length) {
 		return <>
 			<SectionHeader text="Liner Notes" />
 			<blockquote>
@@ -344,8 +317,8 @@ const LinerNotes = ({ liner }) => {
 	return <></>;
 }
 
-const Promo = ({ publicity }) => {
-	if (exists(publicity)) {
+const Promo = ({ publicity = [] }) => {
+	if (publicity.length) {
 		return <>
 			<SectionHeader text="Original Promotional Material " />
 			<ul>
@@ -363,12 +336,12 @@ const Promo = ({ publicity }) => {
 	return <></>;
 }
 
-const Comments = ({ comments }) => {
-	if (exists(comments)) {
+const Comments = ({ comments = [] }) => {
+	if (comments.length) {
 		const sales = comments.filter(c => c.type === 'sale');
 		const other = comments.filter(c => c.type !== 'sale');
 		const getSales = () => {
-			if (exists(sales)) {
+			if (sales.length) {
 					const original = { name: 'Original', data: {} };
 					const reissue = { name: 'Re-Issue', data: {} };
 					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, said }) => {
@@ -391,7 +364,9 @@ const Comments = ({ comments }) => {
 						<ul>
 						{sorted.map(({ who, whoLink, date, said, type }, key) => (
 							<p key={key} className="row">
-									{exists(date) && <FormatDate date={date} />} - <i>{said}</i>
+									{exists(date) && <>
+										{FormatDate(date)} - <i>{said}</i>
+									</>}
 							</p>
 						))}
 						</ul>
@@ -400,17 +375,17 @@ const Comments = ({ comments }) => {
 				return <></>
 			}
 		const getComments = () => {
-			if (exists(other)) {
+			if (other.length) {
 				return <>
 					<SectionHeader text="Comments" />
 					{other.map(({ who, whoLink, date, said, type }, key) => (
 						<p key={key} className="row">
-							<div>
+							<div style={{ padding: '10px' }}>
 								<i>{said}</i>
-							</div>
-							<div style={{ marginTop: '5px' }}>
-								<Who who={who} whoLink={whoLink} />
-								{exists(date) && <FormatDate date={date} />}
+								<div style={{ padding: '10px' }}>
+									<Who who={who} whoLink={whoLink} />
+									{exists(date) && makeDate(date)}
+								</div>
 							</div>
 						</p>
 					))}
@@ -426,15 +401,15 @@ const Comments = ({ comments }) => {
 	return <></>;
 }
 
-const Extra = ({ type, artist, title, tracks, addendum }) => {
-	if (exists(addendum)) {
+const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
+	if (addendum.length) {
 		const href = makeReleaseLink(artist || tracks[0].artist, title || item.tracks[0].title);
 		return <>
 			<SectionHeader text="Auxiliary Materials)" />
 			<blockquote>
 			{addendum.map((props, key) => (
 				<p key={key}>
-					<a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
+					{typeToDisplay(props.type)}: <a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
 				</p>
 			))}
 			</blockquote>
