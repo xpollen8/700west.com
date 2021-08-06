@@ -159,13 +159,13 @@ const TrackCredits = ({ credits }) => {
 	if (exists(credits)) {
 		return <>
 			<div className="track datum">Song Credits</div>
-			<ul>
+			<blockquote>
 				{credits.map((c, key) => {
-					return <li key={key}>
+					return <p key={key}>
 						<Who {...c} /> <span>{c.did.join(', ')}</span>
-					</li>
+					</p>
 				})}
-			</ul>
+			</blockquote>
 		</>
 	} else {
 		return <></>
@@ -318,13 +318,13 @@ const Credits = ({ credits }) => {
 	if (exists(credits)) {
 		return <>
 			<SectionHeader text="Credits" />
-			<ul>
+			<blockquote>
 			{credits.map(({ who, whoLink, did }, key) => (
-				<li key={key}>
+				<p key={key}>
 					<b><Who who={who} whoLink={whoLink} /></b> {did.join(', ')}
-				</li>
+				</p>
 			))}
-			</ul>
+			</blockquote>
 		</>
 	}
 	return <></>;
@@ -363,6 +363,53 @@ const Promo = ({ publicity }) => {
 
 const Comments = ({ comments }) => {
 	if (exists(comments)) {
+		const sales = comments.filter(c => c.type === 'sale');
+		const other = comments.filter(c => c.type !== 'sale');
+		const getSales = () => {
+			if (exists(sales)) {
+					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
+					return <>
+						<SectionHeader text="Sales History" />
+						<ul>
+						{sorted.map(({ who, whoLink, date, said, type }, key) => (
+							<li key={key} style={{ display: 'flex', padding: '3px' }} className="row">
+								<div style={{ width: '50%' }}>
+									<i>{said}</i>
+								</div>
+								<div style={{ width: '50%' }}>
+									{exists(date) && <FormatDate date={date} />}
+								</div>
+							</li>
+						))}
+						</ul>
+					</>
+				}
+				return <></>
+			}
+		const getComments = () => {
+			if (exists(other)) {
+				return <>
+					<SectionHeader text="Comments" />
+					{other.map(({ who, whoLink, date, said, type }, key) => (
+						<p key={key} className="row">
+							<div>
+								<i>{said}</i>
+							</div>
+							<div style={{ marginTop: '5px' }}>
+								<Who who={who} whoLink={whoLink} />
+								{exists(date) && <FormatDate date={date} />}
+							</div>
+						</p>
+					))}
+				</>
+			}
+			return <></>
+		}
+		return <>
+			{getComments()}
+			{getSales()}
+		</>
+		/*
 		return <>
 			<SectionHeader text="Comments" />
 			<ul>
@@ -379,6 +426,7 @@ const Comments = ({ comments }) => {
 			))}
 			</ul>
 		</>
+		*/
 	}
 	return <></>;
 }
@@ -388,15 +436,13 @@ const Extra = ({ type, artist, title, tracks, addendum }) => {
 		const href = makeReleaseLink(artist || tracks[0].artist, title || item.tracks[0].title);
 		return <>
 			<SectionHeader text="Auxiliary Materials)" />
-			<ul>
+			<blockquote>
 			{addendum.map((props, key) => (
-				<li key={key}>
+				<p key={key}>
 					<a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
-				</li>
+				</p>
 			))}
-			</ul>
-			<p>
-			</p>
+			</blockquote>
 		</>
 	}
 	return <></>;

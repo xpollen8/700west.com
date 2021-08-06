@@ -4,7 +4,7 @@ import { SectionHeader, Page } from './_app';
 const Home = () => (
 	<Page title="Equipment" link="equipment" description="Equipment used at 700 West Recording">
 		<SectionHeader text="Homemade Stuff" />
-			<ul>
+			<blockquote><ul>
 			<li>
 			Bi-amped, 3-way studio monitors (Bozak lo, Eminence mids, CTS 
 			hi) with 
@@ -41,10 +41,10 @@ const Home = () => (
 			<li>
 			700west 4 X 4 'consolette', with hyper-quiet mic amps for distant-mic jobs
 			</li>
-			<a href={`/images/equipment/20150503_Console.jpg`}><Image src={`/images/equipment/20150503_Console_500.jpg`} width="500" height="334" /></a>
-			</ul>
+			<a href={`/images/equipment/20150503_Console.jpg`}><Image src={`/images/equipment/20150503_Console_500.jpg`} width="500" height="334"/></a>
+			</ul></blockquote>
 		<SectionHeader text="Commercial Electronics" />
-			<ul>
+			<blockquote><ul>
 			<li>
 			Magnecord PT6-AH 2-track 1/4" recorder - 15IPS
 			</li>
@@ -76,12 +76,12 @@ const Home = () => (
 			Delay lines: Southwest Tech Ambience Synthesizer 2AS-A
 			</li>
 			<a href={`/images/equipment/20150505_SWT2ASA.jpg`}><Image src={`/images/equipment/20150505_SWT2ASA_500.jpg`} width="500" height="282" /></a>
-			</ul>
+			</ul></blockquote>
 		<SectionHeader text="Microphones" />
-			<ul>
+			<blockquote><ul>
 			<li>
 			Capacitor mics
-			<ul>
+			<blockquote><ul>
 			<li>
 			Neumann U-47 (1957 vintage) - (sold to Dave Meador)
 			</li>
@@ -102,11 +102,11 @@ const Home = () => (
 			<li>
 			E-V 1711 electret condenser mics
 			</li>
-			</ul>
+			</ul></blockquote>
 			</li>
 			<li>
 			Dynamic mics
-			<ul>
+			<blockquote><ul>
 			<li>
 			AKG D190E
 			</li>
@@ -118,11 +118,11 @@ const Home = () => (
 			</li>
 			<li>E-V RE16
 			</li>
-			</ul>
+			</ul></blockquote>
 			</li>
-			</ul>
+			</ul></blockquote>
 		<SectionHeader text="House Instruments" />
-			<ul>
+			<blockquote><ul>
 			<li>
 			1934 Story & Clark studio upright piano; Wurlitzer electric piano
 			</li>
@@ -132,7 +132,7 @@ const Home = () => (
 			<li>
 			Elka string machine.
 			</li>
-			</ul>
+			</ul></blockquote>
 	</Page>
 );
 

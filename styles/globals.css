@@ -1,3 +1,6 @@
+blockquote {
+	margin-left: 1em;
+}
 ul {
 	margin: 0px;
 	padding: 0px;
@@ -12,23 +15,7 @@ body {
 	font: normal 15px Verdana, Arial, sans-serif;
 }
 p {
-}
-p:first-of-type{
-	/*
-	text-indent: 1em;
-	*/
-}
-p:first-of-type:first-letter{
-	/*
-	color: white;
-	background-color: black;
-	border-radius: 2px;
-	box-shadow: 3px 3px 0 red;
-	font-size: 250%;
-	padding: 6px 3px;
-	margin-right: 6px;
-	float: left;
-	*/
+	margin: .25em;
 }
 .centerWrapper {	/* wraps everything */
 	 display: grid;
