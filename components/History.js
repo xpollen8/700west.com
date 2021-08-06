@@ -10,12 +10,8 @@ const History = ({ rotating }) => {
 	niche.
 	</p>
 	<p>
-	 <div style={{ display: 'inline-block', float: 'right' }} >
+	 <div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
 		<Image src={src} width={width} height={height} border="0" alt={alt} />
-		{/*
-		<Image src={`/images/250_business_card.jpg`} width="250" height="147" border="0" alt="Business Card" />
-		<Image src={`/images/72adb.gif`} width="379" height="192" border="0" alt="Newspaper Ad" />
-		*/}
 	</div>
 	The demo tape was our specialty, although many albums & singles were generated during 
 	our 12 years of existence.- just check the "Albums/Singles" section of the site!  And with my 
