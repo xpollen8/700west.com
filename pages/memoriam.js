@@ -167,7 +167,7 @@ const Memoriam = (mem) => (
 )
 
 const App = (props) => (
-	<Page title="In Memoriam" link="memoriam" description="Memoriam">
+	<Page link="memoriam" description="Memoriam">
 		<table>
 		{data.map(Memoriam)}
 		</table>

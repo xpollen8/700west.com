@@ -19,7 +19,7 @@ const links = [
 	{ href: '/tributes', text: 'Tributes' },
 	{ href: '/memoriam', text: 'In Memoriam' },
 	// NOT YET { href: '/feedback', text: 'Comments' },
-	{ href: '/contact', text: 'Contact' },
+	{ href: '/contact', text: 'Contact Us' },
 ];
 
 const getNavFromLink = (link) => links.find(l => l.href === `/${link}`).text || '/';
@@ -53,7 +53,7 @@ const Page = (props) => (
 	</Head>
 	<div className='container'>
 		<div>
-		<Topper className="navTopper" text={getNavFromLink(props.link)}/>
+		<Topper className="navTopper" text={props.title || getNavFromLink(props.link)}/>
 		<Navigation link={props.link} />
 		</div>
 		<div>

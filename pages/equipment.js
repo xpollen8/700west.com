@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { SectionHeader, Page } from './_app';
 
 const Home = () => (
-	<Page title="Equipment" link="equipment" description="Equipment used at 700 West Recording">
+	<Page link="equipment" description="Equipment used at 700 West Recording">
 		<SectionHeader text="Homemade Stuff" />
 			<blockquote><ul>
 			<li>
