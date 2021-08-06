@@ -327,6 +327,7 @@ a[target="new"] {
 }
 .datum {
 	display: inline;
+	color: blue;
 }
 .album.cover {
 	padding: 1px;
@@ -359,9 +360,6 @@ a[target="new"] {
 .release.teaser {
 	color: red;
 	font-weight: 900;
-}
-.track.datum {
-	color: blue;
 }
 .who {
 	font-weight: bold;

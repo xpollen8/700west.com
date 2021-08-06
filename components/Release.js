@@ -113,7 +113,7 @@ const AudioTeaser = ({ tracks = [] }) => {
 const Datum = ({ k, v, className }) => {
 	if (exists(v) || typeof v === 'object') {
 		return <div>
-			<span className="track datum"> {k} </span>:
+			<span className="datum"> {k} </span>:
 			<span className={className}> {v} </span>
 		</div>
 	}
@@ -138,7 +138,7 @@ const Who = ({ who = '', whoLink = '' }) => {
 const TrackCredits = ({ credits = [] }) => {
 	if (credits.length) {
 		return <>
-			<div className="track datum">Song Credits</div>
+			<div className="datum">Song Credits</div>
 			<blockquote>
 				{credits.map((c, key) => {
 					return <p key={key}>
@@ -154,7 +154,7 @@ const TrackCredits = ({ credits = [] }) => {
 const TrackComments = ({ comments = [] }) => {
 	if (comments.length) {
 		return <>
-			<div className="track datum">Comments</div>
+			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
 					return <blockquote key={key} className="row">
 						{exists(c.who) && <>{c.who} -</>}
@@ -406,13 +406,11 @@ const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 		const href = makeReleaseLink(artist || tracks[0].artist, title || item.tracks[0].title);
 		return <>
 			<SectionHeader text="Auxiliary Materials)" />
-			<blockquote>
 			{addendum.map((props, key) => (
-				<p key={key}>
-					{typeToDisplay(props.type)}: <a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
+				<p key={key} className="row">
+					<span className="datum">{typeToDisplay(props.type)}</span> : <a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
 				</p>
 			))}
-			</blockquote>
 		</>
 	}
 	return <></>;
