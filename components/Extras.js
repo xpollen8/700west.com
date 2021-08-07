@@ -21,7 +21,7 @@ const AddendumItem = (item, key) => {
 		<>
 			{item.addendum.map(({ location, original, source, credit, date, type, author, authorContact, title, body }, key2) => (
 					<p className="row" key={key2}>
-						<span className="datum">{typeToDisplay(type)}</span> : <a href={`${data.releaseLink}?addendum=${key2 + 1}`}>{makeSubject({ title, location, source, date, type, href: data.releaseLink, number: key2 })}</a>
+						<span className="datum">{typeToDisplay(type)}</span> : <a href={`${data.releaseLink}?addendum=${key2 + 1}`}>{makeSubject({ author, title, location, source, date, type, href: data.releaseLink, number: key2 })}</a>
 					</p>
 				)
 			)}

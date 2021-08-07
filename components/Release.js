@@ -1,29 +1,10 @@
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate } from '../lib/helpers';
+import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor } from '../lib/helpers';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
-
-const makeAuthor = (author, authorContact) => {
-	if (authorContact) {
-		return <>
-			{author} {makeContact(authorContact)}
-		</>
-	} else {
-		return author;
-	}
-}
-
-const makeContact = (authorContact) => {
-	if (authorContact) {
-		const ret = authorContact.match(/@/) ? `mailto:${authorContact}` : authorContact;
-		return <span className="contact">
-			<a href={ret} target="new">{authorContact}</a>
-		</span>;
-	}
-}
 
 const makeBody = (body) => {
 	if (body) {
