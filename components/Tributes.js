@@ -1,12 +1,7 @@
 import releases from '../lib/releases';
-import { SectionHeader } from '../pages/_app';
+import { SectionHeader, Item } from '../lib/helpers';
 
-const makeTribute = (item, key) => (
-	<div key={key}>
-		<SectionHeader text={[item.author, item.source, item.title, item.date].join(' - ').replace(/- -/g, '-')} />
-		{item.body}
-	</div>
-)
+const makeTribute = (item, key) => <Item key={key} bold={item.author} info={(item.source || item.title)} date={item.date} body={item.body} />
 
 const Tributes = () => {
 	const ret = [];

@@ -1,8 +1,6 @@
 import Image from 'next/image';
-import News from '../components/News';
 import releases from '../lib/releases';
-import { SectionHeader } from '../pages/_app';
-import { makeReleaseLink } from '../lib/helpers';
+import { SectionHeader, makeReleaseLink } from '../lib/helpers';
 
 const makeAlbumBlurb = (item, key) => {
 	const href = makeReleaseLink(item.artist, item.title);
@@ -17,27 +15,22 @@ const makeAlbumBlurb = (item, key) => {
 
 const Albums = () => (
 	<>
-	<News slug="bandcampRelease" />
-	<SectionHeader text="Short History" />
-	<p>
+	<blockquote>
 		Between 1972 and 1983, several singles and albums were released on the 700 West label.
-	</p>
-	<p>
-		Many releases were recorded at the studio and released on other labels.
-	</p>
-	<p>
-		Today, many of these records sell amongst collectors for hundreds of dollars!
-	</p>
-	<p>
+		Many other releases were recorded at the studio and released on other labels.
+		Today, these highly-collectible records sell for hundreds of dollars!
+	</blockquote>
+	<blockquote>
 		We're currently working on digitizing and re-releasing some 700 West material.
-	</p>
-	<p>
-		Get in <a href="/contact">touch with us</a> if you have specific requests.
-	</p>
-	<SectionHeader text="Click for more information" />
-	<ul className="albums">
-		{releases.filter(r => r.type === 'album').map(makeAlbumBlurb)}
-	</ul>
+	</blockquote>
+	<b>Released on the 700 West label</b>
+		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
+		{releases.filter(r => r.type === 'album' && r.label.match(/700/)).map(makeAlbumBlurb)}
+		</div>
+	<b>Recorded at 700 West, released on other labels</b>
+		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
+		{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).map(makeAlbumBlurb)}
+		</div>
 	</>
 )
 

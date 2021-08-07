@@ -1,10 +1,7 @@
 import '../styles/globals.css'
 import Head from 'next/head';
 import Image from 'next/image';
-
-const Topper = ({ className, text }) => <div className={className}>&lt;&lt; {text} &gt;&gt;</div>
-
-const SectionHeader = ({ text }) => Topper({ className: "sectionHeader", text })
+import { Topper, SectionHeader } from '../lib/helpers';
 
 const links = [
 	{ href: '/', text: 'Home' },
@@ -16,7 +13,7 @@ const links = [
 	{ href: '/photos', text: 'Photos' },
 	{ href: '/listen', text: 'Listen!' },
 	{ href: '/moe', text: 'Moe Whittemore' },
-	{ href: '/tributes', text: 'Tributes' },
+	{ href: '/tributes', text: 'Reminiscences' },
 	{ href: '/memoriam', text: 'In Memoriam' },
 	{ href: '/feedback', text: 'Comments' },
 	{ href: '/contact', text: 'Contact Us' },

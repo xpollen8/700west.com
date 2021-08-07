@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { SectionHeader, Page } from './_app';
+import { SectionHeader } from '../lib/helpers';
+import { Page } from './_app';
 
 const App = (props) => {
 	return <Page title="Moe" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">

@@ -1,12 +1,11 @@
-import { SectionHeader } from '../pages/_app';
-import { AudioPlayer } from '../lib/helpers.js';
+import { AudioPlayer, Item } from '../lib/helpers.js';
 
 const newsItems = [
 	{
 		slug: 'urgent',
 		date: 'Sun Aug  1 22:03:27 PDT 2021',
 		author: 'David Whittemore',
-		title: 'Moe',
+		title: 'Give Moe a call!',
 		linkInternal: '/contact',
 		linkInternalTitle: 'Drop him a note',
 		body: () =>
@@ -37,7 +36,6 @@ const newsItems = [
 	},
 	{
 		slug: 'manifesto',
-		author: 'David Whittemore',
 		tags: [ 'event:interview', 'album:Best_of_700_West_Volume_II', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
 		date: '2019-04-26',
 		title: 'WFYI interview of Moe Whittemore',
@@ -50,7 +48,6 @@ const newsItems = [
 		</p>
 	},
 	{
-		author: 'David Whittemore',
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
 		title: 'Nuvo Magazine',
 		linkExternal: 'http://www.nuvo.net/MusicBlog/archives/2015/06/10/700-wests-moe-whittemore-gets-reissue',
@@ -60,7 +57,6 @@ const newsItems = [
 		</p>
 	},
 	{
-		author: 'David Whittemore',
 		tags: [ 'event:release', 'album:MO', 'label:Anazitisi_Records' ],
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
 		linkExternal: 'http://www.anazitisirecords.com/shop/phop/product_info.php?products_id=3769',
@@ -150,7 +146,6 @@ const newsItems = [
 	{
 		title: 'PM Magazine (1980) Artist Profile',
 		date: '2012-10-10',
-		author: 'David Whittemore',
 		body: () =>
 			<>
 				<p>
@@ -170,52 +165,33 @@ const Tag = (tag, key) => (
 	<div className="news tag" key={key}>{tag}</div>
 )
 
-const FormatDate = (date) => {
-	const dt = new Date(date).toISOString().slice(0,10);
-	return <>{dt}</>
-}
-
 const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...', } = newsItems[0], key = 0) => (
-		<li className={'news item ' + (key === 0 ? 'first' : '')} key={key}>
-			<div className="news title">
-				<SectionHeader text={title} />
+	<Item key={key} bold={title} info={author} date={date} body={<>
+		{body()}
+		{linkInternal &&
+			<div className="news link">
+				<a href={linkInternal}>{linkInternalTitle}</a>
 			</div>
-			<div className="news body">
-				{body()}
+		}
+		{linkExternal &&
+			<div className="news link">
+				<a href={linkExternal} target="new">{linkExternalTitle}</a>
 			</div>
-			{linkInternal &&
-				<div className="news link">
-					<a href={linkInternal}>{linkInternalTitle}</a>
-				</div>
-			}
-			{linkExternal &&
-				<div className="news link">
-					<a href={linkExternal} target="new">{linkExternalTitle}</a>
-				</div>
-			}
-			<div className="news author">
-				{author}
-			</div>
-			<span className="news date">
-				{FormatDate(date)}
-			</span>
-			<div className="news tags">
-				{tags.map(Tag)}
-			</div>
-	</li>
+		}
+		<div className="news tags">
+			{tags.map(Tag)}
+		</div>
+		</>}
+	/>
 )
 
 const News = ({ slug, num }) => {
 	if (slug) {
-		return <ul>{NewsItem(newsItems.find(i => i.slug === slug))}</ul>;
+		return NewsItem(newsItems.find(i => i.slug === slug))
 	} else if (num) {
-		return <ul>{NewsItem(newsItems[num - 1])}</ul>
+		return NewsItem(newsItems[num - 1])
 	} else {
-		return (
-			<ul>
-			{newsItems.map(NewsItem)}
-			</ul>
-		)
+		return newsItems.map(NewsItem)
 	}
 }
 

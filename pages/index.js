@@ -1,4 +1,5 @@
-import { SectionHeader, Page } from './_app';
+import { Page } from './_app';
+import { SectionHeader } from '../lib/helpers';
 import News from '../components/News';
 import History from '../components/History';
 

@@ -1,25 +1,10 @@
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { SectionHeader } from '../pages/_app';
-import { makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject } from '../lib/helpers';
+import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate } from '../lib/helpers';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
-
-const FormatDate = (date = new Date()) => new Date(date).toISOString().slice(0,10);
-
-const makeDate = (date) => {
-	if (date) {
-		const ret = FormatDate(date);
-		const Difference_In_Time = new Date().getTime() - new Date(date).getTime();
-		const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-		const Difference_In_Years = Difference_In_Days / (365.25);
-
-		const ago = ((Difference_In_Years > 1) ? `${Math.floor(Difference_In_Years)} yrs` : `${Math.ceil(Difference_In_Days)} days`) + ` ago`;
-		return <span className="date">{ret}<span className="date ago">{ago}</span></span>
-	}
-}
 
 const makeAuthor = (author, authorContact) => {
 	if (authorContact) {

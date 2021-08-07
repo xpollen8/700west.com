@@ -1,4 +1,5 @@
 import { Page } from './_app';
+import { Item } from '../lib/helpers';
 
 const data = [
 	{
@@ -83,7 +84,8 @@ const data = [
 	name: 'Jeff Cobb',
 	played: 'Guitar, vocals, songwriter',
 	for: 'Aaron (+ others in area); Beatlesque original material',
-	date: '2007, Summer, cancer',
+	date: '2007-07-01',
+	reason: 'Summer, cancer',
 	},
 	{
 	name: 'Calvin Williams',
@@ -113,13 +115,16 @@ const data = [
 	{
 	name: 'Gary Lee Brewer',
 	played: "Gary was our 1st call session drummer because of his versatility. He did much session work and pub gigs in the area, but wasn't affiliated with any specific band",
-	date: '2017-07-27, heart attack (63)',
+	date: '2017-07-27',
+	reason: 'heart attack',
+	age: 63,
 	for: "He played on some of my stuff from the 'MO' album, and was the drummer on Ed Ott's LP",
 	},
 	{
 	name: 'Tommy Wills',
 	played: 'Band leader.',
-	date: '2017-10-21, fall',
+	date: '2017-10-21',
+	reason: 'fall',
 	age: '93',
 	for: 'Tommy Wills band',
 	},
@@ -139,7 +144,8 @@ const data = [
 	{
 	name: 'Steve Newbold',
 	played: 'Guitarist, backup vocals',
-	date: '2018-04-23, heart attack',
+	date: '2018-04-23',
+	reason: 'heart attack',
 	age: '63',
 	for: 'Zerfas',
 	},
@@ -158,11 +164,20 @@ const data = [
 ];
 
 const Memoriam = (mem, key) => (
-		<p className="row" key={key} style={{ borderRadius: '20px', padding: '10px' }}>
-			<div><b>{mem.name}</b> <span className="date ago">{mem.date}</span></div>
+	<Item key={key}
+		bold={mem.name}
+		info={
+			<>
 			<div>Played: {mem.played}</div>
 			<div>For: {mem.for}</div>
-		</p>
+			</>
+		}
+		date={mem.date}
+		extra={<>
+			{mem.age && <div>Age: {mem.age}</div>}
+			{mem.reason && <div>Reason: {mem.reason}</div>}
+		</>}
+	/>
 )
 
 const App = (props) => (

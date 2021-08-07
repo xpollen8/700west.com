@@ -1,5 +1,6 @@
-import { SectionHeader, Page } from './_app';
+import { Page } from './_app';
 import { fetchFeedback } from '../lib/feedback';
+import { SectionHeader, Item } from '../lib/helpers';
 
 export async function getServerSideProps(context) {
 	const feedback = await fetchFeedback('htdb/index.html');
@@ -29,23 +30,10 @@ const CleanDate = (date = new Date()) => {
 }
 
 const Comment = ({ subject, dtcreated, who, whence, comments }, key) => (
-	<p key={key} className="row" style={{ listStyleType: 'none', padding: '10px', marginTop: '5px', borderRadius: '15px' }}>
-		<div>
-			<div>
-				<b>{subject}</b>
-			<div>
-				{whence}
-				- {CleanContact(who)}
-			</div>
-			<div>
-				{CleanDate(dtcreated)}
-			</div>
-		</div>
-		</div>
-		<blockquote>
-			{comments}
-		</blockquote>
-	</p>
+	<Item key={key} bold={subject} info={<> {whence} - {CleanContact(who)} </>}
+		date={CleanDate(dtcreated)}
+		body={comments}
+	/>
 )
 
 const Comments = ({ feedback = [] }) => <>{feedback.map(Comment)}</>
