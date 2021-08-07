@@ -2,34 +2,32 @@ import Image from 'next/image';
 import releases from '../lib/releases';
 import { SectionHeader, makeReleaseLink } from '../lib/helpers';
 
-const makeAlbumBlurb = (item, key) => {
-	const href = makeReleaseLink(item.artist, item.title);
-
-	return <a className="album cover" key={key} href={href}><Image
-		border="1" src={`/images/covers/${item.image[0].thumb}`}
-		border={0}
+const makeAlbumBlurb = (item, key) => (
+	<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
+		src={`/images/covers/${item.image[0].thumb}`}
 		alt={`${item.artist} - ${item.image[0].name}`}
-		width={150}
-		height={150} /></a>
-}
+		width={125}
+		height={125} /></a>
+)
 
 const Albums = () => (
 	<>
 	<blockquote>
-		Between 1972 and 1983, several singles and albums were released on the 700 West label.
-		Many other releases were recorded at the studio and released on other labels.
-		Today, these highly-collectible records sell for hundreds of dollars!
+		Between 1972 and 1983, several singles and albums were recorded by Moe Whittemore
+		at the 700 West Recording studio.  A select few were released on the 700 West label.
+		Others were released on other labels.
+		Today, these are highly-collectible records!
 	</blockquote>
 	<blockquote>
-		We're currently working on digitizing and re-releasing some 700 West material.
+		We're currently working to digitize the original 1/4" master and 1/2" source tapes.
 	</blockquote>
 	<b>Released on the 700 West label</b>
 		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-		{releases.filter(r => r.type === 'album' && r.label.match(/700/)).map(makeAlbumBlurb)}
+		{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
 		</div>
 	<b>Recorded at 700 West, released on other labels</b>
 		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-		{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).map(makeAlbumBlurb)}
+		{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
 		</div>
 	</>
 )
