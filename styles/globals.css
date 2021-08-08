@@ -296,11 +296,6 @@ a[target="new"] {
 	margin: 0;
 	padding: 2px;
 }
-.singles li {
-	border: 1px solid;
-	border-radius: 20px;
-	padding: 10px;
-}
 .single.sideA {
 	margin-left: 1em;
 	font-size: 0.8em;
@@ -335,10 +330,10 @@ a[target="new"] {
 	padding: 1px;
 }
 .row {
-	margin-bottom: 3px;
 	border: 1px solid;
 	border-radius: 20px;
 	padding: 10px;
+	padding-left: 15px;
 }
 .release.time {
 	display: inline;
