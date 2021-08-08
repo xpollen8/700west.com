@@ -165,8 +165,8 @@ const Track = (data, key) => (
 		<Datum k="Mastering" v={data.mastering} />
 		<Datum k="Writer" v={data.writer} className='who' />
 		<Published publisher={data.publisher} affiliation={data.affiliation} />
-		<TrackComments comments={data.comments} />
 		<TrackCredits credits={data.credits} />
+		<TrackComments comments={data.comments} />
 	</p>
 )
 
