@@ -104,14 +104,14 @@ const Who = ({ who = '', whoLink = '' }) => {
 const TrackCredits = ({ credits = [] }) => {
 	if (credits.length) {
 		return <>
-			<div className="datum">Song Credits</div>
-			<blockquote>
+			<div className="datum">Credits</div>
+			<div className="row">
 				{credits.map((c, key) => {
 					return <p key={key}>
 						<Who {...c} /> <p>{c.did.join(', ')}</p>
 					</p>
 				})}
-			</blockquote>
+			</div>
 		</>
 	}
 	return <></>
@@ -122,11 +122,11 @@ const TrackComments = ({ comments = [] }) => {
 		return <>
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
-					return <blockquote key={key} className="row">
+					return <div key={key} className="row">
 						<i>{c.said}</i>
 						<Who who={c.who} whoLink={c.whoLink} />
 						{exists(c.date) && makeDate(c.date)}
-					</blockquote>
+					</div>
 				})}
 		</>
 	}
@@ -165,8 +165,14 @@ const Track = (data, key) => (
 		<Datum k="Mastering" v={data.mastering} />
 		<Datum k="Writer" v={data.writer} className='who' />
 		<Published publisher={data.publisher} affiliation={data.affiliation} />
+		<div className="panelContainer">
+		<div className="panel">
 		<TrackCredits credits={data.credits} />
+		</div>
+		<div className="panel">
 		<TrackComments comments={data.comments} />
+		</div>
+		</div>
 	</p>
 )
 
@@ -338,7 +344,7 @@ const Comments = ({ comments = [] }) => {
 						<div className="chart">
 							<LineChart adapter="chartjs" data={[original]} />
 						</div>
-						{Object.keys(reissue.data).length && <div className="chart"><LineChart adapter="chartjs" data={[reissue]} /></div>}
+						{!!(Object.keys(reissue.data).length) && <div className="chart"><LineChart adapter="chartjs" data={[reissue]} /></div>}
 						<ul>
 						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">
@@ -381,7 +387,7 @@ const Comments = ({ comments = [] }) => {
 
 const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 	if (addendum.length) {
-		const href = makeReleaseLink(artist || tracks[0].artist, title || item.tracks[0].title);
+		const href = makeReleaseLink(artist || tracks[0].artist, title || tracks[0].title);
 		return <>
 			<SectionHeader text="Auxiliary Materials)" />
 			{addendum.map((props, key) => (

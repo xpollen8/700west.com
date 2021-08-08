@@ -55,7 +55,6 @@ p {
   /height: 100vh;
 }
 .panel {
-	margin-top: 10px;
 }
 
 .albums {
@@ -297,20 +296,10 @@ a[target="new"] {
 	margin: 0;
 	padding: 2px;
 }
-.singles li:nth-of-type(even) {
-	background-color: #ddd;
-}
-.singles li:nth-of-type(odd) {
-	background-color: #eee;
-}
 .singles li {
 	border: 1px solid;
 	border-radius: 20px;
 	padding: 10px;
-	//display: flex;
-	//border-radius: 10px;
-	//list-style-type: none;
-	//margin-bottom: 5px;
 }
 .single.sideA {
 	margin-left: 1em;
@@ -350,18 +339,6 @@ a[target="new"] {
 	border: 1px solid;
 	border-radius: 20px;
 	padding: 10px;
-}
-.row:nth-of-type(odd) {
-	//background-color: #eee;
-}
-.row:nth-of-type(even) {
-	//background-color: #ddd;
-}
-.player li:nth-of-type(odd) {
-	background-color: #ccc;
-}
-.player li:nth-of-type(even) {
-	background-color: #ddd;
 }
 .release.time {
 	display: inline;
