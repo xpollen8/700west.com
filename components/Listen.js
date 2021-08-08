@@ -8,13 +8,13 @@ const makeListenAlbum = ({ artist, title, tracks }, key) => (
 		<span>
 			- <a href={makeReleaseLink(artist, title)}>{title}</a>
 		</span>
-		<ul className="player">
+		<div className="player">
 		{tracks.filter(t => t.audio.length > 0).map(( data, key) => (
-			<li key={key}>
-			{AudioPlayer(data)}
-			</li>
+			<div key={key} className="row">
+				{AudioPlayer(data)}
+			</div>
 			))}
-		</ul>
+		</div>
 	</div>
 )
 
@@ -26,16 +26,19 @@ const makeListenSingle = ({ tracks }) => {
 
 const Listen = (props) => (
 	<>
-	<p>
+	<blockquote>
 		Here are some tracks for your personal enjoyment.
 		You are expressly not authorized to re-distribute or to profit from these audio files.
-	</p>
+	</blockquote>
 
 	<SectionHeader text="Interviews" />
-		<AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
-			title='Interview'
-			time='12.51'
-			comment='Dan Modlin interviews Moe Whittemore' date='2010' />
+		<span className="artist">Dan Modlin interviews Moe Whittemore <span className="date ago">2010</span></span>
+		<div className="player row">
+			<AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
+				title='Interview'
+				time='12.51'
+				/>
+		</div>
 
 	<SectionHeader text="L.P. Tracks" />
 		<>

@@ -22,12 +22,12 @@ const Albums = () => (
 		We're currently working to digitize the original 1/4" master and 1/2" source tapes.
 	</blockquote>
 	<b>Released on the 700 West label</b>
-		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-		{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
+		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
+			{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
 		</div>
 	<b>Recorded at 700 West, released on other labels</b>
-		<div style={{ textAlign: 'center', marginTop: '15px', marginBottom: '15px' }}>
-		{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
+		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
+			{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
 		</div>
 	</>
 )

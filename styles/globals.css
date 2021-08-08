@@ -21,6 +21,9 @@ body {
 	color: #333;
 	font: normal 15px Verdana, Arial, sans-serif;
 }
+hr {
+	border: 1px solid #9c6b47;
+}
 p {
 	margin: .25em;
 	padding: 1px;
@@ -301,10 +304,13 @@ a[target="new"] {
 	background-color: #eee;
 }
 .singles li {
-	display: flex;
-	border-radius: 10px;
-	list-style-type: none;
-	margin-bottom: 5px;
+	border: 1px solid;
+	border-radius: 20px;
+	padding: 10px;
+	//display: flex;
+	//border-radius: 10px;
+	//list-style-type: none;
+	//margin-bottom: 5px;
 }
 .single.sideA {
 	margin-left: 1em;
@@ -340,14 +346,16 @@ a[target="new"] {
 	padding: 1px;
 }
 .row {
+	margin-bottom: 3px;
+	border: 1px solid;
 	border-radius: 20px;
 	padding: 10px;
 }
 .row:nth-of-type(odd) {
-	background-color: #eee;
+	//background-color: #eee;
 }
 .row:nth-of-type(even) {
-	background-color: #ddd;
+	//background-color: #ddd;
 }
 .player li:nth-of-type(odd) {
 	background-color: #ccc;
