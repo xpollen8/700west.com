@@ -45,7 +45,9 @@ const Navigation = ({ link = '' }) => {
 const Page = (props) => (
 	<>
 	<Head>
+		<html lang="en" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="description" content="700 West Recording, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's" />
 		<title> {props.title} </title>
 	</Head>
 	<div className='container'>
