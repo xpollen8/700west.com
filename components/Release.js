@@ -302,6 +302,14 @@ const Promo = ({ publicity = [] }) => {
 	return <></>;
 }
 
+const getPrice = ({ price, said }) => {
+	if (price) { return price.replace('$', '').replace(',', '') }
+	const X = said.match(/\$([(0-9,]+).?([0-9]+)/);
+	if (X && X[1]) {
+		return X[1].replace(',', '');
+	}
+}
+
 const Comments = ({ comments = [] }) => {
 	if (comments.length) {
 		const sales = comments.filter(c => c.type === 'sale');
@@ -310,28 +318,30 @@ const Comments = ({ comments = [] }) => {
 			if (sales.length) {
 					const original = { name: 'Original', data: {} };
 					const reissue = { name: 'Re-Issue', data: {} };
-					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, said }) => {
-						const price = said.match(/\$([(0-9,)+.?(0-9)*]+)/);
-						if (price && price[1]) {
+					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, price, said, where }) => {
+						const Xprice = getPrice({ price, said });
+						if (Xprice) {
+							const usePrice = Xprice.replace(/\$,/g, '');
 							if (said.match(/issue/i)) {
-								reissue.data[date] = price[1];
+								reissue.data[date] = usePrice;
 							} else {
-								original.data[date] = price[1].replace(',', '');
+								original.data[date] = usePrice;
 							}
 						}
-						return { date, said };
+						return { date, said, price: Xprice, where };
 					})
 					const data = [
 						original, reissue
 					];
 					return <>
 						<SectionHeader text="Sales History" />
-						<LineChart adapter="chartjs" data={data} />
+						<LineChart adapter="chartjs" data={[original]} />
+						{Object.keys(reissue.data).length && <LineChart adapter="chartjs" data={[reissue]} />}
 						<ul>
-						{sorted.map(({ who, whoLink, date, said, type }, key) => (
+						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">
 									{exists(date) && <>
-										{FormatDate(date)} - <i>{said}</i>
+										{FormatDate(date)} {price && <span>- ${price}</span>} {where && <span>- ({where})</span>} - <i>{said}</i>
 									</>}
 							</p>
 						))}
