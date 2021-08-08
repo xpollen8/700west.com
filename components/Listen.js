@@ -38,14 +38,14 @@ const Listen = (props) => (
 			comment='Dan Modlin interviews Moe Whittemore' date='2010' />
 
 	<SectionHeader text="L.P. Tracks" />
-		<ul>
+		<>
 			{releases.filter(r => r.type === 'album' && r.tracks.find(t => t.audio.length)).map(makeListenAlbum)}
-		</ul>
+		</>
 
 	<SectionHeader text='7" Tracks' />
-		<ul>
+		<>
 			{releases.filter(r => r.type === 'single' && r.tracks.find(t => t.audio.length)).map(makeListenSingle)}
-		</ul>
+		</>
 
 	<SectionHeader text="Unreleased Material" />
 	<ol>

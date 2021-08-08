@@ -89,10 +89,10 @@ const Photos = () => (
 	<Page link="photos" description="Period Studio Photographs">
 		<blockquote>
 			{data.map(({ src, thumb, width, height, alt, caption = '' }, key) => (
-				<Item key={key} extra={<>
+				<Item key={key} extra={<div style={{ textAlign: 'center' }} >
 					<a href={src}><Image src={thumb} width={width} height={height} alt={alt || caption} /></a>
 					<p>{caption}</p>
-					</>}
+					</div>}
 				/>
 			))}
 		</blockquote>

@@ -156,7 +156,7 @@ const Published = ({ publisher = '', affiliation = '' }) => {
 }
 
 const Track = (data, key) => (
-	<li value={data.tracknum} className="row" style={{ margin: "3px" }} key={key}>
+	<p value={data.tracknum} className="row" key={key}>
 		<Title title={data.title} time={data.time} />
 		{!!(exists(data.audio) || exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation) || exists(data.comments) || exists(data.credits)) && <hr/>}
 		{exists(data.audio) && 
@@ -167,24 +167,24 @@ const Track = (data, key) => (
 		<Published publisher={data.publisher} affiliation={data.affiliation} />
 		<TrackComments comments={data.comments} />
 		<TrackCredits credits={data.credits} />
-	</li>
+	</p>
 )
 
 const Panel = ({ side, tracks }) => {
 	if (side) {
 		return <div className="release panel">
 			<SectionHeader text={`${side} Side`} />
-			<ol>
+			<div className={(tracks.filter(t => t.side === side).length > 1) ? "" : ""}>
 				{tracks.filter(t => t.side === side).map(Track)}
-			</ol>
+			</div>
 			</div>
 	} else {
 		return <>
 			<SectionHeader text="Tracks" />
-			<ol>
+			<>
 				{tracks.map(Track)}
-			</ol>
 			</>
+		</>
 	}
 }
 
@@ -202,8 +202,8 @@ const HeaderData = (release) => (
 
 const MakeSingle = (single) => (
 	<>
-		<div className="release sides">
-			<div className="release panel">
+		<div className="panelContainer">
+			<div className="panel">
 				<div className="release artist">{single.tracks[0].artist}</div>
 				<div className="release title">"{single.tracks[0].title}"</div>
 				<div><i>b/w</i></div>
@@ -215,7 +215,7 @@ const MakeSingle = (single) => (
 			</div>
 			<Covers {...single } />
 		</div>
-		<div className="release sides">
+		<div className="panelContainer">
 			<Panel side='A' tracks={single.tracks} key={1} />
 			<Panel side='B' tracks={single.tracks} key={2} />
 		</div>
@@ -224,7 +224,7 @@ const MakeSingle = (single) => (
 
 const AlbumHeader = (release) => (
 	<>
-	<div className="release sides">
+	<div className="panelContainer">
 		<div className="release panel">
 			<div className="release artist">{release.artist}</div>
 			<div className="release title">"{release.title}"</div>
@@ -241,7 +241,7 @@ const MakeAlbum = (album) => {
 	if (hasSides) {
 		return <>
 			<AlbumHeader {...album} />
-			<div className="release sides">
+			<div className="panelContainer">
 				<Panel side='A' tracks={album.tracks} key={1} />
 				<Panel side='B' tracks={album.tracks} key={2} />
 			</div>
@@ -335,8 +335,10 @@ const Comments = ({ comments = [] }) => {
 					];
 					return <>
 						<SectionHeader text="Sales History" />
-						<LineChart adapter="chartjs" data={[original]} />
-						{Object.keys(reissue.data).length && <LineChart adapter="chartjs" data={[reissue]} />}
+						<div className="chart">
+							<LineChart adapter="chartjs" data={[original]} />
+						</div>
+						{Object.keys(reissue.data).length && <div className="chart"><LineChart adapter="chartjs" data={[reissue]} /></div>}
 						<ul>
 						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">

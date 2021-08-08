@@ -146,8 +146,8 @@ const Home = () => (
 			<>
 				<b>{heading}</b>
 				<blockquote>
-					{items.map(u => (
-						<Item className="row" extra={u} />
+					{items.map((u, key) => (
+						<Item key={key} className="row" extra={u} />
 					))}
 				</blockquote>
 			</>
