@@ -111,9 +111,9 @@ p {
 
 	.nav li { /* turn list into horizontal items */
 		display: inline-block;
+		padding: 10px;
 	}
 	.nav li:not(:nth-last-child(1)):after {
-		content: ' - ';
 	}
 }
 .news.tags {
