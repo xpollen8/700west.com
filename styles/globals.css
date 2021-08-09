@@ -163,6 +163,17 @@ a[target="new"]:after {
 	background-repeat: no-repeat;
 	padding-left: 5px;
 }
+a[target="new"] {
+	display: inline-block;
+	max-width: 380px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top
+}
+a[target="new"]:hover {
+  overflow: visible;
+}
+
 .hilite {
 	text-align: center;
 }
@@ -215,15 +226,6 @@ a[target="new"]:after {
 
 .original {	/* offsite link */
 	text-color: #888;
-}
-
-a[target="new"] {
-	display: inline-block;
-	max-width: 300px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	vertical-align: top
 }
 
 .moe {
