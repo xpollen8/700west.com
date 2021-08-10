@@ -2,13 +2,15 @@ import Image from 'next/image';
 import releases from '../lib/releases';
 import { SectionHeader, makeReleaseLink } from '../lib/helpers';
 
-const makeAlbumBlurb = (item, key) => (
-	<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
-		src={`/images/covers/${item.image[0].thumb}`}
-		alt={`${item.artist} - ${item.image[0].name}`}
+const makeAlbumBlurb = (item, key) => {
+	const thumb = item.image[0]?.thumb || `missingCover.jpg`;
+
+	return <a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
+		src={`/images/covers/${thumb}`}
+		alt={`${item.artist} - ${item.title} cover`}
 		width={125}
 		height={125} /></a>
-)
+}
 
 const Albums = () => (
 	<>

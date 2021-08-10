@@ -328,7 +328,7 @@ const Comments = ({ comments = [] }) => {
 						const Xprice = getPrice({ price, said });
 						if (Xprice) {
 							const usePrice = Xprice.replace(/\$,/g, '');
-							if (said.match(/issue/i)) {
+							if (said?.match(/issue/i)) {
 								reissue.data[date] = usePrice;
 							} else {
 								original.data[date] = usePrice;
@@ -349,7 +349,7 @@ const Comments = ({ comments = [] }) => {
 						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">
 									{exists(date) && <>
-										{FormatDate(date)} {price && <span>- ${price}</span>} {where && <span>- ({where})</span>} - <i>{said}</i>
+										{FormatDate(date)} {price && <span>- ${price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
 									</>}
 							</p>
 						))}
