@@ -42,7 +42,7 @@ const Listen = (props) => (
 
 	<SectionHeader text="L.P. Tracks" />
 		<>
-			{releases.filter(r => r.type === 'album' && r.tracks.find(t => t.audio.length)).map(makeListenAlbum)}
+			{releases.filter(r => r.type === 'album' && r.tracks.find(t => (t && t.audio && t.audio.length))).map(makeListenAlbum)}
 		</>
 
 	<SectionHeader text='7" Tracks' />
