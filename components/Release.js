@@ -278,7 +278,7 @@ const Credits = ({ credits = [] }) => {
 }
 
 const LinerNotes = ({ liner = '' }) => {
-	if (liner.length) {
+	if (liner.length || typeof liner !== 'string') {
 		return <>
 			<SectionHeader text="Liner Notes" />
 			<blockquote>
@@ -316,15 +316,25 @@ const getPrice = ({ price, said }) => {
 	}
 }
 
-const Comments = ({ comments = [] }) => {
-	if (comments.length) {
-		const sales = comments.filter(c => c.type === 'sale');
-		const other = comments.filter(c => c.type !== 'sale');
+const Comments = ({ comments = [], sales = [] }) => {
+		console.log("COMMENTS", { comments, sales });
+	//if (comments.length || sales.length) {
+		const combined = [];
+		comments.forEach(c => combined.push(c));
+		sales.forEach(c => combined.push(c));
+		//const combined = [comments, sales].filter(x => x).map(x => ({ ...x}))];
+		console.log("COMBINED",  combined );
+		combined.filter((c,k) => {
+			console.log("GOT", {k, c });
+		});
+		const xsales = combined.filter(c => (c.price || c.type === 'sale' || getPrice({ ...c })));
+		const other = combined.filter(c => !(c.price || c.type == 'sale' || getPrice({ ...c })));
+		console.log("GOT",  {xsales, other} );
 		const getSales = () => {
-			if (sales.length) {
+			if (xsales.length) {
 					const original = { name: 'Original', data: {} };
 					const reissue = { name: 'Re-Issue', data: {} };
-					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, price, said, where }) => {
+					const sorted = xsales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, price, said, where }) => {
 						const Xprice = getPrice({ price, said });
 						if (Xprice) {
 							const usePrice = Xprice.replace(/\$,/g, '');
@@ -381,8 +391,8 @@ const Comments = ({ comments = [] }) => {
 			{getComments()}
 			{getSales()}
 		</>
-	}
-	return <></>;
+	//}
+	//return <></>;
 }
 
 const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
