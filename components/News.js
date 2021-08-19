@@ -1,4 +1,5 @@
 import { AudioPlayer, Item } from '../lib/helpers.js';
+import Image from 'next/image';
 
 const newsItems = [
 	{
@@ -43,8 +44,8 @@ const newsItems = [
 		linkExternalTitle: 'Original Article',
 		body: () =>
 		<>
-		<p>
-		<img src="images/WFYI_Interview_2019-04-25.jpg" />
+		<p style={{ textAlign: 'center'}}>
+		<Image src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
 		</p>
 		<p>
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Moe Whittemore.
