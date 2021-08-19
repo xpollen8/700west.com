@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink } from '../lib/helpers';
+import { dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
 
 const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;
@@ -25,11 +25,11 @@ const Albums = () => (
 	</blockquote>
 	<b>Released on the 700 West label</b>
 		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
-			{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
+			{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)}
 		</div>
 	<b>Recorded at 700 West, released on other labels</b>
 		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
-			{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeAlbumBlurb)}
+			{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)}
 		</div>
 	</>
 )

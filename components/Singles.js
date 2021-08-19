@@ -1,5 +1,5 @@
 import releases from '../lib/releases';
-import { makeReleaseLink, Item } from '../lib/helpers';
+import { dateCompare, makeReleaseLink, Item } from '../lib/helpers';
 
 const makeSingleBlurb = (item, key) => {
 	const artistA = item.tracks[0].artist;
@@ -22,12 +22,12 @@ const Singles = () => (
 		<b>Released on the 700 West label</b>
 		<blockquote>
 		{releases.filter(r => r.type === 'single' &&
-			r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeSingleBlurb)}
+			r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
 		</blockquote>
 		<b>Recorded at 700 West, released on other labels</b>
 		<blockquote>
 		{releases.filter(r => r.type === 'single' &&
-			!r.label.match(/700/)).sort((a, b) => new Date(a.published) - new Date(b.published)).map(makeSingleBlurb)}
+			!r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
 		</blockquote>
 	</>
 )
