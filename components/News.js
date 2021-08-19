@@ -40,12 +40,21 @@ const newsItems = [
 		date: '2019-04-26',
 		title: 'WFYI interview of Moe Whittemore',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittmore',
-		linkExternalTitle: 'Listen here!',
+		linkExternalTitle: 'Original Article',
 		body: () =>
+		<>
+		<p>
+		<img src="images/WFYI_Interview_2019-04-25.jpg" />
+		</p>
 		<p>
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Moe Whittemore.
 		This hour-long program featured many tracks from the <a href="https://700west.bandcamp.com/album/best-of-700-west-volume-2" target="new"><b>Best of 700 West Vol. II</b></a>
 		</p>
+		<p>
+		<li> Listen here<AudioPlayer mp3='20190426_WFYI_Interview.mp3'
+			title='Kyle Long interviews Moe Whittemore' /></li>
+		</p>
+		</>
 	},
 	{
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
@@ -165,7 +174,7 @@ const Tag = (tag, key) => (
 	<div className="news tag" key={key}>{tag}</div>
 )
 
-const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...', } = newsItems[0], key = 0) => (
+const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
 	<Item key={key} bold={title} info={author} date={date} body={<>
 		{body()}
 		{linkInternal &&
