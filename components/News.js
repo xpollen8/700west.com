@@ -60,11 +60,16 @@ const newsItems = [
 	{
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
 		title: 'Nuvo Magazine',
-		linkExternal: 'http://www.nuvo.net/MusicBlog/archives/2015/06/10/700-wests-moe-whittemore-gets-reissue',
+		linkExternal: 'https://nuvo.newsnirvana.com/music/700-wests-moe-whittemore-gets-reissue/article_0cbd711d-e68c-52a9-91eb-d83ca16cdcbe.html',
 		body: () =>
-		<p>
-		  700 West's Moe Whittemore gets reissue
-		</p>
+			<>
+			<p style={{ textAlign: 'center'}}>
+			<Image src="/images/20150606_Nuvo_Interview.jpg" width={'1763'} height={'1175'} />
+			</p>
+			<p>
+				700 West's Moe Whittemore gets reissue
+			</p>
+			</>
 	},
 	{
 		tags: [ 'event:release', 'album:MO', 'label:Anazitisi_Records' ],
