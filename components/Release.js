@@ -317,49 +317,33 @@ const getPrice = ({ price, said }) => {
 }
 
 const Comments = ({ comments = [], sales = [] }) => {
-		console.log("COMMENTS", { comments, sales });
-	//if (comments.length || sales.length) {
-		const combined = [];
-		comments.forEach(c => combined.push(c));
-		sales.forEach(c => combined.push(c));
-		//const combined = [comments, sales].filter(x => x).map(x => ({ ...x}))];
-		console.log("COMBINED",  combined );
-		combined.filter((c,k) => {
-			console.log("GOT", {k, c });
-		});
-		const xsales = combined.filter(c => (c.price || c.type === 'sale' || getPrice({ ...c })));
-		const other = combined.filter(c => !(c.price || c.type == 'sale' || getPrice({ ...c })));
-		console.log("GOT",  {xsales, other} );
+		const other = sales.filter(c => !(c.price || getPrice({ ...c })));
 		const getSales = () => {
-			if (xsales.length) {
+			if (sales.length) {
+					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
 					const original = { name: 'Original', data: {} };
 					const reissue = { name: 'Re-Issue', data: {} };
-					const sorted = xsales.sort((a, b) => new Date(a.date) - new Date(b.date)).map(({ date, price, said, where }) => {
-						const Xprice = getPrice({ price, said });
-						if (Xprice) {
-							const usePrice = Xprice.replace(/\$,/g, '');
-							if (said?.match(/issue/i)) {
-								reissue.data[date] = usePrice;
-							} else {
-								original.data[date] = usePrice;
-							}
+					sorted.forEach(({ date, price, said }) => {
+						const usePrice = price.replace(/[\$,]+/g, '');
+						if (said?.match(/issue/i)) {
+							reissue.data[date] = usePrice;
+						} else {
+							original.data[date] = usePrice;
 						}
-						return { date, said, price: Xprice, where };
 					})
-					const data = [
-						original, reissue
-					];
 					return <>
 						<SectionHeader text="Sales History" />
+
 						<div className="chart">
-							<LineChart adapter="chartjs" data={[original]} />
+							<LineChart width={'100%'} data={[original]} prefix="$" round={2} zeros={true} />
 						</div>
-						{!!(Object.keys(reissue.data).length) && <div className="chart"><LineChart adapter="chartjs" data={[reissue]} /></div>}
+						{!!(Object.keys(reissue.data).length) &&
+							<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
 						<ul>
 						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">
 									{exists(date) && <>
-										{FormatDate(date)} {price && <span>- ${price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
+										{FormatDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
 									</>}
 							</p>
 						))}
@@ -369,10 +353,10 @@ const Comments = ({ comments = [], sales = [] }) => {
 				return <></>
 			}
 		const getComments = () => {
-			if (other.length) {
+			if (comments.length) {
 				return <>
 					<SectionHeader text="Comments" />
-					{other.map(({ who, whoLink, date, said, type }, key) => (
+					{comments.map(({ who, whoLink, date, said }, key) => (
 						<p key={key} className="row">
 							<div style={{ padding: '10px' }}>
 								<i>{said}</i>
