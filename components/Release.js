@@ -308,22 +308,13 @@ const Promo = ({ publicity = [] }) => {
 	return <></>;
 }
 
-const getPrice = ({ price, said }) => {
-	if (price) { return price.replace('$', '').replace(',', '') }
-	const X = said.match(/\$([(0-9,]+).?([0-9]+)/);
-	if (X && X[1]) {
-		return X[1].replace(',', '');
-	}
-}
-
 const Comments = ({ comments = [], sales = [] }) => {
-		const other = sales.filter(c => !(c.price || getPrice({ ...c })));
 		const getSales = () => {
 			if (sales.length) {
 					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
 					const original = { name: 'Original', data: {} };
 					const reissue = { name: 'Re-Issue', data: {} };
-					sorted.forEach(({ date, price, said }) => {
+					sorted.forEach(({ date, price = '', said }) => {
 						const usePrice = price.replace(/[\$,]+/g, '');
 						if (said?.match(/issue/i)) {
 							reissue.data[date] = usePrice;

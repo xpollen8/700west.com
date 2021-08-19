@@ -15,13 +15,14 @@ const makeAlbumBlurb = (item, key) => {
 const Albums = () => (
 	<>
 	<blockquote>
-		Between 1972 and 1983, several singles and albums were recorded by Moe Whittemore
+		Between 1972 and 1983, about 35 singles and 35 albums were recorded by Moe Whittemore
 		at the 700 West Recording studio.  A select few were released on the 700 West label.
 		Others were released on other labels.
 		Today, these are highly-collectible records!
 	</blockquote>
 	<blockquote>
-		We're currently working to digitize the original 1/4" master and 1/2" source tapes.
+		We're currently working to digitize the original 1/4" master and 1/2" source tapes that
+		remain in the 700 West archives.
 	</blockquote>
 	<b>Released on the 700 West label</b>
 		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
