@@ -2,7 +2,7 @@ import Image from 'next/image';
 import releases from '../lib/releases';
 import { SectionHeader, makeReleaseLink, AudioPlayer } from '../lib/helpers';
 
-const makeListenAlbum = ({ artist, title, tracks }, key) => (
+const makeListenAlbum = ({ artist, title, tracks, multiArtist = false }, key) => (
 	<div key={key}>
 		<span className="artist">{artist}</span>
 		<span>
@@ -11,17 +11,19 @@ const makeListenAlbum = ({ artist, title, tracks }, key) => (
 		<blockquote>
 			{tracks.filter(t => t.audio && t.audio.length > 0).map((data, key) => (
 				<div key={key} className="row">
-					{AudioPlayer(data)}
+					{AudioPlayer({
+						band: (multiArtist) ? data.artist: '',
+					...data })}
 				</div>
 			))}
 		</blockquote>
 	</div>
 )
 
-const makeListenSingle = ({ tracks }, key) => {
+const makeListenSingle = ({ tracks, multiArtist = false }, key) => {
 	const artist = tracks[0].artist;
 	const title = tracks[0].title;
-	return makeListenAlbum({ artist, title, tracks }, key);
+	return makeListenAlbum({ artist, title, tracks, multiArtist }, key);
 }
 
 const Listen = (props) => (
@@ -52,16 +54,6 @@ const Listen = (props) => (
 
 	<SectionHeader text="Unreleased Material" />
 	<blockquote>
-		<p className="row"><AudioPlayer mp3='Mo_WaitTilYesterday.mp3'
-			band='LCD (Least Common Denominator)'
-			title='Wait Til Yesterday' time='3:25'
-			comment='Unreleased Mo demo' date='1977' />
-		</p>
-		<p className="row"><AudioPlayer mp3='UltimateForce/CircleCityFatback.mp3'
-			band='Ultimate Force'
-			title='Circle City Fatback'
-			comment="Smokin' funk!, taken from submasters" />
-		</p>
 		<p className="row"><AudioPlayer mp3='Jeannie.mp3'
 			band='Herman Walker'
 			title='Jeannie' time='2:45'
