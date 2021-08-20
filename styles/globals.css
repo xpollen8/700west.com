@@ -41,8 +41,6 @@ p {
 		"nav content";
   grid-template-rows: auto 1fr auto;
   grid-gap: 0px;
-
-  /height: 100vh;
 }
 .panelContainer {	/* grid container */
   display: grid;
@@ -51,8 +49,6 @@ p {
 		"panel panel";
   grid-template-rows: auto 1fr auto;
   grid-gap: 3px;
-
-  /height: 100vh;
 }
 .panel {
 }

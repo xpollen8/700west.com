@@ -20,12 +20,12 @@ const makeSingleBlurb = (item, key) => {
 const Singles = () => (
 	<>
 		<b>Released on the 700 West label</b>
-		<blockquote>
+		<blockquote className="panelContainer">
 		{releases.filter(r => r.type === 'single' &&
 			r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
 		</blockquote>
 		<b>Recorded at 700 West, released on other labels</b>
-		<blockquote>
+		<blockquote className="panelContainer">
 		{releases.filter(r => r.type === 'single' &&
 			!r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
 		</blockquote>

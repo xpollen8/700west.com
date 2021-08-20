@@ -8,7 +8,7 @@ const makeListenAlbum = ({ artist, title, tracks, multiArtist = false }, key) =>
 		<span>
 			- <a href={makeReleaseLink(artist, title)}>{title}</a>
 		</span>
-		<blockquote>
+		<blockquote className="panelContainer">
 			{tracks.filter(t => t.audio && t.audio.length > 0).map((data, key) => (
 				<div key={key} className="row">
 					{AudioPlayer({
@@ -53,7 +53,7 @@ const Listen = (props) => (
 		</>
 
 	<SectionHeader text="Unreleased Material" />
-	<blockquote>
+	<blockquote className="panelContainer">
 		<p className="row"><AudioPlayer mp3='Jeannie.mp3'
 			band='Herman Walker'
 			title='Jeannie' time='2:45'
@@ -86,7 +86,7 @@ const Listen = (props) => (
 		Here are his MIDI representations of the classical composition class assigments
 		- on which he received all A's
 	</blockquote>
-	<blockquote>
+	<blockquote className="panelContainer">
 		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/MarchMadness.mp3' title='March Madness'
 			date='April 2003' /></p>
 		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/InQuadrature.mp3' title='In Quadrature'
@@ -101,7 +101,7 @@ const Listen = (props) => (
 		<Image src={`/images/Moconcert3.jpg`} width="288" height="432" />
 	</p>
 	<b>Wright Now!</b> (November 2003)
-	<blockquote>
+	<blockquote className="panelContainer">
 		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_01TheWinding.mp3' title='The Winding' /></p>
 		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_02_TheClimb.mp3' title='The Climb' /></p>
 		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_03_BumpingAbout.mp3' title='Bumping About' /></p>

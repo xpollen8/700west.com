@@ -145,7 +145,7 @@ const Home = () => (
 		{data.map(({ heading, items }) => (
 			<>
 				<b>{heading}</b>
-				<blockquote>
+				<blockquote className='panelContainer'>
 					{items.map((u, key) => (
 						<Item key={key} className="row" extra={u} />
 					))}

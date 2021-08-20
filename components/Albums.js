@@ -14,6 +14,7 @@ const makeAlbumBlurb = (item, key) => {
 
 const Albums = () => (
 	<>
+	<div className="panelContainer">
 	<blockquote>
 		Between 1972 and 1983, about 35 singles and 37 albums were recorded by Moe Whittemore
 		at the 700 West Recording studio.  A select few were released on the 700 West label.
@@ -24,6 +25,7 @@ const Albums = () => (
 		We're currently working to digitize the original 1/4" master and 1/2" source tapes that
 		remain in the 700 West archives.
 	</blockquote>
+	</div>
 	<b>Released on the 700 West label</b>
 		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
 			{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)}

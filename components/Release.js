@@ -77,7 +77,7 @@ const AudioTeaser = ({ tracks = [] }) => {
 }
 
 const smartLink = (v) => {
-	if (v.includes('http')) {
+	if (typeof v === 'string' && v?.includes('http')) {
 		return <a href={v} target="new">{v}</a>
 	}
 	return v;

@@ -15,7 +15,7 @@ const Extras = (props) => {
 		{Object.keys(types).map((type, key) => (
 			<div key={key}>
 				<b>{`${typeToDisplay(type)}s`}</b>
-				<blockquote>
+				<blockquote className="panelContainer">
 				{types[type].map(({ item, addendum, number }, key) => {
 					const href = makeReleaseLink(item.artist || item.tracks[0].artist, item.title || item.tracks[0].title);
 					return (

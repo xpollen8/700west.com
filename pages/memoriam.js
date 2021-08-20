@@ -5,7 +5,7 @@ const data = [
 	{
 	name: 'Carl Haefli',
 	played: 'Trumpet',
-	for: 'ERFC',
+	for: 'Ebony Rhythm Funk Campaign',
 	date: '1978',
 	},
 	{
@@ -23,7 +23,7 @@ const data = [
 	{
 	name: 'Master "Boobie" Townsend',
 	played: 'Guitar, Vocals',
-	for: 'ERFC',
+	for: 'Ebony Rhythm Funk Campaign',
 	date: '?',
 	},
 	{
@@ -47,7 +47,7 @@ const data = [
 	{
 	name: 'Tony Black',
 	played: 'Vocalist',
-	for: 'ERFC',
+	for: 'Ebony Rhythm Funk Campaign',
 	date: '?',
 	},
 	{
@@ -159,7 +159,7 @@ const data = [
 	name: 'Matthew Watson',
 	played: 'drums',
 	date: '2019-09-07',
-	for: 'ERFC, Epoxy, 700 West session musician.',
+	for: 'Ebony Rhythm Funk Campaign, Epoxy, 700 West session musician.',
 	}
 ];
 
@@ -182,7 +182,7 @@ const Memoriam = (mem, key) => (
 
 const App = (props) => (
 	<Page link="memoriam" description="Memoriam">
-		{data.map(Memoriam)}
+		<p className="panelContainer">{data.map(Memoriam)}</p>
 	</Page>
 )
 

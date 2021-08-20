@@ -206,7 +206,7 @@ const News = ({ slug, num }) => {
 	} else if (num) {
 		return NewsItem(newsItems[num - 1])
 	} else {
-		return newsItems.map(NewsItem)
+		return <div className="panelContainer">{newsItems.map(NewsItem)}</div>
 	}
 }
 
