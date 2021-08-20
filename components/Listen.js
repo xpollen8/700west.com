@@ -9,7 +9,7 @@ const makeListenAlbum = ({ artist, title, tracks }, key) => (
 			- <a href={makeReleaseLink(artist, title)}>{title}</a>
 		</span>
 		<blockquote>
-			{tracks.filter(t => t.audio.length > 0).map(( data, key) => (
+			{tracks.filter(t => t.audio && t.audio.length > 0).map((data, key) => (
 				<div key={key} className="row">
 					{AudioPlayer(data)}
 				</div>
@@ -18,10 +18,10 @@ const makeListenAlbum = ({ artist, title, tracks }, key) => (
 	</div>
 )
 
-const makeListenSingle = ({ tracks }) => {
+const makeListenSingle = ({ tracks }, key) => {
 	const artist = tracks[0].artist;
 	const title = tracks[0].title;
-	return makeListenAlbum({ artist, title, tracks });
+	return makeListenAlbum({ artist, title, tracks }, key);
 }
 
 const Listen = (props) => (

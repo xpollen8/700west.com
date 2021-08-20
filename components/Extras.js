@@ -1,33 +1,5 @@
 import releases from '../lib/releases';
-import { Item, SectionHeader, makeReleaseLink, typeToDisplay, makeSubject } from '../lib/helpers';
-
-const AddendumItem = (item, key) => {
-	const data = {
-		artist: item.artist || item.tracks[0].artist,
-		title: item.title || item.tracks[0].title,
-	};
-	data.releaseLink = makeReleaseLink(data.artist, data.title);
-
-	return <p className="row" key={key} style={{ borderRadius: '20px', padding: '10px' }}>
-		<span className="addendum artist">
-			{data.artist}
-		</span>
-		<span className="addendum title">
-			<a href={data.releaseLink }>{data.title}</a>
-		</span>
-		<span className="date ago">
-			{item.published}
-		</span>
-		<>
-			{item.addendum.map(({ location, original, source, credit, date, type, author, authorContact, title, body }, key2) => (
-					<p className="row" key={key2}>
-						<span className="datum">{typeToDisplay(type)}</span> : <a href={`${data.releaseLink}?addendum=${key2 + 1}`}>{makeSubject({ author, title, location, source, date, type, href: data.releaseLink, number: key2 })}</a>
-					</p>
-				)
-			)}
-		</>
-	</p>
-}
+import { Item, makeReleaseLink, typeToDisplay, makeSubject } from '../lib/helpers';
 
 const Extras = (props) => {
 	const types = {};
@@ -40,14 +12,15 @@ const Extras = (props) => {
 		const review = a.addendum.forEach(addType);
 	});
 	return <>
-		{Object.keys(types).map(type => (
-			<>
+		{Object.keys(types).map((type, key) => (
+			<div key={key}>
 				<b>{`${typeToDisplay(type)}s`}</b>
 				<blockquote>
-				{types[type].map(({ item, addendum, number }) => {
+				{types[type].map(({ item, addendum, number }, key) => {
 					const href = makeReleaseLink(item.artist || item.tracks[0].artist, item.title || item.tracks[0].title);
 					return (
 						<Item
+							key={key}
 							bold={<>
 								{item.artist || item.tracks[0].artist} <span style={{ fontWeight: 'normal' }}> - <a href={href}>{item.title || item.tracks[0].title}</a></span>
 							</>}
@@ -59,16 +32,9 @@ const Extras = (props) => {
 					)
 				})}
 				</blockquote>
-			</>
+			</div>
 		))}
 	</>
 }
-	/*
-	<>{releases.filter(r => r.addendum && r.addendum.length).map(a => {
-
-		console.log("TYPE", a.addendum);
-		return a.type === 'review'}).map(AddendumItem)}</>
-)
-*/
 
 export default Extras;

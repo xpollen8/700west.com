@@ -76,11 +76,18 @@ const AudioTeaser = ({ tracks = [] }) => {
 	}
 }
 
+const smartLink = (v) => {
+	if (v.includes('http')) {
+		return <a href={v} target="new">{v}</a>
+	}
+	return v;
+}
+
 const Datum = ({ k, v, className }) => {
 	if (exists(v) || typeof v === 'object') {
 		return <div>
 			<span className="datum"> {k} </span>:
-			<span className={className}> {v} </span>
+			<span className={className}> {smartLink(v)} </span>
 		</div>
 	}
 	return <>{v}</>
@@ -133,15 +140,12 @@ const TrackComments = ({ comments = [] }) => {
 	return <></>;
 }
 
-const Title = ({ title = '', time = '' }) => {
-	if (title.length && time.length) {
-		return <div>
-			<span className="artist">{title}</span>
-			<span className="date ago">{time}</span>
-		</div>
-	} else {
-			return <div className="artist">{title}</div>
-	}
+const Title = ({ artist, title = '', time }) => {
+		return <>
+		{artist && artist.length && <span className="artist">{artist} - </span>}
+		<span className="title">{title}</span>
+		{time && <span className="date ago">{time}</span>}
+	</>
 }
 
 const Published = ({ publisher = '', affiliation = '' }) => {
@@ -157,7 +161,7 @@ const Published = ({ publisher = '', affiliation = '' }) => {
 
 const Track = (data, key) => (
 	<p value={data.tracknum} className="row" key={key}>
-		<Title title={data.title} time={data.time} />
+		<Title {...data} />
 		{!!(exists(data.audio) || exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation) || exists(data.comments) || exists(data.credits)) && <hr/>}
 		{exists(data.audio) && 
 			<AudioPlayer mp3={data.audio} />
@@ -201,6 +205,7 @@ const HeaderData = (release) => (
 			<Datum k="Label" v={release.label} />
 			<Datum k="Serial" v={release.id} />
 			<Datum k="Contact" v={release.url} />
+			<Datum k="Purchase" v={release.store} />
 		</div>
 		<AudioTeaser {...release} />
 	</>
@@ -243,7 +248,7 @@ const AlbumHeader = (release) => (
 
 const MakeAlbum = (album) => {
 	const hasTracks = album.tracks[0];
-	const hasSides = album.tracks[0]?.side.length;
+	const hasSides = album.tracks[0]?.side?.length;
 	if (hasSides) {
 		return <>
 			<AlbumHeader {...album} />

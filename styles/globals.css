@@ -201,7 +201,9 @@ a[target="new"]:hover {
 	padding: 5px;
 }
 .title {
+	font-style: italic;
 	display: inline;
+	font-size: 1.1em;
 }
 .details {
 	display: block;
