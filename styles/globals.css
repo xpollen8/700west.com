@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Titillium-Regular;
+	src: url("/fonts/Titillium-Regular.otf") format("opentype");
+}
+
 @viewport {
 	width: device-width;
 	zoom: device-zoom;
@@ -19,7 +24,8 @@ li {
 body {
 	background: #9c6b47;
 	color: #333;
-	font: normal 15px Verdana, Arial, sans-serif;
+	font-family: Titillium-Regular, sans-serif;
+	font-weight: 500;
 }
 hr {
 	border: 1px solid #9c6b47;
@@ -199,6 +205,8 @@ a[target="new"]:hover {
 .title {
 	font-style: italic;
 	display: inline;
+	color: black;
+	font-weight: 600;
 	font-size: 1.1em;
 }
 .details {
@@ -229,7 +237,7 @@ a[target="new"]:hover {
 .moe {
 	margin: 1em;
 	quotes: "\201C""\201D""\2018""\2019";
-	padding: 20px 50px 20px 50px;
+	padding: 10px 10px 10px 10px;
 	line-height: 1.4;
 }
 .moe::before {
@@ -237,7 +245,7 @@ a[target="new"]:hover {
 	display: inline;
 	height: 0;
 	line-height: 0;
-	left: -20px;
+	left: -5px;
 	position: relative;
 	top: 20px;
 	color: #ccc;
@@ -312,7 +320,8 @@ a[target="new"]:hover {
 .single.details {
 }
 .artist {
-	font-weight: 900;
+	font-weight: 400;
+	font-size: 1.2em;
 }
 .addendum.subject {
 	display: block;
