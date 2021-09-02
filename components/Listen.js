@@ -54,29 +54,29 @@ const Listen = (props) => (
 
 	<SectionHeader text="Unreleased Material" />
 	<blockquote className="panelContainer">
-		<p className="row"><AudioPlayer mp3='Jeannie.mp3'
+		<div className="row"><AudioPlayer mp3='Jeannie.mp3'
 			band='Herman Walker'
 			title='Jeannie' time='2:45'
 			comment="The proper interpretation of one Jerome Winoker's unrequited love songs.
 			Larry Lucas: Guitar, Herman Walker: Vocals, Bo Gooliak: Bass, Mel Cupp: Drums" />
-		</p>
-		<p className="row"><AudioPlayer mp3='FunkStWorkshop/Water.mp3'
+		</div>
+		<div className="row"><AudioPlayer mp3='FunkStWorkshop/Water.mp3'
 			band='Funk St. Workshop'
 			title='Water'
 			comment='Taken from submasters' />
-		</p>
-		<p className="row"><AudioPlayer mp3='Jubal/CertainKindOfLady.mp3'
+		</div>
+		<div className="row"><AudioPlayer mp3='Jubal/CertainKindOfLady.mp3'
 			band='Jubal (Zerfas)'
 			title='A Certain Kind Of Lady'
 			comment='Unreleased demo'
 			date='1979' />
-		</p>
-		<p className="row"><AudioPlayer mp3='Jubal/ShakeUpYourMind.mp3'
+		</div>
+		<div className="row"><AudioPlayer mp3='Jubal/ShakeUpYourMind.mp3'
 			band='Jubal (Zerfas)'
 			title='Shake Up Your Mind'
 			comment='Unreleased demo, taken from submasters'
 			date='1979' />
-		</p>
+		</div>
 	</blockquote>
 
 	<SectionHeader text="M. J. Whittemore, Jr.'s Classical Compositions" />
@@ -87,35 +87,35 @@ const Listen = (props) => (
 		- on which he received all A's
 	</blockquote>
 	<blockquote className="panelContainer">
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/MarchMadness.mp3' title='March Madness'
-			date='April 2003' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/InQuadrature.mp3' title='In Quadrature'
-			date='July 2003' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/2-PartInvention.mp3' title='2-Part Invention'
-			date='November 2003' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/3-VoiceFugue.mp3' title='3-Voice Fugue'
-			date='December 2003' /></p>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/MarchMadness.mp3' title='March Madness'
+			date='April 2003' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/InQuadrature.mp3' title='In Quadrature'
+			date='July 2003' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/2-PartInvention.mp3' title='2-Part Invention'
+			date='November 2003' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/3-VoiceFugue.mp3' title='3-Voice Fugue'
+			date='December 2003' /></div>
 	</blockquote>
 
-	<p style={{ textAlign: 'center' }}>
+	<div style={{ textAlign: 'center' }}>
 		<Image src={`/images/Moconcert3.jpg`} width="288" height="432" />
-	</p>
+	</div>
 	<b>Wright Now!</b> (November 2003)
 	<blockquote className="panelContainer">
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_01TheWinding.mp3' title='The Winding' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_02_TheClimb.mp3' title='The Climb' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_03_BumpingAbout.mp3' title='Bumping About' /></p>
-		<p className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_04_Descent.mp3' title='Descent' /></p>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_01TheWinding.mp3' title='The Winding' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_02_TheClimb.mp3' title='The Climb' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_03_BumpingAbout.mp3' title='Bumping About' /></div>
+		<div className="row"><AudioPlayer mp3='ButlerStudentVolumeOne/WrightNow_04_Descent.mp3' title='Descent' /></div>
 	</blockquote>
 
 	<b>More Compositions</b>
 	<blockquote>
-		<p className="row">
+		<div className="row">
 		<AudioPlayer mp3='ButlerStudentVolumeOne/Our4FeralKittens.mp3' title='Our 4 Feral Kittens'
 			time="4:52"
 			comment='Not really a classical composition...'
 			date='December 2003' />
-		</p>
+		</div>
 	</blockquote>
 	</>
 )
