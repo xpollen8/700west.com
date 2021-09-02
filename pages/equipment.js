@@ -142,9 +142,9 @@ const data = [
 
 const Home = () => (
 	<Page link="equipment" description="Equipment used at 700 West Recording">
-		{data.map(({ heading, items }) => (
+		{data.map(({ heading, items }, key) => (
 			<>
-				<b>{heading}</b>
+				<b key={key}>{heading}</b>
 				<blockquote className='panelContainer'>
 					{items.map((u, key) => (
 						<Item key={key} className="row" extra={u} />
