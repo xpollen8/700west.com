@@ -4,7 +4,10 @@ import { dateCompare, makeReleaseLink, Item } from '../lib/helpers';
 const makeSingleBlurb = (item, key) => {
 	const artistA = item.tracks[0].artist;
 	const artistB = item.tracks[1].artist;
-	const href = makeReleaseLink(item.tracks[0].artist, item.tracks[0].title);
+	const alsoAlbum = releases.find(r => r.type === 'album' && r.artist === item.tracks[0].artist && r.title === item.tracks[0].title);
+	// if there are both an album and single by the same artist/title,
+	// then apend '-7' onto the URL for the single
+	const href = makeReleaseLink(item.tracks[0].artist, item.tracks[0].title) + `${alsoAlbum ? '-7' : ''}`;
 	return <Item key={key}
 		extra={<>
 			<a className="single artist" href={href}>{artistA}</a><span className="date ago">{item.published}</span>

@@ -405,13 +405,24 @@ const makeRelease = (item) => {
 }
 
 const matchReleaseName = (url = '', artist = '', title = '') => {
-	const useUrl = url.split('_').join('').toLowerCase();
+	const useUrl = url.replace(/-7$/, '').split('_').join('').toLowerCase();
 	const useTest = (makeReleaseLink(artist, title) || '').split('_').join('').toLowerCase();
 	return (useUrl === useTest);
 }
 
 const Release = ({ url, addendum }) => {
-	const item = releases.find(r => matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+	let item;
+	if (url && url.match(/-7$/)) {
+		// if the URL ends w/ '-7', then only look in singles.
+		item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+	} else {
+		// otherwise, look first in albums
+		item = releases.find(r => r.type === 'album' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		if (!item) {
+			// and then in singles
+			item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		}
+	}
 	if (item) {
 		if (addendum) {
 			const X = parseInt(addendum, 10);
@@ -423,9 +434,11 @@ const Release = ({ url, addendum }) => {
 		return makeRelease(item)
 	}
 	// fallback
+	if (!item) {
 	return <Page title="Albums" link="albums" description="The Albums">
 		<Albums />
 	</Page>
+	}
 }
 
 export default Release
