@@ -23,7 +23,7 @@ const makeDemoBlurb = (item, key) => {
 const Demos = () => (
 	<>
 		<p>
-		While many demo recordings have been lost to time, some of of the remaining
+		While many demo recordings have been lost to time, some of the remaining
 		master tapes were digitized around ~1994.
 		The best of those are available on the two volumes of the <b>Best of 700 West</b>.
 		</p>
