@@ -128,7 +128,30 @@ const data = [
 		heading: 'House Instruments',
 		items: [
 				<>
-					1934 Story & Clark studio upright piano; Wurlitzer electric piano
+					Wurlitzer electric piano
+				</>,
+				<>
+					<p>
+					1934 Story & Clark studio upright piano.
+					</p>
+					<p>
+					The acoustic piano you hear on both of the Vol. I & II recordings is a Story & Clark - built in 1934, the year I was born.  Interestingly, we both were destined to cross paths later!
+					</p>
+					<p>
+					Originally required for my piano class at school, it was purchased from Kenny Jagger, (a popular local TV keyboard celebrity back in the mid-50s).  The instrument was a studio upright, as I couldn't afford a grand.
+					</p>
+					<p>
+					It later became our 700 West house piano, complete with a set of my piezo pickups which were most useful when a loud group decided to use a live acoustic piano on their rhythm beds.  Plus, its carefully lacquered hammers gave this instrument a very distinctive sound, quite suited to the recording process.  I quickly learned to keep it in good tune, occasionally detuning it to match groups' out-of-tune fixed pitch instruments.
+					</p>
+					<p>
+					The next time I needed it (15 years following our studio closure), the instrument still was in perfect tune with itself and had only slipped from A=440 to A=438!  And this without the benefit of air conditioning!
+					</p>
+					<p>
+					<b>One Great Box!!</b>
+					</p>
+					<p>
+					Moe - 2018-02-24
+					</p>
 				</>,
 				<>
 					Korg K2 synth
