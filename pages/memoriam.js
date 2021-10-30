@@ -3,6 +3,12 @@ import { Item } from '../lib/helpers';
 
 const data = [
 	{
+	name: 'Dan Gustin',
+	played: 'Vocals',
+	for: 'Spectre',
+	date: '2021-09',
+	},
+	{
 	name: 'Carl Haefli',
 	played: 'Trumpet',
 	for: 'Ebony Rhythm Funk Campaign',
