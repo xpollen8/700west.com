@@ -3,6 +3,33 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
+	date: 'Fri Oct 29 22:27:01 PDT 2021',
+	title: 'Site Updates',
+	author: 'David Whittemore',
+	body: () =>
+		<ul>
+		<li> Added a new section: <a href="/demos">Demos</a> with <b>Spectre</b> as its first inhabitant.</li>
+		<li> Added audio for the to <a href="/releases/Sailor-Sailor.html">Sailor</a> release.</li>
+		</ul>
+	},
+	{
+		slug: 'manifesto2017',
+		tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+		date: '2017-10-17',
+		title: 'WFYI interview of Moe Whittemore #1',
+		body: () =>
+		<>
+		<p>
+		WFYI's Kyle Long's first "Cultural Manifesto" visit to the old 700 West studio to interview Moe Whittemore.
+		Wide-ranging topics.
+		</p>
+		<p>
+		<li> Listen here<AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
+			title='Kyle Long interviews Moe Whittemore' /></li>
+		</p>
+		</>
+	},
+	{
 		slug: 'urgent',
 		date: 'Sun Aug  1 22:03:27 PDT 2021',
 		author: 'David Whittemore',
@@ -39,7 +66,7 @@ const newsItems = [
 		slug: 'manifesto',
 		tags: [ 'event:interview', 'album:Best_of_700_West_Volume_II', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
 		date: '2019-04-26',
-		title: 'WFYI interview of Moe Whittemore',
+		title: 'WFYI interview of Moe Whittemore #2',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittmore',
 		linkExternalTitle: 'Original Article',
 		body: () =>
@@ -204,7 +231,7 @@ const News = ({ slug, num }) => {
 	} else if (num) {
 		return NewsItem(newsItems[num - 1])
 	} else {
-		return <div className="panelContainer">{newsItems.map(NewsItem)}</div>
+		return <div className="panelContainer">{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}</div>
 	}
 }
 
