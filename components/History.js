@@ -81,6 +81,9 @@ const History = ({ rotating }) => {
 	pirated back in '86, I heard).  Kevin Stonerock is now re-releasing his "Day Before 
 	Tomorrow" on CD.  Hang in, there!  There's more to come from 700 West!
 	</p>
+	<p>
+	Moe - 2001-02-03
+	</p>
 	</>
 }
 

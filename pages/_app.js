@@ -8,6 +8,7 @@ const links = [
 	{ href: '/news', text: 'News' },
 	{ href: '/albums', text: 'Albums' },
 	{ href: '/singles', text: 'Singles' },
+	{ href: '/demos', text: 'Demos' },
 	{ href: '/extras', text: 'Extras!' },
 	{ href: '/equipment', text: 'Equipment' },
 	{ href: '/photos', text: 'Photos' },

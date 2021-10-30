@@ -28,12 +28,20 @@ const makeListenSingle = ({ tracks, multiArtist = false }, key) => {
 
 const Listen = (props) => (
 	<>
-	<blockquote>
+	<p>
 		Here are some tracks for your personal enjoyment.
 		You are expressly not authorized to re-distribute or to profit from these audio files.
-	</blockquote>
+	</p>
 
 	<SectionHeader text="Interviews" />
+		<span className="artist">Kyle Long's WFYI 'A Cultural Manifesto' radio interview<span className="date ago">2017</span></span>
+		<blockquote className="row">
+			<AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
+				title='Interview'
+				time='59:10'
+				/>
+		</blockquote>
+
 		<span className="artist">Dan Modlin interviews Moe Whittemore <span className="date ago">2010</span></span>
 		<blockquote className="row">
 			<AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'

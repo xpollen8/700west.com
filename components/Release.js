@@ -226,6 +226,7 @@ const MakeSingle = (single) => (
 			</div>
 			<Covers {...single } />
 		</div>
+		<Promo {...single} />
 		<div className="panelContainer">
 			<Panel side='A' tracks={single.tracks} key={1} />
 			<Panel side='B' tracks={single.tracks} key={2} />
@@ -243,6 +244,7 @@ const AlbumHeader = (release) => (
 		</div>
 		<Covers {...release } />
 	</div>
+	<Promo {...release} />
 	</>
 )
 
@@ -264,6 +266,31 @@ const MakeAlbum = (album) => {
 		</>
 	}
 	return <AlbumHeader {...album} />
+}
+
+const DemoHeader = (release) => (
+	<>
+	<div className="panelContainer">
+		<div className="release panel">
+			<div className="release artist">{release.artist}</div>
+			<div className="release title">"{release.title}"</div>
+			<HeaderData {...release} />
+		</div>
+		<Covers {...release } />
+	</div>
+	<Promo {...release} />
+	</>
+)
+
+const MakeDemo = (demo) => {
+	const hasTracks = demo.tracks[0];
+	if (hasTracks) {
+		return <>
+			<DemoHeader {...demo} />
+			<Panel tracks={demo.tracks} />
+		</>
+	}
+	return <DemoHeader {...demo} />
 }
 
 const Credits = ({ credits = [] }) => {
@@ -299,12 +326,13 @@ const Promo = ({ publicity = [] }) => {
 		return <>
 			<SectionHeader text="Original Promotional Material " />
 			<ul>
-			{publicity.map(({ image, width, height }, key) => (
+			{publicity.map(({ image, width, height, caption }, key) => (
 				<li key={key}>
-					<a href={`/images/publicity/${image}.jpg`}><Image
-						src={`/images/publicity/${image}.gif`}
+					<a href={`/images/publicity/${image}`}><Image
+						src={`/images/publicity/${image}`}
 						alt="publicity shot"
 						width={width} height={height} /></a>
+					{(caption) && <i>{caption}</i>}
 				</li>
 			))}
 			</ul>
@@ -391,14 +419,16 @@ const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 }
 
 const makeRelease = (item) => {
-	const link = (item.type === 'album') ? 'albums' : 'singles';
+	//const link = (item.type === 'album') ? 'albums' : 'singles';
+	const link = `${item.type}s`;
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 	return <Page title="Releases" link={link} description={`The "${release}" ${item.type} from ${artist}`} >
-		{(item.type === 'album') ? <MakeAlbum {...item} /> : <MakeSingle {...item } />}
+		{(item.type === 'album') && <MakeAlbum {...item} /> }
+		{(item.type === 'single') && <MakeSingle {...item} /> }
+		{(item.type === 'demo') && <MakeDemo {...item} /> }
 		<Credits {...item} />
 		<LinerNotes {...item} />
-		<Promo {...item} />
 		<Comments {...item} />
 		<Extra {...item} />
 	</Page>
@@ -421,6 +451,11 @@ const Release = ({ url, addendum }) => {
 		if (!item) {
 			// and then in singles
 			item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		}
+		// and then in demos
+		if (!item) {
+			// and then in demos
+			item = releases.find(r => r.type === 'demo' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 		}
 	}
 	if (item) {
