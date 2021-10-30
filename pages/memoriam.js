@@ -7,6 +7,7 @@ const data = [
 	played: 'Vocals',
 	for: 'Spectre',
 	date: '2021-09',
+	reason: 'heart attack',
 	},
 	{
 	name: 'Carl Haefli',
