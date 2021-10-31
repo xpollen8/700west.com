@@ -7,7 +7,7 @@ const data = [
 	played: 'Vocals',
 	for: 'Spectre',
 	forLink: '/releases/Spectre-WFBQ_Homegrown_Album_submission',
-	date: '2021-09',
+	date: '2021-08-14',
 	reason: 'heart attack',
 	},
 	{
