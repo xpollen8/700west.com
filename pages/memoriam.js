@@ -6,6 +6,7 @@ const data = [
 	name: 'Dan Gustin',
 	played: 'Vocals',
 	for: 'Spectre',
+	forLink: '/releases/Spectre-WFBQ_Homegrown_Album_submission',
 	date: '2021-09',
 	reason: 'heart attack',
 	},
@@ -104,7 +105,8 @@ const data = [
 	name: 'Jason ("Stonewall") Seidler',
 	played: 'Guitar',
 	for: 'Why On Earth',
-	link: [ 'https://www.youtube.com/watch?v=VtCYGDW2_VM' ],
+	link: 'https://www.youtube.com/watch?v=VtCYGDW2_VM',
+	linkText: 'Memoriam on youtube',
 	date: '2011-07-16',
 	},
 	{
@@ -176,7 +178,10 @@ const Memoriam = (mem, key) => (
 		info={
 			<>
 			<div>Played: {mem.played}</div>
-			<div>For: {mem.for}</div>
+			<div>For: 
+				{(mem?.forLink) ? <a href={`${mem?.forLink}`}>{mem.for}</a> : <>{mem.for}</>}
+			</div>
+			{mem?.link && <>Link: <a href={mem.link}>{mem?.linkText || 'Offsite Information'}</a></>}
 			</>
 		}
 		date={mem.date}
