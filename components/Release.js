@@ -115,7 +115,7 @@ const TrackCredits = ({ credits = [] }) => {
 			<div className="row">
 				{credits.map((c, key) => {
 					return <p key={key}>
-						<Who {...c} /> <p>{c.did.join(', ')}</p>
+						<Who {...c} /> <p>{c?.did?.join(', ')}</p>
 					</p>
 				})}
 			</div>
