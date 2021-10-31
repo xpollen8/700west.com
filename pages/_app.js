@@ -9,6 +9,8 @@ const links = [
 	{ href: '/albums', text: 'Albums' },
 	{ href: '/singles', text: 'Singles' },
 	{ href: '/demos', text: 'Demos' },
+	{ href: '/bands', text: 'Bands' },
+	{ href: '/musicians', text: 'Musicians' },
 	{ href: '/extras', text: 'Extras!' },
 	{ href: '/equipment', text: 'Equipment' },
 	{ href: '/photos', text: 'Photos' },
