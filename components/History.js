@@ -13,8 +13,8 @@ const History = ({ rotating }) => {
 	 <div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
 		<Image src={src} width={width} height={height} border="0" alt={alt} />
 	</div>
-	The demo tape was our specialty, although many albums & singles were generated during 
-	our 12 years of existence.- just check the "Albums/Singles" section of the site!  And with my 
+	The demo tape was our specialty, although many <a href="/albums">albums</a> & <a href="/singles">singles</a> were generated during 
+	our 12 years of existence.  And with my 
 	electronics background, I wound up doing my share of instrument and amp repair - many 
 	times before sessions. I also did a bit of custom electronics fabrication for our clients.  
 	It also seemed that the groups were constantly needing lead sheets of their original tunes for 
@@ -82,7 +82,7 @@ const History = ({ rotating }) => {
 	Tomorrow" on CD.  Hang in, there!  There's more to come from 700 West!
 	</p>
 	<p>
-	Moe - 2001-02-03
+	<b>Moe</b> - 2001-02-03
 	</p>
 	</>
 }
