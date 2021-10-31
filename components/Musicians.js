@@ -5,6 +5,7 @@ const AKAs = {
 	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
+	'Dan Gustin': [ 'Danny Gustin' ],
 };
 
 const makeAKA = (name) => {
@@ -20,19 +21,6 @@ const makeMusicianBlurb = (item, key) => (
 		)}
 	</div>
 );
-
-const displayName = (name) => {
-	const aka = isAKA(name);
-	if (aka !== name) {
-		return {
-			name: aka,
-			aka: AKAs[aka],
-		}
-	}
-	return {
-		name,
-	}
-}
 
 const isAKA = (name) => {
 	const hasAKA = Object.keys(AKAs).find(a => {
