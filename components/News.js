@@ -3,6 +3,16 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
+	date: 'Sat Oct 30 21:15:47 PDT 2021',
+	title: 'Site Updates',
+	author: 'David Whittemore',
+	body: () =>
+		<ul>
+		<li> Added a new section: <a href="/bands">Bands</a> </li>
+		<li> Added a new section: <a href="/musicians">Musicians</a> </li>
+		</ul>
+	},
+	{
 	date: 'Fri Oct 29 22:27:01 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
