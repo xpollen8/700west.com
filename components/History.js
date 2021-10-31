@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
-const History = ({ rotating }) => {
-	const { src, width, height, alt } = rotating;
-	return <>
+const History = ({ rotating }) => (
+	<>
 	<p>
 	700 West Recording was a place that catered to the musician.  Plenty of area studios 
 	back in '72 were doing the commercial thing.  That's where the money was.  But there was 
@@ -11,7 +10,7 @@ const History = ({ rotating }) => {
 	</p>
 	<p>
 	 <div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
-		<Image src={src} width={width} height={height} border="0" alt={alt} />
+		<Image {...rotating } />
 	</div>
 	The demo tape was our specialty, although many <a href="/albums">albums</a> & <a href="/singles">singles</a> were generated during 
 	our 12 years of existence.  And with my 
@@ -85,6 +84,6 @@ const History = ({ rotating }) => {
 	<b>Moe</b> - 2001-02-03
 	</p>
 	</>
-}
+)
 
 export default History;

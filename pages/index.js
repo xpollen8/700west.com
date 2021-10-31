@@ -24,7 +24,7 @@ const Home = ({ rotating }) => (
 	<Page title="Welcome" link="" description="700 West Recording">
 	<div className='hilite'>
 		<News slug='urgent' />
-		<News slug='bandcampRelease' />
+		{/*<News slug='bandcampRelease' />*/}
 	</div>
 	<SectionHeader text="A short history of 700 West Recording by Moe Whittemore" />
 	<History rotating={rotating} />

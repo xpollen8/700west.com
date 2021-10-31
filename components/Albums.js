@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
 import { dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
+import News from './News';
 
 const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;
@@ -26,6 +27,7 @@ const Albums = () => (
 		remain in the 700 West archives.
 	</p>
 	</div>
+	<News slug='bandcampRelease' />
 	<hr/>
 	<b>Albums released on the 700 West label</b>
 		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
