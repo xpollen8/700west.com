@@ -1,16 +1,14 @@
+import Link from 'next/link';
 import releases from '../lib/releases';
-import { dateCompare, makeReleaseLink, Item } from '../lib/helpers';
+import { dateCompare, makeBandLink, Item } from '../lib/helpers';
+import { getBandNames } from './Muso';
 
 const makeBandBlurb = (item, key) => {
-	return (<Item key={key} extra={(<div className="artist">{item}</div>)} />)
-}
-
-const	getBandNames = () => {
-	const X = [].concat(...releases.map(r => {
-		const trackArtists = r?.tracks?.map(t => t.artist);
-		return [ r?.artist ].concat(trackArtists);
-	}));
-	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
+	return (<Item key={key} extra={(
+		<div className="artist">
+			<Link href={makeBandLink(item)}>{item}</Link>
+		</div>
+	)} />)
 }
 
 const Bands = () => {

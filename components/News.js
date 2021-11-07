@@ -3,6 +3,15 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
+	date: 'Sat Nov  6 17:41:19 PDT 2021',
+	title: 'Site Updates',
+	author: 'David Whittemore',
+	body: () =>
+		<ul>
+		<li> Fleshed out the : <a href="/bands">Bands</a> and <a href="/musicians">Musicians</a> sections </li>
+		</ul>
+	},
+	{
 	date: 'Sat Oct 30 21:15:47 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
@@ -216,7 +225,7 @@ const Tag = (tag, key) => (
 )
 
 const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
-	<Item key={key} bold={title} info={author} date={date} body={<>
+	<Item key={key} bold={title} author={author} date={date} body={<>
 		{body()}
 		{linkInternal &&
 			<div className="news link">

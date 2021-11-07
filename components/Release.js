@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor } from '../lib/helpers';
+import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink } from '../lib/helpers';
+import { makeMusicianLink } from './Muso';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
@@ -15,14 +17,14 @@ const makeBody = (body) => {
 const makeOriginal = (original) => {
 	if (original) {
 		return <span className="original">
-			<a href={original} target="new">{original}</a>
+			<Link href={original} target="new">{original}</Link>
 		</span>
 	}
 }
 
 const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, artist, release, releaseLink, number }) => (
 	<>
-		<span className="artist">{artist}</span> : <a href={releaseLink} className="title">{release}</a>
+		<span className="artist">{artist}</span> : <Link href={releaseLink} className="title">{release}</Link>
 		<hr/>
 		<div className="header">
 			<Datum k="Source" v={source} />
@@ -78,7 +80,7 @@ const AudioTeaser = ({ tracks = [] }) => {
 
 const smartLink = (v) => {
 	if (typeof v === 'string' && v?.includes('http')) {
-		return <a href={v} target="new">{v}</a>
+		return <Link href={v} target="new">{v}</Link>
 	}
 	return v;
 }
@@ -93,19 +95,13 @@ const Datum = ({ k, v, className }) => {
 	return <>{v}</>
 }
 
-const Who = ({ who = '', whoLink = '' }) => {
-	if (who.length) {
-		if (whoLink.length) {
-			return <div className="who">
-				<a href={whoLink} target="new">{who}</a>
-			</div>
-		} else {
-			return <div className="who">
-				{who}
-			</div>
-		}
-	}
-	return <></>;
+const Who = ({ who = '' }) => {
+	if (!who?.length) return <></>;
+	return (
+		<div className="who">
+			<Link href={makeMusicianLink(who)}>{who}</Link>
+		</div>
+	);
 }
 
 const TrackCredits = ({ credits = [] }) => {
@@ -115,7 +111,7 @@ const TrackCredits = ({ credits = [] }) => {
 			<div className="row">
 				{credits.map((c, key) => {
 					return <p key={key}>
-						<Who {...c} /> <p>{c?.did?.join(', ')}</p>
+						<Who {...c} /> {c?.did && <p className="played">"{c?.did?.join('", "')}"</p>}
 					</p>
 				})}
 			</div>
@@ -131,7 +127,7 @@ const TrackComments = ({ comments = [] }) => {
 				{comments.map((c, key) => {
 					return <div key={key} className="row">
 						<i>{c.said}</i>
-						<Who who={c.who} whoLink={c.whoLink} />
+						<Who who={c.who} />
 						{exists(c.date) && makeDate(c.date)}
 					</div>
 				})}
@@ -142,7 +138,7 @@ const TrackComments = ({ comments = [] }) => {
 
 const Title = ({ artist, title = '', time }) => {
 		return <>
-		{artist && artist.length && <span className="artist">{artist} - </span>}
+		{artist && artist.length && <span className="artist"><Link href={makeBandLink(artist)}>{artist}</Link> - </span>}
 		<span className="title">{title}</span>
 		{time && <span className="date ago">{time}</span>}
 	</>
@@ -298,9 +294,9 @@ const Credits = ({ credits = [] }) => {
 		return <>
 			<SectionHeader text="Credits" />
 			<blockquote>
-			{credits.map(({ who, whoLink, did }, key) => (
+			{credits.map(({ who, did }, key) => (
 				<p key={key}>
-					<Who who={who} whoLink={whoLink} /> {did.join(', ')}
+					<Who who={who} /> {did && <p className="played">"{did?.join('", "')}"</p>}
 				</p>
 			))}
 			</blockquote>
@@ -328,10 +324,10 @@ const Promo = ({ publicity = [] }) => {
 			<ul>
 			{publicity.map(({ image, width, height, caption }, key) => (
 				<li key={key}>
-					<a href={`/images/publicity/${image}`}><Image
+					<Link href={`/images/publicity/${image}`}><Image
 						src={`/images/publicity/${image}`}
 						alt="publicity shot"
-						width={width} height={height} /></a>
+						width={width} height={height} /></Link>
 					{(caption) && <i>{caption}</i>}
 				</li>
 			))}
@@ -380,12 +376,12 @@ const Comments = ({ comments = [], sales = [] }) => {
 			if (comments.length) {
 				return <>
 					<SectionHeader text="Comments" />
-					{comments.map(({ who, whoLink, date, said }, key) => (
+					{comments.map(({ who, date, said }, key) => (
 						<p key={key} className="row">
 							<div style={{ padding: '10px' }}>
 								<i>{said}</i>
 								<div style={{ padding: '10px' }}>
-									<Who who={who} whoLink={whoLink} />
+									<Who who={who} />
 									{exists(date) && makeDate(date)}
 								</div>
 							</div>
@@ -410,7 +406,7 @@ const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 			<SectionHeader text="Auxiliary Materials)" />
 			{addendum.map((props, key) => (
 				<p key={key} className="row">
-					<span className="datum">{typeToDisplay(props.type)}</span> : <a href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</a>
+					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</Link>
 				</p>
 			))}
 		</>

@@ -265,6 +265,10 @@ a[target="new"]:hover {
 .date {
 	color: #333;
 }
+.played {
+	font-size: 0.8em;
+	color: #999;
+}
 .date.ago {
 	font-size: 0.8em;
 	color: #999;
