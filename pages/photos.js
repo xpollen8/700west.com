@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from './_app';
 import { Item } from '../lib/helpers';
@@ -90,7 +91,7 @@ const Photos = () => (
 		<blockquote className="panelContainer">
 			{data.map(({ src, thumb, width, height, alt, caption = '' }, key) => (
 				<Item key={key} extra={<div style={{ textAlign: 'center' }} >
-					<a href={src}><Image src={thumb} width={width} height={height} alt={alt || caption} /></a>
+					<Link href={src}><Image src={thumb} width={width} height={height} alt={alt || caption} /></Link>
 					<p>{caption}</p>
 					</div>}
 				/>
