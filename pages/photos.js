@@ -5,6 +5,14 @@ import { Item } from '../lib/helpers';
 
 const data = [
 	{
+		src: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
+		thumb: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
+		width: 2362,
+		height: 1356,
+		date: `1980-10-11`,
+		caption: `J. Michael Henderson during video shoot for a "PM Magazine" feature`,
+	},
+	{
 		src: `/images/studio_1976.jpg`,
 		thumb: `/images/studio_1976_500.jpg`,
 		width: 500,
