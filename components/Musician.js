@@ -58,13 +58,13 @@ const Datum = ({ k, v, className }) => {
 	return <>{v}</>
 }
 
-const showAttribution = (attr) => {
-	const { original, author, date } = attr || {};
-	if (!(original || author || date)) return <></>;
+const showAttribution = (attr, className) => {
+	const { original, who, date } = attr || {};
+	if (!(original || who || date)) return <></>;
 	return (
-		<div className="row">
+		<div className={className}>
 			<Datum k="Source" v={original} />
-			<Datum k="Author" v={author} />
+			{who && <Datum k="Author" v=<Who who={who} /> />}
 			{exists(date) && makeDate(date)}
 		</div>
 	);
@@ -78,7 +78,7 @@ const Bio = ({ musician }) => {
 			<h3>Bio</h3>
 			<li className="row">
 				{bio?.body}
-			{showAttribution(bio?.attribution)}
+			{showAttribution(bio?.attribution, 'row')}
 			</li>
 		</div>
 	);
@@ -128,22 +128,18 @@ const Who = ({ who = '' }) => {
 
 const TrackComments = ({ comments = [] }) => {
 	if (comments.length) {
-		return <>
+		return <div>
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
 					return <div key={key} className="row">
 						<i>{c.said}</i>
-						<Who who={c.who} />
-						{exists(c.date) && makeDate(c.date)}
+						{showAttribution({
+							...c
+						})}
 					</div>
 				})}
-		</>
+		</div>
 	}
-	return <></>;
-}
-
-const showComments = (comments) => {
-	return <>(comments)</>;
 }
 
 const embedVideo = (v, key) => {
@@ -153,8 +149,8 @@ const embedVideo = (v, key) => {
 		<video controls preload="none" style={{ maxWidth: '100%' }} poster={thumb?.src}>
 				<source src={src} type="video/mp4" />
 		</video>
-		<div className="row">
-			{showAttribution(attribution)}
+		<div className="panelContainer">
+			{showAttribution(attribution, 'row')}
 			<TrackComments comments={comments} />
 			{date && <div className="date ago">Added: {date}</div>}
 		</div>
@@ -213,6 +209,26 @@ const Contact = ({ musician }) => {
 	);
 }
 
+const Reminisce = ({ musician }) => {
+	const reminiscences = musicianExtra[musician]?.reminiscences || {};
+	if (!(reminiscences)?.length) return <></>;
+	return (
+		<div>
+			<h3>Reminiscence</h3>
+			{reminiscences.map((rem, key) => {
+				const { date, source, who, said, subject } = rem;
+				return (
+					<div className="row">
+						{source}
+						{subject}
+						{makeDate(date)}
+					</div>
+				);
+			})}
+		</div>
+	);
+}
+
 const Musician = ({ url = '' }) => {
 	const cleaned = isAKA(url);
 	const musician = getMusicianNames().find(m => cleanName(m) === cleanName(cleaned));
@@ -228,6 +244,7 @@ const Musician = ({ url = '' }) => {
 				<Contact musician={musician} />
 			</div>
 			<CreditsOn musician={musician} />
+			<Reminisce musician={musician} />
 			<Gallery musician={musician} />
 			<Videos musician={musician} />
 			</div>
