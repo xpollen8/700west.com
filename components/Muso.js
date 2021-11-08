@@ -16,8 +16,17 @@ const AKAs = {
 const isAKA = (name) => {
 	const hasAKA = Object.keys(AKAs).find(a => {
 		if (a === name) return name;
-		return AKAs[a]?.find(aka => aka.toLowerCase() === name.toLowerCase());
+		const fnd = AKAs[a]?.find(aka => {
+			if (name.match('ittemore')) {
+			//console.log("COMP", aka, name, aka.toLowerCase() === name.toLowerCase());
+			}
+			return cleanName(aka.toLowerCase()) === cleanName(name.toLowerCase())
+		});
+		return fnd;
 	}) || name;
+			if (name.match('ittemore')) {
+	//console.log("isAKA", { name, hasAKA });
+	}
 	return hasAKA;
 }
 
@@ -92,4 +101,4 @@ const musiciansByBand = (band) => {
 	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 
-module.exports = { getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink }
+module.exports = { getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }

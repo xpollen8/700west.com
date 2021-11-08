@@ -2,15 +2,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from './_app';
 import { Item } from '../lib/helpers';
+import { cleanName } from '../components/Muso';
+
+const musicianLink = (mus) => {
+	return (
+		<Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
+	)
+}
 
 const data = [
 	{
 		src: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
 		thumb: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
-		width: 2362,
-		height: 1356,
+		width: 500,
+		height: 286,
 		date: `1980-10-11`,
-		caption: `J. Michael Henderson during video shoot for a "PM Magazine" feature`,
+		caption: <>
+			{musicianLink('J. Michael Henderson')} during video shoot for a "PM Magazine" feature
+			</>,
 	},
 	{
 		src: `/images/studio_1976.jpg`,
@@ -26,7 +35,9 @@ const data = [
 		width: 500,
 		height: 427,
 		date: `1976`,
-		caption: `Moe at the controls, the new 8-channel Tascam 70-8 on his right.`,
+		caption: <>
+			{musicianLink('Moe')} at the controls, the new 8-channel Tascam 70-8 on his right.
+			</>,
 	},
 	{
 		src: `/images/Moe_piano.jpg`,
@@ -34,7 +45,9 @@ const data = [
 		width: 500,
 		height: 393,
 		date: `1976`,
-		caption: `Moe at the treated piano`,
+		caption: <>
+			{musicianLink('Moe')} at the treated piano
+			</>,
 	},
 	{
 		src: `/images/Mo_Dave.jpg`,
@@ -42,8 +55,10 @@ const data = [
 		width: 500,
 		height: 335,
 		date: `before 1976`,
-		caption: `Moe Whittemore, Dave Lovell. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
-		and the 3M M23 4-track 1/2" recorder.  4-channel days.`,
+		caption: <>
+			{musicianLink('Moe Whittemore')}, {musicianLink('Dave Lovell')}. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
+			and the 3M M23 4-track 1/2" recorder.  4-channel days.
+			</>,
 	},
 	{
 		src: `/images/Mo_machines.jpg`,
@@ -90,7 +105,9 @@ const data = [
 		thumb: `/images/kev700west_500.jpg`,
 		width: 500,
 		height: 742,
-		caption: `Kevin Stonerock in the studio`,
+		caption: <>
+			{musicianLink('Kevin Stonerock')} in the studio
+			</>,
 	},
 ];
 

@@ -11,7 +11,7 @@ const makeAKA = (name) => {
 const makeMusicianBlurb = (item, key) => (
 	<div className="row" key={key}>
 		<div className="artist">
-			<Link href={makeMusicianLink(item)}>{item}</Link>
+			<Link href={`/musician/${item}`}>{item}</Link>
 		</div>
 		{makeAKA(item)}
 		{/*releasesByMusician(item)?.map((r, i) => (
