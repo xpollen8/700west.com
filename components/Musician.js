@@ -29,12 +29,12 @@ const CreditsOn = ({ musician }) => {
 	const releases = releasesByMusician(musician);
 	if (!releases?.length) { return <></> }
 	return (
-			<>
+			<div>
 				<h3>Credits On</h3>
 				<div className="row">
 				{releases.map(Release)}
 				</div>
-			</>
+			</div>
 		)
 }
 
@@ -59,12 +59,13 @@ const Datum = ({ k, v, className }) => {
 }
 
 const showAttribution = (attr, className) => {
-	const { original, who, date } = attr || {};
+	const { original, who, date, added } = attr || {};
 	if (!(original || who || date)) return <></>;
 	return (
 		<div className={className}>
 			<Datum k="Source" v={original} />
 			{who && <Datum k="Author" v=<Who who={who} /> />}
+			{added && <Datum k="Added" v={makeDate(added)} />}
 			{exists(date) && makeDate(date)}
 		</div>
 	);
@@ -95,11 +96,11 @@ const Gallery = ({ musician }) => {
 				<div key={key} className="row">
 					<Link href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></Link>
 					<li>
-						<blockquote>
+						<i>
 						{caption}
-						</blockquote>
+						</i>
 					{showAttribution(attribution)}
-					{date && makeDate(date)}
+					{date && <Datum k="Added" v={makeDate(date)} />}
 					</li>
 				</div>
 			);
@@ -120,9 +121,7 @@ const smartLink = (v) => {
 const Who = ({ who = '' }) => {
 	if (!who?.length) return <></>;
 	return (
-		<div className="who">
 			<Link href={makeMusicianLink(who)}>{who}</Link>
-		</div>
 	);
 }
 
@@ -135,7 +134,7 @@ const TrackComments = ({ comments = [] }) => {
 						<i>{c.said}</i>
 						{showAttribution({
 							...c
-						})}
+						}, 'row')}
 					</div>
 				})}
 		</div>
@@ -241,9 +240,9 @@ const Musician = ({ url = '' }) => {
 			<div className="row">
 			<div className="panelContainer">
 				<Bio musician={musician} />
-				<Contact musician={musician} />
-			</div>
 			<CreditsOn musician={musician} />
+			</div>
+				<Contact musician={musician} />
 			<Reminisce musician={musician} />
 			<Gallery musician={musician} />
 			<Videos musician={musician} />

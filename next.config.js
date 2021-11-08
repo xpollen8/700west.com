@@ -7,10 +7,17 @@ module.exports = {
 				permanent: false,
 			},
 			{
+				source: '/videos/:path*',
+				destination: `${process.env.NEXT_PUBLIC_VIDEOS}/:path*`,
+				permanent: false,
+			},
+			/*
+			{
 				source: '/images/:path*',
 				destination: `${process.env.NEXT_PUBLIC_IMAGES}/:path*`,
 				permanent: false,
 			},
+			*/
 			{
 				source: '/feed',
 				destination: 'http://old.700west.com/htdb/feed',
