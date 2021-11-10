@@ -58,7 +58,7 @@ const releasesByMusician = (mus) => {
 	uniqueReleases.filter(f => f).forEach(({ artist, title, type, roles }) => {
 		const existing = ret.find(u => u.artist === artist && u.title == title && u.type === type);
 		if (existing) { // combine onto existing roles
-			existing.roles = [...new Set (existing.roles, roles)];
+			existing.roles = [...new Set (existing.roles.concat(roles))];
 		} else {
 			ret.push({ artist, title, type, compilation: (artist === 'Various Artists'), roles });
 		}
