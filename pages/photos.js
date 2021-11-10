@@ -4,11 +4,7 @@ import { Page } from './_app';
 import { Item } from '../lib/helpers';
 import { cleanName } from '../components/Muso';
 
-const musicianLink = (mus) => {
-	return (
-		<Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
-	)
-}
+const musicianLink = (mus) => <Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
 
 const data = [
 	{
