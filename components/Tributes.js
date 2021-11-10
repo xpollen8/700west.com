@@ -6,7 +6,7 @@ const makeTribute = (item, key) => <Item key={key} bold={makeAuthor(item.author,
 const Tributes = () => {
 	const ret = [];
 	releases.forEach(r => {
-		r.addendum.forEach(a => {
+		r?.addendum?.forEach(a => {
 			if (a.type === 'reminiscence') {
 				ret.push(a);
 			}
