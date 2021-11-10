@@ -365,7 +365,9 @@ a[target="new"]:hover {
 	width: auto;
 }
 
-
+.attribution {
+	border-color: green;
+}
 
 
 

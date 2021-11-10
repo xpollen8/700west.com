@@ -11,6 +11,7 @@ const AKAs = {
 	'Dan Gustin': [ 'Danny Gustin' ],
 	'Dave Zerfas': [ 'David Zerfas' ],
 	'James Massie': [ 'Red Massie' ],
+	'Jack Schaefele': [ 'Jack Schafele', 'Jack Schfele' ],
 };
 
 const isAKA = (name) => {

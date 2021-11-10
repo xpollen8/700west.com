@@ -5,6 +5,20 @@ import { Page } from '../pages/_app';
 import { makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
 import { getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
 import musicianExtra from '../lib/musicians';
+import musicianMemoriam from '../lib/memoriam';
+
+const Memoriam = ({ musician }) => {
+	const deceased = musicianMemoriam.find(m => m?.name === musician);
+	if (!deceased) return <></>;
+	return (
+		<div className="row">
+			{(deceased?.date) && <Datum k={`Deceased`} v={makeDate(deceased?.date)} />}
+			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
+			{(deceased?.played) && <Datum k={`Played`} v={deceased?.played} />}
+			{(deceased?.for) && <Datum k={`For`} v={deceased?.for} />}
+		</div>
+	)
+}
 
 const Release = (release, key) => {
 	const href = `${makeReleaseLink(release?.artist, release?.title)}${(release?.type === 'single') ? '-7' : ''}`;
@@ -62,7 +76,7 @@ const showAttribution = (attr, className) => {
 	const { original, who, date, added } = attr || {};
 	if (!(original || who || date)) return <></>;
 	return (
-		<div className={className}>
+		<div className={`${className} attribution`}>
 			<Datum k="Source" v={original} />
 			{who && <Datum k="Author" v=<Who who={who} /> />}
 			{added && <Datum k="Added" v={makeDate(added)} />}
@@ -197,13 +211,13 @@ const Videos = ({ musician }) => {
 	);
 }
 
-const Contact = ({ musician }) => {
-	const contact = musicianExtra[musician]?.contact || {};
-	if (!(Object.keys(contact)?.length)) return <></>;
+const Online = ({ musician }) => {
+	const online = musicianExtra[musician]?.online || {};
+	if (!(Object.keys(online)?.length)) return <></>;
 	return (
 		<div>
-			<h3>Contact</h3>
-			{contact?.website && <li className="row"><Link href={contact.website}>{contact.website}</Link></li>}
+			<h3>Online</h3>
+			{online?.website && <li className="row"><Link href={online.website}>{online.website}</Link></li>}
 		</div>
 	);
 }
@@ -236,14 +250,15 @@ const Musician = ({ url = '' }) => {
 		<Page title="Musicians" link="musicians" description={`Musician: ${musician}`}>
 			<center><div className="artist"><b>{musician}</b></div>
 			<AKA musician={musician} />
+			<Memoriam musician={musician} />
 			</center>
 			<div className="row">
 			<div className="panelContainer">
 				<Bio musician={musician} />
 			<CreditsOn musician={musician} />
 			</div>
-				<Contact musician={musician} />
-			<Reminisce musician={musician} />
+				<Online musician={musician} />
+			{/*<Reminisce musician={musician} />*/}
 			<Gallery musician={musician} />
 			<Videos musician={musician} />
 			</div>
