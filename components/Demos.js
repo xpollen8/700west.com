@@ -3,8 +3,8 @@ import releases from '../lib/releases';
 import { Item, dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
 
 const makeDemoBlurb = (item, key) => {
-	const thumb = item.image[0]?.thumb || item.publicity[0]?.image || `missingCover.jpg`;
-	const directory = item.image[0]?.thumb ? 'covers' : (item.publicity[0]?.image ? 'publicity' : 'covers');
+	const thumb = (item?.image && item?.image[0]?.thumb) || (item?.publicity && item?.publicity[0]?.image) || `missingCover.jpg`;
+	const directory = (item?.image && item?.image[0]?.thumb) ? 'covers' : ((item?.publicity && item?.publicity[0]?.image) ? 'publicity' : 'covers');
 
 	return <Item key={key}
 		extra={<>
@@ -14,7 +14,7 @@ const makeDemoBlurb = (item, key) => {
 				width={125}
 				height={125} /></a>
 			<p>
-			<a className="single artist" href={makeReleaseLink(item.artist, item.title)}>{item.artist} - {item.title}</a><span className="date ago">{item.published}</span>
+			<a className="single artist" href={makeReleaseLink(item.artist, item.title)}>{item.artist} - {item.title}</a> {item.published && <span className="date ago">{item.published}</span>}
 			</p>
 		</>}
 	/>

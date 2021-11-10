@@ -57,7 +57,7 @@ const makeAddendum = (item, addendum = 0) => {
 
 const Covers = (release) => {
 	return <div className="release panel">
-		{release.image.map((i, key) => (
+		{release?.image?.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
 			src={`/images/covers/${i.thumb}`}
 			height="125"

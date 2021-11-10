@@ -12,6 +12,7 @@ const AKAs = {
 	'Dave Zerfas': [ 'David Zerfas' ],
 	'James Massie': [ 'Red Massie' ],
 	'Jack Schaefele': [ 'Jack Schafele', 'Jack Schfele' ],
+	'Boobie Townsend': [ 'Master "Boobie" Townsend' ],
 };
 
 const isAKA = (name) => {
