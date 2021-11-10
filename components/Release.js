@@ -198,6 +198,7 @@ const HeaderData = (release) => (
 	<>
 		<div className="header">
 			<Datum k="Published" v={release.published} />
+			<Datum k="Mastering" v={release.mastering} />
 			<Datum k="Label" v={release.label} />
 			<Datum k="Serial" v={release.id} />
 			<Datum k="Contact" v={release.url} />

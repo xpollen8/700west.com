@@ -13,6 +13,7 @@ const AKAs = {
 	'James Massie': [ 'Red Massie' ],
 	'Jack Schaefele': [ 'Jack Schafele', 'Jack Schfele' ],
 	'Boobie Townsend': [ 'Master "Boobie" Townsend' ],
+	'Jim Hubler': [ 'W. J. Hubler, Jr.' ],
 };
 
 const isAKA = (name) => {
@@ -41,7 +42,7 @@ const releasesByMusician = (mus) => {
 				type: r.type,
 				roles: c?.did,
 			})
-		}) || [];
+		}).filter(f => f) || [];
 		const tracks = r?.tracks.map(t => t?.credits?.filter(c => isAKA(c.who) === mus)?.map(c => {
 			return ({
 				artist: (r.type !== 'single') ? r.artist : r.tracks[0]?.artist,
@@ -49,13 +50,16 @@ const releasesByMusician = (mus) => {
 				type: r.type,
 				roles: c?.did,
 			})
-		})) || [];
+		})).filter(f => f) || [];
 
 		return releases.concat(...tracks);
 	}));
 	const ret = [];
 	uniqueReleases.filter(f => f).forEach(({ artist, title, type, roles }) => {
-		if (!ret.find(u => u.artist === artist && u.title == title && u.type === type)) {
+		const existing = ret.find(u => u.artist === artist && u.title == title && u.type === type);
+		if (existing) { // combine onto existing roles
+			existing.roles = [...new Set (existing.roles, roles)];
+		} else {
 			ret.push({ artist, title, type, compilation: (artist === 'Various Artists'), roles });
 		}
 	});

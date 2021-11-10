@@ -10,7 +10,7 @@ const makeSingleBlurb = (item, key) => {
 	const href = makeReleaseLink(item.tracks[0].artist, item.tracks[0].title) + `${alsoAlbum ? '-7' : ''}`;
 	return <Item key={key}
 		extra={<>
-			<a className="single artist" href={href}>{artistA}</a><span className="date ago">{item.published}</span>
+			<a className="single artist" href={href}>{artistA}</a> {item.published && <span className="date ago">{item.published}</span>}
 			<div className="single sideA">A: "{item.tracks[0].title}"</div>
 			{(artistA !== artistB) &&
 				<div className="single artist">{artistB}</div>
