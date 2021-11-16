@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
-import { dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
+import { Item, dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
 import News from './News';
 
 const makeAlbumBlurb = (item, key) => {
@@ -28,15 +28,18 @@ const Albums = () => (
 	</p>
 	</div>
 	<News slug='bandcampRelease' />
-	<hr/>
-	<b>Albums released on the 700 West label</b>
-		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
-			{releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)}
-		</div>
-	<b>Albums recorded at 700 West, released on other labels</b>
-		<div className="row" style={{ textAlign: 'center', margin: '15px' }}>
-			{releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)}
-		</div>
+	<Item
+		bold={`Albums released on the 700 West label`}
+		body={
+			releases.filter(r => r.type === 'album' && r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)
+		}
+	/>
+	<Item
+		bold={`Albums recorded at 700 West, released on other labels`}
+		body={
+			releases.filter(r => r.type === 'album' && !r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)
+		}
+	/>
 	</>
 )
 

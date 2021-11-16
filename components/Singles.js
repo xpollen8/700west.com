@@ -22,16 +22,20 @@ const makeSingleBlurb = (item, key) => {
 
 const Singles = () => (
 	<>
-		<b>Singles released on the 700 West label</b>
-		<blockquote className="panelContainer">
-		{releases.filter(r => r.type === 'single' &&
-			r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
-		</blockquote>
-		<b>Singles recorded at 700 West, released on other labels</b>
-		<blockquote className="panelContainer">
-		{releases.filter(r => r.type === 'single' &&
-			!r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
-		</blockquote>
+ 		<Item bold={`Singles released on the 700 West label`}
+ 			body={
+ 			<div className="panelContainer">
+ 			{releases.filter(r => r.type === 'single' &&
+ 				r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
+ 			</div>
+ 		}/>
+ 		<Item bold={`Singles recorded at 700 West, released on other labels`}
+ 			body={
+ 			<div className="panelContainer">
+ 			{releases.filter(r => r.type === 'single' &&
+ 				!r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
+ 			</div>
+ 		}/>
 	</>
 )
 
