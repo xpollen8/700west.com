@@ -27,6 +27,11 @@ module.exports = {
 				permanent: false,
 			},
 			{
+				source: '/htdb/history.html',
+				destination: '/',
+				permanent: false,
+			},
+			{
 				source: '/htdb/releases/singles.html',
 				destination: '/singles',
 				permanent: false,
