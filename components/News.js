@@ -3,6 +3,24 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
+		slug: 'RIP',
+	date: 'Thu Jan 20 09:46:48 PST 2022',
+	title: 'Moe',
+	author: 'David Whittemore',
+	body: () =>
+		<p>
+		Moe died with music and family present.
+		<br/><br/>
+		A brilliant man, dead from a contageous disease spread via malicious indifference.
+		<br/><br/>
+		<Image src="/images/nuvo2012/1330513254-img_2730.jpg" width={'500'} height={'333'} />
+		<br/>
+		Maurice James Whittemore, Jr.
+		<br/>
+		1934-09-30 - 2022-01-20
+		</p>
+	},
+	{
 	date: 'Sat Nov  6 17:41:19 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
