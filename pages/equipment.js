@@ -87,6 +87,7 @@ const data = [
 		items: [
 				<>
 					Neumann U-47 (1957 vintage) - (sold to Dave Meador)
+				<a href={`/images/equipment/u47.jpg`}><Image src={`/images/equipment/u47.jpg`} width="267" height="547" /></a>
 				</>,
 				<>
 					Sony C-37A - (sold to B.J. Rogers)
