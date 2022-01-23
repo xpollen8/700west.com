@@ -105,6 +105,15 @@ const data = [
 			{musicianLink('Kevin Stonerock')} in the studio
 			</>,
 	},
+	{
+		src: `/images/Stonerock:Herr@700West.jpg`,
+		thumb: `/images/Stonerock:Herr@700West.jpg`,
+		width: 1022,
+		height: 690,
+		caption: <>
+			{musicianLink('Kevin Stonerock')} in the studio ({musicianLink('Paul Herr')} on drums)
+			</>,
+	},
 ];
 
 const Photos = () => (
