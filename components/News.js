@@ -18,6 +18,8 @@ const newsItems = [
 		Maurice James Whittemore, Jr.
 		<br/>
 		1934-09-30 - 2022-01-20
+		<br/><br/>
+		<a href="https://www.stillingerfamilyfuneralhome.com/obituaries/Maurice-James-Whittemore-Jr?obId=23781211#/obituaryInfo">Funeral home obituary</a>
 		</p>
 	},
 	{
