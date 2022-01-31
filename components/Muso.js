@@ -5,7 +5,7 @@ const cleanName = (value) => value.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/g
 const makeMusicianLink = (musician) => `/musician/` + cleanName(isAKA(musician));
 
 const AKAs = {
-	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr' ],
+	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
 	'Dan Gustin': [ 'Danny Gustin' ],
