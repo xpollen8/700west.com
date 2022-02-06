@@ -324,7 +324,7 @@ const Promo = ({ publicity = [] }) => {
 			<SectionHeader text="Original Promotional Material" />
 			<ul>
 			{publicity.map(({ image, width, height, caption }, key) => (
-				return (<li key={key}>
+				<li key={key}>
 					<Link href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
