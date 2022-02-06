@@ -5,6 +5,7 @@ import releases from '../lib/releases';
 import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink } from '../lib/helpers';
 import { makeMusicianLink } from './Muso';
 import Albums from './Albums';
+import Promo from './Promo';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 
@@ -321,12 +322,12 @@ const LinerNotes = ({ liner = '' }) => {
 const Promo = ({ publicity = [] }) => {
 	if (publicity.length) {
 		return <>
-			<SectionHeader text="Original Promotional Material " />
+			<SectionHeader text="Original Promotional Material" />
 			<ul>
 			{publicity.map(({ image, width, height, caption }, key) => (
-				<li key={key}>
-					<Link href={`/images/publicity/${image}`}><Image
-						src={`/images/publicity/${image}`}
+				return (<li key={key}>
+					<Link href={`/images/publicity/${image}.jpg`}><Image
+						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
 						width={width} height={height} /></Link>
 					{(caption) && <i>{caption}</i>}

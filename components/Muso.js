@@ -107,4 +107,16 @@ const musiciansByBand = (band) => {
 	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 
-module.exports = { getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+const publicityByBand = ({ band }) => {
+	const X = releases.filter(r => {
+		const inArtist = r?.artist === band;
+		const inSingle = r?.type === 'single' && r?.tracks?.filter(t => {
+			return t?.artist === band
+		})?.length;
+		return (inArtist || inSingle) && r?.publicity?.length;
+	});
+	console.log("X", X);
+	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
+}
+
+module.exports = { publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }

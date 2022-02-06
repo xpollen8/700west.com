@@ -2,8 +2,30 @@ import Image from 'next/image';
 import { Page } from '../pages/_app';
 
 import Link from 'next/link';
-import { getBandNames, releasesByBand, musiciansByBand, makeMusicianLink } from './Muso';
-import { makeBandLink, makeReleaseLink } from '../lib/helpers';
+import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink } from './Muso';
+import { SectionHeader, makeBandLink, makeReleaseLink } from '../lib/helpers';
+
+const Publicity = (band) => {
+	const publicity = publicityByBand(band)[0]?.publicity;
+	console.log("Publicity", publicity);
+	if (publicity?.length) {
+		return <>
+			<SectionHeader text="Original Promotional Material" />
+			<ul>
+			{publicity.map(({ image, width, height, caption }, key) => (
+				<li key={key}>
+					<Link href={`/images/publicity/${image}.jpg`}><Image
+						src={`/images/publicity/${image}_thumb.jpg`}
+						alt="publicity shot"
+						width={width} height={height} /></Link>
+					{(caption) && <i>{caption}</i>}
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
 
 const Releases = ({ band }) => {
 	const releases = releasesByBand(band);
@@ -12,6 +34,7 @@ const Releases = ({ band }) => {
 	const appeared = releases.filter(r => r?.artist === 'Various Artists');
 	return (
 			<>
+				<Publicity band={band} />
 				{!!(released?.length) && <>
 				<h3>Released</h3>
 				{released.map((r, key) => {
