@@ -9,7 +9,7 @@ const makeDemoBlurb = (item, key) => {
 	return <Item key={key}
 		extra={<>
 			<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
-				src={thumb ? `/images/${directory}/${thumb}_thumb.jpg` : `missingCover.jpg`}
+				src={thumb ? `/images/${directory}/${thumb}_thumb.jpg` : `/images/${directory}/missingCover.jpg`}
 				alt={`${item.artist} - ${item.title}`}
 				width={125}
 				height={125} /></a>
