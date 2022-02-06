@@ -5,7 +5,6 @@ import releases from '../lib/releases';
 import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink } from '../lib/helpers';
 import { makeMusicianLink } from './Muso';
 import Albums from './Albums';
-import Promo from './Promo';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 
