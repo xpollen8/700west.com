@@ -115,7 +115,6 @@ const publicityByBand = ({ band }) => {
 		})?.length;
 		return (inArtist || inSingle) && r?.publicity?.length;
 	});
-	console.log("X", X);
 	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 

@@ -3,13 +3,13 @@ import releases from '../lib/releases';
 import { Item, dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
 
 const makeDemoBlurb = (item, key) => {
-	const thumb = (item?.image && item?.image[0]?.thumb) || (item?.publicity && item?.publicity[0]?.image) || `missingCover.jpg`;
+	const thumb = (item?.image && item?.image[0]?.thumb) || (item?.publicity && item?.publicity[0]?.image);
 	const directory = (item?.image && item?.image[0]?.thumb) ? 'covers' : ((item?.publicity && item?.publicity[0]?.image) ? 'publicity' : 'covers');
 
 	return <Item key={key}
 		extra={<>
 			<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
-				src={`/images/${directory}/${thumb}`}
+				src={thumb ? `/images/${directory}/${thumb}_thumb.jpg` : `missingCover.jpg`}
 				alt={`${item.artist} - ${item.title}`}
 				width={125}
 				height={125} /></a>
