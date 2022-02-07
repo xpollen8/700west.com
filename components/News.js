@@ -3,9 +3,24 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
+	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+	date: '2202-01-27',
+	title: 'WYFI: Moe Whittemore and 700 West',
+	linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/moe-whittemore-and-700-west',
+	linkExternalTitle: 'Original Article',
+	body: () =>
+		<p>
+		This week we'll listen back to our 2015 interview with Moe Whittemore, who passed away recently. In the 1970s, Moe opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Moe recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
+		<li> Listen here<AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
+			title={`Kyle Long's Retrospective`} /></li>
+		</p>
+	},
+	{
 		slug: 'RIP',
 	date: 'Thu Jan 20 09:46:48 PST 2022',
 	title: 'Moe',
+	linkExternal: 'https://www.stillingerfamilyfuneralhome.com/obituaries/Maurice-James-Whittemore-Jr?obId=23781211#/obituaryInfo',
+	linkExternalTitle: 'Funeral home obituary',
 	author: 'David Whittemore',
 	body: () =>
 		<p>
@@ -13,13 +28,13 @@ const newsItems = [
 		<br/><br/>
 		A brilliant man, dead from a contageous disease spread via malicious indifference.
 		<br/><br/>
-		<Image src="/images/nuvo2012/1330513254-img_2730.jpg" width={'500'} height={'333'} />
+		We encourage you to <a href="/feedback">leave your thoughts</a>
+		<br/><br/>
+		<Image src="/images/cman-22-01-26.png" width={'750'} height={'420'} />
 		<br/>
 		Maurice James Whittemore, Jr.
 		<br/>
 		1934-09-30 - 2022-01-20
-		<br/><br/>
-		<a href="https://www.stillingerfamilyfuneralhome.com/obituaries/Maurice-James-Whittemore-Jr?obId=23781211#/obituaryInfo">Funeral home obituary</a>
 		</p>
 	},
 	{
