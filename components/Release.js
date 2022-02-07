@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink } from '../lib/helpers';
+import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
 import { makeMusicianLink } from './Muso';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
@@ -400,13 +400,14 @@ const Comments = ({ comments = [], sales = [] }) => {
 			if (comments.length) {
 				return <>
 					<SectionHeader text="Comments" />
-					{comments.map(({ who, date, said }, key) => (
+					{comments.map(({ who, date, said, source }, key) => (
 						<p key={key} className="row">
 							<div style={{ padding: '10px' }}>
 								<i>{said}</i>
 								<div style={{ padding: '10px' }}>
 									<Who who={who} />
 									{exists(date) && makeDate(date)}
+									{exists(source) && makeSource(source)}
 								</div>
 							</div>
 						</p>

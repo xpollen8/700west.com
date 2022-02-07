@@ -279,6 +279,10 @@ a[target="new"]:hover {
 .date.ago::after {
 	content: ") ";
 }
+.source {
+	font-size: 0.8em;
+	color: #999;
+}
 .contact {
 	margin-left: 5px;
 	link-color: #666;
