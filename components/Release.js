@@ -274,6 +274,7 @@ const DemoHeader = (release) => (
 			<HeaderData {...release} />
 		</div>
 		<Covers {...release } />
+		<YellowSheets {...release } />
 	</div>
 	<Promo {...release} />
 	</>
@@ -318,6 +319,25 @@ const LinerNotes = ({ liner = '' }) => {
 	return <></>;
 }
 
+const YellowSheets = ({ sheets = [] }) => {
+	if (sheets.length) {
+		return <>
+			<SectionHeader text="Moe's 'yellow sheets' for this recording session" />
+			<ul>
+			{sheets.map(({ image, width, height, caption }, key) => (
+				<li key={key}>
+					<Link href={`/images/sessions/${image}.jpg`}><Image
+						src={`/images/sessions/${image}_thumb.jpg`}
+						alt="Moe's Session Sheets"
+						width={width} height={height} /></Link>
+					{(caption) && <i>{caption}</i>}
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
 const Promo = ({ publicity = [] }) => {
 	if (publicity.length) {
 		return <>
