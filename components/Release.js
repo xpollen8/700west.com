@@ -228,6 +228,7 @@ const MakeSingle = (single) => (
 			<Panel side='A' tracks={single.tracks} key={1} />
 			<Panel side='B' tracks={single.tracks} key={2} />
 		</div>
+		<YellowSheets {...single } />
 	</>
 )
 
@@ -255,14 +256,19 @@ const MakeAlbum = (album) => {
 				<Panel side='A' tracks={album.tracks} key={1} />
 				<Panel side='B' tracks={album.tracks} key={2} />
 			</div>
+			<YellowSheets {...album } />
 		</>
 	} else if (hasTracks) {
 		return <>
 			<AlbumHeader {...album} />
 			<Panel tracks={album.tracks} />
+			<YellowSheets {...album } />
 		</>
 	}
-	return <AlbumHeader {...album} />
+	return <>
+		<AlbumHeader {...album} />
+		<YellowSheets {...album } />
+	</>
 }
 
 const DemoHeader = (release) => (
@@ -274,7 +280,6 @@ const DemoHeader = (release) => (
 			<HeaderData {...release} />
 		</div>
 		<Covers {...release } />
-		<YellowSheets {...release } />
 	</div>
 	<Promo {...release} />
 	</>
@@ -282,13 +287,11 @@ const DemoHeader = (release) => (
 
 const MakeDemo = (demo) => {
 	const hasTracks = demo.tracks[0];
-	if (hasTracks) {
-		return <>
-			<DemoHeader {...demo} />
-			<Panel tracks={demo.tracks} />
-		</>
-	}
-	return <DemoHeader {...demo} />
+	return <>
+		<DemoHeader {...demo} />
+		{hasTracks && <Panel tracks={demo.tracks} />}
+		<YellowSheets {...demo } />
+	</>
 }
 
 const Credits = ({ credits = [] }) => {
