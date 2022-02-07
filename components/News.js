@@ -11,7 +11,7 @@ const newsItems = [
 	body: () =>
 		<p>
 		This week we'll listen back to our 2015 interview with Moe Whittemore, who passed away recently. In the 1970s, Moe opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Moe recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
-		<li> Listen here<AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
+		<li><AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
 			title={`Kyle Long's Retrospective`} /></li>
 		</p>
 	},
@@ -78,7 +78,7 @@ const newsItems = [
 		Wide-ranging topics.
 		</p>
 		<p>
-		<li> Listen here<AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
+		<li><AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
 			title='Kyle Long interviews Moe Whittemore' /></li>
 		</p>
 		</>
@@ -133,7 +133,7 @@ const newsItems = [
 		This hour-long program featured many tracks from the <a href="https://700west.bandcamp.com/album/best-of-700-west-volume-2" target="new"><b>Best of 700 West Vol. II</b></a>
 		</p>
 		<p>
-		<li> Listen here<AudioPlayer mp3='20190426_WFYI_Interview.mp3'
+		<li><AudioPlayer mp3='20190426_WFYI_Interview.mp3'
 			title='Kyle Long interviews Moe Whittemore' /></li>
 		</p>
 		</>
