@@ -15,7 +15,8 @@ const Memoriam = ({ musician }) => {
 			{(deceased?.date) && <Datum k={`Deceased`} v={makeDate(deceased?.date)} />}
 			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 			{(deceased?.played) && <Datum k={`Played`} v={deceased?.played} />}
-			{(deceased?.for) && <Datum k={`For`} v={deceased?.for} />}
+			{(deceased?.for) && <Datum k={`For`} v={(deceased?.forLink) ? <a href={`${deceased?.forLink}`}>{deceased.for}</a> : <>{deceased.for}</>}
+			/>}
 		</div>
 	)
 }
