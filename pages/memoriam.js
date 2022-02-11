@@ -1,15 +1,15 @@
 import { Page } from './_app';
 import { Item } from '../lib/helpers';
+import { makeMusicianLink } from '../components/Muso';
 import memoriam from '../lib/memoriam';
 
 const Memoriam = (mem, key) => (
 	<Item key={key}
-		bold={mem.name}
+		bold={<a href={makeMusicianLink(mem.name)}>{mem.name}</a>}
 		info={
 			<>
 			<div>Played: {mem.played}</div>
-			<div>For: 
-				{(mem?.forLink) ? <a href={`${mem?.forLink}`}>{mem.for}</a> : <>{mem.for}</>}
+			<div>For: {(mem?.forLink) ? <a href={`${mem?.forLink}`}>{mem.for}</a> : <>{mem.for}</>}
 			</div>
 			{mem?.link && <>Link: <a href={mem.link}>{mem?.linkText || 'Offsite Information'}</a></>}
 			</>
