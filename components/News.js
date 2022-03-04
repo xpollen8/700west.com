@@ -84,6 +84,8 @@ const newsItems = [
 		tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
 		date: '2017-10-17',
 		title: 'Cultural Manifesto: Interview of Moe Whittemore #1',
+		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittemore',
+		linkExternalTitle: 'Original Article',
 		body: () =>
 		<>
 		<p style={{ textAlign: 'center'}}>
