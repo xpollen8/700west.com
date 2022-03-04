@@ -4,15 +4,28 @@ import Image from 'next/image';
 const newsItems = [
 	{
 	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
-	date: '2202-01-27',
-	title: 'WYFI: Moe Whittemore and 700 West',
+	date: '2022-02-11',
+	title: 'Echoes Of Indiana Avenue: Indiana Avenue at 700 West',
+	linkExternal: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/indiana-avenue-at-700-west',
+	linkExternalTitle: 'Original Article',
+	body: () =>
+		<p>
+		This week, we'll pay tribute to the late Moe Whittemore. During the 1970s, Moe ran the 700 West record label and recording studio from his family’s home in New Palestine, IN. Moe recorded some of the Avenue’s most respected funk and soul musicians at 700 West, including The Vanguards, Amnesty, Ebony Rhythm Funk Campaign, and the Words of Wisdom, a group founded by host Herman "Butch" Slaughter. 
+		<li><AudioPlayer mp3='2022-02-11_ECHO_1074_4721.mp3'
+			title={`Indiana Avenue at 700 West`} /></li>
+		</p>
+	},
+	{
+	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+	date: '2022-01-27',
+	title: 'Cultural Manifesto: Moe Whittemore and 700 West',
 	linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/moe-whittemore-and-700-west',
 	linkExternalTitle: 'Original Article',
 	body: () =>
 		<p>
 		This week we'll listen back to our 2015 interview with Moe Whittemore, who passed away recently. In the 1970s, Moe opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Moe recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
 		<li><AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
-			title={`Kyle Long's Retrospective`} /></li>
+			title={`Moe Whittemore and 700 West`} /></li>
 		</p>
 	},
 	{
@@ -70,7 +83,7 @@ const newsItems = [
 		slug: 'manifesto2017',
 		tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
 		date: '2017-10-17',
-		title: 'WFYI interview of Moe Whittemore #1',
+		title: 'Cultural Manifesto: Interview of Moe Whittemore #1',
 		body: () =>
 		<>
 		<p>
@@ -120,7 +133,7 @@ const newsItems = [
 		slug: 'manifesto',
 		tags: [ 'event:interview', 'album:Best_of_700_West_Volume_II', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
 		date: '2019-04-26',
-		title: 'WFYI interview of Moe Whittemore #2',
+		title: 'Cultural Manifesto: Interview of Moe Whittemore #2',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittmore',
 		linkExternalTitle: 'Original Article',
 		body: () =>
