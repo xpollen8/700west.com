@@ -86,6 +86,9 @@ const newsItems = [
 		title: 'Cultural Manifesto: Interview of Moe Whittemore #1',
 		body: () =>
 		<>
+		<p style={{ textAlign: 'center'}}>
+		<Image src="/images/cman-17-10-11.jpg" width={'533'} height={'420'} />
+		</p>
 		<p>
 		Kyle will speak with the mad scientist of Indiana music, Moe Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Moe recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
 		</p>
