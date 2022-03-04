@@ -87,8 +87,7 @@ const newsItems = [
 		body: () =>
 		<>
 		<p>
-		WFYI's Kyle Long's first "Cultural Manifesto" visit to the old 700 West studio to interview Moe Whittemore.
-		Wide-ranging topics.
+		Kyle will speak with the mad scientist of Indiana music, Moe Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Moe recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
 		</p>
 		<p>
 		<li><AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
