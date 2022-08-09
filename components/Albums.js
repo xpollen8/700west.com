@@ -17,7 +17,7 @@ const Albums = () => (
 	<>
 	<div className="panelContainer">
 	<p>
-		Between 1972 and 1983, about 35 singles and 37 albums were recorded by Moe Whittemore
+		Between 1972 and 1983, about 35 singles and 37 albums were recorded by Mo Whittemore
 		at the 700 West Recording studio.  A select few were released on the 700 West label.
 		Others were released on other labels.
 		Today, these are highly-collectible records!

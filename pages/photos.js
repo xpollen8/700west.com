@@ -32,7 +32,7 @@ const data = [
 		height: 427,
 		date: `1976`,
 		caption: <>
-			{musicianLink('Moe')} at the controls, the new 8-channel Tascam 70-8 on his right.
+			{musicianLink('Mo')} at the controls, the new 8-channel Tascam 70-8 on his right.
 			</>,
 	},
 	{
@@ -42,7 +42,7 @@ const data = [
 		height: 393,
 		date: `1976`,
 		caption: <>
-			{musicianLink('Moe')} at the treated piano
+			{musicianLink('Mo')} at the treated piano
 			</>,
 	},
 	{
@@ -52,7 +52,7 @@ const data = [
 		height: 335,
 		date: `before 1976`,
 		caption: <>
-			{musicianLink('Moe Whittemore')}, {musicianLink('Dave Lovell')}. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
+			{musicianLink('Mo Whittemore')}, {musicianLink('Dave Lovell')}. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
 			and the 3M M23 4-track 1/2" recorder.  4-channel days.
 			</>,
 	},
@@ -70,7 +70,7 @@ const data = [
 		width: 500,
 		height: 489,
 		date: `1972`,
-		caption: `"Moe the hippie" AKA "disappointing his mother`,
+		caption: `"Mo the hippie" AKA "disappointing his mother`,
 	},
 	{
 		src: `/images/moe_1974.jpg`,
@@ -78,7 +78,7 @@ const data = [
 		width: 500,
 		height: 840,
 		date: `1974`,
-		caption: `Moe with homemade dulcimer, from local newspaper story.
+		caption: `Mo with homemade dulcimer, from local newspaper story.
 		The 4-channel 3M M23 1/2" recorder is over his shoulder`,
 	},
 	{

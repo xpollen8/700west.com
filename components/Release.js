@@ -325,13 +325,13 @@ const LinerNotes = ({ liner = '' }) => {
 const YellowSheets = ({ sheets = [] }) => {
 	if (sheets.length) {
 		return <>
-			<SectionHeader text="Moe's 'yellow sheets' for this recording session" />
+			<SectionHeader text="Mo's 'yellow sheets' for this recording session" />
 			<ul>
 			{sheets.map(({ image, width, height, caption }, key) => (
 				<li key={key}>
 					<Link href={`/images/sessions/${image}.jpg`}><Image
 						src={`/images/sessions/${image}_thumb.jpg`}
-						alt="Moe's Session Sheets"
+						alt="Mo's Session Sheets"
 						width={width} height={height} /></Link>
 					{(caption) && <i>{caption}</i>}
 				</li>

@@ -3,41 +3,41 @@ import Image from 'next/image';
 
 const newsItems = [
 	{
-	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 	date: '2022-02-11',
 	title: 'Echoes Of Indiana Avenue: Indiana Avenue at 700 West',
 	linkExternal: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/indiana-avenue-at-700-west',
 	linkExternalTitle: 'Original Article',
 	body: () =>
 		<p>
-		This week, we'll pay tribute to the late Moe Whittemore. During the 1970s, Moe ran the 700 West record label and recording studio from his family’s home in New Palestine, IN. Moe recorded some of the Avenue’s most respected funk and soul musicians at 700 West, including The Vanguards, Amnesty, Ebony Rhythm Funk Campaign, and the Words of Wisdom, a group founded by host Herman "Butch" Slaughter. 
+		This week, we'll pay tribute to the late Mo Whittemore. During the 1970s, Mo ran the 700 West record label and recording studio from his family’s home in New Palestine, IN. Mo recorded some of the Avenue’s most respected funk and soul musicians at 700 West, including The Vanguards, Amnesty, Ebony Rhythm Funk Campaign, and the Words of Wisdom, a group founded by host Herman "Butch" Slaughter. 
 		<li><AudioPlayer mp3='2022-02-11_ECHO_1074_4721.mp3'
 			title={`Indiana Avenue at 700 West`} /></li>
 		</p>
 	},
 	{
-	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 	date: '2022-01-27',
-	title: 'Cultural Manifesto: Moe Whittemore and 700 West',
+	title: 'Cultural Manifesto: Mo Whittemore and 700 West',
 	linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/moe-whittemore-and-700-west',
 	linkExternalTitle: 'Original Article',
 	body: () =>
 		<p>
-		This week we'll listen back to our 2015 interview with Moe Whittemore, who passed away recently. In the 1970s, Moe opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Moe recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
+		This week we'll listen back to our 2015 interview with Mo Whittemore, who passed away recently. In the 1970s, Mo opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Mo recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
 		<li><AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
-			title={`Moe Whittemore and 700 West`} /></li>
+			title={`Mo Whittemore and 700 West`} /></li>
 		</p>
 	},
 	{
 		slug: 'RIP',
 	date: 'Thu Jan 20 09:46:48 PST 2022',
-	title: 'Moe',
+	title: 'Mo',
 	linkExternal: 'https://www.stillingerfamilyfuneralhome.com/obituaries/Maurice-James-Whittemore-Jr?obId=23781211#/obituaryInfo',
 	linkExternalTitle: 'Funeral home obituary',
 	author: 'David Whittemore',
 	body: () =>
 		<p>
-		Moe died with music and family present.
+		Mo died with music and family present.
 		<br/><br/>
 		A brilliant man, dead from a contageous disease spread via malicious indifference.
 		<br/><br/>
@@ -81,9 +81,9 @@ const newsItems = [
 	},
 	{
 		slug: 'manifesto2017',
-		tags: [ 'event:interview', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+		tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 		date: '2017-10-17',
-		title: 'Cultural Manifesto: Interview of Moe Whittemore #1',
+		title: 'Cultural Manifesto: Interview of Mo Whittemore #1',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittemore',
 		linkExternalTitle: 'Original Article',
 		body: () =>
@@ -92,11 +92,11 @@ const newsItems = [
 		<Image src="/images/cman-17-10-11.jpg" width={'533'} height={'420'} />
 		</p>
 		<p>
-		Kyle will speak with the mad scientist of Indiana music, Moe Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Moe recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
+		Kyle will speak with the mad scientist of Indiana music, Mo Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Mo recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
 		</p>
 		<p>
 		<li><AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
-			title='Kyle Long interviews Moe Whittemore' /></li>
+			title='Kyle Long interviews Mo Whittemore' /></li>
 		</p>
 		</>
 	},
@@ -104,7 +104,7 @@ const newsItems = [
 		slug: 'urgent',
 		date: 'Sun Aug  1 22:03:27 PDT 2021',
 		author: 'David Whittemore',
-		title: 'Give Moe a call!',
+		title: 'Give Mo a call!',
 		linkInternal: '/contact',
 		linkInternalTitle: 'Drop him a note',
 		body: () =>
@@ -135,9 +135,9 @@ const newsItems = [
 	},
 	{
 		slug: 'manifesto',
-		tags: [ 'event:interview', 'album:Best_of_700_West_Volume_II', 'person:Kyle_Long', 'person:Moe_Whittemore' ],
+		tags: [ 'event:interview', 'album:Best_of_700_West_Volume_II', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 		date: '2019-04-26',
-		title: 'Cultural Manifesto: Interview of Moe Whittemore #2',
+		title: 'Cultural Manifesto: Interview of Mo Whittemore #2',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittmore',
 		linkExternalTitle: 'Original Article',
 		body: () =>
@@ -146,12 +146,12 @@ const newsItems = [
 		<Image src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
 		</p>
 		<p>
-		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Moe Whittemore.
+		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Mo Whittemore.
 		This hour-long program featured many tracks from the <a href="https://700west.bandcamp.com/album/best-of-700-west-volume-2" target="new"><b>Best of 700 West Vol. II</b></a>
 		</p>
 		<p>
 		<li><AudioPlayer mp3='20190426_WFYI_Interview.mp3'
-			title='Kyle Long interviews Moe Whittemore' /></li>
+			title='Kyle Long interviews Mo Whittemore' /></li>
 		</p>
 		</>
 	},
@@ -165,7 +165,7 @@ const newsItems = [
 			<Image src="/images/20150606_Nuvo_Interview.jpg" width={'1763'} height={'1175'} />
 			</p>
 			<p>
-				700 West's Moe Whittemore gets reissue
+				700 West's Mo Whittemore gets reissue
 			</p>
 			</>
 	},
@@ -192,18 +192,18 @@ const newsItems = [
 		<li> Uploaded audio for <AudioPlayer mp3='DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
 			band='Dan Mobley'
 			title='Colorado' /></li>
-		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Moe Whittemore 2013 Interview</a></li>
+		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a></li>
 		<li> Added <AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
 			title='Interview'
 			time='12.51'
-			comment='Dan Modlin interviews Moe Whittemore'
+			comment='Dan Modlin interviews Mo Whittemore'
 			date='2010' />
 		</li>
 		</ul>
 	},
 	{
 		date: 'Sat Mar  3 07:55:46 PST 2012',
-		author: 'Moe Whittemore',
+		author: 'Mo Whittemore',
 		title: 'Email Message',
 		linkInternal: '/releases/Mo-First_Album?addendum=6',
 		linkInternalTitle: 'Local copy of the 2012 Nuvo article',

@@ -42,7 +42,7 @@ const Listen = (props) => (
 				/>
 		</blockquote>
 
-		<span className="artist">Dan Modlin interviews Moe Whittemore <span className="date ago">2010</span></span>
+		<span className="artist">Dan Modlin interviews Mo Whittemore <span className="date ago">2010</span></span>
 		<blockquote className="row">
 			<AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
 				title='Interview'
@@ -89,7 +89,7 @@ const Listen = (props) => (
 
 	<SectionHeader text="M. J. Whittemore, Jr.'s Classical Compositions" />
 	<blockquote>
-		In 2003, Moe Whittemore returned to graduate school at Butler University
+		In 2003, Mo Whittemore returned to graduate school at Butler University
 		to complete the music degree he had started back in the 50's!
 		Here are his MIDI representations of the classical composition class assigments
 		- on which he received all A's

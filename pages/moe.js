@@ -3,7 +3,7 @@ import { SectionHeader } from '../lib/helpers';
 import { Page } from './_app';
 
 const App = (props) => {
-	return <Page title="Moe" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
+	return <Page title="Mo" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
 		<center>
 		<table border="0" cellPadding="5" cellSpacing="0">
 		<tr>
@@ -19,7 +19,7 @@ const App = (props) => {
 		(Recent contact info available
 		<a href="mailto:moe@700west.com">upon request</a>)
 		<p>
-			<a href="/releases/Mo-First_Album?addendum=5">Moe Whittemore 2013 Interview</a>)
+			<a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a>)
 		</p>
 		</td>
 		</tr>

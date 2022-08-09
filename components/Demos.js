@@ -45,7 +45,7 @@ const Demos = () => (
 			niche.
 			</i>
 		<p>
-			<b>Moe - 2001-02-03</b>
+			<b>Mo - 2001-02-03</b>
 		</p>
 		</blockquote>
 		<hr/>

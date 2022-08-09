@@ -81,7 +81,7 @@ const History = ({ rotating }) => (
 	Tomorrow" on CD.  Hang in, there!  There's more to come from 700 West!
 	</p>
 	<p>
-	<b>Moe</b> - 2001-02-03
+	<b>Mo</b> - 2001-02-03
 	</p>
 	</>
 )

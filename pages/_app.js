@@ -15,7 +15,7 @@ const links = [
 	{ href: '/equipment', text: 'Equipment' },
 	{ href: '/photos', text: 'Photos' },
 	{ href: '/listen', text: 'Listen!' },
-	{ href: '/moe', text: 'Moe Whittemore' },
+	{ href: '/moe', text: 'Mo Whittemore' },
 	{ href: '/tributes', text: 'Reminiscences' },
 	{ href: '/memoriam', text: 'In Memoriam' },
 	{ href: '/feedback', text: 'Comments' },
@@ -49,7 +49,7 @@ const Page = (props) => (
 	<>
 	<Head>
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<meta name="description" content="700 West Recording, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's" />
+		<meta name="description" content="700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's" />
 		<title> {props.title} </title>
 	</Head>
 	<div className='container'>

@@ -151,7 +151,7 @@ const data = [
 					<b>One Great Box!!</b>
 					</p>
 					<p>
-					Moe - 2018-02-24
+					Mo - 2018-02-24
 					</p>
 				</>,
 				<>
