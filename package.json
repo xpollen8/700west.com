@@ -12,7 +12,7 @@
     "mywrap": "github:xpollen8/mywrap",
     "next": "12.3.0",
     "react": "18.x",
-    "react-chartkick": "^0.5.1",
+    "react-chartkick": "^0.5.3",
     "react-dom": "18.x"
   }
 }
