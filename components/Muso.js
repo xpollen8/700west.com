@@ -121,4 +121,4 @@ const publicityByBand = ({ band }) => {
 	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 
-module.exports = { publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+export { publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
