@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "chart.js": "^4.1.2",
+    "chart.js": "^4.2.0",
     "mywrap": "github:xpollen8/mywrap",
     "next": "13.1.2",
     "react": "18.x",
