@@ -80,7 +80,6 @@ p {
 	color: white;
   grid-area: topper;
 	max-height: auto;
-	max-width: 1020;
 	padding: 1px;
 }
 .nav {	/* the navigation */
@@ -120,6 +119,7 @@ p {
 	padding: 1rem;
   grid-area: content;
 	border: 1px solid;
+	max-width: 1020;
 }
 
 @media (max-width: 750px) {
