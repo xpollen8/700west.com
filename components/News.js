@@ -162,7 +162,7 @@ const newsItems = [
 		body: () =>
 			<>
 			<p style={{ textAlign: 'center'}}>
-			<Image src="/images/20150606_Nuvo_Interview.jpg" width={'1763'} height={'1175'} />
+			<Image src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
 			</p>
 			<p>
 				700 West's Mo Whittemore gets reissue
