@@ -80,6 +80,7 @@ p {
 	color: white;
   grid-area: topper;
 	max-height: auto;
+	max-width: 1020;
 	padding: 1px;
 }
 .nav {	/* the navigation */
