@@ -43,7 +43,7 @@ const newsItems = [
 		<br/><br/>
 		We encourage you to <a href="/feedback">leave your thoughts</a>
 		<br/><br/>
-		<Image src="/images/cman-22-01-26.png" width={'750'} height={'420'} />
+		<Image src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
 		<br/>
 		Maurice James Whittemore, Jr.
 		<br/>
