@@ -36,7 +36,7 @@ p {
 }
 .centerWrapper {	/* wraps everything */
 	 display: grid;
-	 grid-template-columns: minmax(auto, 1020px);
+	 grid-template-columns: minmax(auto, 500px);
 	justify-content: center;
 }
 
