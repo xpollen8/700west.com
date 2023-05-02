@@ -119,7 +119,6 @@ p {
 	padding: 1rem;
   grid-area: content;
 	border: 1px solid;
-	max-width: 1020;
 }
 
 @media (max-width: 750px) {

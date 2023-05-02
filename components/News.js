@@ -302,7 +302,7 @@ const News = ({ slug, num }) => {
 	} else if (num) {
 		return NewsItem(newsItems[num - 1])
 	} else {
-		return <div className="panelContainer" width={'500'}>{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}</div>
+		return <div className="panelContainer">{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}</div>
 	}
 }
 
