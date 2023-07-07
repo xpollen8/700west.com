@@ -219,6 +219,7 @@ const Online = ({ musician }) => {
 		<div>
 			<h3>Online</h3>
 			{online?.website && <li className="row"><Link href={online.website}>{online.website}</Link></li>}
+			{online?.youtube && <li className="row"><Link href={online.youtube}>{online.youtube}</Link></li>}
 			{online?.email && <li className="row">Email available upon request</li>}
 		</div>
 	);
