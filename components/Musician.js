@@ -225,6 +225,20 @@ const Online = ({ musician }) => {
 	);
 }
 
+const Address = ({ musician }) => {
+	const address = musicianExtra[musician]?.address || {};
+	if (!(Object.keys(address)?.length)) return <></>;
+	return (
+		<div>
+			<h3>Location</h3>
+			<li className="row">
+			{address?.city && <span>{address.city}{' '}</span>}
+			{address?.state && <span>{address.state}{' '}</span>}
+			{address?.postalcode && <span>{address.postalcode}{' '}</span>}
+			</li>
+		</div>
+	);
+}
 const Reminisce = ({ musician }) => {
 	const reminiscences = musicianExtra[musician]?.reminiscences || {};
 	if (!(reminiscences)?.length) return <></>;
@@ -261,6 +275,7 @@ const Musician = ({ url = '' }) => {
 			<CreditsOn musician={musician} />
 			</div>
 				<Online musician={musician} />
+				<Address musician={musician} />
 			{/*<Reminisce musician={musician} />*/}
 			<Gallery musician={musician} />
 			<Videos musician={musician} />
