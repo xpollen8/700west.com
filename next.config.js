@@ -48,17 +48,14 @@ module.exports = {
 			{
 				source: '/tapes',
 				destination: 'http://tapes.700west.com',
-				permanent: false,
 			},
 			{
 				source: '/tapes/:path*',
 				destination: 'http://tapes.700west.com/:path*',
-				permanent: false,
 			},
 			{
 				source: '/manifestor',
 				destination: 'http://tapes.700west.com/manifestor',
-				permanent: false,
 			},
 		]
 	}
