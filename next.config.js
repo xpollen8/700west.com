@@ -22,6 +22,21 @@ module.exports = {
 				permanent: false,
 			},
 			{
+				source: '/tapes',
+				destination: 'http://tapes.700west.com',
+				permanent: false,
+			},
+			{
+				source: '/tapes/:path*',
+				destination: 'http://tapes.700west.com/:path*',
+				permanent: false,
+			},
+			{
+				source: '/manifestor',
+				destination: 'http://tapes.700west.com/manifestor',
+				permanent: false,
+			},
+			{
 				source: '/htdb/history.html',
 				destination: '/',
 				permanent: false,
@@ -42,21 +57,5 @@ module.exports = {
 				permanent: false,
 			},
 		]
-  },
-  async rewrites() {
-		return [
-			{
-				source: '/tapes',
-				destination: 'http://tapes.700west.com',
-			},
-			{
-				source: '/tapes/:path*',
-				destination: 'http://tapes.700west.com/:path*',
-			},
-			{
-				source: '/manifestor',
-				destination: 'http://tapes.700west.com/manifestor',
-			},
-		]
-	}
+  }
 }
