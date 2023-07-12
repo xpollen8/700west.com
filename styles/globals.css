@@ -367,14 +367,12 @@ a[target="new"]:hover {
 	font-weight: bold;
 }
 .chart {
-	width: auto;
+	width: 90%;
 }
 
 .attribution {
 	border-color: green;
 }
-
-
 
 .carousel-wrapper {
   overflow: hidden;

@@ -365,8 +365,8 @@ const Comments = ({ comments = [], sales = [] }) => {
 		const getSales = () => {
 			if (sales.length) {
 					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
-					const original = { name: 'Original', data: {} };
-					const reissue = { name: 'Re-Issue', data: {} };
+					const original = { name: 'Original Released Price', data: {} };
+					const reissue = { name: 'Re-Issued Release Price', data: {} };
 					sorted.forEach(({ date, price = '', said }) => {
 						const usePrice = price.replace(/[\$,]+/g, '');
 						if (said?.match(/issue/i)) {
@@ -377,7 +377,6 @@ const Comments = ({ comments = [], sales = [] }) => {
 					})
 					return <>
 						<SectionHeader text="Sales History" />
-
 						<div className="chart">
 							<LineChart width={'100%'} data={[original]} prefix="$" round={2} zeros={true} />
 						</div>
