@@ -28,9 +28,11 @@ const Publicity = (band) => {
 }
 
 const Releases = ({ band }) => {
-	const releases = releasesByBand(band);
+	const releases = releasesByBand(band)?.filter(r => r.type !== 'demo');
+	const demos = releasesByBand(band)?.filter(r => r.type === 'demo');
 	if (!releases?.length) { return <></> }
 	const released = releases.filter(r => r?.artist !== 'Various Artists');
+	const demoed = demos;
 	const appeared = releases.filter(r => r?.artist === 'Various Artists');
 	return (
 			<>
@@ -38,6 +40,22 @@ const Releases = ({ band }) => {
 				{!!(released?.length) && <>
 				<h3>Released</h3>
 				{released.map((r, key) => {
+					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
+					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
+					return (
+						<li key={key}>
+							<a href={makeReleaseLink(useBand, title)}>
+							<>
+								{title}
+							</>
+						</a> {`${(r.type !== 'album') ? `(${r.type})` : ''}`}
+						{r?.published && <span className="date ago">{r?.published}</span>}
+					</li>);
+				})}
+				</>}
+				{!!(demoed?.length) && <>
+				<h3>Demos</h3>
+				{demoed.map((r, key) => {
 					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
 					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
 					return (
