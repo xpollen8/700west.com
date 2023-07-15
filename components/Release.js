@@ -286,7 +286,7 @@ const DemoHeader = (release) => (
 )
 
 const MakeDemo = (demo) => {
-	const hasTracks = demo.tracks[0];
+	const hasTracks = demo?.tracks && demo.tracks[0];
 	return <>
 		<DemoHeader {...demo} />
 		{hasTracks && <Panel tracks={demo.tracks} />}
