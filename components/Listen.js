@@ -52,12 +52,17 @@ const Listen = (props) => (
 
 	<SectionHeader text="L.P. Tracks" />
 		<>
-			{releases.filter(r => r.type === 'album' && r.tracks.find(t => (t && t.audio && t.audio.length))).map(makeListenAlbum)}
+			{releases.filter(r => r.type === 'album' && r.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.artist.localeCompare(b.artist, undefined, { numeric: true })).map(makeListenAlbum)}
 		</>
 
 	<SectionHeader text='7" Tracks' />
 		<>
-			{releases.filter(r => r.type === 'single' && r.tracks.find(t => t.audio.length)).map(makeListenSingle)}
+			{releases.filter(r => r.type === 'single' && r.tracks.find(t => (t.audio && t.audio.length))).map(makeListenSingle)}
+		</>
+
+	<SectionHeader text='Demmo Session Tracks' />
+		<>
+			{releases.filter(r => r.type === 'demo' && r?.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.artist.localeCompare(b.artist, undefined, { numeric: true })).map(makeListenAlbum)}
 		</>
 
 	<SectionHeader text="Unreleased Material" />
