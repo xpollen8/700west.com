@@ -8,10 +8,10 @@ const History = ({ rotating }) => (
 	a big vacuum in affordable locations for bands to cut a quality demo.  This was to be our 
 	niche.
 	</p>
-	<p>
-	 <div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
+	<div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
 		<Image {...rotating } />
 	</div>
+	<p>
 	The demo tape was our specialty, although many <a href="/albums">albums</a> & <a href="/singles">singles</a> were generated during 
 	our 12 years of existence.  And with my 
 	electronics background, I wound up doing my share of instrument and amp repair - many 

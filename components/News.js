@@ -9,11 +9,11 @@ const newsItems = [
 	linkExternal: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/indiana-avenue-at-700-west',
 	linkExternalTitle: 'Original Article',
 	body: () =>
-		<p>
+		<ul>
 		This week, we'll pay tribute to the late Mo Whittemore. During the 1970s, Mo ran the 700 West record label and recording studio from his family’s home in New Palestine, IN. Mo recorded some of the Avenue’s most respected funk and soul musicians at 700 West, including The Vanguards, Amnesty, Ebony Rhythm Funk Campaign, and the Words of Wisdom, a group founded by host Herman "Butch" Slaughter. 
 		<li><AudioPlayer mp3='2022-02-11_ECHO_1074_4721.mp3'
 			title={`Indiana Avenue at 700 West`} /></li>
-		</p>
+		</ul>
 	},
 	{
 	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
@@ -22,11 +22,11 @@ const newsItems = [
 	linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/moe-whittemore-and-700-west',
 	linkExternalTitle: 'Original Article',
 	body: () =>
-		<p>
+		<ul>
 		This week we'll listen back to our 2015 interview with Mo Whittemore, who passed away recently. In the 1970s, Mo opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Mo recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
 		<li><AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
 			title={`Mo Whittemore and 700 West`} /></li>
-		</p>
+		</ul>
 	},
 	{
 		slug: 'RIP',
@@ -94,10 +94,10 @@ const newsItems = [
 		<p>
 		Kyle will speak with the mad scientist of Indiana music, Mo Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Mo recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
 		</p>
-		<p>
+		<ul>
 		<li><AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
 			title='Kyle Long interviews Mo Whittemore' /></li>
-		</p>
+		</ul>
 		</>
 	},
 	{
@@ -149,10 +149,10 @@ const newsItems = [
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Mo Whittemore.
 		This hour-long program featured many tracks from the <a href="https://700west.bandcamp.com/album/best-of-700-west-volume-2" target="new"><b>Best of 700 West Vol. II</b></a>
 		</p>
-		<p>
+		<ul>
 		<li><AudioPlayer mp3='20190426_WFYI_Interview.mp3'
 			title='Kyle Long interviews Mo Whittemore' /></li>
-		</p>
+		</ul>
 		</>
 	},
 	{
