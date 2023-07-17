@@ -11,9 +11,7 @@ const makeListenAlbum = ({ artist, title, tracks, multiArtist = false }, key) =>
 		<blockquote className="panelContainer">
 			{tracks.filter(t => t.audio && t.audio.length > 0).map((data, key) => (
 				<div key={key} className="row">
-					{AudioPlayer({
-						band: (multiArtist) ? data.artist: '',
-					...data })}
+					<AudioPlayer {...data} band={(multiArtist) ? data.artist: ''} />
 				</div>
 			))}
 		</blockquote>
@@ -57,7 +55,7 @@ const Listen = (props) => (
 
 	<SectionHeader text='7" Tracks' />
 		<>
-			{releases.filter(r => r.type === 'single' && r.tracks.find(t => (t.audio && t.audio.length))).map(makeListenSingle)}
+			{releases.filter(r => r.type === 'single' && r.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.tracks[0].artist.localeCompare(b.tracks[0].artist, undefined, { numeric: true })).map(makeListenSingle)}
 		</>
 
 	<SectionHeader text='Demmo Session Tracks' />
@@ -124,10 +122,10 @@ const Listen = (props) => (
 	<b>More Compositions</b>
 	<blockquote>
 		<div className="row">
-		<AudioPlayer mp3='ButlerStudentVolumeOne/Our4FeralKittens.mp3' title='Our 4 Feral Kittens'
-			time="4:52"
-			comment='Not really a classical composition...'
-			date='December 2003' />
+			<AudioPlayer mp3='ButlerStudentVolumeOne/Our4FeralKittens.mp3' title='Our 4 Feral Kittens'
+				time="4:52"
+				comment='Not really a classical composition...'
+				date='December 2003' />
 		</div>
 	</blockquote>
 	</>
