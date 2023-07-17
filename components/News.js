@@ -43,7 +43,7 @@ const newsItems = [
 		<br/><br/>
 		We encourage you to <a href="/feedback">leave your thoughts</a>
 		<br/><br/>
-		<img className="image" src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
+		<Image className="image" src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
 		<br/>
 		Maurice James Whittemore, Jr.
 		<br/>
@@ -143,7 +143,7 @@ const newsItems = [
 		body: () =>
 		<>
 		<p style={{ textAlign: 'center'}}>
-		<img className="image" src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
+		<Image className="image" src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
 		</p>
 		<p>
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Mo Whittemore.
@@ -162,7 +162,7 @@ const newsItems = [
 		body: () =>
 			<>
 			<p style={{ textAlign: 'center'}}>
-			<img className="image" src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
+			<Image className="image" src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
 			</p>
 			<p>
 				700 West's Mo Whittemore gets reissue
