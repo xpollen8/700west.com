@@ -43,7 +43,7 @@ const newsItems = [
 		<br/><br/>
 		We encourage you to <a href="/feedback">leave your thoughts</a>
 		<br/><br/>
-		<Image src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
+		<img className="image" src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
 		<br/>
 		Maurice James Whittemore, Jr.
 		<br/>
@@ -89,7 +89,7 @@ const newsItems = [
 		body: () =>
 		<>
 		<p style={{ textAlign: 'center'}}>
-		<Image src="/images/cman-17-10-11.jpg" width={'533'} height={'420'} />
+		<Image className="image" src="/images/cman-17-10-11.jpg" width={'533'} height={'420'} />
 		</p>
 		<p>
 		Kyle will speak with the mad scientist of Indiana music, Mo Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Mo recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
@@ -143,7 +143,7 @@ const newsItems = [
 		body: () =>
 		<>
 		<p style={{ textAlign: 'center'}}>
-		<Image src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
+		<img className="image" src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
 		</p>
 		<p>
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Mo Whittemore.
@@ -162,7 +162,7 @@ const newsItems = [
 		body: () =>
 			<>
 			<p style={{ textAlign: 'center'}}>
-			<Image src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
+			<img className="image" src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
 			</p>
 			<p>
 				700 West's Mo Whittemore gets reissue
@@ -278,7 +278,7 @@ const Tag = (tag, key) => (
 
 const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
 	<Item key={key} bold={title} author={author} date={date} body={<>
-		{body()}
+			{body()}
 		{linkInternal &&
 			<div className="news link">
 				<a href={linkInternal}>{linkInternalTitle}</a>
@@ -302,7 +302,9 @@ const News = ({ slug, num }) => {
 	} else if (num) {
 		return NewsItem(newsItems[num - 1])
 	} else {
-		return <div className="panelContainer">{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}</div>
+		return <blockquote className="panelContainer">
+			{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}
+		</blockquote>
 	}
 }
 

@@ -31,12 +31,10 @@ const Demos = () => (
 		Efforts are underway to digitize the remaining 1/4" 15IPS masters. Who knows? There may be
 		additional Best of Volumes!
 		</p>
-		<p>
-			<div style={{padding: "10px", width: '95%' }}>
-				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-			</div>
-		</p>
+		<div style={{padding: "10px", width: '95%' }}>
+			<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+			<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+		</div>
 		<blockquote>
 			<i>
 			700 West Recording was a place that catered to the musician.  Plenty of area studios
@@ -44,15 +42,15 @@ const Demos = () => (
 			a big vacuum in affordable locations for bands to cut a quality demo.  This was to be our
 			niche.
 			</i>
-		<p>
-			<b>Mo - 2001-02-03</b>
-		</p>
+			<p>
+				<b>Mo - 2001-02-03</b>
+			</p>
 		</blockquote>
 		<hr/>
 		<p>
 			<b>Demos sessions</b>
 		</p>
-		<div className="" style={{ margin: '15px' }}>
+		<div className="panelContainer" style={{ margin: '15px' }}>
 			{releases.filter(r => r.type === 'demo').sort(dateCompare).map(makeDemoBlurb)}
 		</div>
 	</>
