@@ -382,7 +382,7 @@ const Comments = ({ comments = [], sales = [] }) => {
 						</div>
 						{!!(Object.keys(reissue.data).length) &&
 							<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
-						<ul>
+						<ul className="panelContainer">
 						{sorted.map(({ date, said, price, where }, key) => (
 							<p key={key} className="row">
 									{exists(date) && <>

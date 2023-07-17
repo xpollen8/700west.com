@@ -121,7 +121,7 @@ const Photos = () => (
 		<blockquote className="panelContainer">
 			{data.map(({ src, thumb, width, height, alt, caption = '' }, key) => (
 				<Item key={key} extra={<div style={{ textAlign: 'center' }} >
-					<Link href={src}><Image src={thumb} width={width} height={height} alt={alt || caption} /></Link>
+					<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={alt || caption} /></Link>
 					<p>{caption}</p>
 					</div>}
 				/>

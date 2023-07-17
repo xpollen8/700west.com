@@ -39,7 +39,7 @@ const data = [
 				are worse!
 			</>,
 			<>
-				<a href={`/images/equipment/20150503_Console.jpg`}><Image src={`/images/equipment/20150503_Console_500.jpg`} width="500" height="334"/></a>
+				<a href={`/images/equipment/20150503_Console.jpg`}><Image className="image" src={`/images/equipment/20150503_Console_500.jpg`} width="500" height="334"/></a>
 				<br/>
 				700west 4 X 4 'consolette', with hyper-quiet mic amps for distant-mic jobs
 			</>
@@ -76,7 +76,7 @@ const data = [
 				Octave-band graphic equalizers
 			</>,
 			<>
-				<a href={`/images/equipment/20150505_SWT2ASA.jpg`}><Image src={`/images/equipment/20150505_SWT2ASA_500.jpg`} width="500" height="282" /></a>
+				<a href={`/images/equipment/20150505_SWT2ASA.jpg`}><Image className="image" src={`/images/equipment/20150505_SWT2ASA_500.jpg`} width="500" height="282" /></a>
 				<br/>
 				Delay lines: Southwest Tech Ambience Synthesizer 2AS-A
 			</>
@@ -87,7 +87,7 @@ const data = [
 		items: [
 				<>
 					Neumann U-47 (1957 vintage) - (sold to Dave Meador)
-				<a href={`/images/equipment/u47.jpg`}><Image src={`/images/equipment/u47.jpg`} width="267" height="547" /></a>
+				<a href={`/images/equipment/u47.jpg`}><Image className="image" src={`/images/equipment/u47.jpg`} width="267" height="547" /></a>
 				</>,
 				<>
 					Sony C-37A - (sold to B.J. Rogers)
