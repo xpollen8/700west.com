@@ -60,8 +60,8 @@ const Covers = (release) => {
 		{release?.image?.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
 			src={`/images/covers/${i.thumb}`}
-			height="125"
-			width="125"
+			height="250"
+			width="250"
 			alt="image" /></a>
 		))}
 	</div>
