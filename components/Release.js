@@ -298,13 +298,13 @@ const Credits = ({ credits = [] }) => {
 	if (credits.length) {
 		return <>
 			<SectionHeader text="Credits" />
-			<blockquote>
+			<p className="panelContainer">
 			{credits.map(({ who, did }, key) => (
-				<p key={key}>
+				<p key={key} className="row">
 					<Who who={who} /> {did && <p className="played">"{did?.join('", "')}"</p>}
 				</p>
 			))}
-			</blockquote>
+			</p>
 		</>
 	}
 	return <></>;
@@ -427,12 +427,14 @@ const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 	if (addendum.length) {
 		const href = makeReleaseLink(artist || tracks[0].artist, title || tracks[0].title);
 		return <>
-			<SectionHeader text="Auxiliary Materials)" />
+			<SectionHeader text="Auxiliary Materials" />
+			<div className="panelContainer">
 			{addendum.map((props, key) => (
 				<p key={key} className="row">
 					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</Link>
 				</p>
 			))}
+			</div>
 		</>
 	}
 	return <></>;
