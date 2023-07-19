@@ -78,10 +78,10 @@ const showAttribution = (attr, className) => {
 	if (!(original || who || date)) return <></>;
 	return (
 		<div className={`${className} attribution`}>
+			{exists(date) && makeDate(date)}
 			<Datum k="Source" v={original} />
 			{who && <Datum k="Author" v=<Who who={who} /> />}
 			{added && <Datum k="Added" v={makeDate(added)} />}
-			{exists(date) && makeDate(date)}
 		</div>
 	);
 }
