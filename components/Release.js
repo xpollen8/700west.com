@@ -187,9 +187,9 @@ const Panel = ({ side, tracks }) => {
 	} else {
 		return <>
 			<SectionHeader text="Tracks" />
-			<>
+			<div className="panelContainer">
 				{tracks.map(Track)}
-			</>
+			</div>
 		</>
 	}
 }
