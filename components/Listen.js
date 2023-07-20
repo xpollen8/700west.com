@@ -1,13 +1,18 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink, AudioPlayer } from '../lib/helpers';
+import { SectionHeader, makeMusicianLink, makeReleaseLink, AudioPlayer } from '../lib/helpers';
 
-const makeListenAlbum = ({ artist, title, tracks, multiArtist = false }, key) => (
+const makeListenAlbum = ({ type, artist, title, tracks, multiArtist = false }, key) => (
 	<div key={key}>
-		<span className="artist">{artist}</span>
-		<span>
-			- <a href={makeReleaseLink(artist, title)}>{title}</a>
-		</span>
+		{(type === 'reminiscence') ?
+			(
+				<span className="artist"><a href={makeMusicianLink(artist)}>{artist}</a> </span>
+			)
+			:
+			(
+				<span className="artist">{artist} - <a href={makeReleaseLink(artist, title)}>{title}</a> </span>
+			)
+		}
 		<blockquote className="panelContainer">
 			{tracks.filter(t => t.audio && t.audio.length > 0).map((data, key) => (
 				<div key={key} className="row">
@@ -63,32 +68,10 @@ const Listen = (props) => (
 			{releases.filter(r => r.type === 'demo' && r?.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.artist.localeCompare(b.artist, undefined, { numeric: true })).map(makeListenAlbum)}
 		</>
 
-	<SectionHeader text="Unreleased Material" />
-	<blockquote className="panelContainer">
-		<div className="row"><AudioPlayer mp3='Jeannie.mp3'
-			band='Herman Walker'
-			title='Jeannie' time='2:45'
-			comment="The proper interpretation of one Jerome Winoker's unrequited love songs.
-			Larry Lucas: Guitar, Herman Walker: Vocals, Bo Gooliak: Bass, Mel Cupp: Drums" />
-		</div>
-		<div className="row"><AudioPlayer mp3='FunkStWorkshop/Water.mp3'
-			band='Funk St. Workshop'
-			title='Water'
-			comment='Taken from submasters' />
-		</div>
-		<div className="row"><AudioPlayer mp3='Jubal/CertainKindOfLady.mp3'
-			band='Jubal (Zerfas)'
-			title='A Certain Kind Of Lady'
-			comment='Unreleased demo'
-			date='1979' />
-		</div>
-		<div className="row"><AudioPlayer mp3='Jubal/ShakeUpYourMind.mp3'
-			band='Jubal (Zerfas)'
-			title='Shake Up Your Mind'
-			comment='Unreleased demo, taken from submasters'
-			date='1979' />
-		</div>
-	</blockquote>
+	<SectionHeader text="Special Material" />
+		<>
+			{releases.filter(r => r.type === 'reminiscence' && r?.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.artist.localeCompare(b.artist, undefined, { numeric: true })).map(makeListenAlbum)}
+		</>
 
 	<SectionHeader text="M. J. Whittemore, Jr.'s Classical Compositions" />
 	<blockquote>
