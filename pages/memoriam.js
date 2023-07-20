@@ -1,5 +1,5 @@
 import { Page } from './_app';
-import { Item } from '../lib/helpers';
+import { getBodyHTML, Item } from '../lib/helpers';
 import { makeMusicianLink } from '../components/Muso';
 import memoriam from '../lib/memoriam';
 
@@ -24,7 +24,7 @@ const Memoriam = (mem, key) => (
 
 const App = (props) => (
 	<Page link="memoriam" description="Memoriam">
-		<p className="panelContainer">{memoriam.map(Memoriam)}</p>
+		<div className="panelContainer">{memoriam.map(Memoriam)}</div>
 	</Page>
 )
 
