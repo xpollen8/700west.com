@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from './_app';
-import { Item } from '../lib/helpers';
+import { getBodyHTML, Item } from '../lib/helpers';
 import { cleanName } from '../components/Muso';
 
 const musicianLink = (mus) => <Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
@@ -119,10 +119,10 @@ const data = [
 const Photos = () => (
 	<Page link="photos" description="Period Studio Photographs">
 		<blockquote className="panelContainer">
-			{data.map(({ src, thumb, width, height, alt, caption = '' }, key) => (
+			{data.map(({ src, thumb, width, height, caption = '' }, key) => (
 				<Item key={key} extra={<div style={{ textAlign: 'center' }} >
-					<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={alt || caption} /></Link>
-					<p>{caption}</p>
+					<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
+					<p>{getBodyHTML(caption)}</p>
 					</div>}
 				/>
 			))}
