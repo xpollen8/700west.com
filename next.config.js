@@ -2,12 +2,8 @@ module.exports = {
   async rewrites() {
 		return [
 			{
-				source: '/test/:path*',
-				destination: 'https://natureconservancy.org/:path*',
-			},
-			{
-				source: '/test',
-				destination: 'https://natureconservancy.org',
+				source: '/manifestor',
+				destination: 'https://tapes.700west.com/manifestor',
 			},
 		]
 	},
@@ -37,11 +33,6 @@ module.exports = {
 			{
 				source: '/tapes/:path*',
 				destination: 'https://tapes.700west.com/:path*',
-				permanent: false,
-			},
-			{
-				source: '/manifestor',
-				destination: 'https://tapes.700west.com/manifestor',
 				permanent: false,
 			},
 			{
