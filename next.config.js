@@ -1,4 +1,17 @@
 module.exports = {
+  async rewrites() {
+		return [
+			{
+				source: '/test/:path*',
+				destination: 'https://natureconservancy.org/:path*',
+			},
+			{
+				source: '/test',
+				destination: 'https://natureconservancy.org',
+			},
+		]
+	},
+
   async redirects() {
 		return [
 			{
@@ -14,11 +27,6 @@ module.exports = {
 			{
 				source: '/images/:path*',
 				destination: `${process.env.NEXT_PUBLIC_IMAGES}/:path*`,
-				permanent: false,
-			},
-			{
-				source: '/feed',
-				destination: 'http://old.700west.com/htdb/feed',
 				permanent: false,
 			},
 			{
