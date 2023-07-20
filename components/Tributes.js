@@ -1,7 +1,7 @@
 import releases from '../lib/releases';
-import { SectionHeader, Item, makeAuthor } from '../lib/helpers';
+import { getBodyHTML, SectionHeader, Item, makeAuthor } from '../lib/helpers';
 
-const makeTribute = (item, key) => <Item key={key} bold={makeAuthor(item.author, item.authorContact)} info={(item.source || item.title)} date={item.date} body={item.body} />
+const makeTribute = (item, key) => <Item key={key} bold={makeAuthor(item.author, item.authorContact)} info={(item.source || item.title)} date={item.date} body={getBodyHTML(item.body)} />
 
 const Tributes = () => {
 	const ret = [];

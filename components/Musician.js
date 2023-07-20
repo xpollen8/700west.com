@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Page } from '../pages/_app';
 
-import { makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
+import { getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
 import { getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
 import musicianExtra from '../lib/musicians';
 import musicianMemoriam from '../lib/memoriam';
@@ -93,8 +93,8 @@ const Bio = ({ musician }) => {
 		<div>
 			<h3>Bio</h3>
 			<li className="row">
-				{bio?.body}
-			{showAttribution(bio?.attribution, 'row')}
+				<div dangerouslySetInnerHTML={ { __html: getBodyHTML(bio.body) } }></div>
+				{showAttribution(bio?.attribution, 'row')}
 			</li>
 		</div>
 	);

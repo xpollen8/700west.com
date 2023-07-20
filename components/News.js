@@ -1,4 +1,4 @@
-import { AudioPlayer, Item } from '../lib/helpers.js';
+import { getBodyHTML, AudioPlayer, Item } from '../lib/helpers.js';
 import Image from 'next/image';
 
 const newsItems = [
@@ -278,7 +278,7 @@ const Tag = (tag, key) => (
 
 const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
 	<Item key={key} bold={title} author={author} date={date} body={<>
-			{body()}
+			{getBodyHTML(body())}
 		{linkInternal &&
 			<div className="news link">
 				<a href={linkInternal}>{linkInternalTitle}</a>
