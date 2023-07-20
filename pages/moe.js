@@ -4,27 +4,25 @@ import { Page } from './_app';
 
 const App = (props) => {
 	return <Page title="Mo" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
-		<center>
-		<table border="0" cellPadding="5" cellSpacing="0">
-		<tr>
-		<td>
-		<Image src={`/images/mo.gif`} border="3" width="170" height="233" />
-		</td>
-		<td valign="middle">
-		<b> Maurice J. ('Mo') Whittemore. Jr.</b>
-		<p>
-		<a href={`/images/business_card.jpg`}><Image
-		        src={`/images/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
-		</p>
-		(Recent contact info available
-		<a href="mailto:moe@700west.com">upon request</a>)
-		<p>
-			<a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a>)
-		</p>
-		</td>
-		</tr>
-		</table>
-		</center>
+		<div style={{
+		    'display': 'flex',
+				'align-items': 'center',
+				'justify-content': 'center'
+			}}>
+			<div>
+				<Image src={`/images/mo.gif`} border="3" width="170" height="233" />
+			</div>
+			<div>
+				<b> Maurice J. ('Mo') Whittemore. Jr.</b>
+				<p>
+					<a href={`/images/business_card.jpg`}><Image
+							src={`/images/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
+				</p>
+				<p>
+					<a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a>)
+				</p>
+			</div>
+		</div>
 		<SectionHeader text="In Brief" />
 		<p>
 		My forte' is electronic hardware and circuit design, both digital and analog. My most recent electronic experience has been systems integration of CNC machine tools and the troubleshooting/repair of microprocessor-based portable medical electronics' tools.
