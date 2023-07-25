@@ -8,7 +8,7 @@ const AKAs = {
 	'Robert Williams': [ 'Bob WIlliams' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
-	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.' ],
+	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
 	'Dan Gustin': [ 'Danny Gustin' ],
