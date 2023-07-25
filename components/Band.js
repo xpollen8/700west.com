@@ -7,11 +7,10 @@ import { SectionHeader, makeBandLink, makeReleaseLink } from '../lib/helpers';
 
 const Publicity = (band) => {
 	const publicity = publicityByBand(band)[0]?.publicity;
-	console.log("Publicity", publicity);
 	if (publicity?.length) {
 		return <>
-			<SectionHeader text="Original Promotional Material" />
-			<ul>
+			<h3>Promo Material</h3>
+			<ul className="row">
 			{publicity.map(({ image, width, height, caption }, key) => (
 				<li key={key}>
 					<Link href={`/images/publicity/${image}.jpg`}><Image
@@ -30,60 +29,36 @@ const Publicity = (band) => {
 const Releases = ({ band }) => {
 	const releases = releasesByBand(band)?.filter(r => r.type !== 'demo');
 	const demos = releasesByBand(band)?.filter(r => r.type === 'demo');
-	if (!releases?.length && !demos.length) { return <></> }
 	const released = releases.filter(r => r?.artist !== 'Various Artists');
 	const appeared = releases.filter(r => r?.artist === 'Various Artists');
+
+	const ReleaseType = ({ label, data }) => {
+		if (!(data && data.length)) return <></>;
+		return (<>
+			<h3>{label}</h3>
+				<div className="row">
+				{data.map((r, key) => {
+				const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
+				const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
+				return (
+					<li key={key}>
+						<a href={makeReleaseLink(useBand, title)}>
+						<>
+							{title}
+						</>
+					</a> {`${(r.type !== 'album') ? `(${r.type})` : ''}`}
+					{r?.published && <span className="date ago">{r?.published}</span>}
+				</li>);
+			})}
+			</div>
+		</>)
+	}
+
 	return (
 			<>
-				<Publicity band={band} />
-				{!!(released?.length) && <>
-				<h3>Released</h3>
-				{released.map((r, key) => {
-					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
-					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
-					return (
-						<li key={key}>
-							<a href={makeReleaseLink(useBand, title)}>
-							<>
-								{title}
-							</>
-						</a> {`${(r.type !== 'album') ? `(${r.type})` : ''}`}
-						{r?.published && <span className="date ago">{r?.published}</span>}
-					</li>);
-				})}
-				</>}
-				{!!(demos?.length) && <>
-				<h3>Demos</h3>
-				{demos.map((r, key) => {
-					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
-					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
-					return (
-						<li key={key}>
-							<a href={makeReleaseLink(useBand, title)}>
-							<>
-								{title}
-							</>
-						</a> {`${(r.type !== 'album') ? `(${r.type})` : ''}`}
-						{r?.published && <span className="date ago">{r?.published}</span>}
-					</li>);
-				})}
-				</>}
-				{!!(appeared?.length) && <>
-				<h3>Appeared On</h3>
-				{appeared.map((r, key) => {
-					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
-					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
-					return (
-						<li key={key}>
-							<a href={makeReleaseLink(useBand, title)}>
-							<>
-								{title} {`${(r.type !== 'album') ? `(${r.type})` : ''}`}
-							</>
-						</a>
-						{r?.published && <span className="date ago">{r?.published}</span>}
-					</li>);
-				})}
-				</>}
+				<ReleaseType label={'Released'} data={released} />
+				<ReleaseType label={'Demos'} data={demos} />
+				<ReleaseType label={'Appeared On'} data={appeared} />
 			</>
 		)
 };
@@ -94,6 +69,7 @@ const Musicians = ({ band }) => {
 	return (
 			<>
 				<h3>Musicians</h3>
+				<div className="row">
 				{musicians.map((mus, key) => {
 					return (
 						<li key={key}>
@@ -101,6 +77,7 @@ const Musicians = ({ band }) => {
 						</a>
 					</li>);
 				})}
+			</div>
 			</>
 		)
 };
@@ -111,9 +88,11 @@ const Band = ({ url }) => {
 	return (
 		<Page title="Bands" link="bands" description={`Band: ${band}`}>
 			<div className="artist"><b>{band}</b></div>
-			<hr/>
+			<div className="row">
+			<Publicity band={band} />
 			<Releases band={band} />
 			<Musicians band={band} />
+			</div>
 		</Page>
 	);
 }
