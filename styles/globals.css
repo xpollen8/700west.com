@@ -194,6 +194,7 @@ a[target="new"]:hover {
 	padding-right: 5px;
 }
 .audio {
+	margin-left: -15px;
 	width: 100%;
 }
 .audio.title {
@@ -213,9 +214,9 @@ a[target="new"]:hover {
 .title {
 	font-style: italic;
 	display: inline;
-	color: black;
+	color: #333;
 	font-weight: 600;
-	font-size: 1.1em;
+	font-size: 1.3em;
 }
 .details {
 	display: block;
@@ -355,10 +356,10 @@ a[target="new"]:hover {
 	padding: 1px;
 }
 .row {
-	border: 1px solid;
+	border: 1px solid #888;
 	border-radius: 20px;
 	margin: .5em;
-	padding: 10px;
+	padding: .5em;
 	padding-left: 15px;
 }
 .release.time {

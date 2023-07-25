@@ -162,17 +162,20 @@ const Track = (data, key) => (
 		{exists(data.audio) && 
 			<AudioPlayer mp3={data.audio} />
 			}
-		<Datum k="Mastering" v={data.mastering} />
-		<Datum k="Writer" v={data.writer} className='who' />
-		<Published publisher={data.publisher} affiliation={data.affiliation} />
 		<div className="panelContainer">
-		<div className="panel">
-		<TrackCredits credits={data.credits} />
+			<div className="panel">
+				<TrackCredits credits={data.credits} />
+			</div>
+			<div className="panel">
+				<TrackComments comments={data.comments} />
+			</div>
 		</div>
-		<div className="panel">
-		<TrackComments comments={data.comments} />
-		</div>
-		</div>
+		{(data.mastering || data.writer || data.publisher || data.affiliation) &&
+			(<div className="row">
+			<Datum k="Mastering" v={data.mastering} />
+			<Datum k="Writer" v={data.writer} className='who' />
+			<Published publisher={data.publisher} affiliation={data.affiliation} />
+		</div>)}
 	</p>
 )
 
@@ -196,7 +199,7 @@ const Panel = ({ side, tracks }) => {
 
 const HeaderData = (release) => (
 	<>
-		<div className="header">
+		<div className="row">
 			<Datum k="Published" v={release.published} />
 			<Datum k="Mastering" v={release.mastering} />
 			<Datum k="Label" v={release.label} />
