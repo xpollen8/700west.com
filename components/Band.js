@@ -30,9 +30,8 @@ const Publicity = (band) => {
 const Releases = ({ band }) => {
 	const releases = releasesByBand(band)?.filter(r => r.type !== 'demo');
 	const demos = releasesByBand(band)?.filter(r => r.type === 'demo');
-	if (!releases?.length) { return <></> }
+	if (!releases?.length && !demos.length) { return <></> }
 	const released = releases.filter(r => r?.artist !== 'Various Artists');
-	const demoed = demos;
 	const appeared = releases.filter(r => r?.artist === 'Various Artists');
 	return (
 			<>
@@ -53,9 +52,9 @@ const Releases = ({ band }) => {
 					</li>);
 				})}
 				</>}
-				{!!(demoed?.length) && <>
+				{!!(demos?.length) && <>
 				<h3>Demos</h3>
-				{demoed.map((r, key) => {
+				{demos.map((r, key) => {
 					const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
 					const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
 					return (
