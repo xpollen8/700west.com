@@ -280,6 +280,7 @@ a[target="new"]:hover {
 }
 .date.ago {
 	font-size: 0.8em;
+	margin-left: .5em;
 	color: #999;
 }
 .date.ago::before {
