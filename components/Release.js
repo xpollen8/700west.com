@@ -8,12 +8,6 @@ import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
 
-const makeBody = (body) => {
-	if (body) {
-		return <>{body}</>
-	}
-}
-
 const makeOriginal = (original) => {
 	if (original) {
 		return <span className="original">
@@ -25,8 +19,7 @@ const makeOriginal = (original) => {
 const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, artist, release, releaseLink, number }) => (
 	<>
 		<span className="artist">{artist}</span> : <Link href={releaseLink} className="title">{release}</Link>
-		<hr/>
-		<div className="header">
+		<div className="row">
 			<Datum k="Source" v={source} />
 			<Datum k="Location" v={location} />
 			<Datum k="Type" v={typeToDisplay(type)} />
@@ -34,13 +27,10 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 			<Datum k="Published" v={makeDate(date)} />
 			<Datum k="Original" v={makeOriginal(original)} />
 		</div>
-		<hr/>
 		{title &&
-			<p>
-				<b>{title}</b>
-			</p>
+			<div className="title">{title}</div>
 		}
-		{makeBody(body)}
+		{body && <div className="row">{body}</div>}
 	</>
 )
 
@@ -50,7 +40,7 @@ const makeAddendum = (item, addendum = 0) => {
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 
-	return <Page title="Releases" link={link} description={makeSubject(add)} >
+	return <Page title="Addendum" link={link} description={makeSubject(add)} >
 		{add && <Addendum {...add} artist={artist} release={release} releaseLink={makeReleaseLink(artist, release)} number={addendum} />}
 	</Page>
 }
@@ -68,15 +58,6 @@ const Covers = (release) => {
 }
 
 const exists = (v) => v && v.length;
-
-const AudioTeaser = ({ tracks = [] }) => {
-	const haveAudio = tracks.filter(t => (t.audio && t.audio.length));
-	if (haveAudio.length) {
-		return <div className="release teaser">{haveAudio.length} audio sample{haveAudio.length > 1 ? 's' : ''} available below!</div>
-	} else {
-		return <></>
-	}
-}
 
 const smartLink = (v) => {
 	if (typeof v === 'string' && v?.includes('http')) {
@@ -179,7 +160,7 @@ const Track = (data, key) => (
 	</p>
 )
 
-const Panel = ({ side, tracks }) => {
+const TrackPanel = ({ side, tracks }) => {
 	if (side) {
 		return <div className="release panel">
 			<SectionHeader text={`${side} Side`} />
@@ -197,8 +178,18 @@ const Panel = ({ side, tracks }) => {
 	}
 }
 
-const HeaderData = (release) => (
-	<>
+const AudioTeaser = ({ tracks = [] }) => {
+	const haveAudio = tracks.filter(t => (t.audio && t.audio.length));
+	if (haveAudio.length) {
+		return <div className="release teaser">{haveAudio.length} audio sample{haveAudio.length > 1 ? 's' : ''} available</div>
+	} else {
+		return <></>
+	}
+}
+
+const HeaderData = (release) => {
+	if (!(release.published || release.mastering || release.label || release.id || release.url || release.store)) return <></>;
+	return (<>
 		<div className="row">
 			<Datum k="Published" v={release.published} />
 			<Datum k="Mastering" v={release.mastering} />
@@ -207,94 +198,53 @@ const HeaderData = (release) => (
 			<Datum k="Contact" v={release.url} />
 			<Datum k="Purchase" v={release.store} />
 		</div>
-		<AudioTeaser {...release} />
-	</>
-)
-
-const MakeSingle = (single) => (
-	<>
-		<div className="panelContainer">
-			<div className="panel">
-				<div className="release artist">{single.tracks[0].artist}</div>
-				<div className="release title">"{single.tracks[0].title}"</div>
-				<div><i>b/w</i></div>
-				{!!(single.tracks[0].artist !== single.tracks[1].artist) &&
-					<div className="release artist">{single.tracks[1].artist}</div>
-				}
-				<div className="release title">"{single.tracks[1].title}"</div>
-				<HeaderData {...single} />
-			</div>
-			<Covers {...single } />
-		</div>
-		<Promo {...single} />
-		<div className="panelContainer">
-			<Panel side='A' tracks={single.tracks} key={1} />
-			<Panel side='B' tracks={single.tracks} key={2} />
-		</div>
-		<YellowSheets {...single } />
-	</>
-)
-
-const AlbumHeader = (release) => (
-	<>
-	<div className="panelContainer">
-		<div className="release panel">
-			<div className="release artist">{release.artist}</div>
-			<div className="release title">"{release.title}"</div>
-			<HeaderData {...release} />
-		</div>
-		<Covers {...release } />
-	</div>
-	<Promo {...release} />
-	</>
-)
-
-const MakeAlbum = (album) => {
-	const hasTracks = album.tracks[0];
-	const hasSides = album.tracks[0]?.side?.length;
-	if (hasSides) {
-		return <>
-			<AlbumHeader {...album} />
-			<div className="panelContainer">
-				<Panel side='A' tracks={album.tracks} key={1} />
-				<Panel side='B' tracks={album.tracks} key={2} />
-			</div>
-			<YellowSheets {...album } />
-		</>
-	} else if (hasTracks) {
-		return <>
-			<AlbumHeader {...album} />
-			<Panel tracks={album.tracks} />
-			<YellowSheets {...album } />
-		</>
-	}
-	return <>
-		<AlbumHeader {...album} />
-		<YellowSheets {...album } />
-	</>
+	</>)
 }
 
-const DemoHeader = (release) => (
-	<>
-	<div className="panelContainer">
-		<div className="release panel">
-			<div className="release artist">{release.artist}</div>
-			<div className="release title">"{release.title}"</div>
-			<HeaderData {...release} />
+const CommonHeader = (release) => {
+	const artist = (release.type === 'single') ? release.tracks[0].artist : release.artist;
+	const title = (release.type === 'single') ? release.tracks[0].title : release.title;
+	const titles = (release.type === 'single') ?
+		<>
+				<div className="release artist">{artist}</div>
+				<div className="release title">"{title}"</div>
+				<div><i>b/w</i></div>
+				{!!(artist !== release.tracks[1].artist) &&
+					<div className="release artist">{release.tracks[1].artist}</div>
+				}
+				<div className="release title">"{release.tracks[1].title}"</div>
+		</>
+		:
+		<>
+				<div className="release artist">{artist}</div>
+				<div className="release title">"{title}"</div>
+		</>
+	return (<>
+		<div className="panelContainer">
+			<div className="release panel">
+				{titles}
+				<HeaderData {...release} />
+				<AudioTeaser {...release} />
+			</div>
+			<Covers {...release } />
 		</div>
-		<Covers {...release } />
-	</div>
-	<Promo {...release} />
-	</>
-)
+		<Promo {...release} />
+		</>
+	)
+}
 
-const MakeDemo = (demo) => {
-	const hasTracks = demo?.tracks && demo.tracks[0];
-	return <>
-		<DemoHeader {...demo} />
-		{hasTracks && <Panel tracks={demo.tracks} />}
-		<YellowSheets {...demo } />
-	</>
+const Tracks = (item) => {
+	const hasTracks = item?.tracks && item.tracks[0];
+	const hasSides = item?.tracks && item.tracks[0]?.side?.length;
+	if (hasSides) {
+		return <div className="panelContainer">
+			<TrackPanel side='A' tracks={item.tracks} key={1} />
+			<TrackPanel side='B' tracks={item.tracks} key={2} />
+		</div>
+	} else if (hasTracks) {
+		return <TrackPanel tracks={item.tracks} />
+	}
+	return <> </>
 }
 
 const Credits = ({ credits = [] }) => {
@@ -347,10 +297,10 @@ const YellowSheets = ({ sheets = [] }) => {
 const Promo = ({ publicity = [] }) => {
 	if (publicity.length) {
 		return <>
-			<SectionHeader text="Original Promotional Material" />
+			<SectionHeader text="Promotional Material" />
 			<ul>
 			{publicity.map(({ image, width, height, caption }, key) => (
-				<li key={key}>
+				<li key={key} className="row">
 					<Link href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
@@ -364,69 +314,62 @@ const Promo = ({ publicity = [] }) => {
 	return <></>;
 }
 
-const Comments = ({ comments = [], sales = [] }) => {
-		const getSales = () => {
-			if (sales.length) {
-					const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
-					const original = { name: 'Original Released Price', data: {} };
-					const reissue = { name: 'Re-Issued Release Price', data: {} };
-					sorted.forEach(({ date, price = '', said }) => {
-						const usePrice = price.replace(/[\$,]+/g, '');
-						if (said?.match(/issue/i)) {
-							reissue.data[date] = usePrice;
-						} else {
-							original.data[date] = usePrice;
-						}
-					})
-					return <>
-						<SectionHeader text="Sales History" />
-						<div className="chart">
-							<LineChart width={'100%'} data={[original]} prefix="$" round={2} zeros={true} />
-						</div>
-						{!!(Object.keys(reissue.data).length) &&
-							<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
-						<ul className="panelContainer">
-						{sorted.map(({ date, said, price, where }, key) => (
-							<p key={key} className="row">
-									{exists(date) && <>
-										{FormatDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
-									</>}
-							</p>
-						))}
-						</ul>
-					</>
-				}
-				return <></>
+const Sales = ({ sales = [] }) => {
+	if (sales.length) {
+		const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
+		const original = { name: 'Original Released Price', data: {} };
+		const reissue = { name: 'Re-Issued Release Price', data: {} };
+		sorted.forEach(({ date, price = '', said }) => {
+			const usePrice = price.replace(/[\$,]+/g, '');
+			if (said?.match(/issue/i)) {
+				reissue.data[date] = usePrice;
+			} else {
+				original.data[date] = usePrice;
 			}
-		const getComments = () => {
-			if (comments.length) {
-				return <>
-					<SectionHeader text="Comments" />
-					{comments.map(({ who, date, said, source }, key) => (
-						<p key={key} className="row">
-							<div style={{ padding: '10px' }}>
-								<i>{said}</i>
-								<div style={{ padding: '10px' }}>
-									<Who who={who} />
-									{exists(date) && makeDate(date)}
-									{exists(source) && makeSource(source)}
-								</div>
-							</div>
-						</p>
-					))}
-				</>
-			}
-			return <></>
-		}
+		})
 		return <>
-			{getComments()}
-			{getSales()}
+			<SectionHeader text="Sales History" />
+			<div className="chart">
+				<LineChart width={'100%'} data={[original]} prefix="$" round={2} zeros={true} />
+			</div>
+			{!!(Object.keys(reissue.data).length) &&
+				<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
+			<ul className="panelContainer">
+			{sorted.map(({ date, said, price, where }, key) => (
+				<p key={key} className="row">
+						{exists(date) && <>
+							{FormatDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
+						</>}
+				</p>
+			))}
+			</ul>
 		</>
-	//}
-	//return <></>;
+	}
+	return <></>
 }
 
-const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
+const Comments = ({ comments = [] }) => {
+	if (comments.length) {
+		return <>
+			<SectionHeader text="Comments" />
+			{comments.map(({ who, date, said, source }, key) => (
+				<p key={key} className="row">
+					<div style={{ padding: '10px' }}>
+						<i>{said}</i>
+						<div style={{ padding: '10px' }}>
+							<Who who={who} />
+							{exists(date) && makeDate(date)}
+							{exists(source) && makeSource(source)}
+						</div>
+					</div>
+				</p>
+			))}
+		</>
+	}
+	return <></>
+}
+
+const Auxiliary = ({ type, artist, title, tracks, addendum = [] }) => {
 	if (addendum.length) {
 		const href = makeReleaseLink(artist || tracks[0].artist, title || tracks[0].title);
 		return <>
@@ -444,18 +387,19 @@ const Extra = ({ type, artist, title, tracks, addendum = [] }) => {
 }
 
 const makeRelease = (item) => {
-	//const link = (item.type === 'album') ? 'albums' : 'singles';
 	const link = `${item.type}s`;
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
-	return <Page title="Releases" link={link} description={`The "${release}" ${item.type} from ${artist}`} >
-		{(item.type === 'album') && <MakeAlbum {...item} /> }
-		{(item.type === 'single') && <MakeSingle {...item} /> }
-		{(item.type === 'demo') && <MakeDemo {...item} /> }
+	const description = `${artist}: "${release}" (${item.type})`;
+	return <Page link={link} description={description} >
+		<CommonHeader {...item} />
+		<Tracks {...item} />
 		<Credits {...item} />
 		<LinerNotes {...item} />
 		<Comments {...item} />
-		<Extra {...item} />
+		<Sales {...item} />
+		<Auxiliary {...item} />
+		<YellowSheets {...item} />
 	</Page>
 }
 
