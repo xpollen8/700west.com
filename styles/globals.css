@@ -9,6 +9,11 @@
 	max-zoom: 4;
 }
 
+.lyrics {
+	font-size: .7em;
+	font-style: italic;
+}
+
 blockquote {
 	margin-left: 1em;
 }
@@ -296,9 +301,6 @@ a[target="new"]:hover {
 .contact {
 	margin-left: 5px;
 	link-color: #666;
-}
-.lyrics {
-	font-style: italic;
 }
 .addendum.artist {
 	font-weight: 900;
