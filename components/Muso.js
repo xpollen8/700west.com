@@ -54,8 +54,16 @@ const releasesByMusician = (mus) => {
 				roles: c?.did,
 			})
 		})).filter(f => f) || [];
+		const writers = r?.tracks.filter(t => {
+			return t?.writer?.includes(isAKA(mus))
+		})?.map(t => ({
+			artist: (r.type !== 'single') ? r.artist : r.tracks[0]?.artist,
+			title: (r.type !== 'single') ? r.title : r.tracks[0]?.title,
+			type: r.type,
+			roles: [ 'Writer' ],
+		})).filter(f => f) || [];
 
-		return releases.concat(...tracks);
+		return releases.concat(...tracks, ...writers);
 	}));
 	const ret = [];
 	uniqueReleases.filter(f => f).forEach(({ artist, title, type, roles }) => {
