@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
+import { Lyrics, SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
 import { makeMusicianLink } from './Muso';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
@@ -16,7 +16,7 @@ const makeOriginal = (original) => {
 	}
 }
 
-const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, artist, release, releaseLink, number }) => (
+const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, lyrics, artist, release, releaseLink, number }) => (
 	<>
 		<span className="artist">{artist}</span> : <Link href={releaseLink} className="title">{release}</Link>
 		<div className="row">
@@ -31,6 +31,7 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 			<div className="title">{title}</div>
 		}
 		{body && <div className="row">{body}</div>}
+		{lyrics && <Lyrics lyrics={lyrics} />}
 	</>
 )
 
@@ -157,6 +158,7 @@ const Track = (data, key) => (
 			<Datum k="Writer" v={data.writer} className='who' />
 			<Published publisher={data.publisher} affiliation={data.affiliation} />
 		</div>)}
+		<Lyrics {...data} />
 	</p>
 )
 
