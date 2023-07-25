@@ -11,6 +11,7 @@ const AKAs = {
 	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
+	'Carlos Silva': [ 'Silva' ],
 	'Dan Gustin': [ 'Danny Gustin' ],
 	'Dave Zerfas': [ 'David Zerfas' ],
 	'James Massie': [ 'Red Massie' ],
@@ -55,8 +56,11 @@ const releasesByMusician = (mus) => {
 			})
 		})).filter(f => f) || [];
 		const writers = r?.tracks.filter(t => {
-			return t?.writer?.includes(isAKA(mus))
-		})?.map(t => ({
+			if (!t.writer) return false;
+			// are any aliases found in the writers string?
+			const aliases = AKAs[mus] || [];
+			return [ mus, ...aliases].find(a => t.writer.includes(a));
+		}).filter(f => f).map(t => ({
 			artist: (r.type !== 'single') ? r.artist : r.tracks[0]?.artist,
 			title: (r.type !== 'single') ? r.title : r.tracks[0]?.title,
 			type: r.type,
