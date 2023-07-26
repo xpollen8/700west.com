@@ -469,3 +469,7 @@ a[target="new"]:hover {
 	float: left;
 }
 
+.flexor {
+	display: flex;
+	space-around: center;
+}

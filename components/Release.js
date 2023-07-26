@@ -300,7 +300,7 @@ const YellowSheets = ({ sheets = [] }) => {
 const Reels = ({ reels = [] }) => {
 	if (reels.length) {
 		return <>
-			<SectionHeader text="Master Tape" />
+			<SectionHeader text="Tapes" />
 			<ul>
 			{reels.map((i, key) => (
 				<li key={key}>

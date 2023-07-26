@@ -8,17 +8,24 @@ const makeDemoBlurb = (item, key) => {
 	const directory = (item?.image && item?.image[0]?.thumb) ? 'covers' : ((item?.publicity && item?.publicity[0]?.image) ? 'publicity' : 'covers');
 
 	return <Item key={key}
-		extra={<>
+		extra={<div className="flexor">
+			<div>
 			<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
 				src={thumb ? `/images/${directory}/${thumb}_thumb.jpg` : (
 					reels ? `https://tapes.700west.com/api/reels/${reels}` : `/images/${directory}/missingCover.jpg`)}
 				alt={`${item.artist} - ${item.title}`}
 				width={125}
 				height={125} /></a>
-			<p>
-			<a className="single artist" href={makeReleaseLink(item.artist, item.title)}>{item.artist} - {item.title}</a> {item.published && <span className="date ago">{item.published}</span>}
-			</p>
-		</>}
+			</div>
+			<div>
+				<p>
+					<a className="single artist" href={makeReleaseLink(item.artist, item.title)}>{item.artist}</a>
+				</p>
+				<p>
+					<a className="single artist" href={makeReleaseLink(item.artist, item.title)}>{item.title}</a> {item.published && <span className="date ago">{item.published}</span>}
+				</p>
+			</div>
+		</div>}
 	/>
 }
 
