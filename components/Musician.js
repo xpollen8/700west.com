@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Page } from '../pages/_app';
 
 import { getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
-import { getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
+import { getBandNames, getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
 import musicianExtra from '../lib/musicians';
 import musicianMemoriam from '../lib/memoriam';
 
@@ -239,19 +239,45 @@ const Address = ({ musician }) => {
 		</div>
 	);
 }
-const Reminisce = ({ musician }) => {
+
+// TODO - search through all comments, body, etc and find
+// all which match ANY musician alias.
+const Tributes = ({ musician }) => {
+	/*
 	const reminiscences = musicianExtra[musician]?.reminiscences || {};
 	if (!(reminiscences)?.length) return <></>;
 	return (
 		<div>
-			<h3>Reminiscence</h3>
+			<h3>Others Mention {musician}</h3>
 			{reminiscences.map((rem, key) => {
 				const { date, source, who, said, subject } = rem;
 				return (
 					<div className="row">
 						{source}
 						{subject}
-						{makeDate(date)}
+						<div dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
+						{showAttribution({ original: source, date }, 'row')}
+					</div>
+				);
+			})}
+		</div>
+	);
+	*/
+}
+
+const Shares = ({ musician }) => {
+	const reminiscences = musicianExtra[musician]?.reminiscences || {};
+	if (!(reminiscences)?.length) return <></>;
+	return (
+		<div>
+			<h3>{musician} Shares Thoughts About Others</h3>
+			{reminiscences.map((rem, key) => {
+				const { date, source, who, said, subject } = rem;
+				return (
+					<div className="row">
+						{subject}
+						<div dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
+						{showAttribution({ original: source, date }, 'row')}
 					</div>
 				);
 			})}
@@ -276,7 +302,8 @@ const Musician = ({ url = '' }) => {
 			</div>
 				<Online musician={musician} />
 				<Address musician={musician} />
-			{/*<Reminisce musician={musician} />*/}
+			<Shares musician={musician} />
+			<Tributes musician={musician} />
 			<Gallery musician={musician} />
 			<Videos musician={musician} />
 			</div>

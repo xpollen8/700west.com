@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from './_app';
-import { getBodyHTML, Item } from '../lib/helpers';
+import { autoLink, getBodyHTML, Item } from '../lib/helpers';
 import { cleanName } from '../components/Muso';
 
 const musicianLink = (mus) => <Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
@@ -13,9 +13,7 @@ const data = [
 		width: 500,
 		height: 286,
 		date: `1980-10-11`,
-		caption: <>
-			{musicianLink('J. Michael Henderson')} during video shoot for a "PM Magazine" feature
-			</>,
+		caption: ` J. Michael Henderson during video shoot for a "PM Magazine" feature `,
 	},
 	{
 		src: `/images/studio_1976.jpg`,
@@ -31,9 +29,7 @@ const data = [
 		width: 500,
 		height: 427,
 		date: `1976`,
-		caption: <>
-			{musicianLink('Mo')} at the controls, the new 8-channel Tascam 70-8 on his right.
-			</>,
+		caption: ` Mo at the controls, the new 8-channel Tascam 70-8 on his right.  `,
 	},
 	{
 		src: `/images/Moe_piano.jpg`,
@@ -41,9 +37,7 @@ const data = [
 		width: 500,
 		height: 393,
 		date: `1976`,
-		caption: <>
-			{musicianLink('Mo')} at the treated piano
-			</>,
+		caption: ` Mo at the treated piano`,
 	},
 	{
 		src: `/images/Mo_Dave.jpg`,
@@ -51,10 +45,10 @@ const data = [
 		width: 500,
 		height: 335,
 		date: `before 1976`,
-		caption: <>
-			{musicianLink('Mo Whittemore')}, {musicianLink('Dave Lovell')}. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
+		caption: `
+			Mo Whittemore, Dave Lovell. Also in-frame: Magnecord PT6-AH 2-track 1/4" recorder,
 			and the 3M M23 4-track 1/2" recorder.  4-channel days.
-			</>,
+			`,
 	},
 	{
 		src: `/images/Mo_machines.jpg`,
@@ -101,18 +95,14 @@ const data = [
 		thumb: `/images/kev700west_500.jpg`,
 		width: 500,
 		height: 742,
-		caption: <>
-			{musicianLink('Kevin Stonerock')} in the studio
-			</>,
+		caption: ` Kevin Stonerock in the studio`,
 	},
 	{
 		src: `/images/Stonerock:Herr@700West.jpg`,
 		thumb: `/images/Stonerock:Herr@700West.jpg`,
 		width: 500,
 		height: 337,
-		caption: <>
-			{musicianLink('Kevin Stonerock')} in the studio ({musicianLink('Paul Herr')} on drums)
-			</>,
+		caption: `Kevin Stonerock in the studio Paul Herr on drums`,
 	},
 ];
 
@@ -120,11 +110,11 @@ const Photos = () => (
 	<Page link="photos" description="Period Studio Photographs">
 		<blockquote className="panelContainer">
 			{data.map(({ src, thumb, width, height, caption = '' }, key) => (
-				<Item key={key} extra={<div style={{ textAlign: 'center' }} >
-					<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
-					<p>{getBodyHTML(caption)}</p>
-					</div>}
-				/>
+				<Item key={key} extra={
+					<div style={{ textAlign: 'center' }}>
+						<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
+					</div>
+				} body={autoLink(caption)} />
 			))}
 		</blockquote>
 	</Page>

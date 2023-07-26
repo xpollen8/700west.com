@@ -1,4 +1,4 @@
-import { getBodyHTML, AudioPlayer, Item } from '../lib/helpers.js';
+import { autoLink, getBodyHTML, AudioPlayer, Item } from '../lib/helpers.js';
 import Image from 'next/image';
 
 const newsItems = [
@@ -8,12 +8,12 @@ const newsItems = [
 	title: 'Echoes Of Indiana Avenue: Indiana Avenue at 700 West',
 	linkExternal: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/indiana-avenue-at-700-west',
 	linkExternalTitle: 'Original Article',
-	body: () =>
-		<ul>
+	audio: `2022-02-11_ECHO_1074_4721.mp3`,
+	body: `
+		<p>
 		This week, we'll pay tribute to the late Mo Whittemore. During the 1970s, Mo ran the 700 West record label and recording studio from his family’s home in New Palestine, IN. Mo recorded some of the Avenue’s most respected funk and soul musicians at 700 West, including The Vanguards, Amnesty, Ebony Rhythm Funk Campaign, and the Words of Wisdom, a group founded by host Herman "Butch" Slaughter. 
-		<li><AudioPlayer mp3='2022-02-11_ECHO_1074_4721.mp3'
-			title={`Indiana Avenue at 700 West`} /></li>
-		</ul>
+		</p>
+		`
 	},
 	{
 	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
@@ -21,12 +21,12 @@ const newsItems = [
 	title: 'Cultural Manifesto: Mo Whittemore and 700 West',
 	linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/moe-whittemore-and-700-west',
 	linkExternalTitle: 'Original Article',
-	body: () =>
-		<ul>
+	audio: `2022-01-27_CMAN_238_4698.mp3`,
+	body: `
+		<p>
 		This week we'll listen back to our 2015 interview with Mo Whittemore, who passed away recently. In the 1970s, Mo opened the 700 West studio and record label in the living room of his family’s home in New Palestine, Indiana. During the studio’s run, Mo recorded a diverse array of Indiana music - from early electronic sounds, bluegrass, funk, heavy metal, and psychedelic rock.
-		<li><AudioPlayer mp3='2022-01-27_CMAN_238_4698.mp3'
-			title={`Mo Whittemore and 700 West`} /></li>
-		</ul>
+		</p>
+		`
 	},
 	{
 		slug: 'RIP',
@@ -35,49 +35,58 @@ const newsItems = [
 	linkExternal: 'https://www.stillingerfamilyfuneralhome.com/obituaries/Maurice-James-Whittemore-Jr?obId=23781211#/obituaryInfo',
 	linkExternalTitle: 'Funeral home obituary',
 	author: 'David Whittemore',
-	body: () =>
+	body: `
 		<p>
 		Mo died with music and family present.
-		<br/><br/>
+		</p>
+		<p>
 		A brilliant man, dead from a contageous disease spread via malicious indifference.
-		<br/><br/>
+		</p>
+		<p>
 		We encourage you to <a href="/feedback">leave your thoughts</a>
-		<br/><br/>
-		<Image className="image" src="/images/cman-22-01-26.png" width={'500'} height={'280'} />
-		<br/>
+		</p>
+		<p>
+		<Image className="image" src="/images/cman-22-01-26.png" width='100%' height='100%' />
+		</p>
+		<p>
 		Maurice James Whittemore, Jr.
-		<br/>
+		</p>
+		<p>
 		1934-09-30 - 2022-01-20
 		</p>
+		`
 	},
 	{
 	date: 'Sat Nov  6 17:41:19 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
-	body: () =>
-		<ul>
-		<li> Fleshed out the : <a href="/bands">Bands</a> and <a href="/musicians">Musicians</a> sections </li>
-		</ul>
+	body: `
+		<p>
+		Fleshed out the : <a href="/bands">Bands</a> and <a href="/musicians">Musicians</a> sections
+		</p>
+		`
 	},
 	{
 	date: 'Sat Oct 30 21:15:47 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
-	body: () =>
+	body: `
 		<ul>
 		<li> Added a new section: <a href="/bands">Bands</a> </li>
 		<li> Added a new section: <a href="/musicians">Musicians</a> </li>
 		</ul>
+		`
 	},
 	{
 	date: 'Fri Oct 29 22:27:01 PDT 2021',
 	title: 'Site Updates',
 	author: 'David Whittemore',
-	body: () =>
+	body: `
 		<ul>
 		<li> Added a new section: <a href="/demos">Demos</a> with <b>Spectre</b> as its first inhabitant.</li>
 		<li> Added audio for the to <a href="/releases/Sailor-Sailor.html">Sailor</a> release.</li>
 		</ul>
+		`
 	},
 	{
 		slug: 'manifesto2017',
@@ -86,19 +95,15 @@ const newsItems = [
 		title: 'Cultural Manifesto: Interview of Mo Whittemore #1',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittemore',
 		linkExternalTitle: 'Original Article',
-		body: () =>
-		<>
-		<p style={{ textAlign: 'center'}}>
-		<Image className="image" src="/images/cman-17-10-11.jpg" width={'533'} height={'420'} />
+		audio: `20171017_Nuvo_Whittemore_Interview.mp3`,
+		body: `
+		<p style={{ textAlign: 'center'	}}>
+		<Image className="image" src="/images/cman-17-10-11.jpg" width='100%' height='100%' />
 		</p>
 		<p>
 		Kyle will speak with the mad scientist of Indiana music, Mo Whittemore, for an hour of words and music from 700 West. This episode features some rare soul and funk discs Mo recorded from bands like Little Murray and The Mantics, Funk St. Workshop, and more.
 		</p>
-		<ul>
-		<li><AudioPlayer mp3='20171017_Nuvo_Whittemore_Interview.mp3'
-			title='Kyle Long interviews Mo Whittemore' /></li>
-		</ul>
-		</>
+		`
 	},
 	{
 		slug: 'urgent',
@@ -107,8 +112,7 @@ const newsItems = [
 		title: 'Give Mo a call!',
 		linkInternal: '/contact',
 		linkInternalTitle: 'Drop him a note',
-		body: () =>
-			<>
+		body: `
 			<p>
 				Friends, Musicians, Gentlefolk!
 			</p>
@@ -118,7 +122,7 @@ const newsItems = [
 			<p>
 				Now's the time.
 			</p>
-		</>
+		`
 	},
 	{
 		slug: 'bandcampRelease',
@@ -126,12 +130,11 @@ const newsItems = [
 		linkExternal: 'https://700west.bandcamp.com',
 		linkExternalTitle: 'Purchase both volumes from bandcamp',
 		date: '2019-05-18',
-		body: () => (
-			<div style={{padding: "10px", width: '95%' }}>
-				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-			</div>
-		)
+		extra:
+			<p>
+				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'	}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'	}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+			</p>
 	},
 	{
 		slug: 'manifesto',
@@ -140,66 +143,57 @@ const newsItems = [
 		title: 'Cultural Manifesto: Interview of Mo Whittemore #2',
 		linkExternal: 'https://www.wfyi.org/programs/cultural-manifesto/radio/Moe-Whittmore',
 		linkExternalTitle: 'Original Article',
-		body: () =>
-		<>
-		<p style={{ textAlign: 'center'}}>
-		<Image className="image" src="/images/WFYI_Interview_2019-04-25.jpg" width={'559'} height={'419'} />
+		audio: `20190426_WFYI_Interview.mp3`,
+		body: `
+		<p style={{ textAlign: 'center'	}}>
+		<Image className="image" src="/images/WFYI_Interview_2019-04-25.jpg" width='100%' height='100%' />
 		</p>
 		<p>
 		WFYI's Kyle Long's "Cultural Manifesto" returned to the old 700 West studio to interview Mo Whittemore.
-		This hour-long program featured many tracks from the <a href="https://700west.bandcamp.com/album/best-of-700-west-volume-2" target="new"><b>Best of 700 West Vol. II</b></a>
+		This hour-long program featured many tracks from the Best Of 700 West - Volume II
 		</p>
-		<ul>
-		<li><AudioPlayer mp3='20190426_WFYI_Interview.mp3'
-			title='Kyle Long interviews Mo Whittemore' /></li>
-		</ul>
-		</>
+		`
 	},
 	{
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
 		title: 'Nuvo Magazine',
 		linkExternal: 'https://nuvo.newsnirvana.com/music/700-wests-moe-whittemore-gets-reissue/article_0cbd711d-e68c-52a9-91eb-d83ca16cdcbe.html',
-		body: () =>
-			<>
-			<p style={{ textAlign: 'center'}}>
-			<Image className="image" src="/images/20150606_Nuvo_Interview.jpg" width={'500'} height={'333'} />
+		body: `
+			<p style={{ textAlign: 'center'	}}>
+			<Image className="image" src="/images/20150606_Nuvo_Interview.jpg" width='100%' height='100%' />
 			</p>
 			<p>
 				700 West's Mo Whittemore gets reissue
 			</p>
-			</>
+		`
 	},
 	{
 		tags: [ 'event:release', 'album:MO', 'label:Anazitisi_Records' ],
 		date: 'Sat Jun  6 07:04:05 PDT 2015',
 		linkExternal: 'http://www.anazitisirecords.com/shop/phop/product_info.php?products_id=3769',
 		linkExternalTitle: 'Order here',
-		body: () =>
+		body: `
 		<p>
-			The extremely rare <b>Mo</b> album has ben re-released by <b>Anazitisi Records</b> with bonus track!
+			The extremely rare Mo album has ben re-released by <b>Anazitisi Records</b> with bonus track!
 		</p>
+		`
 	},
 	{
 	date: 'Fri May 23 21:44:59 PDT 2014',
 	title: 'Site Updates',
 	author: 'David Whittemore',
-	body: () =>
+	body: `
 		<ul>
 		<li> Added track listing and updated audio to Amnesty's <a href="/releases/Amnesty-Free_Your_Mind.html">Free Your Mind</a></li>
 		<li> Added images and audio excerpt to <a href="/releases/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
 		<li> Updated <a href="/photos.html">Photos section</a></li>
 		<li> Added <a href="/releases/Dan_Mobley-Walk_In_the_Wind_and_the_Rain.html">Dan Mobley track listing</a></li>
-		<li> Uploaded audio for <AudioPlayer mp3='DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3'
-			band='Dan Mobley'
-			title='Colorado' /></li>
+		<li> Uploaded audio for <AudioPlayer mp3='DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3' band='Dan Mobley' title='Colorado' /></li>
 		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a></li>
-		<li> Added <AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
-			title='Interview'
-			time='12.51'
-			comment='Dan Modlin interviews Mo Whittemore'
-			date='2010' />
+		<li> Added <AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3' title='Interview' time='12.51' comment='Dan Modlin interviews Mo Whittemore' date='2010' />
 		</li>
 		</ul>
+		`
 	},
 	{
 		date: 'Sat Mar  3 07:55:46 PST 2012',
@@ -207,8 +201,7 @@ const newsItems = [
 		title: 'Email Message',
 		linkInternal: '/releases/Mo-First_Album?addendum=6',
 		linkInternalTitle: 'Local copy of the 2012 Nuvo article',
-		body: () =>
-			<>
+		body: `
 				<p>
 				Tho't u all'd get a kick out of my interview in the latest NUVO alternate rag.  It was supposed to show up in the print edition featuring "local
 				labels", but they didn't have the room for it - hence the online link....  The original interview was done by Kyle Long at my place around '06.
@@ -222,14 +215,13 @@ const newsItems = [
 				<p>
 				Take care!
 				</p>
-			</>
+		`
 	},
 	{
 		date: 'Sat Mar  3 08:22:25 PST 2012',
 		author: 'Jay Wilfong',
 		title: 'Email Message',
-		body: () =>
-			<>
+		body: `
 				<p>
 				Great article BUT justice could only be served by real time spent down that long gravel lane.
 				</p>
@@ -252,23 +244,20 @@ const newsItems = [
 				<p>
 				May there be a 700 West and a Moford in every filthy scoundrels life.
 				</p>
-			</>
+		`
 	},
 	{
 		title: 'PM Magazine (1980) Artist Profile',
 		date: '2012-10-10',
-		body: () =>
-			<>
+		extra: <div className="video"><iframe title="TV interview" src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen /></div>,
+		body: `
 				<p>
 					700 West artist J Michael Henderson was profiled on "PM Magazine" Indianapolis with Tom Cochrun (1980)
 				</p>
 				<p>
 					M.J. Whittemore Jr and the studio interior appears at 6:10 (yeah, that's a U47!)
 				</p>
-				<div className="video">
-					<iframe title="TV interview" src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen />
-				</div>
-			</>
+		`
 	},
 ];
 
@@ -276,23 +265,24 @@ const Tag = (tag, key) => (
 	<div className="news tag" key={key}>{tag}</div>
 )
 
-const NewsItem = ({ author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
-	<Item key={key} bold={title} author={author} date={date} body={<>
-			{getBodyHTML(body())}
-		{linkInternal &&
-			<div className="news link">
-				<a href={linkInternal}>{linkInternalTitle}</a>
+const NewsItem = ({ extra, audio, author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
+	<Item key={key} bold={title} author={author} date={date} audio={audio} body={body} extra={extra ||
+		<>
+			{linkInternal &&
+				<div className="news link">
+					<a href={linkInternal}>{linkInternalTitle}</a>
+				</div>
+			}
+			{linkExternal &&
+				<div className="news link">
+					<a href={linkExternal} target="new">{linkExternalTitle}</a>
+				</div>
+			}
+			<div className="news tags">
+				{tags.map(Tag)}
 			</div>
+		</>
 		}
-		{linkExternal &&
-			<div className="news link">
-				<a href={linkExternal} target="new">{linkExternalTitle}</a>
-			</div>
-		}
-		<div className="news tags">
-			{tags.map(Tag)}
-		</div>
-		</>}
 	/>
 )
 

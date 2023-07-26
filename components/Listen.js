@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
-import { SectionHeader, makeMusicianLink, makeReleaseLink, AudioPlayer } from '../lib/helpers';
+import { AudioPlayer } from './Muso';
+import { SectionHeader, makeMusicianLink, makeReleaseLink } from '../lib/helpers';
 
 const makeListenAlbum = ({ type, artist, title, tracks, multiArtist = false }, key) => (
 	<div key={key}>

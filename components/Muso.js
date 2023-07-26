@@ -1,5 +1,5 @@
 import releases from '../lib/releases';
-import { dateCompare, Item } from '../lib/helpers';
+import { getBodyHTML, makeReleaseLink, makeBandLink, dateCompare, Item } from '../lib/helpers';
 
 const cleanName = (value) => value.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
 const makeMusicianLink = (musician) => `/musician/` + cleanName(isAKA(musician));
@@ -81,6 +81,8 @@ const releasesByMusician = (mus) => {
 	return ret.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
 }
 
+const getAlbumNames = () => releases.filter(r => r?.type === 'album');
+
 const	getMusicianNames = () => {
 	const uniqueNames = [].concat(...releases.map(r => {
 		const credits = r?.credits?.map(c => c.who) || [];
@@ -133,4 +135,67 @@ const publicityByBand = ({ band }) => {
 	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 
-export { publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+const AudioPlayer = (props) => {
+	const GetTitle = ({ title, band, href, audio, mp3, author, comment, date, time }) => {
+		const getT = (band, title) => {
+			if (band || title) {
+				return <>
+					<div className="title">
+						{band && <b>{band} - </b>}
+						{title && <i>{title}</i>}
+						{time && <span className="date ago">{time}</span> }
+					</div>
+					<div className="details">
+						{author && <>({author})</> }
+						{date && <>({date})</> }
+					</div>
+				</>
+			} else {
+				return <></>
+			}
+		}
+		if (audio && href) {
+			return <a href={href}>{getT(band, title)}</a>
+		}
+		return getT(band, title)
+	}
+	const GetComment = ({ comment, comments }) => {
+		if (comments && comments.length) {
+			const { said, who } = comments[0];
+			return (
+				<div className='details'>
+					<div dangerouslySetInnerHTML={{ __html: getBodyHTML(said) }}></div>
+					<div className="who">{who}</div>
+				</div>)
+		}
+		if (comment && comment.length) {
+			return (
+				<div className='details'>
+					<div dangerouslySetInnerHTML={{ __html: getBodyHTML(comment) }}></div>
+				</div>)
+		}
+		return <>
+		</>
+	}
+	const GetPlayer = ({ title, band, href, audio, mp3, author, comment, date, time, comments }) => {
+		const useAudio = audio || mp3 || '';
+		const useSrc = useAudio.startsWith('https://') ? useAudio : `/audio/${useAudio}`;
+		return (
+			<>
+				<GetTitle {...props} />
+				<audio controls="controls" title={title} preload="none" className="audio">
+					<source src={useSrc} type="audio/mpeg" />
+				</audio>
+				<GetComment comment={comment} comments={comments} />
+			</>
+		)
+	}
+
+	return(
+		<div className="player">
+			<GetPlayer {...props} />
+		</div>
+	);
+};
+
+export { getAlbumNames, AudioPlayer, publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }

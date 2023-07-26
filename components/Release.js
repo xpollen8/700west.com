@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
-import { Lyrics, SectionHeader, makeReleaseLink, AudioPlayer, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
-import { makeMusicianLink } from './Muso';
+import { getBodyHTML, Lyrics, SectionHeader, makeReleaseLink, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
+import { AudioPlayer, makeMusicianLink } from './Muso';
 import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
@@ -30,7 +30,7 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 		{title &&
 			<div className="title">{title}</div>
 		}
-		{body && <div className="row">{body}</div>}
+		{body && <div className="row" dangerouslySetInnerHTML={{ __html: getBodyHTML(body) }}></div>}
 		{lyrics && <Lyrics lyrics={lyrics} />}
 	</>
 )
@@ -109,7 +109,7 @@ const TrackComments = ({ comments = [] }) => {
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
 					return <div key={key} className="row">
-						<i>{c.said}</i>
+						<div dangerouslySetInnerHTML={{ __html: getBodyHTML(c.said) }}></div>
 						<Who who={c.who} />
 						{exists(c.date) && makeDate(c.date)}
 					</div>
@@ -278,7 +278,7 @@ const LinerNotes = ({ liner = '' }) => {
 		return <>
 			<SectionHeader text="Liner Notes" />
 			<blockquote>
-				{liner}
+				<div className="row" dangerouslySetInnerHTML={{ __html: getBodyHTML(liner) }}></div>
 			</blockquote>
 		</>
 	}

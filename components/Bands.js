@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import releases from '../lib/releases';
-import { dateCompare, makeBandLink, Item } from '../lib/helpers';
+import { makeBandLink, Item } from '../lib/helpers';
 import { getBandNames } from './Muso';
 
 const makeBandBlurb = (item, key) => {
@@ -15,7 +14,7 @@ const Bands = () => {
 	const bands = getBandNames();
 	return (
 		<Item bold={`Approximately ${bands?.length} bands passed through our doors`}
-			body={
+			extra={
 				<div className="panelContainer">
 					{bands.map(makeBandBlurb)}
 				</div>

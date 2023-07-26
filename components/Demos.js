@@ -61,7 +61,7 @@ const Demos = () => (
 			</p>
 		</blockquote>
 		<Item bold={`Demo Sessions`}
-			body={
+			extra={
 				<div className="panelContainer">
 					{releases.filter(r => r.type === 'demo').sort(dateCompare).map(makeDemoBlurb)}
 				</div>
