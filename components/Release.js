@@ -229,7 +229,7 @@ const CommonHeader = (release) => {
 		</>
 	return (<>
 		<div className="panelContainer">
-			{(release.image?.length) && <div className="row panel">
+			{!!(release.image?.length) && <div className="row panel">
 				<Covers {...release } />
 			</div>}
 			<div className="row panel">
