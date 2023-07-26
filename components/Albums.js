@@ -10,8 +10,8 @@ const makeAlbumBlurb = (item, key) => {
 		className="avatar"
 		src={`/images/covers/${thumb}`}
 		alt={`${item.artist} - ${item.title} cover`}
-		width={125}
-		height={125} /></a>
+		width={200}
+		height={200} /></a>
 }
 
 const Albums = () => (
