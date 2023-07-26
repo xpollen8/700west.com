@@ -59,14 +59,12 @@ const Demos = () => (
 				<b>Mo - 2001-02-03</b>
 			</p>
 		</blockquote>
-		<Item bold={`Demo Session`}
-		      body={
-		<>
-		<div className="panelContainer" style={{ margin: '15px' }}>
-			{releases.filter(r => r.type === 'demo').sort(dateCompare).map(makeDemoBlurb)}
-		</div>
-		</>
-		} />
+		<Item bold={`Demo Sessions`}
+			body={
+				<div className="panelContainer">
+					{releases.filter(r => r.type === 'demo').sort(dateCompare).map(makeDemoBlurb)}
+				</div>
+			} />
 	</>
 )
 
