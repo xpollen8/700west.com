@@ -30,6 +30,11 @@ module.exports = {
 				permanent: false,
 			},
 			{
+				source: '/reels/:path*',
+				destination: 'https://tapes.700west.com/api/reels/:path*',
+				permanent: false,
+			},
+			{
 				source: '/tapes',
 				destination: 'https://tapes.700west.com',
 				permanent: false,
