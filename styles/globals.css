@@ -26,6 +26,9 @@ li {
 	margin: .25em;
 	padding: 1px;
 }
+:root {
+	--color-highlight: #9c6b47;
+}
 body {
 	background: #9c6b47;
 	color: #333;
@@ -359,7 +362,8 @@ a[target="new"]:hover {
 	padding: 1px;
 }
 .row {
-	border: 1px solid #888;
+	border: 1px solid #bbb;
+	background: #ffe;
 	border-radius: 20px;
 	margin: .5em;
 	padding: .5em;
@@ -472,4 +476,9 @@ a[target="new"]:hover {
 .flexor {
 	display: flex;
 	space-around: center;
+}
+
+.center {
+	border: 10px;
+	text-align: center;
 }
