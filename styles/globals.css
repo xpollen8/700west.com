@@ -369,6 +369,11 @@ a[target="new"]:hover {
 	padding: .5em;
 	padding-left: 15px;
 }
+.row:hover {
+	border: 1px solid #000;
+	color: #000;
+}
+
 .release.time {
 	display: inline;
 }
