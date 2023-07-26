@@ -1,4 +1,15 @@
 module.exports = {
+	images: {
+			remotePatterns: [
+				{
+					protocol: 'https',
+					hostname: 'tapes.700west.com',
+					port: '',
+					pathname: '**',
+				},
+			],
+		},
+
   async rewrites() {
 		return [
 			{
@@ -27,11 +38,6 @@ module.exports = {
 			{
 				source: '/images/:path*',
 				destination: `${process.env.NEXT_PUBLIC_IMAGES}/:path*`,
-				permanent: false,
-			},
-			{
-				source: '/reels/:path*',
-				destination: 'https://tapes.700west.com/api/reels/:path*',
 				permanent: false,
 			},
 			{

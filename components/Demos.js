@@ -11,7 +11,7 @@ const makeDemoBlurb = (item, key) => {
 		extra={<>
 			<a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
 				src={thumb ? `/images/${directory}/${thumb}_thumb.jpg` : (
-					reels ? `/reels/${reels[0]}` : `/images/${directory}/missingCover.jpg`)}
+					reels ? `https://tapes.700west.com/api/reels/${reels}` : `/images/${directory}/missingCover.jpg`)}
 				alt={`${item.artist} - ${item.title}`}
 				width={125}
 				height={125} /></a>

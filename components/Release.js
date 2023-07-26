@@ -296,6 +296,26 @@ const YellowSheets = ({ sheets = [] }) => {
 	}
 	return <></>;
 }
+
+const Reels = ({ reels = [] }) => {
+	if (reels.length) {
+		return <>
+			<SectionHeader text="Master Tape" />
+			<ul>
+			{reels.map((i, key) => (
+				<li key={key}>
+					<Link href={`https://tapes.700west.com/api/reels/${i}`}><Image
+						src={`https://tapes.700west.com/api/reels/250/${i}`}
+						caption="Da master tape"
+						width={250} height={250} /></Link>
+				</li>
+			))}
+			</ul>
+		</>
+	}
+	return <></>;
+}
+
 const Promo = ({ publicity = [] }) => {
 	if (publicity.length) {
 		return <>
@@ -402,6 +422,7 @@ const makeRelease = (item) => {
 		<Sales {...item} />
 		<Auxiliary {...item} />
 		<YellowSheets {...item} />
+		<Reels {...item } />
 	</Page>
 }
 
