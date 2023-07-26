@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { makeReleaseLink, makeBandLink } from '../lib/helpers';
+import { Item, makeReleaseLink, makeBandLink } from '../lib/helpers';
 import { getMusicianNames, releasesByMusician, AKAs, makeMusicianLink } from './Muso';
 
 const makeAKA = (name) => {
@@ -31,12 +31,9 @@ const makeMusicianBlurb = (item, key) => (
 const Musicians = () => {
 	const musicians = getMusicianNames();
 	return (
-		<>
-			<b>Approximately {musicians?.length} musicians passed through our doors:</b>
-			<blockquote className="panelContainer">
-				{musicians?.map(makeMusicianBlurb)}
-			</blockquote>
-		</>
+		 <Item bold={`Approximately ${musicians?.length} musicians passed through our doors`}
+				 body={<div className="panelContainer">{musicians?.map(makeMusicianBlurb)}</div>}
+			/>
 	);
 }
 

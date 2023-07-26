@@ -14,12 +14,12 @@ const makeBandBlurb = (item, key) => {
 const Bands = () => {
 	const bands = getBandNames();
 	return (
-		<>
-			<b>Approximately {bands?.length} bands passed through our doors:</b>
-			<blockquote className="panelContainer">
-			{bands.map(makeBandBlurb)}
-			</blockquote>
-		</>
+		<Item bold={`Approximately ${bands?.length} bands passed through our doors`}
+			body={
+				<div className="panelContainer">
+					{bands.map(makeBandBlurb)}
+				</div>
+			} />
 	);
 }
 

@@ -138,27 +138,32 @@ const Published = ({ publisher = '', affiliation = '' }) => {
 }
 
 const Track = (data, key) => (
-	<p value={data.tracknum} className="row" key={key}>
+	<p value={data.tracknum} key={key}>
 		<Title {...data} />
-		{!!(exists(data.audio) || exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation) || exists(data.comments) || exists(data.credits)) && <hr/>}
+		{(exists(data.audio) || exists(data.credits) || exists(data.comments) || exists(data.writer)) &&
+		<div className="row">
 		{exists(data.audio) && 
 			<AudioPlayer mp3={data.audio} />
 			}
 		<div className="panelContainer">
-			<div className="panel">
-				<TrackCredits credits={data.credits} />
-			</div>
-			<div className="panel">
-				<TrackComments comments={data.comments} />
-			</div>
+			<TrackCredits credits={data.credits} />
+			<TrackComments comments={data.comments} />
 		</div>
-		{(data.mastering || data.writer || data.publisher || data.affiliation) &&
+		{(exists(data.mastering) || exists(data.writer) || exists(data.publisher) || exists(data.affiliation)) &&
+			(exists(data.lyrics) || exists(data.credits) || exists(data.comments)) ?
 			(<div className="row">
-			<Datum k="Mastering" v={data.mastering} />
-			<Datum k="Writer" v={data.writer} className='who' />
-			<Published publisher={data.publisher} affiliation={data.affiliation} />
-		</div>)}
+				<Datum k="Mastering" v={data.mastering} />
+				<Datum k="Writer" v={data.writer} className='who' />
+				<Published publisher={data.publisher} affiliation={data.affiliation} />
+			</div>) :
+			(<>
+				<Datum k="Mastering" v={data.mastering} />
+				<Datum k="Writer" v={data.writer} className='who' />
+				<Published publisher={data.publisher} affiliation={data.affiliation} />
+			</>)
+		}
 		<Lyrics {...data} />
+		</div>}
 	</p>
 )
 
@@ -223,12 +228,14 @@ const CommonHeader = (release) => {
 		</>
 	return (<>
 		<div className="panelContainer">
-			<div className="release panel">
+			{(release.image?.length) && <div className="row panel">
+				<Covers {...release } />
+			</div>}
+			<div className="row panel">
 				{titles}
 				<HeaderData {...release} />
 				<AudioTeaser {...release} />
 			</div>
-			<Covers {...release } />
 		</div>
 		<Promo {...release} />
 		</>
