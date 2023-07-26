@@ -7,6 +7,7 @@ const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;
 
 	return <a className="album cover" key={key} href={makeReleaseLink(item.artist, item.title)}><Image
+		className="avatar"
 		src={`/images/covers/${thumb}`}
 		alt={`${item.artist} - ${item.title} cover`}
 		width={125}

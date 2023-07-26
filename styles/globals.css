@@ -361,6 +361,10 @@ a[target="new"]:hover {
 .album.cover {
 	padding: 1px;
 }
+.avatar {
+	border: 1px solid #bbb;
+	border-radius: 15px;
+}
 .row {
 	border: 1px solid #bbb;
 	background: #ffe;
