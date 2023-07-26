@@ -47,9 +47,10 @@ const makeAddendum = (item, addendum = 0) => {
 }
 
 const Covers = (release) => {
-	return <div className="release panel">
+	return <div className="center">
 		{release?.image?.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
+			className="avatar"
 			src={`/images/covers/${i.thumb}`}
 			height="250"
 			width="250"
