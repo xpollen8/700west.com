@@ -45,8 +45,8 @@ const Demos = () => (
 		</div>
 		<div className="row">
 			<div className="center">
-				<iframe title="Store" style={{ border: 0, width: '90%', height: '120px' }} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true" seamless />
-				<iframe title="Store" style={{ border: 0, width: '90%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+				<iframe title="Store" style={{ border: 0, width: '80%', height: '120px' }} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true" seamless />
+				<iframe title="Store" style={{ border: 0, width: '80%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
 			</div>
 		</div>
 		<blockquote className="row">
