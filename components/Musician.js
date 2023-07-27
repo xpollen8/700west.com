@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Page } from '../pages/_app';
 
 import { getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
-import { getBandNames, getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
+import { AudioPlayer, getBandNames, getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
 import musicianExtra from '../lib/musicians';
 import musicianMemoriam from '../lib/memoriam';
 
@@ -250,7 +250,7 @@ const Tributes = ({ musician }) => {
 		<div>
 			<h3>Others Mention {musician}</h3>
 			{reminiscences.map((rem, key) => {
-				const { date, source, who, said, subject } = rem;
+				const { date, source, who, said, subject, audio } = rem;
 				return (
 					<div className="row">
 						{source}
@@ -266,16 +266,18 @@ const Tributes = ({ musician }) => {
 }
 
 const Shares = ({ musician }) => {
+	/*
 	const reminiscences = musicianExtra[musician]?.reminiscences || {};
 	if (!(reminiscences)?.length) return <></>;
 	return (
 		<div>
 			<h3>{musician} Shares Thoughts About Others</h3>
 			{reminiscences.map((rem, key) => {
-				const { date, source, who, said, subject } = rem;
+				const { date, source, who, said, subject, audio } = rem;
 				return (
 					<div className="row">
 						{subject}
+						{audio && <AudioPlayer source={audio} />}
 						<div dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
 						{showAttribution({ original: source, date }, 'row')}
 					</div>
@@ -283,6 +285,7 @@ const Shares = ({ musician }) => {
 			})}
 		</div>
 	);
+	*/
 }
 
 const Musician = ({ url = '' }) => {
