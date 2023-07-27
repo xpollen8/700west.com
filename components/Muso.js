@@ -181,13 +181,13 @@ const AudioPlayer = (props) => {
 		const useAudio = audio || mp3 || '';
 		const useSrc = useAudio.startsWith('https://') ? useAudio : `/audio/${useAudio}`;
 		return (
-			<>
+			<div>
 				<GetTitle {...props} />
 				<audio controls="controls" title={title} preload="none" className="audio">
 					<source src={useSrc} type="audio/mpeg" />
 				</audio>
 				<GetComment comment={comment} comments={comments} />
-			</>
+			</div>
 		)
 	}
 
