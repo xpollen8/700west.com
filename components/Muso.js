@@ -1,5 +1,5 @@
 import releases from '../lib/releases';
-import { getBodyHTML, makeReleaseLink, makeBandLink, dateCompare, Item } from '../lib/helpers';
+import { getBodyHTML } from '../lib/helpers';
 
 const cleanName = (value) => value.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
 const makeMusicianLink = (musician) => `/musician/` + cleanName(isAKA(musician));
@@ -8,7 +8,7 @@ const AKAs = {
 	'Robert Williams': [ 'Bob WIlliams' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
-	'M. J. Whittemore, Jr.': [ 'Mo', 'Moe', 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore' ],
+	'M. J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
 	'Carlos Silva': [ 'Silva' ],
