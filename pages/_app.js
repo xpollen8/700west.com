@@ -22,7 +22,7 @@ const links = [
 	{ href: '/contact', text: 'Contact Us' },
 ];
 
-const getNavFromLink = (link) => links.find(l => l.href === `/${link}`).text || '/';
+const getNavFromLink = (link) => links.find(l => l.href === `/${link}`)?.text || '/';
 
 const Navigation = ({ link = '' }) => {
 	return (
