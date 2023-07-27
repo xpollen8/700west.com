@@ -131,10 +131,10 @@ const newsItems = [
 		linkExternalTitle: 'Purchase both volumes from bandcamp',
 		date: '2019-05-18',
 		extra:
-			<p>
+			<blockquote>
 				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'	}} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
 				<iframe title="Store" style={{ border: 0, width: '100%', height: '120px'	}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
-			</p>
+			</blockquote>
 	},
 	{
 		slug: 'manifesto',
@@ -249,7 +249,7 @@ const newsItems = [
 	{
 		title: 'PM Magazine (1980) Artist Profile',
 		date: '2012-10-10',
-		extra: <div className="video"><iframe title="TV interview" src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen /></div>,
+		extra: <blockquote className="video"><iframe title="TV interview" src="//www.youtube.com/embed/bNyjLmT3dn0" frameBorder="0" allowFullScreen /></blockquote>,
 		body: `
 				<p>
 					700 West artist J Michael Henderson was profiled on "PM Magazine" Indianapolis with Tom Cochrun (1980)
