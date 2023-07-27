@@ -10,8 +10,7 @@
 }
 
 .lyrics {
-	font-size: .7em;
-	font-style: italic;
+	font-size: .8em;
 }
 
 blockquote {
@@ -202,8 +201,7 @@ a[target="new"]:hover {
 	padding-right: 5px;
 }
 .audio {
-	margin-left: -15px;
-	width: 100%;
+	width: 93%;
 }
 .audio.title {
 }
