@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from '../pages/_app';
 import releases from '../lib/releases';
+//import musicians from '../lib/musicians';
 import { getBodyHTML, Lyrics, SectionHeader, makeReleaseLink, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
 import { AudioPlayer, makeMusicianLink } from './Muso';
 import Albums from './Albums';
@@ -34,7 +35,7 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 		{lyrics && <Lyrics lyrics={lyrics} />}
 	</>
 )
-
+ 
 const makeAddendum = (item, addendum = 0) => {
 	const add = item.addendum && item.addendum.find((x, i) => i === addendum - 1);
 	const link = (item.type === 'album') ? 'albums' : 'singles';
@@ -440,8 +441,9 @@ const matchReleaseName = (url = '', artist = '', title = '') => {
 	return (useUrl === useTest);
 }
 
-const Release = ({ url, addendum }) => {
+const Release = ({ url = '', addendum }) => {
 	let item;
+	const [ artist = '', title = '' ] = url.split('-');
 	if (url && url.match(/-7$/)) {
 		// if the URL ends w/ '-7', then only look in singles.
 		item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
@@ -456,6 +458,35 @@ const Release = ({ url, addendum }) => {
 		if (!item) {
 			// and then in demos
 			item = releases.find(r => r.type === 'demo' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		}
+		// and then in reminiscen
+		if (!item) {
+			item = releases.find(r => r.type === 'reminiscence' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+//			/*
+//			const t1 = artist.replace(/ /, '').split('_').join('').toLowerCase();
+//			const any = Object.keys(musicians).find(m => m.replace(/ /, '').split('_').join('').toLowerCase() === t1);
+//			item = musicians[any]?.reminiscences?.find(r => {
+//				const matched = matchReleaseName(`/releases/${url}`, artist, r.subject);
+//				console.log("M", artist, r, matched);
+//				return matched;
+//				});
+//			if (item) {
+//				return makeRelease({
+//					artist: item.who,
+//					title: item.subject,
+//					tracks: [
+//						{
+//							artist: item.who,
+//							title: item.subject,
+//							audio: item.audio,
+//							lyrics: item.said
+//						}
+//					]
+//				})
+//			}
+//			console.log("ANY", item);
+//			item = null;
+//			*/
 		}
 	}
 	if (item) {
