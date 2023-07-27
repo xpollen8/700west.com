@@ -6,6 +6,16 @@ const makeTribute = (item, key) => <Item key={key} bold={makeAuthor(item.author,
 const Tributes = () => {
 	const ret = [];
 	releases.forEach(r => {
+		if (r.type === 'reminiscence') {	// turn a release into a reminiscence (RDEO THIS TO NORMALIZE)
+			const { lyrics, audio } = r.tracks[0];
+			ret.push({
+				date: r.published,
+				title: r.title,
+				author: r.artist,
+				lyrics,
+				audio,
+			});
+		}
 		r?.addendum?.forEach(a => {
 			if (a.type === 'reminiscence') {
 				ret.push(a);
