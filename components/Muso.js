@@ -8,7 +8,7 @@ const AKAs = {
 	'Robert Williams': [ 'Bob WIlliams' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
-	'M. J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. J. Whittemore, Jr.', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
+	'M.J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
 	'Carlos Silva': [ 'Silva' ],
@@ -20,7 +20,7 @@ const AKAs = {
 	'Jim Hubler': [ 'W. J. Hubler, Jr.' ],
 };
 
-const isAKA = (name) => {
+const isAKA = (name = '') => {
 	const hasAKA = Object.keys(AKAs).find(a => {
 		if (a === name) return name;
 		const fnd = AKAs[a]?.find(aka => {
@@ -81,6 +81,21 @@ const releasesByMusician = (mus) => {
 	return ret.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
 }
 
+const commentsByMusician = (mus) => {
+	const comments = [];
+	releases.forEach(r => {
+		r?.tracks.forEach(t => {
+			t?.comments?.forEach(c => {
+				if (isAKA(c.who) === mus) {
+					comments.push({ release: r, track: t, comment: c });
+				}
+			})
+		})
+	});
+console.log("comments", comments);
+	return comments;
+}
+
 const getAlbumNames = () => releases.filter(r => r?.type === 'album');
 
 const	getMusicianNames = () => {
@@ -90,6 +105,23 @@ const	getMusicianNames = () => {
 		return credits.concat(...tracksCredits).filter(f => f);
 	}));
 	return uniqueNames.map(n => isAKA(n)).filter((v, i, s) => s.indexOf(v) === i).sort();
+}
+
+const isRelease = (artist, title) => {
+	return releases.find(r => {
+		if (r.type === 'single') {
+			return r.tracks[0]?.artist === artist && r.tracks[0]?.title === title;
+		} else {
+			return r.artist === artist && r.title === title;
+		}
+	});
+}
+
+const	getReleasedBandNames = () => {
+	const X = [].concat(...releases.map(r => {
+		return [ r?.artist ];
+	}));
+	return X.filter(f => f).filter((v, i, s) => s.indexOf(v) === i).sort();
 }
 
 const	getBandNames = () => {
@@ -198,4 +230,4 @@ const AudioPlayer = (props) => {
 	);
 };
 
-export { getAlbumNames, AudioPlayer, publicityByBand, getMusicianNames, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+export { isRelease, getReleasedBandNames, getAlbumNames, AudioPlayer, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
