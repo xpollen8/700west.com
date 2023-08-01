@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Page } from '../pages/_app';
 
-import { getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
-import { AudioPlayer, getBandNames, getMusicianNames, bandsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
+import { maybeReleaseLink, getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
+import { AudioPlayer, getBandNames, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
 import musicianExtra from '../lib/musicians';
 import musicianMemoriam from '../lib/memoriam';
 
@@ -146,7 +146,7 @@ const TrackComments = ({ comments = [] }) => {
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
 					return <div key={key} className="row">
-						<i>{c.said}</i>
+						<i><div dangerouslySetInnerHTML={{ __html: getBodyHTML(c.said) }}></div></i>
 						{showAttribution({
 							...c
 						}, 'row')}
@@ -266,26 +266,32 @@ const Tributes = ({ musician }) => {
 }
 
 const Shares = ({ musician }) => {
-	/*
-	const reminiscences = musicianExtra[musician]?.reminiscences || {};
-	if (!(reminiscences)?.length) return <></>;
+	const comments = commentsByMusician(musician);
+	if (!(comments)?.length) return <></>;
 	return (
 		<div>
-			<h3>{musician} Shares Thoughts About Others</h3>
-			{reminiscences.map((rem, key) => {
-				const { date, source, who, said, subject, audio } = rem;
+			<h3>{musician} Says..</h3>
+			{comments.map((rem, key) => {
+				const { release, track, comment } = rem;
+				const { date, source, who, said, subject, audio } = comment;
 				return (
 					<div className="row">
-						{subject}
 						{audio && <AudioPlayer source={audio} />}
-						<div dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
+						<div className="datum">
+						Topic:
+						</div>
+						{subject}
+						{' '}
+						{(track?.artist && track?.title) && (<>{maybeReleaseLink(track?.artist, track?.title)}</>)}
+						{' '}
+						{(release?.artist && release?.title) && (<>({maybeReleaseLink(release?.artist, release?.title)})</>)}
+						<div className="row" dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
 						{showAttribution({ original: source, date }, 'row')}
 					</div>
 				);
 			})}
 		</div>
 	);
-	*/
 }
 
 const Musician = ({ url = '' }) => {
