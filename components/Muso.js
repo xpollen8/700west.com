@@ -92,7 +92,6 @@ const commentsByMusician = (mus) => {
 			})
 		})
 	});
-console.log("comments", comments);
 	return comments;
 }
 
