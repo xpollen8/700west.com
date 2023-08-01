@@ -13,9 +13,12 @@
   "dependencies": {
     "chart.js": "^4.3.1",
     "mywrap": "github:xpollen8/mywrap",
-    "next": "latest",
-    "react": "18.x",
+    "next": "^13.4.12",
+    "react": "^18.2.0",
     "react-chartkick": "^0.5.3",
-    "react-dom": "18.x"
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^13.4.12"
   }
 }
