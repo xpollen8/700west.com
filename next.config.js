@@ -10,19 +10,6 @@ module.exports = {
 			],
 		},
 
-  async rewrites() {
-		return [
-			{
-				source: '/test/:path*',
-				destination: 'https://natureconservancy.org/:path*',
-			},
-			{
-				source: '/test',
-				destination: 'https://natureconservancy.org',
-			},
-		]
-	},
-
   async redirects() {
 		return [
 			{
