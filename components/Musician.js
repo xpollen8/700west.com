@@ -7,7 +7,7 @@ import musicians from '../lib/musicians';
 import AKAs from '../lib/AKAs';
 import memoriam from '../lib/memoriam';
 import AudioPlayer from './AudioPlayer';
-import MakeReleaseLink from './MakeReleaseLink';
+import MaybeReleaseLink from './MaybeReleaseLink';
 import MakeDate from './MakeDate';
 
 const Memoriam = ({ musician }) => {
