@@ -1,4 +1,4 @@
-import { makeReleaseLink } from '../lib/helpers';
+import { isRelease, makeReleaseLink } from '../lib/helpers';
 
 const MaybeReleaseLink = (artist='', title='') => {
 	if (!isRelease(artist, title)) return <><b>{artist}</b> - {title}</>;
