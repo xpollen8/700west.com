@@ -1,7 +1,7 @@
 import { Page } from './_app';
-import { getBodyHTML, Item } from '../lib/helpers';
-import { makeMusicianLink } from '../components/Muso';
+import { makeMusicianLink, getBodyHTML } from '../lib/helpers';
 import memoriam from '../lib/memoriam';
+import Item from '../components/Item';
 
 const Memoriam = (mem, key) => (
 	<Item key={key}

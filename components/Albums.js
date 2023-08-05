@@ -1,8 +1,6 @@
 import Image from 'next/image';
-//import releases from '../lib/releases';
-import { getAlbumNames } from './Muso';
-import { Item, dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
-import News from './News';
+import { getAlbumNames, dateCompare, makeReleaseLink } from '../lib/helpers';
+import Item from './Item';
 
 const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;

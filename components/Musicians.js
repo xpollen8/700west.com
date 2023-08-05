@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Item } from '../lib/helpers';
-import { getMusicianNames, AKAs, makeMusicianLink } from './Muso';
+import { getMusicianNames, makeMusicianLink } from '../lib/helpers';
+import Item from './Item';
+import AKAs from '../lib/AKAs';
 
 const makeAKA = (name) => {
 	const akas = AKAs[name];

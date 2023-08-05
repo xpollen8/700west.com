@@ -1,5 +1,7 @@
 import releases from '../lib/releases';
-import { Item, makeReleaseLink, typeToDisplay, makeSubject } from '../lib/helpers';
+import { makeReleaseLink, typeToDisplay } from '../lib/helpers';
+import Item from './Item';
+import MakeSubject from './MakeSubject';
 
 const Extras = (props) => {
 	const types = {};
@@ -25,7 +27,7 @@ const Extras = (props) => {
 								{item.artist || item.tracks[0].artist} <span style={{ fontWeight: 'normal' }}> - <a href={href}>{item.title || item.tracks[0].title}</a></span>
 							</>}
 							info={<>
-								{typeToDisplay(type)} : <a href={`${href}?addendum=${number}`}>{makeSubject(addendum)}</a>
+								{typeToDisplay(type)} : <a href={`${href}?addendum=${number}`}>{MakeSubject(addendum)}</a>
 							</>}
 							date={addendum.date}
 						/>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Item } from '../lib/helpers';
 import { Page } from './_app';
+import Item from '../components/Item';
 
 const data = [
 	{

@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Page } from './_app';
-import { autoLink, getBodyHTML, Item } from '../lib/helpers';
-import { cleanName } from '../components/Muso';
-
-const musicianLink = (mus) => <Link href={`/musician/${cleanName(mus)}`}>{mus}</Link>
+import { autoLink } from '../lib/helpers';
+import Item from '../components/Item';
 
 const data = [
 	{

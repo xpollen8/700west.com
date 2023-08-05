@@ -1,9 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Page } from '../pages/_app';
 
-import Link from 'next/link';
-import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink } from './Muso';
-import { SectionHeader, makeBandLink, makeReleaseLink } from '../lib/helpers';
+import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
 
 const Publicity = (band) => {
 	const publicity = publicityByBand(band)[0]?.publicity;

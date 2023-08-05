@@ -1,13 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Page } from '../pages/_app';
-import releases from '../lib/releases';
-//import musicians from '../lib/musicians';
-import { getBodyHTML, Lyrics, SectionHeader, makeReleaseLink, typeToDisplay, makeSubject, FormatDate, makeDate, makeAuthor, makeBandLink, makeSource } from '../lib/helpers';
-import { AudioPlayer, makeMusicianLink } from './Muso';
-import Albums from './Albums';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
+import { Page } from '../pages/_app';
+
+import releases from '../lib/releases';
+import { makeMusicianLink, getBodyHTML, makeReleaseLink, typeToDisplay, makeBandLink } from '../lib/helpers';
+import AudioPlayer from './AudioPlayer';
+import Lyrics from './Lyrics';
+import MakeDate from './MakeDate';
+import MakeSource from './MakeSource';
+import MakeAuthor from './MakeAuthor';
+import MakeSubject from './MakeSubject';
+import SectionHeader from './SectionHeader';
+import Albums from './Albums';
 
 const makeOriginal = (original) => {
 	if (original) {
@@ -24,8 +30,8 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
 			<Datum k="Source" v={source} />
 			<Datum k="Location" v={location} />
 			<Datum k="Type" v={typeToDisplay(type)} />
-			<Datum k="Author" v={makeAuthor(author, authorContact)} />
-			<Datum k="Published" v={makeDate(date)} />
+			<Datum k="Author" v={MakeAuthor(author, authorContact)} />
+			<Datum k="Published" v={MakeDate(date)} />
 			<Datum k="Original" v={makeOriginal(original)} />
 		</div>
 		{title &&
@@ -42,7 +48,7 @@ const makeAddendum = (item, addendum = 0) => {
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 
-	return <Page title="Addendum" link={link} description={makeSubject(add)} >
+	return <Page title="Addendum" link={link} description={MakeSubject(add)} >
 		{add && <Addendum {...add} artist={artist} release={release} releaseLink={makeReleaseLink(artist, release)} number={addendum} />}
 	</Page>
 }
@@ -112,7 +118,7 @@ const TrackComments = ({ comments = [] }) => {
 					return <div key={key} className="row">
 						<div dangerouslySetInnerHTML={{ __html: getBodyHTML(c.said) }}></div>
 						<Who who={c.who} />
-						{exists(c.date) && makeDate(c.date)}
+						{exists(c.date) && MakeDate(c.date)}
 					</div>
 				})}
 		</>
@@ -369,7 +375,7 @@ const Sales = ({ sales = [] }) => {
 			{sorted.map(({ date, said, price, where }, key) => (
 				<p key={key} className="row">
 						{exists(date) && <>
-							{FormatDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
+							{MakeDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
 						</>}
 				</p>
 			))}
@@ -389,8 +395,8 @@ const Comments = ({ comments = [] }) => {
 						<i>{said}</i>
 						<div style={{ padding: '10px' }}>
 							<Who who={who} />
-							{exists(date) && makeDate(date)}
-							{exists(source) && makeSource(source)}
+							{exists(date) && MakeDate(date)}
+							{exists(source) && MakeSource(source)}
 						</div>
 					</div>
 				</p>
@@ -408,7 +414,7 @@ const Auxiliary = ({ type, artist, title, tracks, addendum = [] }) => {
 			<div className="panelContainer">
 			{addendum.map((props, key) => (
 				<p key={key} className="row">
-					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{makeSubject(props)}</Link>
+					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{MakeSubject(props)}</Link>
 				</p>
 			))}
 			</div>
@@ -440,6 +446,8 @@ const matchReleaseName = (url = '', artist = '', title = '') => {
 	const useTest = (makeReleaseLink(artist, title) || '').split('_').join('').toLowerCase();
 	return (useUrl === useTest);
 }
+
+//import musicians from '../lib/musicians';
 
 const Release = ({ url = '', addendum }) => {
 	let item;

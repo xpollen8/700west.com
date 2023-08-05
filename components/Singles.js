@@ -1,5 +1,6 @@
 import releases from '../lib/releases';
-import { dateCompare, makeReleaseLink, Item } from '../lib/helpers';
+import { dateCompare, makeReleaseLink } from '../lib/helpers';
+import Item from './Item';
 
 const makeSingleBlurb = (item, key) => {
 	const artistA = item.tracks[0].artist;

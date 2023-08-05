@@ -1,5 +1,7 @@
-import { autoLink, getBodyHTML, AudioPlayer, Item } from '../lib/helpers.js';
 import Image from 'next/image';
+import { autoLink, getBodyHTML } from '../lib/helpers.js';
+import AudioPlayer from './AudioPlayer';
+import Item from './Item';
 
 const newsItems = [
 	{

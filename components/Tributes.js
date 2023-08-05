@@ -1,7 +1,8 @@
 import releases from '../lib/releases';
-import { Item, makeAuthor } from '../lib/helpers';
+import Item from './Item';
+import MakeAuthor from './MakeAuthor';
 
-const makeTribute = (item, key) => <Item key={key} bold={makeAuthor(item.author, item.authorContact)} info={(item.source || item.title)} date={item.date} body={item.body} lyrics={item.lyrics} audio={item.audio} />
+const makeTribute = (item, key) => <Item key={key} bold={MakeAuthor(item.author, item.authorContact)} info={(item.source || item.title)} date={item.date} body={item.body} lyrics={item.lyrics} audio={item.audio} />
 
 const Tributes = () => {
 	const ret = [];

@@ -1,7 +1,9 @@
 import '../styles/globals.css'
 import Head from 'next/head';
 import Image from 'next/image';
-import { Topper, SectionHeader } from '../lib/helpers';
+
+import Topper from '../components/Topper';
+import SectionHeader from '../components/SectionHeader';
 
 const links = [
 	{ href: '/', text: 'Home' },

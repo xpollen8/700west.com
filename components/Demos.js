@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import releases from '../lib/releases';
-import { Item, dateCompare, SectionHeader, makeReleaseLink } from '../lib/helpers';
+import { dateCompare, makeReleaseLink } from '../lib/helpers';
+import Item from './Item';
+import SectionHeader from './SectionHeader';
 
 const makeDemoBlurb = (item, key) => {
 	const thumb = (item?.image && item?.image[0]?.thumb) || (item?.publicity && item?.publicity[0]?.image);

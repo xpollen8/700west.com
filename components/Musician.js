@@ -2,17 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Page } from '../pages/_app';
 
-import { maybeReleaseLink, getBodyHTML, makeReleaseLink, makeBandLink, makeDate } from '../lib/helpers';
-import { AudioPlayer, getBandNames, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, AKAs, isAKA, cleanName } from './Muso';
-import musicianExtra from '../lib/musicians';
-import musicianMemoriam from '../lib/memoriam';
+import { getBandNames, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink } from '../lib/helpers';
+import musicians from '../lib/musicians';
+import AKAs from '../lib/AKAs';
+import memoriam from '../lib/memoriam';
+import AudioPlayer from './AudioPlayer';
+import MakeReleaseLink from './MakeReleaseLink';
+import MakeDate from './MakeDate';
 
 const Memoriam = ({ musician }) => {
-	const deceased = musicianMemoriam.find(m => m?.name === musician);
+	const deceased = memoriam.find(m => m?.name === musician);
 	if (!deceased) return <></>;
 	return (
 		<div className="row">
-			{(deceased?.date) && <Datum k={`Deceased`} v={makeDate(deceased?.date)} />}
+			{(deceased?.date) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
 			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 			{(deceased?.played) && <Datum k={`Played`} v={deceased?.played} />}
 			{(deceased?.for) && <Datum k={`For`} v={(deceased?.forLink) ? <a href={`${deceased?.forLink}`}>{deceased.for}</a> : <>{deceased.for}</>}
@@ -78,16 +81,16 @@ const showAttribution = (attr, className) => {
 	if (!(original || who || date)) return <></>;
 	return (
 		<div className={`${className} attribution`}>
-			{exists(date) && makeDate(date)}
+			{exists(date) && MakeDate(date)}
 			<Datum k="Source" v={original} />
 			{who && <Datum k="Author" v=<Who who={who} /> />}
-			{added && <Datum k="Added" v={makeDate(added)} />}
+			{added && <Datum k="Added" v={MakeDate(added)} />}
 		</div>
 	);
 }
 
 const Bio = ({ musician }) => {
-	const bio = musicianExtra[musician]?.bio;
+	const bio = musicians[musician]?.bio;
 	if (!bio) return <></>;
 	return (
 		<div>
@@ -101,7 +104,7 @@ const Bio = ({ musician }) => {
 }
 
 const Gallery = ({ musician }) => {
-	const images = musicianExtra[musician]?.images;
+	const images = musicians[musician]?.images;
 	if (!(images?.length)) return <></>;
 	return (
 		<div>
@@ -115,7 +118,7 @@ const Gallery = ({ musician }) => {
 						{caption}
 						</i>
 					{showAttribution(attribution)}
-					{date && <Datum k="Added" v={makeDate(date)} />}
+					{date && <Datum k="Added" v={MakeDate(date)} />}
 					</li>
 				</div>
 			);
@@ -172,37 +175,8 @@ const embedVideo = (v, key) => {
 	)
 }
 
-/*
-#live   if (define(urlClean, ${replace(${url}, https://vimeo.com/, https://player.vimeo.com/video/)}))
-#live   endif
-#live   if ((getval(local) = yes) || (!getval(url) == .))
-            <video controls preload="none" style="max-width: 100%;" poster="${url}_thumbnail.jpg">
-                <source src="${url}.mp4" type="video/mp4">
-            </video>
-#live       if ((getval(anno)) && (getval(${anno})))
-                <div class="annotation">
-                    ${${anno}}
-                </div>
-#live       endif
-#live   else if (getval(urlClean) == jazzbutcher.com)
-#
-#   prevent recurision inside iframe
-#
-    bad url: ${url}
-#live   else
-            <div class="js-video [vimeo, widescreen]">
-                <iframe width="560" height="315" src="${urlClean}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-#live       if ((getval(anno)) && (getval(${anno})))
-                <div class="annotation">
-                    ${${anno}}
-                </div>
-#live       endif
-#live   endif
-*/
-
 const Videos = ({ musician }) => {
-	const videos = musicianExtra[musician]?.videos;
+	const videos = musicians[musician]?.videos;
 	if (!(videos?.length)) return <></>;
 	return (
 		<div>
@@ -213,7 +187,7 @@ const Videos = ({ musician }) => {
 }
 
 const Online = ({ musician }) => {
-	const online = musicianExtra[musician]?.online || {};
+	const online = musicians[musician]?.online || {};
 	if (!(Object.keys(online)?.length)) return <></>;
 	return (
 		<div>
@@ -226,7 +200,7 @@ const Online = ({ musician }) => {
 }
 
 const Address = ({ musician }) => {
-	const address = musicianExtra[musician]?.address || {};
+	const address = musicians[musician]?.address || {};
 	if (!(Object.keys(address)?.length)) return <></>;
 	return (
 		<div>
@@ -244,7 +218,7 @@ const Address = ({ musician }) => {
 // all which match ANY musician alias.
 const Tributes = ({ musician }) => {
 	/*
-	const reminiscences = musicianExtra[musician]?.reminiscences || {};
+	const reminiscences = musicians[musician]?.reminiscences || {};
 	if (!(reminiscences)?.length) return <></>;
 	return (
 		<div>
@@ -282,9 +256,9 @@ const Shares = ({ musician }) => {
 						</div>
 						{subject}
 						{' '}
-						{(track?.artist && track?.title) && (<>{maybeReleaseLink(track?.artist, track?.title)}</>)}
+						{(track?.artist && track?.title) && (<>{MaybeReleaseLink(track?.artist, track?.title)}</>)}
 						{' '}
-						{(release?.artist && release?.title) && (<>({maybeReleaseLink(release?.artist, release?.title)})</>)}
+						{(release?.artist && release?.title) && (<>({MaybeReleaseLink(release?.artist, release?.title)})</>)}
 						<div className="row" dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
 						{showAttribution({ original: source, date }, 'row')}
 					</div>

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Page } from './_app';
 import { fetchFeedback } from '../lib/feedback';
-import { makeDate, SectionHeader, Item } from '../lib/helpers';
+import MakeDate from '../components/MakeDate';
+import SectionHeader from '../components/SectionHeader';
+import Item from '../components/Item';
 
 export async function getServerSideProps(context) {
 	const feedback = await fetchFeedback('htdb/index.html');
@@ -20,7 +22,7 @@ const CleanContact = (str) => str && str.replace(/\[remove\].*/, '@...');
 
 const Comment = ({ subject, dtcreated, who, whence, comments }, key) => (
 	<Item key={key} bold={subject} info={<> {whence} - {CleanContact(who)} </>}
-		date={makeDate(dtcreated)}
+		date={MakeDate(dtcreated)}
 		body={comments}
 	/>
 )

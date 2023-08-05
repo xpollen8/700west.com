@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { SectionHeader } from '../lib/helpers';
+import SectionHeader from '../components/SectionHeader';
 import { Page } from './_app';
 
 const App = (props) => {
