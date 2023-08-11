@@ -31,7 +31,7 @@ const links: any  = {
 	'/photos': 'Photos',
 	'/listen': 'Listen!',
 	'/moe': 'Mo Whittemore',
-	'/tributes': 'Reminiscences',
+	'/tributes': 'Tributes',
 	'/memoriam': 'In Memoriam',
 	'/feedback': 'Comments',
 	'/contact': 'Contact Us',
@@ -106,7 +106,9 @@ export default function RootLayout({
 }) {
   return (
 		<html>
-      {children}
+			<body>
+				{children}
+			</body>
     </html>
   )
 }
