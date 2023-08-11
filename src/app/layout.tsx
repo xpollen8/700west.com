@@ -1,20 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import '../styles/globals.css'
 import Topper from '../components/Topper';
 import SectionHeader from '../components/SectionHeader';
 
-import { Metadata, ResolvingMetadata } from 'next'
-export function generateMetadata({ params: { title } }: any) {
-	return {
-		viewport: {
-			initialScale: 1.0,
-			width: 'device-width',
-		},
-		description:  "700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's",
-		title
-	}
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+	viewport: {
+		initialScale: 1.0,
+		width: 'device-width',
+	},
+	description: "Curated archive of Mo WHittemore's 700 West Recording studio",
+	keywords: [
+		"700 West", "Mo Whittemore", "Moe Whittemore", "Zerfas", "Primevil", "Indiana music", "70's & 80's"
+	],
 }
 
 const links = [
@@ -59,10 +61,6 @@ const Navigation = ({ link = '' }) => {
 	);
 }
 
-let title: string = 'Welcome!';
-const setTitle = (tit: any) => title = tit;
-const getTitle = () => title;
-
 export const Page = ({
 	title,
 	link,
@@ -74,19 +72,25 @@ export const Page = ({
 	description?: string
   children?: React.ReactNode
 }) => {
-	setTitle(title);
-	return (<div className='container'>
-		<div>
-			<Topper className="navTopper" text={title || getNavFromLink(link)}/>
-			<Navigation link={link} />
-		</div>
-		<div>
-			<Topper className="mainTopper" text={description}/>
-			<div className='main'>
-				{children}
+	return (
+		<>
+		<Head>
+			<title>700 West - {title}</title>
+		</Head>
+		<div className='container'>
+			<div>
+				<Topper className="navTopper" text={title || getNavFromLink(link)}/>
+				<Navigation link={link} />
+			</div>
+			<div>
+				<Topper className="mainTopper" text={description}/>
+				<div className='main'>
+					{children}
+				</div>
 			</div>
 		</div>
-	</div>)
+		</>
+	)
 }
 
 export default function RootLayout({
@@ -96,7 +100,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-		<title>{getTitle()}</title>
       <body>{children}</body>
     </html>
   )
