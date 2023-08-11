@@ -7,18 +7,17 @@ import Topper from '../components/Topper';
 import SectionHeader from '../components/SectionHeader';
 
 type Props = {
-  params: { title?: string }
-	searchParams?: { [key: string]: string | string[] | undefined }
+  title?: string
 }
 
-export function generateMetadata({ params, searchParams }: Props) {
+export function generateMetadata({ title }: Props) {
 	return {
 		viewport: {
 			initialScale: 1.0,
 			width: 'device-width',
 		},
 		description:  "700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's",
-		title: params?.title,
+		title
 	}
 }
 
@@ -75,7 +74,7 @@ export const Page = ({
 	description?: string
   children?: React.ReactNode
 }) => {
-	generateMetadata({ params: { title } });
+	generateMetadata({ title });
 	return (<div className='container'>
 		<div>
 			<Topper className="navTopper" text={title || getNavFromLink(link)}/>
