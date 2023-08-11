@@ -1,19 +1,26 @@
 import { Metadata, ResolvingMetadata } from 'next'
- 
-export function generateMetadata({ title }: { title?: string }) {
-	return {
-		viewport: "initial-scale=1.0, width=device-width",
-		description:  "700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's",
-		title,
-	}
-}
-
 import Image from 'next/image';
 import Link from 'next/link';
 
 import '../styles/globals.css'
 import Topper from '../components/Topper';
 import SectionHeader from '../components/SectionHeader';
+
+type Props = {
+  params: { title?: string }
+	searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export function generateMetadata({ params, searchParams }: Props) {
+	return {
+		viewport: {
+			initialScale: 1.0,
+			width: 'device-width',
+		},
+		description:  "700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's",
+		title: params?.title,
+	}
+}
 
 const links = [
 	{ href: '/', text: 'Home' },
@@ -34,7 +41,7 @@ const links = [
 	{ href: '/contact', text: 'Contact Us' },
 ];
 
-const getNavFromLink = (link) => links.find(l => l.href === `/${link}`)?.text || '/';
+const getNavFromLink = (link?: string) => link && links.find(l => l.href === `/${link}`)?.text || '/';
 
 const Navigation = ({ link = '' }) => {
 	return (
@@ -44,11 +51,11 @@ const Navigation = ({ link = '' }) => {
 			</div>
 			<SectionHeader text="Choose" />
 			<ul>
-				{links.map(({ href, text, style }, i) => {
+				{links.map(({ href, text }, i) => {
 					const X = (href === `/${link}`) ? 'navActive' : 'navInactive';
 					return (
 						<li key={i}>
-							<span className={X} style={style}></span><Link href={href}>{text}</Link>
+							<span className={X}></span><Link href={href}>{text}</Link>
 						</li>
 					)
 				})}
@@ -63,16 +70,12 @@ export const Page = ({
   children,
 	description
 }: {
-	title: string
-	link: string
-	description: string
-  children: React.ReactNode
+	title?: string
+	link?: string
+	description?: string
+  children?: React.ReactNode
 }) => {
-	generateMetadata({
-		viewport: "initial-scale=1.0, width=device-width",
-		description: "700 West Recording, Mo Whittemore, Moe Whittemore, Zerfas, Primevil, Indiana 70's 80's",
-		title
-	})
+	generateMetadata({ params: { title } });
 	return (<div className='container'>
 		<div>
 			<Topper className="navTopper" text={title || getNavFromLink(link)}/>

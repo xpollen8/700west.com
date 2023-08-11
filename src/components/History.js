@@ -1,7 +1,17 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-const History = ({ rotating }) => (
-	<>
+const	ImageRotate = () => {
+	switch (Math.floor(Math.random() * 4)) {
+		case 1: return { src: `/images/250_business_card.jpg`, width: 250, height: 147, alt: "Business Card" }
+		case 2: return { src: `/images/72adb.gif`, width: 379, height: 192, alt: "Newspaper Ad" }
+		case 3: return { src: `/images/19730205_Primevil_Zerfas.jpg`, width: 250, height: 215, alt: "Big Day!" }
+		default: return { src: `/images/newsad.jpg`, width: 367, height: 152, alt: "Newspaper Ad" }
+	}
+}
+
+const History = () => (
+<>
 	<p>
 	700 West Recording was a place that catered to the musician.  Plenty of area studios 
 	back in '72 were doing the commercial thing.  That's where the money was.  But there was 
@@ -9,10 +19,10 @@ const History = ({ rotating }) => (
 	niche.
 	</p>
 	<div style={{ display: 'inline-block', float: 'right', padding: '5px' }} >
-		<Image {...rotating } />
+		<Image {...ImageRotate()} />
 	</div>
 	<p>
-	The demo tape was our specialty, although many <a href="/albums">albums</a> & <a href="/singles">singles</a> were generated during 
+	The demo tape was our specialty, although many <Link href="/albums">albums</Link> & <a href="/singles">singles</a> were generated during 
 	our 12 years of existence.  And with my 
 	electronics background, I wound up doing my share of instrument and amp repair - many 
 	times before sessions. I also did a bit of custom electronics fabrication for our clients.  
@@ -31,7 +41,7 @@ const History = ({ rotating }) => (
 	the best material with major publishers by keeping countless demo tapes in circulation.
 	</p>
 	<div style={{ display: 'inline-block', float: 'left', padding: '10px' }}>
-		<a href={`/images/20161007_700WestTapes.jpg`}><Image src={`/images/20161007_700WestTapes_500.jpg`} width="500" height="670" alt="The Master Tapes" /></a>
+		<Link href={`/images/20161007_700WestTapes.jpg`}><Image src={`/images/20161007_700WestTapes_500.jpg`} width="500" height="670" alt="The Master Tapes" /></Link>
 	</div>
 	<p>
 	We did all types of material at 700 West: funk; hard rock; country rock; gospel (all styles!), 
@@ -83,7 +93,7 @@ const History = ({ rotating }) => (
 	<p>
 	<b>Mo</b> - 2001-02-03
 	</p>
-	</>
+</>
 )
 
 export default History;

@@ -3,7 +3,24 @@ import { autoLink, getBodyHTML } from '../lib/helpers.js';
 import AudioPlayer from './AudioPlayer';
 import Item from './Item';
 
-const newsItems = [
+type ItemType = {
+	slug?: string
+	extra?: string | React.ReactElement
+	audio?: string
+	author?: string
+	date?: string
+	title?: string
+	body?: string
+	tags?: string[]
+	linkInternal?: string
+	linkInternalTitle?: string
+	linkExternal?: string
+	linkExternalTitle?: string,
+	info?: string
+	lyrics?: string
+}
+
+const newsItems: ItemType[] = [
 	{
 	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 	date: '2022-02-11',
@@ -263,12 +280,27 @@ const newsItems = [
 	},
 ];
 
-const Tag = (tag, key) => (
+const Tag = (tag: string, key: number) => (
 	<div className="news tag" key={key}>{tag}</div>
 )
 
-const NewsItem = ({ extra, audio, author, date, title = 'News Item!', body, tags = [], linkInternal, linkInternalTitle, linkExternal, linkExternalTitle = 'Original Article...' } = newsItems[0], key = 0) => (
-	<Item key={key} bold={title} author={author} date={date} audio={audio} body={body} extra={extra ||
+const NewsItem = ({
+	extra,
+	audio,
+	author,
+	date,
+	title,
+	body,
+	tags,
+	linkInternal,
+	linkInternalTitle,
+	linkExternal,
+	linkExternalTitle,
+	info,
+	lyrics,
+}: ItemType, key?: number | undefined) => (
+	<div key={key}>
+	<Item bold={title || 'News Item!'} author={author} date={date} audio={audio} body={body} extra={extra}>
 		<>
 			{linkInternal &&
 				<div className="news link">
@@ -277,25 +309,25 @@ const NewsItem = ({ extra, audio, author, date, title = 'News Item!', body, tags
 			}
 			{linkExternal &&
 				<div className="news link">
-					<a href={linkExternal} target="new">{linkExternalTitle}</a>
+					<a href={linkExternal} target="new">{linkExternalTitle || 'Original Article...'}</a>
 				</div>
 			}
 			<div className="news tags">
-				{tags.map(Tag)}
+				{tags?.map(Tag)}
 			</div>
 		</>
-		}
-	/>
+	</Item>
+	</div>
 )
 
-const News = ({ slug, num }) => {
+const News = ({ slug, num }: { slug?: string, num?: number }) => {
 	if (slug) {
-		return NewsItem(newsItems.find(i => i.slug === slug))
+		return NewsItem(newsItems.find(i => i.slug === slug) || {})
 	} else if (num) {
-		return NewsItem(newsItems[num - 1])
+		return NewsItem(newsItems[num - 1] || {})
 	} else {
 		return <blockquote className="panelContainer">
-			{newsItems.sort((a, b) => new Date(b.date) - new Date(a.date)).map(NewsItem)}
+			{newsItems.sort((a: any, b: any): any => (new Date(b.date)).getTime() - (new Date(a.date)).getTime()).map(NewsItem)}
 		</blockquote>
 	}
 }

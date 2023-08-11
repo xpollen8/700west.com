@@ -3,8 +3,22 @@ import MakeDate from './MakeDate';
 import Lyrics from './Lyrics';
 import AudioPlayer from './AudioPlayer';
 
-const Item = ({ children, bold, author, info, date, body, extra, lyrics, audio }, key) => (
-	<div className="row" key={key}>
+//<Item bold={title || 'News Item!'} author={author} date={date} audio={audio} body={body} extra={extra}>
+
+type Props ={
+	children?: React.ReactNode
+	bold?: string
+	author?: string
+	info?: string
+	date?: string
+	body?: string
+	extra?: string | React.ReactElement
+	lyrics?: string
+	audio?: string
+}
+
+const Item = ({ children, bold, author, info, date, body, extra, lyrics, audio }: Props) => (
+	<div className="row">
 		{bold && <div className="artist">
 			<b>{bold}</b>
 		</div>}
@@ -25,6 +39,7 @@ const Item = ({ children, bold, author, info, date, body, extra, lyrics, audio }
 			<div dangerouslySetInnerHTML={{ __html: getBodyHTML(body) }}></div>
 		</blockquote>}
 		<Lyrics lyrics={lyrics} />
+		{children}
 	</div>
 )
 
