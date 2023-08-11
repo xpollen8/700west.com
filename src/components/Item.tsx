@@ -3,8 +3,6 @@ import MakeDate from './MakeDate';
 import Lyrics from './Lyrics';
 import AudioPlayer from './AudioPlayer';
 
-//<Item bold={title || 'News Item!'} author={author} date={date} audio={audio} body={body} extra={extra}>
-
 type Props ={
 	children?: React.ReactNode
 	bold?: string

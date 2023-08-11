@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Head from 'next/head';
 
 import '../styles/globals.css'
 import Topper from '../components/Topper';
@@ -19,47 +18,57 @@ export const metadata: Metadata = {
 	],
 }
 
-const links = [
-	{ href: '/', text: 'Home' },
-	{ href: '/news', text: 'News' },
-	{ href: '/albums', text: 'Albums' },
-	{ href: '/singles', text: 'Singles' },
-	{ href: '/demos', text: 'Demos' },
-	{ href: '/bands', text: 'Bands' },
-	{ href: '/musicians', text: 'Musicians' },
-	{ href: '/extras', text: 'Extras!' },
-	{ href: '/equipment', text: 'Equipment' },
-	{ href: '/photos', text: 'Photos' },
-	{ href: '/listen', text: 'Listen!' },
-	{ href: '/moe', text: 'Mo Whittemore' },
-	{ href: '/tributes', text: 'Reminiscences' },
-	{ href: '/memoriam', text: 'In Memoriam' },
-	{ href: '/feedback', text: 'Comments' },
-	{ href: '/contact', text: 'Contact Us' },
-];
-
-const getNavFromLink = (link?: string) => link && links.find(l => l.href === `/${link}`)?.text || '/';
-
-const Navigation = ({ link = '' }) => {
-	return (
-		<div className="nav">
-			<div style={{ textAlign: 'center' }}>
-				<Link href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" /></Link>
-			</div>
-			<SectionHeader text="Choose" />
-			<ul>
-				{links.map(({ href, text }, i) => {
-					const X = (href === `/${link}`) ? 'navActive' : 'navInactive';
-					return (
-						<li key={i}>
-							<span className={X}></span><Link href={href}>{text}</Link>
-						</li>
-					)
-				})}
-			</ul>
-		</div>
-	);
+const links: any  = {
+	'/': 'Home',
+	'/news': 'News',
+	'/albums': 'Albums',
+	'/singles': 'Singles',
+	'/demos': 'Demos',
+	'/bands': 'Bands',
+	'/musicians': 'Musicians',
+	'/extras': 'Extras!',
+	'/equipment': 'Equipment',
+	'/photos': 'Photos',
+	'/listen': 'Listen!',
+	'/moe': 'Mo Whittemore',
+	'/tributes': 'Reminiscences',
+	'/memoriam': 'In Memoriam',
+	'/feedback': 'Comments',
+	'/contact': 'Contact Us',
 }
+
+export const setTitle = (title: string): Metadata => ({
+		viewport: {
+			initialScale: 1.0,
+			width: 'device-width',
+		},
+		description: "Curated archive of Mo WHittemore's 700 West Recording studio",
+		keywords: [
+			"700 West", "Mo Whittemore", "Moe Whittemore", "Zerfas", "Primevil", "Indiana music", "70's & 80's"
+		],
+		title
+})
+
+export const setTitleFromURL = (url: string): Metadata => setTitle(links[url] || 'Welcome');
+
+const Navigation = ({ link = '' }) => (
+	<div className="nav">
+		<div style={{ textAlign: 'center' }}>
+			<Link href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" /></Link>
+		</div>
+		<SectionHeader text="Choose" />
+		<ul>
+			{Object.keys(links).map((k, i) => {
+				const cls = (k === `/${link}`) ? 'navActive' : 'navInactive';
+				return (
+					<li key={i}>
+						<span className={cls}></span><Link href={k}>{links[k]}</Link>
+					</li>
+				)
+			})}
+		</ul>
+	</div>
+)
 
 export const Page = ({
 	title,
@@ -67,16 +76,14 @@ export const Page = ({
   children,
 	description
 }: {
-	title?: string
+	title?: any
 	link?: string
 	description?: string
   children?: React.ReactNode
 }) => {
+	const getNavFromLink = (link?: string) => links[link || '/'];
+
 	return (
-		<>
-		<Head>
-			<title>700 West - {title}</title>
-		</Head>
 		<div className='container'>
 			<div>
 				<Topper className="navTopper" text={title || getNavFromLink(link)}/>
@@ -89,7 +96,6 @@ export const Page = ({
 				</div>
 			</div>
 		</div>
-		</>
 	)
 }
 
@@ -99,8 +105,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+		<html>
+      {children}
     </html>
   )
 }
