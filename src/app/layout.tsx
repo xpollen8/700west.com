@@ -6,11 +6,7 @@ import '../styles/globals.css'
 import Topper from '../components/Topper';
 import SectionHeader from '../components/SectionHeader';
 
-type Props = {
-  title?: string
-}
-
-export function generateMetadata({ title }: Props) {
+export function generateMetadata({ params: { title } }: any) {
 	return {
 		viewport: {
 			initialScale: 1.0,
@@ -74,7 +70,7 @@ export const Page = ({
 	description?: string
   children?: React.ReactNode
 }) => {
-	generateMetadata({ title });
+	generateMetadata({ params: { title } });
 	return (<div className='container'>
 		<div>
 			<Topper className="navTopper" text={title || getNavFromLink(link)}/>
