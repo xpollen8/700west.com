@@ -1,4 +1,3 @@
-import { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,6 +5,7 @@ import '../styles/globals.css'
 import Topper from '../components/Topper';
 import SectionHeader from '../components/SectionHeader';
 
+import { Metadata, ResolvingMetadata } from 'next'
 export function generateMetadata({ params: { title } }: any) {
 	return {
 		viewport: {
@@ -59,6 +59,10 @@ const Navigation = ({ link = '' }) => {
 	);
 }
 
+let title: string = 'Welcome!';
+const setTitle = (tit: any) => title = tit;
+const getTitle = () => title;
+
 export const Page = ({
 	title,
 	link,
@@ -70,7 +74,7 @@ export const Page = ({
 	description?: string
   children?: React.ReactNode
 }) => {
-	generateMetadata({ params: { title } });
+	setTitle(title);
 	return (<div className='container'>
 		<div>
 			<Topper className="navTopper" text={title || getNavFromLink(link)}/>
@@ -92,6 +96,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+		<title>{getTitle()}</title>
       <body>{children}</body>
     </html>
   )
