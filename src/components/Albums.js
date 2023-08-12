@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getAlbumNames, dateCompare, makeReleaseLink } from '../lib/helpers';
 import Item from './Item';
+import SectionHeader from './SectionHeader';
 
 const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;
@@ -35,14 +36,14 @@ const Albums = () => {
 				<iframe title="Store" style={{ border: 0, width: '80%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
 			</div>
 		</div>
+		<SectionHeader text="Albums released on the 700 West label" />
 		<Item
-			bold={`Albums released on the 700 West label`}
 			extra={
 				albums.filter(r => r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)
 			}
 		/>
+		<SectionHeader text="Albums recorded at 700 West, released on other labels" />
 		<Item
-			bold={`Albums recorded at 700 West, released on other labels`}
 			extra={
 				albums.filter(r => !r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)
 			}

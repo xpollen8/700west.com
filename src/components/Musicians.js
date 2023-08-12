@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getMusicianNames, makeMusicianLink } from '../lib/helpers';
 import Item from './Item';
 import AKAs from '../lib/AKAs';
+import SectionHeader from './SectionHeader';
 
 const makeAKA = (name) => {
 	const akas = AKAs[name];
@@ -21,9 +22,12 @@ const makeMusicianBlurb = (item, key) => (
 const Musicians = () => {
 	const musicians = getMusicianNames();
 	return (
-		 <Item bold={`Approximately ${musicians?.length} musicians passed through our doors`}
+		 <>
+			 <SectionHeader text={`${musicians?.length} (documented) musicians recorded w/us`} />
+			 <Item
 				 extra={<div className="panelContainer">{musicians?.map(makeMusicianBlurb)}</div>}
 			/>
+		</>
 	);
 }
 

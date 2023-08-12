@@ -62,7 +62,8 @@ const Demos = () => (
 				<b>Mo - 2001-02-03</b>
 			</p>
 		</blockquote>
-		<Item bold={`Demo Sessions`}
+		<SectionHeader text="A few of the Demo Sessions" />
+		<Item
 			extra={
 				<div className="panelContainer">
 					{releases.filter(r => r.type === 'demo').sort(dateCompare).map(makeDemoBlurb)}

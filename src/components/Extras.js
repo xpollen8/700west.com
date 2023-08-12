@@ -2,6 +2,7 @@ import releases from '../lib/releases';
 import { makeReleaseLink, typeToDisplay } from '../lib/helpers';
 import Item from './Item';
 import MakeSubject from './MakeSubject';
+import SectionHeader from './SectionHeader';
 
 const Extras = (props) => {
 	const types = {};
@@ -16,7 +17,7 @@ const Extras = (props) => {
 	return <>
 		{Object.keys(types).map((type, key) => (
 			<div key={key}>
-				<b>{`${typeToDisplay(type)}s`}</b>
+				<SectionHeader text={`${typeToDisplay(type)}s`} />
 				<blockquote className="panelContainer">
 				{types[type].map(({ item, addendum, number }, key) => {
 					const href = makeReleaseLink(item.artist || item.tracks[0].artist, item.title || item.tracks[0].title);

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Page from './Page';
 
-import { getBandNames, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink } from '../lib/helpers';
+import { getBandNames, knownForsByMusician, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink } from '../lib/helpers';
 import musicians from '../lib/musicians';
 import AKAs from '../lib/AKAs';
 import memoriam from '../lib/memoriam';
@@ -41,6 +41,20 @@ const Release = (release, key) => {
 				}
 		</li>
 	)
+}
+
+const KnownFor = ({ musician }) => {
+	const known = knownForsByMusician(musician);
+	console.log("knownForsByMusician", known);
+	if (!known?.length) { return <></> }
+	return (
+			<div>
+				<h3>Also Known For</h3>
+				<ul className="row">
+				{known.map((k, key) => <li key={key}>{k}</li>)}
+				</ul>
+			</div>
+		)
 }
 
 const CreditsOn = ({ musician }) => {
@@ -282,6 +296,7 @@ const Musician = ({ url = '' }) => {
 			<div className="panelContainer">
 				<Bio musician={musician} />
 			<CreditsOn musician={musician} />
+			<KnownFor musician={musician} />
 			</div>
 				<Online musician={musician} />
 				<Address musician={musician} />

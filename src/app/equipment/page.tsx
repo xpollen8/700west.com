@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Page, { setTitleFromURL } from '../../components/Page';
 import Item from '../../components/Item';
+import SectionHeader from '../../components/SectionHeader';
 
 export const metadata: Metadata = setTitleFromURL('/equipment');
 
@@ -177,14 +178,14 @@ const data: Data[] = [
 const Home = () =>
 	<Page link="/equipment">
 		{data.map(({ heading, items }, key) => (
-			<>
-				<b key={key}>{heading}</b>
+			<div key={key}>
+				<SectionHeader text={heading} />
 				<blockquote className='panelContainer'>
 					{items.map((u, key) => (
 						<Item key={key} extra={u} />
 					))}
 				</blockquote>
-			</>
+			</div>
 		))}
 	</Page>
 

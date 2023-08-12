@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getBandNames, makeBandLink } from '../lib/helpers';
 import Item from './Item';
+import SectionHeader from './SectionHeader';
 
 const MakeBandBlurb = (item, key) => {
 	return (<Item key={key} extra={(
@@ -13,12 +14,15 @@ const MakeBandBlurb = (item, key) => {
 const Bands = () => {
 	const bands = getBandNames();
 	return (
-		<Item bold={`Approximately ${bands?.length} bands passed through our doors`}
+		<>
+		<SectionHeader text={`${bands?.length} (documented) bands recorded w/us`} />
+		<Item
 			extra={
 				<div className="panelContainer">
 					{bands.map(MakeBandBlurb)}
 				</div>
 			} />
+		</>
 	);
 }
 

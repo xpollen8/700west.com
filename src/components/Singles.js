@@ -1,6 +1,7 @@
 import releases from '../lib/releases';
 import { dateCompare, makeReleaseLink } from '../lib/helpers';
 import Item from './Item';
+import SectionHeader from './SectionHeader';
 
 const makeSingleBlurb = (item, key) => {
 	const artistA = item.tracks[0].artist;
@@ -23,14 +24,16 @@ const makeSingleBlurb = (item, key) => {
 
 const Singles = () => (
 	<>
- 		<Item bold={`Singles released on the 700 West label`}
+		<SectionHeader text="Singles released on the 700 West label" />
+ 		<Item
  			extra={
  			<div className="panelContainer">
  			{releases.filter(r => r.type === 'single' &&
  				r.label.match(/700/)).sort(dateCompare).map(makeSingleBlurb)}
  			</div>
  		}/>
- 		<Item bold={`Singles recorded at 700 West, released on other labels`}
+		<SectionHeader text="Singles recorded at 700 West, released on other labels" />
+ 		<Item
  			extra={
  			<div className="panelContainer">
  			{releases.filter(r => r.type === 'single' &&
