@@ -1,9 +1,13 @@
-import { Page } from './_app';
-import { makeMusicianLink, getBodyHTML } from '../lib/helpers';
-import memoriam from '../lib/memoriam';
-import Item from '../components/Item';
+import { Metadata } from 'next'
 
-const Memoriam = (mem, key) => (
+import { Page, setTitleFromURL } from '../layout';
+import { makeMusicianLink, getBodyHTML } from '../../lib/helpers';
+import memoriam from '../../lib/memoriam';
+import Item from '../../components/Item';
+
+export const metadata: Metadata = setTitleFromURL('/memoriam');
+
+const Memoriam = (mem: any, key: number) => (
 	<Item key={key}
 		bold={<a href={makeMusicianLink(mem.name)}>{mem.name}</a>}
 		info={
@@ -22,8 +26,8 @@ const Memoriam = (mem, key) => (
 	/>
 )
 
-const App = (props) => (
-	<Page link="memoriam" description="Memoriam">
+const App = () => (
+	<Page link='/memoriam' description="Memoriam">
 		<div className="panelContainer">{memoriam.map(Memoriam)}</div>
 	</Page>
 )
