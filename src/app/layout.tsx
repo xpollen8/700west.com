@@ -30,7 +30,7 @@ const links: any  = {
 	'/equipment': 'Equipment',
 	'/photos': 'Photos',
 	'/listen': 'Listen!',
-	'/moe': 'Mo Whittemore',
+	'/mo': 'Mo Whittemore',
 	'/tributes': 'Tributes',
 	'/memoriam': 'In Memoriam',
 	'/feedback': 'Comments',
