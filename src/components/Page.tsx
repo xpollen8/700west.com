@@ -40,8 +40,8 @@ export const setTitleFromURL = (url: string): Metadata => setTitle(links[url][0]
 
 const Navigation = ({ link = '' }) => (
 	<div className="nav">
-		<div style={{ textAlign: 'center' }}>
-			<Link href="/"><Image width="168" height="90" src={`/images/logoModern.gif`} alt="logo" /></Link>
+		<div style={{ textAlign: 'center', marginTop: '6px', marginBottom: '2px' }}>
+			<Link href="/"><Image width="168" height="90" src="https://700west.com/images/logoModern.gif" alt="logo" /></Link>
 		</div>
 		<SectionHeader text="Choose" />
 		<ul>
