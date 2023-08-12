@@ -59,7 +59,7 @@ const Navigation = ({ link = '' }) => (
 		<SectionHeader text="Choose" />
 		<ul>
 			{Object.keys(links).map((k, i) => {
-				const cls = (k === `/${link}`) ? 'navActive' : 'navInactive';
+				const cls = (k === link) ? 'navActive' : 'navInactive';
 				return (
 					<li key={i}>
 						<span className={cls}></span><Link href={k}>{links[k]}</Link>

@@ -5,7 +5,7 @@ import Musicians from '../../components/Musicians';
 export const metadata: Metadata = setTitleFromURL('/musicians');
 
 const App = () =>
-	<Page title="Musicians" link="musicians" description="The Musicians">
+	<Page title="Musicians" link="/musicians" description="The Musicians">
 		<Musicians />
 	</Page>
 

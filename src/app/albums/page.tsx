@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import { Page, setTitleFromURL } from '../layout';
 import Albums from '../../components/Albums';
 
-export const metadata: Metadata = setTitleFromURL('/releases');
+export const metadata: Metadata = setTitleFromURL('/albums');
 
 const App = () =>
-	<Page title="Releases" link="albums" description="The Albums">
+	<Page title="Releases" link="/albums" description="The Albums">
 		<Albums />
 	</Page>
 

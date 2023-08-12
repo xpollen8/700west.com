@@ -5,7 +5,7 @@ import Extras from '../../components/Extras';
 export const metadata: Metadata = setTitleFromURL('/extras');
 
 const App = () =>
-	<Page title="Extras" link="extras" description="Reviews and Other Auxiliary Materials ">
+	<Page title="Extras" link="/extras" description="Reviews and Other Auxiliary Materials ">
 		<Extras />
 	</Page>
 
