@@ -74,8 +74,8 @@ module.exports = {
 				permanent: false,
 			},
 			{
-				source: '/releases',
-				destination: '/release',
+				source: '/releases/:path*',
+				destination: '/release/:path*',
 				permanent: false,
 			},
 		]
