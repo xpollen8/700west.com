@@ -1,9 +1,20 @@
+import { Metadata } from 'next'
+
+import { Page, setTitleFromURL } from '.././layout';
+
+export const metadata: Metadata = setTitleFromURL('/equipment');
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Page } from './_app';
-import Item from '../components/Item';
+import Item from '../../components/Item';
 
-const data = [
+type Items = React.ReactElement[];
+type Data = {
+	heading: string
+	items: Items
+}
+	
+const data: Data[] = [
 	{
 		heading: 'Homemade Stuff',
 		items: [
@@ -172,7 +183,7 @@ const Home = () => (
 				<b key={key}>{heading}</b>
 				<blockquote className='panelContainer'>
 					{items.map((u, key) => (
-						<Item key={key} className="row" extra={u} />
+						<Item key={key} extra={u} />
 					))}
 				</blockquote>
 			</>
