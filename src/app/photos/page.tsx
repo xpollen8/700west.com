@@ -1,10 +1,23 @@
+import { Metadata } from 'next';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Page } from './_app';
-import { autoLink } from '../lib/helpers';
-import Item from '../components/Item';
+import { Page, setTitleFromURL } from '../layout';
+import { autoLink } from '../../lib/helpers';
+import Item from '../../components/Item';
 
-const data = [
+export const metadata: Metadata = setTitleFromURL('/photos');
+
+type Photo = {
+	src: string
+	thumb: string
+	width: number
+	height: number
+	date?: string
+	caption: string
+}
+
+const data: Photo[] = [
 	{
 		src: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
 		thumb: `/images/19801011_PMMagazineIndianapolis_JMichaelHenderson.jpg`,
@@ -104,18 +117,22 @@ const data = [
 	},
 ];
 
-const Photos = () => (
-	<Page link="photos" description="Period Studio Photographs">
-		<blockquote className="panelContainer">
-			{data.map(({ src, thumb, width, height, caption = '' }, key) => (
-				<Item key={key} extra={
-					<div style={{ textAlign: 'center' }}>
-						<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
-					</div>
-				} body={autoLink(caption)} />
-			))}
-		</blockquote>
-	</Page>
-);
+const Photos = () => {
+	return (
+		<Page link="/photos" description="Period Studio Photographs">
+			<blockquote className="panelContainer">
+				{data.map(({ src, thumb, width, height, caption, date }: Photo, key) => (
+					<Item key={key} extra={
+						<div style={{ textAlign: 'center' }}>
+							<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
+							<br/>
+							{date}
+						</div>
+					} body={autoLink(caption)} />
+				))}
+			</blockquote>
+		</Page>
+	)
+}
 
 export default Photos;
