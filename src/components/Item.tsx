@@ -5,9 +5,9 @@ import AudioPlayer from './AudioPlayer';
 
 type Props ={
 	children?: React.ReactNode
-	bold?: string
+	bold?: string | React.ReactElement
 	author?: string
-	info?: string
+	info?: string | React.ReactElement
 	date?: string
 	body?: string
 	extra?: string | React.ReactElement
