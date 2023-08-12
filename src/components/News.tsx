@@ -103,7 +103,7 @@ const newsItems: ItemType[] = [
 	body: `
 		<ul>
 		<li> Added a new section: <a href="/demos">Demos</a> with <b>Spectre</b> as its first inhabitant.</li>
-		<li> Added audio for the to <a href="/releases/Sailor-Sailor.html">Sailor</a> release.</li>
+		<li> Added audio for the to <a href="/release/Sailor-Sailor.html">Sailor</a> release.</li>
 		</ul>
 		`
 	},
@@ -203,12 +203,12 @@ const newsItems: ItemType[] = [
 	author: 'David Whittemore',
 	body: `
 		<ul>
-		<li> Added track listing and updated audio to Amnesty's <a href="/releases/Amnesty-Free_Your_Mind.html">Free Your Mind</a></li>
-		<li> Added images and audio excerpt to <a href="/releases/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
+		<li> Added track listing and updated audio to Amnesty's <a href="/release/Amnesty-Free_Your_Mind.html">Free Your Mind</a></li>
+		<li> Added images and audio excerpt to <a href="/release/Lights_Of_Dawn-Ooo_Wee.html">Lights Of Dawn</a></li>
 		<li> Updated <a href="/photos.html">Photos section</a></li>
-		<li> Added <a href="/releases/Dan_Mobley-Walk_In_the_Wind_and_the_Rain.html">Dan Mobley track listing</a></li>
+		<li> Added <a href="/release/Dan_Mobley-Walk_In_the_Wind_and_the_Rain.html">Dan Mobley track listing</a></li>
 		<li> Uploaded audio for <AudioPlayer mp3='DanMobley_DenverDan/DanMobley_DenverDan_Colorado.mp3' band='Dan Mobley' title='Colorado' /></li>
-		<li> Added <a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a></li>
+		<li> Added <a href="/release/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a></li>
 		<li> Added <AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3' title='Interview' time='12.51' comment='Dan Modlin interviews Mo Whittemore' date='2010' />
 		</li>
 		</ul>
@@ -218,7 +218,7 @@ const newsItems: ItemType[] = [
 		date: 'Sat Mar  3 07:55:46 PST 2012',
 		author: 'Mo Whittemore',
 		title: 'Email Message',
-		linkInternal: '/releases/Mo-First_Album?addendum=6',
+		linkInternal: '/release/Mo-First_Album?addendum=6',
 		linkInternalTitle: 'Local copy of the 2012 Nuvo article',
 		body: `
 				<p>

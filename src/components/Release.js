@@ -454,27 +454,27 @@ const Release = ({ url = '', addendum }) => {
 	const [ artist = '', title = '' ] = url.split('-');
 	if (url && url.match(/-7$/)) {
 		// if the URL ends w/ '-7', then only look in singles.
-		item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		item = releases.find(r => r.type === 'single' && matchReleaseName(`/release/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 	} else {
 		// otherwise, look first in albums
-		item = releases.find(r => r.type === 'album' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+		item = releases.find(r => r.type === 'album' && matchReleaseName(`/release/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 		if (!item) {
 			// and then in singles
-			item = releases.find(r => r.type === 'single' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+			item = releases.find(r => r.type === 'single' && matchReleaseName(`/release/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 		}
 		// and then in demos
 		if (!item) {
 			// and then in demos
-			item = releases.find(r => r.type === 'demo' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+			item = releases.find(r => r.type === 'demo' && matchReleaseName(`/release/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 		}
 		// and then in reminiscen
 		if (!item) {
-			item = releases.find(r => r.type === 'reminiscence' && matchReleaseName(`/releases/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
+			item = releases.find(r => r.type === 'reminiscence' && matchReleaseName(`/release/${url}`, r.artist || r.tracks[0].artist, r.title || r.tracks[0].title));
 //			/*
 //			const t1 = artist.replace(/ /, '').split('_').join('').toLowerCase();
 //			const any = Object.keys(musicians).find(m => m.replace(/ /, '').split('_').join('').toLowerCase() === t1);
 //			item = musicians[any]?.reminiscences?.find(r => {
-//				const matched = matchReleaseName(`/releases/${url}`, artist, r.subject);
+//				const matched = matchReleaseName(`/release/${url}`, artist, r.subject);
 //				console.log("M", artist, r, matched);
 //				return matched;
 //				});

@@ -23,7 +23,7 @@ const App = () =>
 							src="https://700west.com/images/250_business_card.jpg" width="250" height="147" alt="Business card"/></Link>
 				</p>
 				<p>
-					<Link href="https://700west.com/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</Link>)
+					<Link href="https://700west.com/release/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</Link>)
 				</p>
 			</div>
 		</div>

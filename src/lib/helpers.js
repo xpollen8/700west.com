@@ -20,7 +20,7 @@ const isAKA = (name = '') => {
 const makeBandLink = (band) => `/band/${cleanName(band)}`;
 const makeMusicianLink = (musician) => `/musician/` + cleanName(isAKA(musician));
 //const makeMusicianLink = (musician) => `/musician/${cleanName(musician)}`;
-const makeReleaseLink = (artist='', title='') => `/releases/${cleanName(artist)}-${cleanName(title)}`;
+const makeReleaseLink = (artist='', title='') => `/release/${cleanName(artist)}-${cleanName(title)}`;
 
 const typeToDisplay = (type) => {
 	const	types = [
