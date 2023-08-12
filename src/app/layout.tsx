@@ -58,7 +58,7 @@ const Navigation = ({ link = '' }) => (
 		</div>
 		<SectionHeader text="Choose" />
 		<ul>
-			{Object.keys(links).map((k: string[], i: number) => {
+			{Object.keys(links).map((k, i) => {
 				const cls = (k === link) ? 'navActive' : 'navInactive';
 				return (
 					<li key={i}>
@@ -71,13 +71,13 @@ const Navigation = ({ link = '' }) => (
 )
 
 export const Page = ({
-	title,
 	link,
+	title,
 	description,
   children,
 }: {
+	link: string
 	title?: any
-	link?: string
 	description?: string
   children?: React.ReactNode
 }) => {
