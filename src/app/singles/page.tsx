@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Page, setTitleFromURL } from '../layout';
+import Page, { setTitleFromURL } from '../../components/Page';
 import Singles from '../../components/Singles';
 
 export const metadata: Metadata = setTitleFromURL('/singles');

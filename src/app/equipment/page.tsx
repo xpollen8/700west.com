@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image';
 import Link from 'next/link';
-import { Page, setTitleFromURL } from '.././layout';
+import Page, { setTitleFromURL } from '../../components/Page';
 import Item from '../../components/Item';
 
 export const metadata: Metadata = setTitleFromURL('/equipment');

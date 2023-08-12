@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Page } from '../pages/_app';
+import Page from './Page';
 
 import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
 
@@ -85,7 +85,7 @@ const Band = ({ url }) => {
 	const band = getBandNames().find(b => makeBandLink(b) === `/band/${url}`);
 	if (!band) { return <>404</> }
 	return (
-		<Page title="Bands" link="bands" description={`Band: ${band}`}>
+		<Page link="/bands" description={`Band: ${band}`}>
 			<div className="artist"><b>{band}</b></div>
 			<div className="row">
 			<Publicity band={band} />

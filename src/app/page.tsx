@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import { Page, setTitleFromURL } from './layout';
+import Page, { setTitleFromURL } from '../components/Page';
 import SectionHeader from '../components/SectionHeader';
 import News from '../components/News';
 import History from '../components/History';

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
-import { Page } from '../pages/_app';
+import Page from './Page';
 
 import releases from '../lib/releases';
 import { makeMusicianLink, getBodyHTML, makeReleaseLink, typeToDisplay, makeBandLink } from '../lib/helpers';
@@ -44,7 +44,7 @@ const Addendum = ({ location, original, source, credit, date, type, author, auth
  
 const makeAddendum = (item, addendum = 0) => {
 	const add = item.addendum && item.addendum.find((x, i) => i === addendum - 1);
-	const link = (item.type === 'album') ? 'albums' : 'singles';
+	const link = (item.type === 'album') ? '/albums' : '/singles';
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 
@@ -424,7 +424,7 @@ const Auxiliary = ({ type, artist, title, tracks, addendum = [] }) => {
 }
 
 const makeRelease = (item) => {
-	const link = `${item.type}s`;
+	const link = `/${item.type}s`;
 	const artist = item.artist || item.tracks[0].artist;
 	const release = item.title || item.tracks[0].title;
 	const description = `${artist}: "${release}" (${item.type})`;
@@ -509,7 +509,7 @@ const Release = ({ url = '', addendum }) => {
 	}
 	// fallback
 	if (!item) {
-	return <Page title="Albums" link="albums" description="The Albums">
+	return <Page link="/albums">
 		<Albums />
 	</Page>
 	}

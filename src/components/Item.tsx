@@ -8,7 +8,7 @@ type Props ={
 	bold?: string | React.ReactElement
 	author?: string
 	info?: string | React.ReactElement
-	date?: string
+	date?: string | React.ReactElement
 	body?: string
 	extra?: string | React.ReactElement
 	lyrics?: string

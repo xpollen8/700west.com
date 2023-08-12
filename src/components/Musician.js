@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Page } from '../pages/_app';
+import Page from './Page';
 
 import { getBandNames, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink } from '../lib/helpers';
 import musicians from '../lib/musicians';
@@ -15,11 +15,11 @@ const Memoriam = ({ musician }) => {
 	if (!deceased) return <></>;
 	return (
 		<div className="row">
-			{(deceased?.date) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
-			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 			{(deceased?.played) && <Datum k={`Played`} v={deceased?.played} />}
 			{(deceased?.for) && <Datum k={`For`} v={(deceased?.forLink) ? <a href={`${deceased?.forLink}`}>{deceased.for}</a> : <>{deceased.for}</>}
 			/>}
+			{(deceased?.date) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
+			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 		</div>
 	)
 }
@@ -273,7 +273,7 @@ const Musician = ({ url = '' }) => {
 	const musician = getMusicianNames().find(m => cleanName(m) === cleanName(cleaned));
 	if (!musician) { return <>404</> }
 	return (
-		<Page title="Musicians" link="musicians" description={`Musician: ${musician}`}>
+		<Page link="/musicians" description={`Musician: ${musician}`}>
 			<center><div className="artist"><b>{musician}</b></div>
 			<AKA musician={musician} />
 			<Memoriam musician={musician} />

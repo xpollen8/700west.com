@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next'
-import { Page, setTitleFromURL } from '../layout';
+import Page, { setTitleFromURL } from '../../components/Page';
 import SectionHeader from '../../components/SectionHeader';
 
 export const metadata: Metadata = setTitleFromURL('/mo');

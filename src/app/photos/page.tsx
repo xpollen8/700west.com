@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Page, setTitleFromURL } from '../layout';
+import Page, { setTitleFromURL } from '../../components/Page';
 import { autoLink } from '../../lib/helpers';
 import Item from '../../components/Item';
 

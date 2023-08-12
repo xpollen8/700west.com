@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Page, setTitleFromURL } from '../layout';
+import Page, { setTitleFromURL } from '../../components/Page';
 import { makeMusicianLink, getBodyHTML } from '../../lib/helpers';
 import memoriam from '../../lib/memoriam';
 import Item from '../../components/Item';
