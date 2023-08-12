@@ -7,7 +7,7 @@ import SectionHeader from '../../components/SectionHeader';
 export const metadata: Metadata = setTitleFromURL('/mo');
 
 const App = () =>
-	<Page title="Mo" link="/mo" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
+	<Page link="/mo">
 		<div style={{
 		    display: 'flex',
 				alignItems: 'center',

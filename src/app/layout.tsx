@@ -19,22 +19,22 @@ export const metadata: Metadata = {
 }
 
 const links: any  = {
-	'/': 'Home',
-	'/news': 'News',
-	'/albums': 'Albums',
-	'/singles': 'Singles',
-	'/demos': 'Demos',
-	'/bands': 'Bands',
-	'/musicians': 'Musicians',
-	'/extras': 'Extras!',
-	'/equipment': 'Equipment',
-	'/photos': 'Photos',
-	'/listen': 'Listen!',
-	'/mo': 'Mo Whittemore',
-	'/tributes': 'Tributes',
-	'/memoriam': 'In Memoriam',
-	'/feedback': 'Comments',
-	'/contact': 'Contact Us',
+	'/': [ 'Home', '700 West Recording!' ],
+	'/news': [ 'News', '700 West News and Updates' ],
+	'/albums': [ 'Albums', 'The Albums' , 'Releases'],
+	'/singles': [ 'Singles', 'The Singles', 'Releases' ],
+	'/demos': [ 'Demos', 'The Demos' , 'Unreleased'],
+	'/bands': [ 'Bands', 'The Bands' ],
+	'/musicians': [ 'Musicians', 'he Musicians' ],
+	'/extras': [ 'Extras', 'Reviews and Other Auxiliary Materials' ],
+	'/equipment': [ 'Equipment', 'Equipment used at 700 West Recording' ],
+	'/photos': [ 'Photos', 'Period Studio Photographs' ],
+	'/listen': [ 'Listen!', 'Give a few tunes a spi' ],
+	'/mo': [ 'Mo', 'The Resume of Maurice J. Whittemore, Jr., 700 West Engineer' ],
+	'/tributes': [ 'Tributes', 'Recording artists share..' ],
+	'/memoriam': [ 'Memoriam', 'In Memoriam' ],
+	'/feedback': [ 'Comments', 'Comments left by 700west.com visitors' ],
+	'/contact': [ "Contact Us", "We'd love to hear from you!" ],
 }
 
 export const setTitle = (title: string): Metadata => ({
@@ -49,7 +49,7 @@ export const setTitle = (title: string): Metadata => ({
 		title
 })
 
-export const setTitleFromURL = (url: string): Metadata => setTitle(links[url] || 'Welcome');
+export const setTitleFromURL = (url: string): Metadata => setTitle(links[url][0] || 'Welcome');
 
 const Navigation = ({ link = '' }) => (
 	<div className="nav">
@@ -58,11 +58,11 @@ const Navigation = ({ link = '' }) => (
 		</div>
 		<SectionHeader text="Choose" />
 		<ul>
-			{Object.keys(links).map((k, i) => {
+			{Object.keys(links).map((k: string[], i: number) => {
 				const cls = (k === link) ? 'navActive' : 'navInactive';
 				return (
 					<li key={i}>
-						<span className={cls}></span><Link href={k}>{links[k]}</Link>
+						<span className={cls}></span><Link href={k}>{links[k][0]}</Link>
 					</li>
 				)
 			})}
@@ -73,24 +73,24 @@ const Navigation = ({ link = '' }) => (
 export const Page = ({
 	title,
 	link,
+	description,
   children,
-	description
 }: {
 	title?: any
 	link?: string
 	description?: string
   children?: React.ReactNode
 }) => {
-	const getNavFromLink = (link?: string) => links[link || '/'];
+	const [ titleFromSplit, descriptionFromSplit, sectionFromSplit ] = links[link];
 
 	return (
 		<div className='container'>
 			<div>
-				<Topper className="navTopper" text={title || getNavFromLink(link)}/>
+				<Topper className="navTopper" text={sectionFromSplit || titleFromSplit}/>
 				<Navigation link={link} />
 			</div>
 			<div>
-				<Topper className="mainTopper" text={description}/>
+				<Topper className="mainTopper" text={description || descriptionFromSplit}/>
 				<div className='main'>
 					{children}
 				</div>

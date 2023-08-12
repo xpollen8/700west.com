@@ -5,7 +5,7 @@ import News from '../../components/News';
 export const metadata: Metadata = setTitleFromURL('/news');
 
 const Home = () =>
-	<Page link="/news" description="700 West News and Updates">
+	<Page link="/news">
 		<News />
 	</Page>
 

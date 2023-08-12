@@ -25,7 +25,7 @@ const Memoriam = (mem: any, key: number) =>
 	/>
 
 const App = () =>
-	<Page link='/memoriam' description="Memoriam">
+	<Page link='/memoriam'>
 		<div className="panelContainer">{memoriam.map(Memoriam)}</div>
 	</Page>
 

@@ -8,7 +8,7 @@ import History from '../components/History';
 export const metadata: Metadata = setTitleFromURL('/');
 
 const Home = () => (
-	<Page title={metadata.title} link="/" description="700 West Recording">
+	<Page link="/">
 		<div className='hilite'>
 			<News slug="RIP" />
 		</div>

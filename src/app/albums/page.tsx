@@ -5,7 +5,7 @@ import Albums from '../../components/Albums';
 export const metadata: Metadata = setTitleFromURL('/albums');
 
 const App = () =>
-	<Page title="Releases" link="/albums" description="The Albums">
+	<Page link="/albums">
 		<Albums />
 	</Page>
 

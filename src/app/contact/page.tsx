@@ -4,7 +4,7 @@ import { Page, setTitleFromURL } from '../layout';
 export const metadata: Metadata = setTitleFromURL('/contact');
 
 const App = () =>
-	<Page title="Contact" link="/contact" description="We'd love to hear from you!">
+	<Page link="/contact">
 		<div className="panelContainer">
 			<p className="row">
 				If you have any material (audio, albums scans, press clippings) related to any of the bands associated with the 700 West Studio, we've got a home for it... right here!

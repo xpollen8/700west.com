@@ -117,7 +117,7 @@ const data: Photo[] = [
 ];
 
 const Photos = () =>
-	<Page link="/photos" description="Period Studio Photographs">
+	<Page link="/photos">
 		<blockquote className="panelContainer">
 			{data.map(({ src, thumb, width, height, caption, date }: Photo, key) => (
 				<Item key={key} extra={

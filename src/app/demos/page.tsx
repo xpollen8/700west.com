@@ -5,7 +5,7 @@ import Demos from '../../components/Demos';
 export const metadata: Metadata = setTitleFromURL('/demos');
 
 const App = () =>
-	<Page title="Releases" link="/demos" description="The Demos">
+	<Page link="/demos">
 		<Demos />
 	</Page>
 
