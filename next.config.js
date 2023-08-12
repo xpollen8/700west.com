@@ -73,6 +73,11 @@ module.exports = {
 				destination: '/mo',
 				permanent: false,
 			},
+			{
+				source: '/releases',
+				destination: '/release',
+				permanent: false,
+			},
 		]
   }
 }
