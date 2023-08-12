@@ -62,6 +62,11 @@ module.exports = {
 				destination: '/:uri*',
 				permanent: false,
 			},
+			{
+				source: '/moe',
+				destination: '/mo',
+				permanent: false,
+			},
 		]
   }
 }
