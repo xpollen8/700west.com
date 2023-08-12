@@ -175,7 +175,7 @@ const data: Data[] = [
 ];
 
 const Home = () =>
-	<Page link="equipment" description="Equipment used at 700 West Recording">
+	<Page link="/equipment" description="Equipment used at 700 West Recording">
 		{data.map(({ heading, items }, key) => (
 			<>
 				<b key={key}>{heading}</b>
