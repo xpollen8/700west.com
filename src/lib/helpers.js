@@ -166,6 +166,16 @@ const releasesByMusician = (mus) => {
 	return ret.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
 }
 
+const knownForsByMusician = (mus) => {
+	let known;
+	releases.forEach(r => !known && r?.credits?.filter(t => {
+		if (t?.who && t?.knownFor && isAKA(t?.who) === mus && t?.knownFor) {
+			known = t.knownFor;
+		}
+	}));
+	return known;
+}
+
 const commentsByMusician = (mus) => {
 	const comments = [];
 	releases.forEach(r => {
@@ -233,5 +243,5 @@ const publicityByBand = ({ band }) => {
 }
 
 export { autoLink, getBodyHTML, makeReleaseLink, typeToDisplay, dateCompare, makeBandLink };
-export { isRelease, getReleasedBandNames, getAlbumNames, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+export { isRelease, getReleasedBandNames, getAlbumNames, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, knownForsByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
 

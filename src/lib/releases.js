@@ -9586,7 +9586,8 @@ album that justifies their quest. I've found mine.
 				],
 			},
 			{
-				who: `John Cassella (John Cougar Mellencamp; Faith Band)`,
+				who: `John Cassella`,
+				knownFor: [ 'John Cougar Mellencamp', 'Faith Band' ],
 				did: [
 					"tenor saxophone",
 				],
