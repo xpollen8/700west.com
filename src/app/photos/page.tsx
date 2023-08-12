@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Page, setTitleFromURL } from '../layout';
@@ -117,22 +116,19 @@ const data: Photo[] = [
 	},
 ];
 
-const Photos = () => {
-	return (
-		<Page link="/photos" description="Period Studio Photographs">
-			<blockquote className="panelContainer">
-				{data.map(({ src, thumb, width, height, caption, date }: Photo, key) => (
-					<Item key={key} extra={
-						<div style={{ textAlign: 'center' }}>
-							<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
-							<br/>
-							{date}
-						</div>
-					} body={autoLink(caption)} />
-				))}
-			</blockquote>
-		</Page>
-	)
-}
+const Photos = () =>
+	<Page link="/photos" description="Period Studio Photographs">
+		<blockquote className="panelContainer">
+			{data.map(({ src, thumb, width, height, caption, date }: Photo, key) => (
+				<Item key={key} extra={
+					<div style={{ textAlign: 'center' }}>
+						<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
+						<br/>
+						{date}
+					</div>
+				} body={autoLink(caption)} />
+			))}
+		</blockquote>
+	</Page>
 
 export default Photos;

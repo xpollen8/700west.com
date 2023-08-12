@@ -3,7 +3,7 @@ import { Page, setTitleFromURL } from '../layout';
 
 export const metadata: Metadata = setTitleFromURL('/contact');
 
-const App = () => (
+const App = () =>
 	<Page title="Contact" link="contact" description="We'd love to hear from you!">
 		<div className="panelContainer">
 			<p className="row">
@@ -17,6 +17,5 @@ const App = () => (
 			Get in touch at: contact[at]700west.com
 		</div>
 	</Page>
-)
 
 export default App;

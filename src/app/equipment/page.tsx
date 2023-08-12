@@ -1,12 +1,10 @@
 import { Metadata } from 'next'
-
-import { Page, setTitleFromURL } from '.././layout';
-
-export const metadata: Metadata = setTitleFromURL('/equipment');
-
 import Image from 'next/image';
 import Link from 'next/link';
+import { Page, setTitleFromURL } from '.././layout';
 import Item from '../../components/Item';
+
+export const metadata: Metadata = setTitleFromURL('/equipment');
 
 type Items = React.ReactElement[];
 type Data = {
@@ -176,7 +174,7 @@ const data: Data[] = [
 	},
 ];
 
-const Home = () => (
+const Home = () =>
 	<Page link="equipment" description="Equipment used at 700 West Recording">
 		{data.map(({ heading, items }, key) => (
 			<>
@@ -189,6 +187,5 @@ const Home = () => (
 			</>
 		))}
 	</Page>
-);
 
 export default Home;

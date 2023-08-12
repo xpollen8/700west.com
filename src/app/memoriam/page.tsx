@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-
 import { Page, setTitleFromURL } from '../layout';
 import { makeMusicianLink, getBodyHTML } from '../../lib/helpers';
 import memoriam from '../../lib/memoriam';
@@ -7,7 +6,7 @@ import Item from '../../components/Item';
 
 export const metadata: Metadata = setTitleFromURL('/memoriam');
 
-const Memoriam = (mem: any, key: number) => (
+const Memoriam = (mem: any, key: number) =>
 	<Item key={key}
 		bold={<a href={makeMusicianLink(mem.name)}>{mem.name}</a>}
 		info={
@@ -24,12 +23,10 @@ const Memoriam = (mem: any, key: number) => (
 			{mem.reason && <div>Reason: {mem.reason}</div>}
 		</>}
 	/>
-)
 
-const App = () => (
+const App = () =>
 	<Page link='/memoriam' description="Memoriam">
 		<div className="panelContainer">{memoriam.map(Memoriam)}</div>
 	</Page>
-)
 
 export default App;
