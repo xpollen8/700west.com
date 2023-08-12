@@ -1,6 +1,9 @@
-import { Page } from './_app';
+import { Metadata } from 'next'
+import { Page, setTitleFromURL } from '../layout';
 
-const App = (props) => (
+export const metadata: Metadata = setTitleFromURL('/contact');
+
+const App = () => (
 	<Page title="Contact" link="contact" description="We'd love to hear from you!">
 		<div className="panelContainer">
 			<p className="row">
