@@ -1,25 +1,29 @@
+import Link from 'next/link';
 import Image from 'next/image';
-import SectionHeader from '../components/SectionHeader';
-import { Page } from './_app';
+import { Metadata } from 'next'
+import { Page, setTitleFromURL } from '../layout';
+import SectionHeader from '../../components/SectionHeader';
 
-const App = (props) => {
-	return <Page title="Mo" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
+export const metadata: Metadata = setTitleFromURL('/mo');
+
+const App = () =>
+	<Page title="Mo" link="moe" description="The Resume of Maurice J. Whittemore, Jr., 700 West Engineer">
 		<div style={{
-		    'display': 'flex',
-				'align-items': 'center',
-				'justify-content': 'center'
+		    display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center'
 			}}>
 			<div>
-				<Image src={`/images/mo.gif`} border="3" width="170" height="233" />
+				<Image src="https://700west.com/images/mo.gif" width="170" height="233" alt="1997 portrait" />
 			</div>
 			<div>
 				<b> Maurice J. ('Mo') Whittemore. Jr.</b>
 				<p>
-					<a href={`/images/business_card.jpg`}><Image
-							src={`/images/250_business_card.jpg`} width="250" height="147" border="0" hspace="3" vspace="3" /></a>
+					<Link href="https://700west.com/images/business_card.jpg"><Image
+							src="https://700west.com/images/250_business_card.jpg" width="250" height="147" alt="Business card"/></Link>
 				</p>
 				<p>
-					<a href="/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</a>)
+					<Link href="https://700west.com/releases/Mo-First_Album?addendum=5">Mo Whittemore 2013 Interview</Link>)
 				</p>
 			</div>
 		</div>
@@ -134,7 +138,7 @@ const App = (props) => {
 		<p>
 		<b>RCA Corp.
 		(1967-72)</b><br/>
-		Developed an opto/electronic stereo audio system for their <a href="http://www.google.com/patents/US3688025" target="new">SelectaVision product</a>.  The recording and playback was accomplished using lasers and a hi-resolution photosensitive medium.  The project resulted in a patent granted.
+		Developed an opto/electronic stereo audio system for their <Link href="http://www.google.com/patents/US3688025" target="new">SelectaVision product</Link>.  The recording and playback was accomplished using lasers and a hi-resolution photosensitive medium.  The project resulted in a patent granted.
 		</p>
 		<p>
 		Developed a hi-frequency piezoelectric disc cutting system that was the forerunner of the production SV cutters.
@@ -153,7 +157,7 @@ const App = (props) => {
 		Designed, then followed through production an auto radio audio circuit that was so cost effective it remained in production for over 12 years, was copied by most of the competition and became an industry standard.
 		</p>
 		<p>
-		Designed a subminiature horn loudspeaker for a helmet radio that was instrumental in winning a large military contract for Delco.  This project resulted in <a href="http://www.google.com/patents/US3249873" target="new">a patent granted</a>.
+		Designed a subminiature horn loudspeaker for a helmet radio that was instrumental in winning a large military contract for Delco.  This project resulted in <Link href="http://www.google.com/patents/US3249873" target="new">a patent granted</Link>.
 		</p>
 		<p>
 		<b>Allison Div, GMC.
@@ -192,7 +196,7 @@ const App = (props) => {
 		1960 through 1967 found me with Delco Electronics Div. GMC (Kokomo, IN).  My responsibilities included the design and development of specialized loudspeaker and microphone test equipment, which involved both analog and digital circuitry; the development of low distortion solid state audio amplifiers; low noise, low distortion audio preamplifiers; the design, development and production follow-through of high volume production auto radio audio systems (including tape players and reverberation devices).  I was also involved in the design, development and production follow-through of both commercial grade and high quality moving coil speakers and cones (latter item requiring a knowledge of paper technology), and the design and development of horn, electrostatic and piezoelectric loudspeakers and electrostatic microphones.
 		</p>
 		<p>
-		From 1967 to 1972 I was employed by RCA Record Engineering Labs (Indianapolis).  I was responsible for the development of the opto/electronic (laser record/playback) audio concept used in the holographic option of <a href="http://www.google.com/patents/US3688025" target="new">SelectaVision</a>.  I was also responsible for the original development of the hi-frequency piezoelectric disc cutting system used in SelectaVision production.
+		From 1967 to 1972 I was employed by RCA Record Engineering Labs (Indianapolis).  I was responsible for the development of the opto/electronic (laser record/playback) audio concept used in the holographic option of <Link href="http://www.google.com/patents/US3688025" target="new">SelectaVision</Link>.  I was also responsible for the original development of the hi-frequency piezoelectric disc cutting system used in SelectaVision production.
 		Additional duties included the development of an automatic record fault detection system; the design, development and production of studio monitor loudspeaker systems; the development of low noise preamplifiers for disc and tape playback reference systems.  I have spent considerable time in the evaluation and modification of: studio microphones and monitor speaker systems; multi-channel studio tape recorders and high speed tape duplication systems; studio console electronics; audio compressor/limiters; equalizers and artificial reverberation systems.
 		</p>
 		<p>
@@ -216,6 +220,5 @@ const App = (props) => {
 		</p>
 		<b>Rev.	5/29/11</b>
 	</Page>
-}
 
 export default App;
