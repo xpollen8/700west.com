@@ -12,7 +12,7 @@ const links: any  = {
 	'/singles': [ 'Singles', 'The Singles', 'Releases' ],
 	'/demos': [ 'Demos', 'The Demos' , 'Unreleased'],
 	'/bands': [ 'Bands', 'The Bands' ],
-	'/musicians': [ 'Musicians', 'he Musicians' ],
+	'/musicians': [ 'Musicians', 'The Musicians' ],
 	'/extras': [ 'Extras', 'Reviews and Other Auxiliary Materials' ],
 	'/equipment': [ 'Equipment', 'Equipment used at 700 West Recording' ],
 	'/photos': [ 'Photos', 'Period Studio Photographs' ],
