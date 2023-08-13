@@ -16,7 +16,7 @@ const links: any  = {
 	'/extras': [ 'Extras', 'Reviews and Other Auxiliary Materials' ],
 	'/equipment': [ 'Equipment', 'Equipment used at 700 West Recording' ],
 	'/photos': [ 'Photos', 'Period Studio Photographs' ],
-	'/listen': [ 'Listen!', 'Give a few tunes a spi' ],
+	'/listen': [ 'Listen!', 'Give a few tunes a spin' ],
 	'/mo': [ 'Mo', 'The Resume of Maurice J. Whittemore, Jr., 700 West Engineer' ],
 	'/tributes': [ 'Tributes', 'Recording artists share..' ],
 	'/memoriam': [ 'Memoriam', 'In Memoriam' ],
