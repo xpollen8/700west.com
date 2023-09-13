@@ -15001,4 +15001,43 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 			},
 		],
 	},
+	{
+		type: "demo",
+		artist: `Ebony Rhythm Funk Campaign`,
+		label: ``,
+		liner: ``,
+		mastering: ``,
+		title: `Originals, Covers and Radio Spots Demo`,
+		id: ``,
+		published: ``,
+		reissue: ``,
+		tracks: [],
+		comments: [
+			{
+				who: `David Whittemore`,
+				said: `Digitzed from 1/4" masters to 192kHz, 24bit`,
+				date: `2019-11-30`,
+			}
+		],
+		publicity: [
+			{
+				image: 'echoes-ebony-rhythm-funk',
+				width: `250`,
+				height: `140`,
+				caption: ``
+			},
+			{
+				image: 'echoes-ebony-rhythm-funk-campaign-pt-2',
+				width: `250`,
+				height: `140`,
+				caption: ``
+			},
+			{
+				image: 'echoes-ebony-rhythm-funk-pt-3',
+				width: `250`,
+				height: `140`,
+				caption: ``
+			},
+		],
+	},
 ];
