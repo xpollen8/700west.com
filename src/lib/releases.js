@@ -2214,8 +2214,8 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		},
 		{
 			image: `07-16-2023-echoes-of-indiana-avenue-podcast-graphic`,
-			width: `750`,
-			height: `420`,
+			width: `250`,
+			height: `140`,
 			caption: ``,
 		},
 		],
