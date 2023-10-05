@@ -13,7 +13,7 @@
   "dependencies": {
     "chart.js": "^4.4.0",
     "mywrap": "github:xpollen8/mywrap",
-    "next": "^13.5.3",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-chartkick": "^0.5.3",
     "react-dom": "^18.2.0"
