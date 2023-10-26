@@ -636,6 +636,11 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: '2021-04-10',
 				price: '$68.49',
 			},
+			{
+				where: 'ebay',
+				date: '2023-08-06',
+				price: '$20.50',
+			},
 		],
 		image: [
 		],
@@ -7216,6 +7221,11 @@ you saw that red recording light go on..........
 				where: 'discogs',
 				price: '$55.00',
 				said: `gorgeous copy, signed`,
+			},
+			{
+				date: '2023-07-28',
+				where: 'ebay',
+				price: '$50.00',
 			},
 		],
 		image: [
