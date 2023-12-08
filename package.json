@@ -11,7 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "chart.js": "^4.4.0",
+    "chart.js": "^4.4.1",
     "mywrap": "github:xpollen8/mywrap",
     "next": "^14.0.3",
     "react": "^18.2.0",
