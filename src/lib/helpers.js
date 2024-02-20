@@ -109,8 +109,9 @@ const _autoLink = (subs, str, ignore = false) => {
 			} else {
 				// do the sub
 				subs.forEach(({ orig, subt }) => {
-					const regex = RegExp(`(\\b${orig}\\b)`, 'g');
-					str = str.replaceAll(regex, `<a href="${subt}">${orig}</a>`);
+					//const regex = RegExp(`(\\b${orig}\\b)`, 'g');
+					//str = str.replaceAll(regex, `<a href="${subt}">${orig}</a>`);
+					str = str.replace(RegExp(`\\b${orig}\\b`), `<a href="${subt}">${orig}</a>`);
 				});
 				return str;
 			}
