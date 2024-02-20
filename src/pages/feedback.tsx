@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { useState } from 'react';
 import Page, { setTitleFromURL }  from '../components/Page';
 import { fetchFeedback } from '../lib/feedback';
-import MakeDate from '../components/MakeDate';
 import SectionHeader from '../components/SectionHeader';
 import Item from '../components/Item';
 
@@ -29,7 +28,7 @@ const CleanContact = (str: string) => str && str.replace(/\[remove\].*/, '@...')
 
 const Comment = ({ subject, dtcreated, who, whence, comments }: Feedback, key: number) => (
 	<Item key={key} bold={subject} info={<> {whence} - {CleanContact(who)} </>}
-		date={MakeDate(dtcreated)}
+		date={dtcreated}
 		body={comments}
 	/>
 )
