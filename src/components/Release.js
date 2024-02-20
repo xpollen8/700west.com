@@ -354,8 +354,8 @@ const Promo = ({ publicity = [] }) => {
 const Sales = ({ sales = [] }) => {
 	if (sales.length) {
 		const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
-		const original = { name: 'Original Released Price', data: {} };
-		const reissue = { name: 'Re-Issued Release Price', data: {} };
+		const original = { name: 'Price', data: {} };
+		const reissue = { name: 'Re-Issue Price', data: {} };
 		sorted.forEach(({ date, price = '', said }) => {
 			const usePrice = price.replace(/[\$,]+/g, '');
 			if (said?.match(/issue/i)) {
