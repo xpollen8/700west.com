@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Page, { setTitleFromURL } from '../../components/Page';
 import { makeMusicianLink, getBodyHTML } from '../../lib/helpers';
 import memoriam from '../../lib/memoriam';
+import { AKA } from '../../components/Musician';
 import Item from '../../components/Item';
 
 export const metadata: Metadata = setTitleFromURL('/memoriam');
@@ -11,6 +12,7 @@ const Memoriam = (mem: any, key: number) =>
 		bold={<a href={makeMusicianLink(mem.name)}>{mem.name}</a>}
 		info={
 			<>
+			<AKA musician={mem.name} />
 			<div>Role: {mem.played}</div>
 			<div>For: {(mem?.forLink) ? <a href={`${mem?.forLink}`}>{mem.for}</a> : <>{mem.for}</>}
 			</div>

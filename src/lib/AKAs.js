@@ -1,5 +1,6 @@
 const AKAs = {
 	'Robert Williams': [ 'Bob Williams' ],
+	'Bradford Braden': [ 'B. Braden', 'Brad Braden' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
 	'M.J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
@@ -12,6 +13,7 @@ const AKAs = {
 	'Jack Schaefele': [ 'Jack Schafele', 'Jack Schfele' ],
 	'Boobie Townsend': [ 'Master "Boobie" Townsend' ],
 	'Jim Hubler': [ 'W. J. Hubler, Jr.' ],
+	'Rollin Wood': [ 'Rollin Hugh W.' ],
 };
 
 export default AKAs;

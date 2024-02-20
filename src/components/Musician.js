@@ -72,7 +72,7 @@ const CreditsOn = ({ musician }) => {
 		)
 }
 
-const AKA = ({ musician }) => {
+export const AKA = ({ musician }) => {
 	const aka = AKAs[musician];
 	if (!aka) return <></>;
 	return (
