@@ -10711,7 +10711,7 @@ Thank you... Bill for being a believer.
 					did: [ `Percussion` ],
 				},
 				{
-					who: `Moe Whittimore`,
+					who: `Moe Whittimore*`,
 					did: [ `Piano`, `Electric String synthesizer`, `Engineer`, `Mixed` ],
 				},
 				{
@@ -12612,7 +12612,7 @@ it is also a damn fine record for your average funk listener.
 		type: "album",
 		artist: `Jim Sturgis`,
 		label: `J J. P. Records`,
-		liner: `A special thanks to Mo Wittemore for his engineering expertise`,
+		liner: `A special thanks to Mo Wittemore* for his engineering expertise`,
 		mastering: ``,
 		title: `Sun Run`,
 		id: `1001`,

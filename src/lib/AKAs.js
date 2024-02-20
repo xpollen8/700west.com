@@ -3,7 +3,7 @@ const AKAs = {
 	'Bradford Braden': [ 'B. Braden', 'Brad Braden' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
-	'M.J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
+	'Maurice James Whittemore, Jr.': [ 'M.J. Whittemore, Jr.', 'Mo', 'Moe', 'Mo Whittemore', 'Moe Whittemore', 'M. Whittemore Jr', 'M. Whittemore', 'Moe Whittimore*', 'Mo Wittemore*' ],
 	'Jay Wilfong': [ 'Jay Wilfong', 'William Bonney' ],
 	'Arthur Swords': [ 'Shanty' ],
 	'Carlos Silva': [ 'Silva' ],
