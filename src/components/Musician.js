@@ -11,14 +11,15 @@ import MaybeReleaseLink from './MaybeReleaseLink';
 import MakeDate from './MakeDate';
 
 const Memoriam = ({ musician }) => {
-	const deceased = memoriam.find(m => m?.name === musician);
+	const aka = AKAs[musician];
+	const deceased = memoriam.find(m => m?.name === musician) || memoriam.find(m => aka?.includes(m.name));
 	if (!deceased) return <></>;
 	return (
 		<div className="row">
-			{(deceased?.played) && <Datum k={`Played`} v={deceased?.played} />}
+			{(deceased?.played) && <Datum k={`Role`} v={deceased?.played} />}
 			{(deceased?.for) && <Datum k={`For`} v={(deceased?.forLink) ? <a href={`${deceased?.forLink}`}>{deceased.for}</a> : <>{deceased.for}</>}
 			/>}
-			{(deceased?.date) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
+			{(parseInt(deceased?.date, 10) > 0) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
 			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 		</div>
 	)
