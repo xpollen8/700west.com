@@ -358,7 +358,7 @@ const Sales = ({ sales = [] }) => {
 		const reissue = { name: 'Re-Issue Price', data: {} };
 		sorted.forEach(({ date, price = '', said }) => {
 			const usePrice = price.replace(/[\$,]+/g, '');
-			if (said?.match(/issue/i)) {
+			if (said?.match(/issue[\s\.]/i)) {
 				reissue.data[date] = usePrice;
 			} else {
 				original.data[date] = usePrice;
