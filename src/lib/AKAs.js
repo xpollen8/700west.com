@@ -1,5 +1,5 @@
 const AKAs = {
-	'Robert Williams': [ 'Bob WIlliams' ],
+	'Robert Williams': [ 'Bob Williams' ],
 	'Gary Brewer': [ 'Gary Lee Brewer' ],
 	'Jason Seidler': [ 'Jason Stonewall' ],
 	'M.J. Whittemore, Jr.': [ 'Mo Whittemore', 'Mo Wittemore*', 'Moe Whittemore', 'M. Whittemore Jr', 'M. Whittemore', 'Maurice James Whittemore, Jr.', 'Moe Whittimore', 'Moe', 'Mo' ],
@@ -7,7 +7,7 @@ const AKAs = {
 	'Arthur Swords': [ 'Shanty' ],
 	'Carlos Silva': [ 'Silva' ],
 	'Dan Gustin': [ 'Danny Gustin' ],
-	'Dave Zerfas': [ 'David Zerfas' ],
+	'David Zerfas': [ 'Dave Zerfas' ],
 	'James Massie': [ 'Red Massie' ],
 	'Jack Schaefele': [ 'Jack Schafele', 'Jack Schfele' ],
 	'Boobie Townsend': [ 'Master "Boobie" Townsend' ],
