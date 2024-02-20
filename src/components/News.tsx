@@ -22,6 +22,15 @@ type ItemType = {
 
 const newsItems: ItemType[] = [
 	{
+	date: '2024-02-19',
+	title: 'Site Updates',
+	body: `
+		<p>
+		Added demo audio for <a href="/release/Aaron_Band-Live_room_practice_session">Aaron Band</a>
+		</p>
+		`
+	},
+	{
 	tags: [ 'event:interview', 'person:Kyle_Long', 'person:Mo_Whittemore' ],
 	date: '2022-02-11',
 	title: 'Echoes Of Indiana Avenue: Indiana Avenue at 700 West',
