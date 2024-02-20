@@ -1255,6 +1255,18 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				where: 'ebay',
 				price: `$14.99`,
 			},
+			{
+				date: `2023-07-28`,
+				where: 'discogs',
+				price: `$13.00`,
+				said: `clean. Very Good Plus (VG+)`,
+			},
+			{
+				date: `2021-11-02`,
+				where: 'discogs',
+				price: `$9.98`,
+				said: `vinyl shows a few light marks, A Side label has a name written/signed in pencil. Very Good Plus (VG+)`,
+			},
 		],
 		image: [
 		],
@@ -2458,7 +2470,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			{
 				date: `2017-09-27`,
 				where: `ebay`,
-				price: `$15`,
+				price: `$15.00`,
+			},
+			{
+				date: `2023-03-22`,
+				where: `discogs`,
+				price: `$20.00`,
+				said: `Very Good (VG)`,
 			},
 		],
 		image: [
@@ -5123,6 +5141,12 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 				price: '$250.00',
 				said: `Record is VG++ (minor surface marks not affecting play, clean labels). Cover is VG+ (minor corner wear, minor ring wear, minor edge wear)`,
 			},
+			{
+				where: 'discogs',
+				date: '2023-09-30',
+				price: '$250.00',
+				said: `Very Good Plus (VG+)  Sleeve: Very Good Plus (VG+)`,
+			},
 		],
 		image: [
 			{
@@ -5678,6 +5702,12 @@ value of among both psych and heavy rock collectors.
 				date: '2015-07-13',
 				price: '$294.12',
 				said: `Original U.S.A. Pressing 1974`,
+			},
+			{
+				where: 'discogs',
+				date: '2021-10-29',
+				price: '$475.00',
+				said: `Plays perfect with no skips or crackling. Slight ring wear. Very Good Plus (VG+)  Sleeve: Very Good (VG)`,
 			},
 		],
 		image: [
@@ -6287,6 +6317,24 @@ This album is dedicated to all the oppressed people in the world - especially ch
 				price: '$82.16',
 				said: 'Cover/Record Grade: VG-/Ex+ Info: Real nice easy-going, rural-tinged soft rock.  On the same small label as the Zerfas and Primevil albums.',
 			},
+			{
+				where: 'discogs',
+				date: `2023-12-27`,
+				price: `$59.99`,
+				said: `Pretty much perfect copy! Near Mint (NM or M-)  Sleeve: Near Mint (NM or M-)`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-03-23`,
+				price: `$49.94`,
+				said: `Very nice copy. Vinyl shows only faint scuffs, likely from paper inner sleeve (correct original lyric inner is present. I have since moved it to a nice Diskeeper inner but original is included). Play tested and Sounds great! Jacket shows only faint early shelf wear and some natural yellowing. But spines/edges are all clean and no creases or stains of note. Very Good Plus (VG+)  Sleeve: Very Good Plus (VG+)`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-11-07`,
+				price: `$39.99`,
+				said: `VG++ / VG++ slight fade to right side of jacket where opening is, vinyl super nice.`,
+			},
 		],
 		image: [
 			{
@@ -6852,6 +6900,24 @@ you saw that red recording light go on..........
 				price: `$529.41`,
 				said: `Really great record, sounds excellent. Conservatively graded as VG due to light hairlines and small white spots that are inaudible. The cover is signed by Dan Modlin.`,
 			},
+			{
+				where: `discogs`,
+				date: `2023-04-01`,
+				price: `$549.95`,
+				said: `sealed. Mint (M)  Sleeve: Mint (M)`,
+			},
+			{
+				where: `discogs`,
+				date: `2022-11-08`,
+				price: `$525.00`,
+				said: `Super clean playing surfaces and labels. Sleeve displays light seam and corner wear and light partial ring wear on back cover. No splits, tears or writing on sleeve. Near Mint (NM or M-)  Sleeve: Very Good Plus (VG+)`,
+			},
+			{
+				where: `discogs`,
+				date: `2022-04-11`,
+				price: `$325.00`,
+				said: `play graded. Record has a slight warp but plays perfect. vinyl is glossy with no label marks. Cover is very nice with glossy still present. Minor shelf wear due to having a black border. Very Good Plus (VG+)  Sleeve: Very Good Plus (VG+)`,
+			},
 		],
 		image: [
 			{
@@ -7226,6 +7292,18 @@ you saw that red recording light go on..........
 				date: '2023-07-28',
 				where: 'ebay',
 				price: '$50.00',
+			},
+			{
+				date: `2023-04-30`,
+				where: 'discogs',
+				price: 	`$39.99`,
+				said: `In shrink Happy to answer any questions. If you need matrix/runout or other specific information, please ask before purchase. Check out Everyman Records inventory, we have records for everyone. Very Good Plus (VG+)  Sleeve: Near Mint (NM or M-)`,
+			},
+			{
+				date: `2022-08-24`,
+				where: 'discogs',
+				price: 	`$20.09`,
+				said: `clean vinyl. Cover in original shrink, cleanly opened. Very Good Plus (VG+)  Sleeve: Near Mint (NM or M-)`,
 			},
 		],
 		image: [
@@ -7975,6 +8053,18 @@ Kevin Stonerock in the studio
 				date: '2020-01-12',
 				price: '64.71',
 				said: `small sticker on front. a few bendmarks & small scratches on sleeve. a little light staining/discoloration. a little seam wear. a few light marks on vinyl.`,
+			},
+			{
+				date: `2023-08-07`,
+				where: `discogs`,
+				price: `$15.00`,
+				said: `Clean record with some light marks / impressions from the inner sleeve. Cover has general wear, as well as creasing in the upper left corner. Very Good Plus (VG+)  Sleeve: Very Good (VG)`,
+			},
+			{
+				date: `2023-05-03`,
+				where: `discogs`,
+				price: `$34.00`,
+				said: `Record has a couple light marks. Excellent gloss! Jacket has typical light corner and edge wear. No splits or major issues. Very Good Plus (VG+)  Sleeve: Very Good Plus (VG+)`,
 			},
 		],
 		image: [
@@ -9395,6 +9485,19 @@ album that justifies their quest. I've found mine.
 				price: `$599.99`,
 				said: `Scarce Original pressing. Has partial shrink wrap attached. Cover is clean with no problems, other than the torn shrink wrap. Vinyl is flawless. Looks unplayed, which is probably the case, bought a big collection from a radio dj that did not play/promote music like this.`,
 			},
+			{
+				date: `2023-12-04`,
+				where: `discogs`,
+				price: `$2,500.00`,
+				said: `SEALED ORIGINAL, INCREDIBLE COPY, RARE AS HENS TEETH. Mint (M)	Sleeve: Near Mint (NM or M-)`,
+			},
+			{
+				date: `2023-07-25`,
+				where: `discogs`,
+				price: `$950.00`,
+				said: `Vinyl plays without any noise on my Ortofon 2m Blue stylus. The jacket is rough, but not awful. No seam splits. Very Good Plus (VG+)  Sleeve: Good Plus (G+)`,
+			},
+
 		],
 		image: [
 			{
@@ -14224,6 +14327,12 @@ And the walls came tumbling down
 				price: '$45.56',
 				where: 'discogs',
 				said: `Sleeve has snow/ring wear, corner wear, top left seam split 3 inches. Vinyl looks extremely clean, BUT it has a "WAVE WARP"`,
+			},
+			{
+				date: `2023-08-08`,
+				where: 'discogs',
+				price: `$114.71`,
+				said: `SIDE ONE IS VG++. SIDE 2 IS VG-. SIDE 2 has some pretty ugly marks but plays well with just a light pop you can barely hear. Labels are nice and clean with clear print.`,
 			},
 		],
 		image: [
