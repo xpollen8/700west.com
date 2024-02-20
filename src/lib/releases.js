@@ -14621,26 +14621,38 @@ And the walls came tumbling down
 			{
 				tracknum: 1,
 				title: `Light My Fire`,
+				time: '2:21',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.01.mp3`,
 			},
 			{
 				tracknum: 2,
 				title: `Gone Girl`,
+				time: '3:38',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.02.mp3`,
 			},
 			{
 				tracknum: 3,
 				title: `Jazz Jam`,
+				time: '1:58',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.03.mp3`,
 			},
 			{
 				tracknum: 4,
 				title: `Something In The Way She Moves`,
+				time: '4:21',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.04.mp3`,
 			},
 			{
 				tracknum: 5,
 				title: `Fly Me To The Moon`,
+				time: '3:00',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.05.mp3`,
 			},
 			{
 				tracknum: 6,
 				title: `Stormy`,
+				time: '2:59',
+				audio: `${AUDIO_BOX}/Aaron-Demo/53.06.mp3`,
 			},
 		],
 		credits: [
