@@ -20,6 +20,7 @@ const Memoriam = ({ musician }) => {
 			{(deceased?.for) && <Datum k={`For`} v={(deceased?.forLink) ? <a href={`${deceased?.forLink}`}>{deceased.for}</a> : <>{deceased.for}</>}
 			/>}
 			{(parseInt(deceased?.date, 10) > 0) && <Datum k={`Deceased`} v={MakeDate(deceased?.date)} />}
+			{(deceased?.age) && <Datum k={`Age`} v={deceased?.age} />}
 			{(deceased?.reason) && <Datum k={`Cause`} v={deceased?.reason} />}
 		</div>
 	)

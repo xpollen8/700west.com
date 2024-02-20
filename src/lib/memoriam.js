@@ -11,6 +11,7 @@ const memoriam = [
 	name: 'Maurice James Whittemore, Jr.',
 	played: 'Everything',
 	for: '700 West',
+	age: '87',
 	date: '2022-01-20',
 	reason: 'COVID',
 	},
@@ -136,7 +137,9 @@ const memoriam = [
 	{
 	name: 'Russell Peck',
 	played: 'An award winning ASCAP composer',
-	for: 'russellpeck.com',
+	for: 'The Competition, Inc.',
+	link: 'https://russellpeck.com',
+	linkText: 'russellpeck.com',
 	date: '2009',
 	},
 	{

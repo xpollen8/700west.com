@@ -11,7 +11,7 @@ const Memoriam = (mem: any, key: number) =>
 		bold={<a href={makeMusicianLink(mem.name)}>{mem.name}</a>}
 		info={
 			<>
-			<div>Played: {mem.played}</div>
+			<div>Role: {mem.played}</div>
 			<div>For: {(mem?.forLink) ? <a href={`${mem?.forLink}`}>{mem.for}</a> : <>{mem.for}</>}
 			</div>
 			{mem?.link && <>Link: <a href={mem.link}>{mem?.linkText || 'Offsite Information'}</a></>}
