@@ -17,10 +17,10 @@ const Memoriam = (mem: any, key: number) =>
 			{mem?.link && <>Link: <a href={mem.link}>{mem?.linkText || 'Offsite Information'}</a></>}
 			</>
 		}
-		date={mem.date}
+		date={parseInt(mem.date, 10) ? mem.date : ''}
 		extra={<>
 			{mem.age && <div>Age: {mem.age}</div>}
-			{mem.reason && <div>Reason: {mem.reason}</div>}
+			{mem.reason && <div>Cause: {mem.reason}</div>}
 		</>}
 	/>
 
