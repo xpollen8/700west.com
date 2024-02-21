@@ -1645,7 +1645,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `stonerock_800225_A.jpg`,
-				thumb: `stonerock_800225_A_250.jpg`,
+				thumb: `thumbs/stonerock_800225_A_250.jpg`,
 				name: ``,
 				width: `250`,
 				height: `333`,
@@ -1654,7 +1654,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `stonerock_800225_B.jpg`,
-				thumb: `stonerock_800225_B_250.jpg`,
+				thumb: `thumbs/stonerock_800225_B_250.jpg`,
 				name: ``,
 				width: `250`,
 				height: `333`,
@@ -2350,7 +2350,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `731120-A.jpg`,
-				thumb: `731120-A.gif`,
+				thumb: `thumbs/731120-A_250.jpg`,
 				name: `A-Side`,
 				width: `150`,
 				height: `114`,
@@ -2359,7 +2359,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `731120-B.jpg`,
-				thumb: `731120-B.gif`,
+				thumb: `thumbs/731120-B_250.jpg`,
 				name: `B-Side`,
 				width: `150`,
 				height: `114`,
@@ -2482,7 +2482,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `LightsOfDawn_A.jpg`,
-				thumb: `thumb_LightsOfDawn_A.gif`,
+				thumb: `thumbs/LightsOfDawn_A_250.jpg`,
 				name: `A`,
 				width: `125`,
 				height: `125`,
@@ -2491,7 +2491,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `LightsOfDawn_B.jpg`,
-				thumb: `thumb_LightsOfDawn_B.gif`,
+				thumb: `thumbs/LightsOfDawn_B_250.jpg`,
 				name: `B`,
 				width: `125`,
 				height: `125`,
@@ -2731,7 +2731,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `ed_ott_scatter_me_cover.jpg`,
-				thumb: `ed_ott_scatter_me_cover_250.jpg`,
+				thumb: `thumbs/ed_ott_scatter_me_cover_250.jpg`,
 				name: `cover`,
 				width: `250`,
 				height: `250`,
@@ -2740,7 +2740,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `ed_ott_scatter_me_reverse.jpg`,
-				thumb: `ed_ott_scatter_me_reverse_250.jpg`,
+				thumb: `thumbs/ed_ott_scatter_me_reverse_250.jpg`,
 				name: `back`,
 				width: `250`,
 				height: `250`,
@@ -2749,7 +2749,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `ed_ott_scatter_me_A.jpg`,
-				thumb: `ed_ott_scatter_me_A_250.jpg`,
+				thumb: `thumbs/ed_ott_scatter_me_A_250.jpg`,
 				name: `back`,
 				width: `250`,
 				height: `250`,
@@ -2758,7 +2758,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				file: `ed_ott_scatter_me_B.jpg`,
-				thumb: `ed_ott_scatter_me_B_250.jpg`,
+				thumb: `thumbs/ed_ott_scatter_me_B_250.jpg`,
 				name: `back`,
 				width: `250`,
 				height: `250`,
@@ -2850,7 +2850,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `estey_poor_johnny_front.jpg`,
-				thumb: `estey_poor_johnny_front_250.jpg`,
+				thumb: `thumbs/estey_poor_johnny_front_250.jpg`,
 				name: `front`,
 				width: `250`,
 				height: `190`,
@@ -3143,14 +3143,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `bronco_front.jpg`,
-				thumb: `thumb_bronco_front.jpg`,
+				thumb: `thumbs/bronco_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `bronco_back.jpg`,
-				thumb: `thumb_bronco_back.jpg`,
+				thumb: `thumbs/bronco_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -3268,28 +3268,28 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `buccaneer_front.jpg`,
-				thumb: `thumb_buccaneer_front.gif`,
+				thumb: `thumbs/buccaneer_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `buccaneer_back.jpg`,
-				thumb: `thumb_buccaneer_back.gif`,
+				thumb: `thumbs/buccaneer_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `buccaneer_in1.jpg`,
-				thumb: `thumb_buccaneer_in1.gif`,
+				thumb: `thumbs/buccaneer_in1_250.jpg`,
 				name: `inside one`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `buccaneer_in2.jpg`,
-				thumb: `thumb_buccaneer_in2.gif`,
+				thumb: `thumbs/buccaneer_in2_250.jpg`,
 				name: `inside two`,
 				width: `125`,
 				height: `128`,
@@ -3529,7 +3529,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `gooliak_front.jpg`,
-				thumb: `thumb_gooliak_front.gif`,
+				thumb: `thumbs/gooliak_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
@@ -3777,14 +3777,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `henderson_front.jpg`,
-				thumb: `thumb_henderson_front.gif`,
+				thumb: `thumbs/henderson_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `124`,
 			},
 			{
 				file: `henderson_back.gif`,
-				thumb: `thumb_henderson_back.gif`,
+				thumb: `thumbs/henderson_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `124`,
@@ -3904,7 +3904,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `ironhorse_front.jpg`,
-				thumb: `thumb_ironhorse_front.gif`,
+				thumb: `thumbs/ironhorse_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
@@ -4156,14 +4156,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		image: [
 			{
 				file: `paradigms_front.jpg`,
-				thumb: `thumb_paradigms_front.gif`,
+				thumb: `thumbs/paradigms_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `paradigms_back.jpg`,
-				thumb: `thumb_paradigms_back.gif`,
+				thumb: `thumbs/paradigms_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -5151,14 +5151,14 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 		image: [
 			{
 				file: `mo_front.jpg`,
-				thumb: `thumb_mo_front.gif`,
+				thumb: `thumbs/mo_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `mo_back.jpg`,
-				thumb: `thumb_mo_back.gif`,
+				thumb: `thumbs/mo_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -5294,14 +5294,14 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 		image: [
 			{
 				file: `ott_front.jpg`,
-				thumb: `thumb_ott_front.jpg`,
+				thumb: `thumbs/ott_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `ott_back.jpg`,
-				thumb: `thumb_ott_back.jpg`,
+				thumb: `thumbs/ott_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -5713,14 +5713,14 @@ value of among both psych and heavy rock collectors.
 		image: [
 			{
 				file: `prim_front.jpg`,
-				thumb: `thumb_prim_front.gif`,
+				thumb: `thumbs/prim_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `prim_back.jpg`,
-				thumb: `thumb_prim_back.gif`,
+				thumb: `thumbs/prim_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -6002,14 +6002,14 @@ This album is dedicated to all the oppressed people in the world - especially ch
 		image: [
 			{
 				file: `immature_front.jpg`,
-				thumb: `thumb_immature_front.jpg`,
+				thumb: `thumbs/immature_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `126`,
 			},
 			{
 				file: `immature_back.jpg`,
-				thumb: `thumb_immature_back.jpg`,
+				thumb: `thumbs/immature_back_250.jpg`,
 				name: `back`,
 				width: `129`,
 				height: `126`,
@@ -6339,14 +6339,14 @@ This album is dedicated to all the oppressed people in the world - especially ch
 		image: [
 			{
 				file: `sailor_front.jpg`,
-				thumb: `thumb_sailor_front.gif`,
+				thumb: `thumbs/sailor_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `sailor_back.jpg`,
-				thumb: `thumb_sailor_back.gif`,
+				thumb: `thumbs/sailor_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -6922,14 +6922,14 @@ you saw that red recording light go on..........
 		image: [
 			{
 				file: `scott_front.jpg`,
-				thumb: `thumb_scott_front.gif`,
+				thumb: `thumbs/scott_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `scott_back.jpg`,
-				thumb: `thumb_scott_back.gif`,
+				thumb: `thumbs/scott_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -7309,28 +7309,28 @@ you saw that red recording light go on..........
 		image: [
 			{
 				file: `seq_front.jpg`,
-				thumb: `thumb_seq_front.gif`,
+				thumb: `thumbs/seq_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `seq_back.jpg`,
-				thumb: `thumb_seq_back.gif`,
+				thumb: `thumbs/seq_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `sequoiah_A.jpg`,
-				thumb: `thumb_sequoiah_A.gif`,
+				thumb: `thumbs/sequoiah_A_250.jpg`,
 				name: `A`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `sequoiah_B.jpg`,
-				thumb: `thumb_sequoiah_B.gif`,
+				thumb: `thumbs/sequoiah_B_250.jpg`,
 				name: `B`,
 				width: `125`,
 				height: `125`,
@@ -8070,14 +8070,14 @@ Kevin Stonerock in the studio
 		image: [
 			{
 				file: `kevin_front.jpg`,
-				thumb: `thumb_kevin_front.gif`,
+				thumb: `thumbs/kevin_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `kevin_back.jpg`,
-				thumb: `thumb_kevin_back.gif`,
+				thumb: `thumbs/kevin_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -9502,14 +9502,14 @@ album that justifies their quest. I've found mine.
 		image: [
 			{
 				file: `zerf_front.jpg`,
-				thumb: `thumb_zerf_front.gif`,
+				thumb: `thumbs/zerf_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `zerf_back.jpg`,
-				thumb: `thumb_zerf_back.gif`,
+				thumb: `thumbs/zerf_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `128`,
@@ -9833,14 +9833,14 @@ album that justifies their quest. I've found mine.
 		image: [
 			{
 				file: `Nite_People_front.gif`,
-				thumb: `thumb_Nite_People_front.gif`,
+				thumb: `thumbs/Nite_People_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `124`,
 			},
 			{
 				file: `Nite_People_back.gif`,
-				thumb: `thumb_Nite_People_back.gif`,
+				thumb: `thumbs/Nite_People_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `124`,
@@ -9873,14 +9873,14 @@ album that justifies their quest. I've found mine.
 		image: [
 			{
 				file: `jd_front.jpg`,
-				thumb: `thumb_jd_front.jpg`,
+				thumb: `thumbs/jd_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `jd_back.jpg`,
-				thumb: `thumb_jd_back.jpg`,
+				thumb: `thumbs/jd_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -10000,28 +10000,28 @@ Manufactured & Distributed by Obie Records
 		image: [
 			{
 				file: `rex_front.jpg`,
-				thumb: `thumb_rex_front.jpg`,
+				thumb: `thumbs/rex_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `rex_back.jpg`,
-				thumb: `thumb_rex_back.jpg`,
+				thumb: `thumbs/rex_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `rex_insert_front.jpg`,
-				thumb: `thumb_rex_insert_front.jpg`,
+				thumb: `thumbs/rex_insert_front_250.jpg`,
 				name: `insert_front`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `rex_insert_back.jpg`,
-				thumb: `thumb_rex_insert_back.jpg`,
+				thumb: `thumbs/rex_insert_back_250.jpg`,
 				name: `insert_back`,
 				width: `125`,
 				height: `125`,
@@ -10141,14 +10141,14 @@ Manufactured & Distributed by Obie Records
 		image: [
 			{
 				file: `goldengrass_front.jpg`,
-				thumb: `thumb_goldengrass_front.jpg`,
+				thumb: `thumbs/goldengrass_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `goldengrass_back.jpg`,
-				thumb: `thumb_goldengrass_back.jpg`,
+				thumb: `thumbs/goldengrass_back_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -10218,14 +10218,14 @@ It’s a desperate LP in many aspects, and one of them had been its desire to be
 		image: [
 			{
 				file: `raypierle_front.jpg`,
-				thumb: `thumb_raypierle_front.jpg`,
+				thumb: `thumbs/raypierle_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
 				file: `raypierle_back.jpg`,
-				thumb: `thumb_raypierle_back.jpg`,
+				thumb: `thumbs/raypierle_back_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
@@ -10518,7 +10518,7 @@ Thank you... Bill for being a believer.
 		image: [
 			{
 				file: `huntsinger_front.jpg`,
-				thumb: `thumb_huntsinger_front.jpg`,
+				thumb: `thumbs/huntsinger_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
@@ -10811,14 +10811,14 @@ Thank you... Bill for being a believer.
 		image: [
 			{
 				file: `mobl_front.jpg`,
-				thumb: `thumb_mobl_front.jpg`,
+				thumb: `thumbs/mobl_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `mobl_back.jpg`,
-				thumb: `thumb_mobl_back.jpg`,
+				thumb: `thumbs/mobl_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -10910,14 +10910,14 @@ Thank you... Bill for being a believer.
 		image: [
 			{
 				file: `wills_front.jpg`,
-				thumb: `thumb_wills_front.jpg`,
+				thumb: `thumbs/wills_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `wills_back.jpg`,
-				thumb: `thumb_wills_back.jpg`,
+				thumb: `thumbs/wills_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -11178,7 +11178,7 @@ to offer.
 		image: [
 			{
 				file: `bestof700west1.jpg`,
-				thumb: `bestof700west1_250.jpg`,
+				thumb: `thumbs/bestof700west1_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -11409,7 +11409,7 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `amnesty_front.jpg`,
-				thumb: `thumb_amnesty_front.jpg`,
+				thumb: `thumbs/amnesty_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -12136,7 +12136,7 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `bestof700west2.jpg`,
-				thumb: `bestof700west2_250.jpg`,
+				thumb: `thumbs/bestof700west2_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -12244,14 +12244,14 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `jd_letmelive_front.jpg`,
-				thumb: `thumb_jd_letmelive_front.jpg`,
+				thumb: `thumbs/jd_letmelive_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `jd_letmelive_back.jpg`,
-				thumb: `thumb_jd_letmelive_back.jpg`,
+				thumb: `thumbs/jd_letmelive_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -12285,14 +12285,14 @@ it is also a damn fine record for your average funk listener.
 			/*
 			{
 				file: `jd_front.jpg`,
-				thumb: `thumb_jd_front.jpg`,
+				thumb: `thumbs/jd_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `jd_back.jpg`,
-				thumb: `thumb_jd_back.jpg`,
+				thumb: `thumbs/jd_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -12404,14 +12404,14 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `believers_front.jpg`,
-				thumb: `thumb_believers_front.jpg`,
+				thumb: `thumbs/believers_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `believers_back.jpg`,
-				thumb: `thumb_believers_back.jpg`,
+				thumb: `thumbs/believers_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -12601,7 +12601,7 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `lowe_front.jpg`,
-				thumb: `thumb_lowe_front.jpg`,
+				thumb: `thumbs/lowe_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -12738,14 +12738,14 @@ it is also a damn fine record for your average funk listener.
 		image: [
 			{
 				file: `sunrun_front.jpg`,
-				thumb: `thumb_sunrun_front.jpg`,
+				thumb: `thumbs/sunrun_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `sunrun_back.jpg`,
-				thumb: `thumb_sunrun_back.jpg`,
+				thumb: `thumbs/sunrun_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -13555,14 +13555,14 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `firstannual_front.jpg`,
-				thumb: `thumb_firstannual_front.jpg`,
+				thumb: `thumbs/firstannual_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `firstannual_back.jpg`,
-				thumb: `thumb_firstannual_back.jpg`,
+				thumb: `thumbs/firstannual_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -13591,14 +13591,14 @@ And the walls came tumbling down
 			/*
 			{
 				file: `jd_front.jpg`,
-				thumb: `thumb_jd_front.jpg`,
+				thumb: `thumbs/jd_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `jd_back.jpg`,
-				thumb: `thumb_jd_back.jpg`,
+				thumb: `thumbs/jd_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
@@ -13752,7 +13752,7 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `terry_kimbrell_front.jpg`,
-				thumb: `thumb_terry_kimbrell_front.jpg`,
+				thumb: `thumbs/terry_kimbrell_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
@@ -13895,14 +13895,14 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `ed_hamilton_front.jpg`,
-				thumb: `thumb_ed_hamilton_front.jpg`,
+				thumb: `thumbs/ed_hamilton_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `ed_hamilton_back.jpg`,
-				thumb: `thumb_ed_hamilton_back.jpg`,
+				thumb: `thumbs/ed_hamilton_back_250.jpg`,
 				name: `rear`,
 				width: `125`,
 				height: `125`,
@@ -14039,14 +14039,14 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `enoch_front.jpg`,
-				thumb: `thumb_enoch_front.jpg`,
+				thumb: `thumbs/enoch_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `enoch_back.jpg`,
-				thumb: `thumb_enoch_back.jpg`,
+				thumb: `thumbs/enoch_back_250.jpg`,
 				name: `rear`,
 				width: `125`,
 				height: `125`,
@@ -14183,14 +14183,14 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `carlos_silva_front.jpg`,
-				thumb: `thumb_carlos_silva_front.jpg`,
+				thumb: `thumbs/carlos_silva_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `carlos_silva_back.jpg`,
-				thumb: `thumb_carlos_silva_back.jpg`,
+				thumb: `thumbs/carlos_silva_back_250.jpg`,
 				name: `rear`,
 				width: `125`,
 				height: `125`,
@@ -14338,14 +14338,14 @@ And the walls came tumbling down
 		image: [
 			{
 				file: `mistreater_lp_front.jpg`,
-				thumb: `thumb_mistreater_lp_front.jpg`,
+				thumb: `thumbs/mistreater_lp_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
 				file: `mistreater_lp_back.jpg`,
-				thumb: `thumb_mistreater_lp_back.jpg`,
+				thumb: `thumbs/mistreater_lp_back_250.jpg`,
 				name: `rear`,
 				width: `125`,
 				height: `125`,
