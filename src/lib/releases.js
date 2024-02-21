@@ -2599,7 +2599,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				said: `former stock copy, wear on label from storage. Labels VG+`,
 			},
 		],
-		image: [
+		publicity: [
 			{
 				image: `funk_street`,
 				width: `500`,
@@ -14995,7 +14995,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 		],
 		comments: [
 		],
-		image: [
+		publicity: [
 			{
 				image: `funk_street`,
 				width: `500`,
