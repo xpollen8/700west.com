@@ -7430,6 +7430,18 @@ you saw that red recording light go on..........
 				comments: [
 				],
 				credits: [
+					{
+						who: `Janet Hewitt`,
+						did: [
+							"Background Vocals",
+						],
+					},
+					{
+						who: `Paul Herr`,
+						did: [
+							"Background Vocals",
+						],
+					},
 				],
 			},
 			{
@@ -7472,6 +7484,12 @@ you saw that red recording light go on..........
 				comments: [
 				],
 				credits: [
+					{
+						who: `Janet Hewitt`,
+						did: [
+							"Background Vocals",
+						],
+					},
 				],
 			},
 			{
@@ -7509,37 +7527,43 @@ you saw that red recording light go on..........
 				did: [
 					"Acoustic Guitar",
 					"Electric Guitar",
-					"bass",
-					"incidental percussion",
-					"lead vocals",
-					"background vocals",
-					"all compositions",
+					"Bass",
+					"Incidental percussion",
+					"Lead vocals",
+					"Background vocals",
+					"All Compositions",
+					"Produced",
 				],
 			},
 			{
 				who: `Paul Herr`,
 				did: [
-					"drums",
-					"incidental percussion",
-					"background vocals (You Were Made To Smile)",
-				],
-			},
-			{
-				who: `Janet Hewitt`,
-				did: [
-					"background vocals (You Were Made To Smile)",
+					"Drums",
+					"Incidental Percussion",
 				],
 			},
 			{
 				who: `Rex Thomas`,
 				did: [
-					"pedal steel guitar",
+					"Pedal Steel Guitar",
 				],
 			},
 			{
 				who: `Moe Whittemore`,
 				did: [
-					"keyboards",
+					"Keyboards", "Engineer"
+				],
+			},
+			{
+				who: `Bill Walden`,
+				did: [
+					"Photography",
+				],
+			},
+			{
+				who: `Mike Wallace`,
+				did: [
+					"Photography",
 				],
 			},
 		],
@@ -14062,6 +14086,10 @@ And the walls came tumbling down
 		],
 		credits: [
 			{
+				did: [ `Photography` ],
+				who: 'Stan Price',
+			},
+			{
 				did: [ `Backing Vocals` ],
 				who: 'Marianne Abel',
 			},
@@ -14094,7 +14122,7 @@ And the walls came tumbling down
 				who: 'Doug Enoch',
 			},
 			{
-				did: [ `Steel Guitar`, `Arranger` ],
+				did: [ `Steel Guitar`, `String Arrangements` ],
 				who: 'Rex Thomas',
 			},
 		],
