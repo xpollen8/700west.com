@@ -12282,22 +12282,20 @@ it is also a damn fine record for your average funk listener.
 			},
 		],
 		image: [
-			/*
 			{
-				file: `jd_front.jpg`,
-				thumb: `thumbs/jd_front_250.jpg`,
+				file: `jd_keepin_on_front.jpg`,
+				thumb: `thumbs/jd_keepin_on_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
-				file: `jd_back.jpg`,
-				thumb: `thumbs/jd_back_250.jpg`,
+				file: `jd_keepin_on_back.jpg`,
+				thumb: `thumbs/jd_keepin_on_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
 			},
-			*/
 		],
 	},
 	{
@@ -13588,22 +13586,20 @@ And the walls came tumbling down
 		comments: [
 		],
 		image: [
-			/*
 			{
-				file: `jd_front.jpg`,
-				thumb: `thumbs/jd_front_250.jpg`,
+				file: `don_rissler_front.jpg`,
+				thumb: `thumbs/don_rissler_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `125`,
 			},
 			{
-				file: `jd_back.jpg`,
-				thumb: `thumbs/jd_back_250.jpg`,
+				file: `don_rissler_back.jpg`,
+				thumb: `thumbs/don_rissler_back_250.jpg`,
 				name: `back`,
 				width: `125`,
 				height: `125`,
 			},
-			*/
 		],
 	},
 	{
