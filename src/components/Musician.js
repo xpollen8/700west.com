@@ -75,9 +75,12 @@ const CreditsOn = ({ musician }) => {
 export const AKA = ({ musician }) => {
 	const aka = AKAs[musician];
 	if (!aka) return <></>;
+	const mispelings = aka.filter(a => a !== musician && a.includes('*'));
+	const akas = aka.filter(a => a !== musician && !a.includes('*'));
 	return (
 		<>
-		(AKA: "{aka.filter(a => a !== musician).join('", "')}")
+		{(!!akas.length) && <>"{akas.join('", "')}"<br /></>}
+		{(!!mispelings.length) && <>(<i>Mis-spellings: "{mispelings.join('", "')}"</i>)</>}
 		</>
 	);
 }
