@@ -10099,19 +10099,59 @@ album that justifies their quest. I've found mine.
 	{
 		type: "album",
 		artist: `J.D. Redmon`,
-		label: ``,
+		label: `Redmon Records`,
 		liner: ``,
 		mastering: ``,
 		title: `Just J.D.`,
-		id: ``,
+		id: `RLP-110`,
 		published: `1978-08-01`,
 		reissue: ``,
 		tracks: [
 		],
 		credits: [
 			{
-				did: [ `Acoustic Guitar`, `Lead Vocals` ],
+				did: [ `Piano` ],
+				who: `Larry Bassett`,
+			},
+			{
+				did: [ `Bass` ],
+				who: `Dave Sullivan`,
+			},
+			{
+				did: [ `Lead Guitar` ],
+				who: `Kevin Stonerock`,
+			},
+			{
+				did: [ `Percussion` ],
+				who: `Darrell Watkins*`,
+			},
+			{
+				did: [ `Trombone` ],
+				who: `Graig Parmerlee*`,
+			},
+			{
+				did: [ `Trumpet` ],
+				who: `Kevin Gasaway`,
+			},
+			{
+				did: [ `Saxophone` ],
+				who: `Jack Schafele*`,
+			},
+			{
+				did: [ `Engineer` ],
+				who: `M.J. Whittemore`,
+			},
+			{
+				did: [ `Electric Keyboards` ],
+				who: `Mo Whittemore`,
+			},
+			{
+				did: [ `Acoustic Guitar`, `Lead Vocals`, `Back-up Vocals` ],
 				who: `J.D. Redmon`,
+			},
+			{
+				did: [ `Back-up Vocals` ],
+				who: `Grace Hammock`,
 			},
 		],
 		addendum: [
@@ -12416,8 +12456,8 @@ it is also a damn fine record for your average funk listener.
 		liner: ``,
 		mastering: ``,
 		title: `Let Me Live`,
-		id: `RLP 103`,
-		published: ``,
+		id: `RLP-103`,
+		published: `1973`,
 		reissue: ``,
 		tracks: [
 			{
@@ -12535,7 +12575,7 @@ it is also a damn fine record for your average funk listener.
 		liner: ``,
 		mastering: ``,
 		title: `Keep On Keepin On`,
-		id: `RLP 107`,
+		id: `RLP-107`,
 		published: ``,
 		reissue: ``,
 		tracks: [
