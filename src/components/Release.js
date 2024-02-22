@@ -147,7 +147,7 @@ const Published = ({ publisher = '', affiliation = '' }) => {
 
 const Track = (data, key) => (
 	<p value={data.tracknum} key={key}>
-		<Title {...data} />
+		{key + 1}. <Title {...data} />
 		{(exists(data.audio) || exists(data.credits) || exists(data.comments) || exists(data.writer)) &&
 		<div className="row">
 		{exists(data.audio) && 
@@ -180,7 +180,7 @@ const TrackPanel = ({ side, tracks }) => {
 		return <div className="release panel">
 			<SectionHeader text={`${side} Side`} />
 			<div className={(tracks.filter(t => t.side === side).length > 1) ? "" : ""}>
-				{tracks.filter(t => t.side === side).map(Track)}
+				{tracks.sort((a, b) => a.tracknum - b.tracknum).filter(t => t.side === side).map(Track)}
 			</div>
 			</div>
 	} else {
