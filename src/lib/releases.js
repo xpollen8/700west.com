@@ -323,6 +323,14 @@ export default [
 				],
 			},
 		],
+		sales: [
+			{
+				where: 'discogs',
+				date: '2023-07-28',
+				price: '$7.00',
+				said: `Very Good (VG)`,
+			},
+		],
 		addendum: [
 		],
 		comments: [
@@ -782,6 +790,24 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				where: 'discogs',
 				date: '2015-10-27',
 				price: '$40.00',
+			},
+			{
+				where: 'discogs',
+				date: `2023-08-08`,
+				price: `$114.71`,
+				said: `SIDE ONE IS VG++. SIDE 2 IS VG-. SIDE 2 has some pretty ugly marks but plays well with just a light pop you can barely hear. Labels are nice and clean with clear print.`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-07-03`,
+				price: `76.09`,
+				said: `Original White Paper Sleeve ! Very Good Plus (VG+)`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-12-02`,
+				price: `$43.48`,
+				said: `Near Mint (NM or M-) Vinyl looks barely played, maybe already M. Plain white paper sleeve...`,
 			},
 		],
 		image: [
@@ -1575,6 +1601,20 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 		],
+		sales: [
+			{
+				where: 'discogs',
+				date: `2022-10-04`,
+				said: `Very Good (VG)`,
+				price: `$5.99`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-08-10	`,
+				said: `Very Good Plus (VG+)`,
+				price: `$3.99`,
+			},
+		],
 		addendum: [
 		],
 		comments: [
@@ -1648,6 +1688,12 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: `2020-06-06`,
 				where: 'ebay',
 				price: `$8.00`,
+			},
+			{
+				date: `2023-11-26`,
+				where: 'discogs',
+				price: `$15.00`,
+				said: `NM unplayed. Autographed on one side`,
 			},
 		],
 		image: [
@@ -2218,6 +2264,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 		],
+		sales: [
+			{
+				date: `2021-04-24`,
+				where: 'discogs',
+				price: `$45.00`,
+				said: `Vinyl: very clean appearance vinyl surfaces, well taken care of - company sleeve - Labels: EX`,
+			},
+		],
 		addendum: [
 		],
 		comments: [
@@ -2352,6 +2406,12 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: '2017-10-31',
 				price: '$80.00',
 				said: `Vinyl is VG to VG+ (visually VG with surface marks not affecting play, plays VG+, minor foxing on label). Plain white sleeve.`,
+			},
+			{
+				where: 'discogs',
+				date: '2022-07-20',
+				price: '$300.00',
+				said: `Record is shiny strong VG+/ VG light scuffs Clean labels Plays nice`,
 			},
 
 		],
@@ -3147,6 +3207,30 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: '2017-10-22',
 				price: '$29.41',
 			},
+			{
+				where: 'discogs',
+				date: `2023-08-30`,
+				price: `$9.00`,
+				said: `Very Good Plus (VG+) contains insert...in shrink`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-12-05`,
+				price: `$7.00`,
+				said: `Very Good (VG)`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-09-27`,
+				price: `$8.00`,
+				said: `Very Good Plus (VG+) cut corner`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-12-23`,
+				price: `$32.65`,
+				said: `Mint (M)  SEALED / UN-OPENED COPY - very clean appearance cover`,
+			},
 		],
 		image: [
 			{
@@ -3532,6 +3616,78 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: `2019-05-23`,
 				where: 'ebay',
 				price: `$69.69`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-03-27`,
+				price: `$130.00`,
+				said: `Sealed copy in original shrink!`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-03-16`,
+				price: `$65.00`,
+				said: `Cover closer to VG+`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-03-10`,
+				price: `$74.99`,
+				said: `Couple very faint scuffs to side one, side two looks superb. Jacket still in shrink wrap, old price sticker to wrap. Comes w/printed innersleeve.`,
+			},
+			{
+				where: 'discogs',
+				date: `2020-11-14`,
+				price: `$75.00`,
+				said: `NM- vinyl and VG++ cover sleeve. Includes original inner sleeve.`,
+			},
+			{
+				where: 'discogs',
+				date: `2020-11-14`,
+				price: `$85.00`,
+				said: `vinyl looks NM-`,
+			},
+			{
+				where: 'discogs',
+				date: `2020-10-16`,
+				price: `$73.33`,
+				said: `Very Good Plus (VG+)`,
+			},
+			{
+				where: 'discogs',
+				date: `2018-11-04`,
+				price: `$119.99`,
+				said: `SEALED COPY`,
+			},
+			{
+				where: 'discogs',
+				date: `2018-08-23`,
+				price: `$100.00`,
+				said: `Minty Sealed Copy`,
+			},
+			{
+				where: 'discogs',
+				date: `2018-02-28`,
+				price: `$120.00`,
+				said: `Sealed copy. Shrink wrap has split on the front, but still intact.`,
+			},
+			{
+				where: 'discogs',
+				date: `2018-02-28`,
+				price: `$100.00`,
+				said: `766154, slight cover wear (mild seam/corner wear, small toc), printed inner sleeve, late 70s Hawaiian Private Press breezy AOR Soft Rock`,
+			},
+			{
+				where: 'discogs',
+				date: `2016-05-15`,
+				price: `$50.00`,
+				said: `Still sealed!!`,
+			},
+			{
+				where: 'discogs',
+				date: `2015-10-10`,
+				price: `$46.49`,
+				said: `Very Good Plus (VG+)`,
 			},
 		],
 		image: [
@@ -6015,6 +6171,24 @@ This album is dedicated to all the oppressed people in the world - especially ch
 				date: '2016-06-09',
 				price: '$58.82',
 				said: `still in shrink wrap, played once! TOP shape`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-10-30`,
+				price: `$65.22`,
+				said: `Near Mint (NM or M-) still in shrink wrap, played once! TOP shape`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-10-24`,
+				price: `$50.00`,
+				said: `GORGEO copy of this Avant-Electronic ONE-MAN-PROG-BAND LP w/ Arty touches! Vinyl looks immaculate, unplayed; Jacket tip-on slick is JUST starting to fray at rear left edge, has some tape-job/repair aspects to lower rear edge & some waviness but is structurally sound. KEEPER COPY!`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-08-13`,
+				price: `$35.00`,
+				said: `Vinyl and jacket both EX. You will be happy.`,
 			},
 		],
 		image: [
@@ -12719,6 +12893,18 @@ it is also a damn fine record for your average funk listener.
 				where: 'discogs',
 				price: '$9.00',
 			},
+			{
+				where: 'discogs',
+				date: `2023-01-01`,
+				said: `Very Good Plus`,
+				price: `$16.30`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-09-08`,
+				price: `$4.00`,
+				said: `Very Good Plus (VG+)  vinyl has some minor scuffs, but still plays great. sleeve has original shrink wrap.`,
+			},
 		],
 		image: [
 			{
@@ -13673,6 +13859,12 @@ And the walls came tumbling down
 				where: 'discogs',
 				price: '$6.99',
 			},
+			{
+				where: 'discogs',
+				date: `2021-12-14`,
+				said: `Very Good Plus (VG+)`,
+				price: `$10.00`,
+			}
 		],
 		image: [
 			{
@@ -14010,7 +14202,12 @@ And the walls came tumbling down
 				date: '2019-08-19',
 				price: '$16.44',
 			},
-
+			{
+				where: 'discogs',
+				date: `2023-06-11`,
+				price: `$13.44`,
+				said: `Visually graded: free of scratches & warps. Slight rubbing on cover, which is free of seam splits, stickers, c/o marks, moisture damage, writing & color fading. Excellent label. Stored upright in climate control. Also recommended to connoisseurs of rare label logos.`,
+			}
 		],
 		image: [
 			{
@@ -14453,10 +14650,16 @@ And the walls came tumbling down
 				said: `Sleeve has snow/ring wear, corner wear, top left seam split 3 inches. Vinyl looks extremely clean, BUT it has a "WAVE WARP"`,
 			},
 			{
-				date: `2023-08-08`,
+				date: `2023-06-16`,
 				where: 'discogs',
-				price: `$114.71`,
-				said: `SIDE ONE IS VG++. SIDE 2 IS VG-. SIDE 2 has some pretty ugly marks but plays well with just a light pop you can barely hear. Labels are nice and clean with clear print.`,
+				price: `$325.00`,
+				said: `Near Mint (NM or M-) Wax retains a deep gloss in case you need to fix your lashes. Not a flaw to the jacket and no shrink.`,
+			},
+			{
+				date: `2023-05-27`,
+				where: 'discogs',
+				price: `$140.00`,
+				said: `Very Good Plus (VG+)`,
 			},
 		],
 		image: [
