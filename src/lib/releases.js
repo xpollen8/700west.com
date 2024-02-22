@@ -477,6 +477,10 @@ export default [
 					}
 				],
 				credits: [
+					{
+						who: `Jeff Purvis`,
+						did: [ `Writer` ],
+					}
 				],
 			},
 			{
@@ -493,6 +497,10 @@ export default [
 				comments: [
 				],
 				credits: [
+					{
+						who: `Jeff Purvis`,
+						did: [ `Writer` ],
+					}
 				],
 			},
 		],
@@ -11160,6 +11168,12 @@ Thank you... Bill for being a believer.
 				artist: `Stone's Crossing`,
 				title: `Wedding Day`,
 				time: '03:00',
+				credits: [
+					{
+						who: `Jeff Purvis`,
+						did: [ `Writer` ],
+					}
+				],
 			},
 			{
 				tracknum: '18',
