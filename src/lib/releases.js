@@ -4921,7 +4921,6 @@ Moe
 Credit: Artur Silva
 <br/>
 Moe Whittemore of 700 West records
-</p>
 <p>
 Behind every great music scene, there's a cultural revolutionary. Not necessarily a musician - it could be a label boss, a producer or disc jockey - someone with a far-reaching musical vision that extends beyond established paradigms and parameters, eclipsing the provincial values of a local scene to open up exciting musical frontiers.
 </p>
@@ -5502,7 +5501,6 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 <img src="/images/primevil1.jpg" width="384" height="480" />
 <br/>
 Dave Campton (18)
-</p>
 <p>
 <img src="/images/primevil2.jpg" width="398" height="485" />
 <br/>
@@ -5716,6 +5714,18 @@ value of among both psych and heavy rock collectors.
 				date: '2021-10-29',
 				price: '$475.00',
 				said: `Plays perfect with no skips or crackling. Slight ring wear. Very Good Plus (VG+)  Sleeve: Very Good (VG)`,
+			},
+			{
+				where: 'ebay',
+				date: '2023-12-18',
+				price: '$577.33',
+				said: `Smokin Bats At Camptons ORIGINAL US PRIVATE PRESS, only 1000 copies of this monster hard rock LP was pressed extremely rare and hard to find this copy is coming from my personal collection and is solid keeper copy and is still in the original shrink it plays great with the Lp being a solid upper VG+ and the cover being a solid EX`,
+			},
+			{
+				where: 'ebay',
+				date: '2023-12-14',
+				price: '$475.00',
+				said: `Smokin Bats At Camptons ORIGINAL US PRIVATE PRESS, only 1000 copies of this monster hard rock LP was pressed extremely rare and hard to find this copy is coming from my personal collection and is solid keeper copy and is still in the original shrink it plays great with the Lp being a solid upper VG+ and the cover being a solid EX`,
 			},
 		],
 		image: [
@@ -6793,7 +6803,6 @@ out there was Ezekial Longspur's song about
 "Rolling Down the Highway."  It sounded so good that
 it was obvious this Whittemore guy knew what he was
 doing...........
-</p>
 <p>
 Shortly after that I played bass on a demo for
 Bill Jackson and Tom Mobley at 700 West. Rex Thomas also
