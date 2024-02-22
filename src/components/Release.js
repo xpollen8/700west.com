@@ -353,7 +353,7 @@ const Promo = ({ publicity = [] }) => {
 
 const Sales = ({ sales = [] }) => {
 	if (sales.length) {
-		const sorted = sales.sort((a, b) => new Date(a.date) - new Date(b.date));
+		const sorted = sales.sort((a, b) => new Date(b.date) - new Date(a.date));
 		const original = { name: 'Price', data: {} };
 		const reissue = { name: 'Re-Issue Price', data: {} };
 		sorted.forEach(({ date, price = '', said }) => {
@@ -372,11 +372,12 @@ const Sales = ({ sales = [] }) => {
 			{!!(Object.keys(reissue.data).length) &&
 				<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
 			<ul className="panelContainer">
-			{sorted.map(({ date, said, price, where }, key) => (
+			{sorted.map(({ date, said, price, where }, key) => exists(date) && (
 				<p key={key} className="row">
-						{exists(date) && <>
-							{MakeDate(date)} {price && <span>- {price}</span>} {where && <span>- ({where})</span>} {said && <i>- {said}</i>}
-						</>}
+						{price && <b>{price}</b>}<br/>
+						{said && <i>{said}</i>} {where && <span>({where})</span>}
+						<p/>
+						{MakeDate(date)}
 				</p>
 			))}
 			</ul>
