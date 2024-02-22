@@ -11421,6 +11421,7 @@ it is also a damn fine record for your average funk listener.
 		artist: `Various Artists`,
 		multiArtist: true,
 		label: `700 West`,
+		store: `https://700west.bandcamp.com/album/best-of-700-west-volume-2`,
 		liner: ``,
 		mastering: ``,
 		title: `Best Of 700 West - Volume II`,

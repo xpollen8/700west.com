@@ -30,16 +30,22 @@ const Albums = () => {
 				remain in the 700 West archives.
 			</p>
 		</div>
+		<SectionHeader text="700 West compilations" />
 		<div className="row">
 			<div className="center">
 				<iframe title="Store" style={{ border: 0, width: '80%', height: '120px' }} src="https://bandcamp.com/EmbeddedPlayer/album=1474513005/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true" seamless />
 				<iframe title="Store" style={{ border: 0, width: '80%', height: '120px'}} src="https://bandcamp.com/EmbeddedPlayer/album=762103402/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless />
+		<Item
+			extra={
+				albums.filter(r => r.label.match(/700/) && r.artist.match(/Various Artists/)).sort(dateCompare).map(makeAlbumBlurb)
+			}
+		/>
 			</div>
 		</div>
 		<SectionHeader text="Albums released on the 700 West label" />
 		<Item
 			extra={
-				albums.filter(r => r.label.match(/700/)).sort(dateCompare).map(makeAlbumBlurb)
+				albums.filter(r => r.label.match(/700/) && !r.artist.match(/Various Artists/)).sort(dateCompare).map(makeAlbumBlurb)
 			}
 		/>
 		<SectionHeader text="Albums recorded at 700 West, released on other labels" />
