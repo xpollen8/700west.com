@@ -589,6 +589,11 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 					{
 						who: `M.J. Whittemore, Jr.`,
 						said: `Very commercial power trio.`,
+					},
+					{
+						date: '2021-08-18',
+						who: 'David Whittemore',
+						said: `Alternate mixes with synth counterpoint blips exist on 15IPS tapes`,
 					}
 				],
 				credits: [
@@ -618,11 +623,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 		],
 		comments: [
-			{
-				date: '2021-08-18',
-				who: 'David Whittemore',
-				said: `Alternate mixes with synth counterpoint blips exist on 15IPS tapes`,
-			}
 		],
 		addendum: [
 		],
