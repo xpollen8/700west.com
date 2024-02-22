@@ -180,6 +180,11 @@ const knownForsByMusician = (mus) => {
 const commentsByMusician = (mus) => {
 	const comments = [];
 	releases.forEach(r => {
+		r?.comments?.forEach(c => {
+			if (isAKA(c.who) === mus) {
+				comments.push({ release: r, comment: c });
+			}
+		})
 		r?.tracks.forEach(t => {
 			t?.comments?.forEach(c => {
 				if (isAKA(c.who) === mus) {
