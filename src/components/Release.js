@@ -101,7 +101,7 @@ const TrackCredits = ({ credits = [] }) => {
 			<div className="row">
 				{credits.map((c, key) => {
 					return <p key={key}>
-						<Who {...c} /> {c?.did && <p className="played">"{c?.did?.join('", "')}"</p>}
+						<Who {...c} /> {!!c?.did?.length && <p className="played">"{c?.did?.join('", "')}"</p>}
 					</p>
 				})}
 			</div>
@@ -271,7 +271,7 @@ const Credits = ({ credits = [] }) => {
 			<p className="panelContainer">
 			{credits.map(({ who, did }, key) => (
 				<p key={key} className="row">
-					<Who who={who} /> {did && <p className="played">"{did?.join('", "')}"</p>}
+					<Who who={who} /> {!!did?.length && <p className="played">"{did?.join('", "')}"</p>}
 				</p>
 			))}
 			</p>
