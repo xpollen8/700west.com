@@ -278,8 +278,10 @@ const Shares = ({ musician }) => {
 						{(track?.artist && track?.title) && (<>{MaybeReleaseLink(track?.artist, track?.title)}</>)}
 						{' '}
 						{(release?.artist && release?.title) && (<>({MaybeReleaseLink(release?.artist, release?.title)})</>)}
-						<div className="row" dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } }></div>
-						{showAttribution({ original: source, date }, 'row')}
+						<div className="row">
+							<div dangerouslySetInnerHTML={ { __html: getBodyHTML(said) } } />
+							{(date) && <><p/>{showAttribution({ original: source, date })}</>}
+						</div>
 					</div>
 				);
 			})}
