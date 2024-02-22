@@ -1526,7 +1526,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `3:22`,
 				publisher: `Hubler Publishing`,
 				affiliation: `ASCAP`,
-				writer: `W. J. Hubler, Jr.`,
+				writer: `W.J. Hubler, Jr.`,
 				mastering: `Houston Records #LH-16749`,
 				audio: `JimHubler/JimHubler_BigBruce.mp3`,
 				comments: [
@@ -1550,7 +1550,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `3:05`,
 				publisher: `Hubler Publishing`,
 				affiliation: `ASCAP`,
-				writer: `W. J. Hubler, Jr.`,
+				writer: `W.J. Hubler, Jr.`,
 				mastering: `Houston Records #LH-16750`,
 				audio: ``,
 				comments: [
@@ -5237,7 +5237,7 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 				did: [ `Horns` ],
 			},
 			{
-				who: `Jack Schfele`,
+				who: `Jack Schfele*`,
 				did: [ `Horns` ],
 			},
 			{
@@ -9883,17 +9883,21 @@ album that justifies their quest. I've found mine.
 	},
 	{
 		type: "album",
-		artist: `J. D. Redmon`,
+		artist: `J.D. Redmon`,
 		label: ``,
 		liner: ``,
 		mastering: ``,
-		title: `Just J. D.`,
+		title: `Just J.D.`,
 		id: ``,
 		published: `1978-08-01`,
 		reissue: ``,
 		tracks: [
 		],
 		credits: [
+			{
+				did: [ `Acoustic Guitar`, `Lead Vocals` ],
+				who: `J.D. Redmon`,
+			},
 		],
 		addendum: [
 		],
@@ -9901,7 +9905,7 @@ album that justifies their quest. I've found mine.
 			{
 				date: `2004-03-07`,
 				who: `M.J. Whittemore, Jr.`,
-				said: `J. D. probably did at least 6 of his albums with us - but  I consider 'Just J. D.' to be his best.  Although his roots were in Country/Southern quartet-style gospel, he always let us talk him into arrangements of his material that turned out to be great hybrids - and still wear well today!`,
+				said: `J.D. probably did at least 6 of his albums with us - but  I consider 'Just J. D.' to be his best.  Although his roots were in Country/Southern quartet-style gospel, he always let us talk him into arrangements of his material that turned out to be great hybrids - and still wear well today!`,
 			},
 		],
 		image: [
@@ -11093,9 +11097,15 @@ Thank you... Bill for being a believer.
 			},
 			{
 				tracknum: '12',
-				artist: `J. D. Redmon`,
+				artist: `J.D. Redmon`,
 				title: `It Will Pass`,
 				time: '03:01',
+				credits: [
+					{
+						did: [ `Acoustic Guitar`, `Lead Vocals` ],
+						who: `J.D. Redmon`,
+					},
+				],
 			},
 			{
 				tracknum: '13',
@@ -12180,7 +12190,7 @@ it is also a damn fine record for your average funk listener.
 	},
 	{
 		type: "album",
-		artist: `J. D. Redmon`,
+		artist: `J.D. Redmon`,
 		label: `Redmon Records`,
 		liner: ``,
 		mastering: ``,
@@ -12258,8 +12268,12 @@ it is also a damn fine record for your average funk listener.
 		],
 		credits: [
 			{
+				did: [ `Acoustic Guitar`, `Lead Vocals` ],
+				who: `J.D. Redmon`,
+			},
+			{
 				did: [ `Engineer` ],
-				who: `M.J. Whittemore, Jr.`,
+				who: `M.J. Whittimore, Jr.*`,
 			}
 		],
 		addendum: [
@@ -12295,7 +12309,7 @@ it is also a damn fine record for your average funk listener.
 	},
 	{
 		type: "album",
-		artist: `J. D. Redmon & The Redeemers`,
+		artist: `J.D. Redmon & The Redeemers`,
 		label: `Redmon Records`,
 		liner: ``,
 		mastering: ``,
@@ -12306,6 +12320,34 @@ it is also a damn fine record for your average funk listener.
 		tracks: [
 		],
 		credits: [
+			{
+				did: [ `Piano` ],
+				who: `Roy Bray`,
+			},
+			{
+				did: [ `Percussion` ],
+				who: `Rick Moreland`,
+			},
+			{
+				did: [ `Bass` ],
+				who: `Dave Sullivan`,
+			},
+			{
+				did: [ `Pedal Steel Guitar` ],
+				who: `Pat Johnson`,
+			},
+			{
+				did: [ `Electric Guitar` ],
+				who: `Doug Enoch`,
+			},
+			{
+				did: [ `Acoustic Guitar`, `Lead Vocals` ],
+				who: `J.D. Redmon`,
+			},
+			{
+				did: [ `Engineer` ],
+				who: `M.J. Whitemore*`,
+			},
 		],
 		addendum: [
 		],
@@ -12725,7 +12767,7 @@ it is also a damn fine record for your average funk listener.
 			},
 			{
 				did: [`Saxophone`],
-				who: `Jack Schafele`,
+				who: `Jack Schafele*`,
 			},
 			{
 				did: [`Trombone`],
@@ -14029,7 +14071,7 @@ And the walls came tumbling down
 			},
 			{
 				did: [ `Electric Piano`, `Engineer` ],
-				who: 'M.J. Whittemore, Jr.',
+				who: 'M.J. Whitamore*',
 			},
 			{
 				did: [ `Guitar` ],
