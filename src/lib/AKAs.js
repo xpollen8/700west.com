@@ -1,4 +1,6 @@
 const AKAs = {
+	'Dave Meador': [ 'Elliott Meadows' ],
+	'Steve Morley': [ 'S.V. Morley' ],
 	'Craig Parmerlee': [ 'Graig Parmerlee*' ],
 	'Darrel Watkins': [ 'Darrell Watkins*' ],
 	'Robert Williams': [ 'Bob Williams' ],
