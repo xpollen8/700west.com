@@ -3,11 +3,96 @@ const	AUDIO_BOX = `https://tapes.700west.com/api/audio`;
 export default [
 	{
 		type: "single",
+		discogs: `https://www.discogs.com/release/6877732-White-Bird-Love-Outlaw`,
+		label: `White Bird`,
+		id: `770725`,
+		dtadded: `2024-02-23`,
+		sessions: [ `1977-07-02`, `1977-07-03` ],
+		published: `1977-07-23`,
+		publicity: [
+		],
+		tracks: [
+			{
+				artist: `White Bird`,
+				side: 'A',
+				tracknum: 1,
+				title: `Love Outlaw`,
+				time: `4:52`,
+				mastering: ``,
+				audio: ``,
+				comments: [
+				],
+				credits: [
+					{
+						did: [ `Writer` ],
+						who: `James E. Smith`,
+					},
+				],
+			},
+			{
+				artist: `White Bird`,
+				side: 'B',
+				tracknum: 2,
+				title: `Music Man`,
+				time: `3:55`,
+				mastering: ``,
+				audio: ``,
+				credits: [
+					{
+						did: [ `Writer` ],
+						who: `James E. Smith`,
+					},
+				],
+				comments: [
+				],
+				credits: [
+				],
+			},
+		],
+		addendum: [
+		],
+		credits: [
+			{
+				who: `Mo Whittemore`,
+				did: [ `Engineer` ],
+			},
+		],
+		sales: [
+			{
+				where: 'discogs',
+				price: `$6.33`,
+				date: `2022-12-26`,
+				said: `Near Mint (NM or M-)`,
+			},
+		],
+		image: [
+			{
+				file: `white_bird_A.jpg`,
+				thumb: `thumbs/white_bird_A_250.jpg`,
+				name: `A`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+			{
+				file: `white_bird_B.jpg`,
+				thumb: `thumbs/white_bird_B_250.jpg`,
+				name: `B`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+		],
+	},
+	{
+		type: "single",
 		label: `Not On Label`,
 		id: `761020`,
 		dtadded: `2024-02-23`,
 		sessions: [ `1976-09-18`, `1976-09-19`, `1976-09-20` ],
-		published: `1976`,
+		published: `1976-10-20`,
 		publicity: [
 		],
 		tracks: [
@@ -474,7 +559,7 @@ export default [
 			artist: `Granite`,
 		label: `Broken Wrekurds`,
 		id: `731125`,
-		published: `1973`,
+		published: `1973-11-25`,
 		publicity: [
 		],
 		tracks: [
@@ -1849,7 +1934,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		artist: `The Beatsters`,
 		label: `Cavern`,
 		id: `830242`,
-		published: `1983`,
+		published: `1982`,
 		publicity: [
 		],
 		tracks: [
@@ -1861,7 +1946,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `2:31`,
 				publisher: `Liverpool Music`,
 				affiliation: `ASCAP`,
-				writer: `Dave Meador`,
 				mastering: `? - GP-1003A`,
 				audio: ``,
 				comments: [
@@ -1872,19 +1956,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 				credits: [
 					{
-						who: `Dave Meador`,
+						who: `Elliott Meadows`,
 						did: [
 							"Drums",
+							"Writer",
 							"Rhythm Guitar",
 							"Lead Guitar",
 							"Bass",
-						],
-					},
-					{
-						who: `Scott Flettcher`,
-						did: [
-							"Lead Vocals",
-							"B.U. Vocals",
 						],
 					},
 				],
@@ -1897,16 +1975,16 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `2:32`,
 				publisher: `Liverpool Music`,
 				affiliation: `ASCAP`,
-				writer: `Dave Meador`,
 				mastering: `? - GP-1003B`,
 				audio: ``,
 				comments: [
 				],
 				credits: [
 					{
-						who: `Dave Meador`,
+						who: `Elliott Meadows`,
 						did: [
 							"Drums",
+							"Writer",
 							"Rhythm Guitar",
 							"Lead Guitar",
 						],
@@ -1917,19 +1995,24 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 							"Bass",
 						],
 					},
-					{
-						who: `Scott Flettcher`,
-						did: [
-							"Lead Vocals",
-							"B.U. Vocals",
-						],
-					},
-					{
-						who: `Steve Morley`,
-						did: [
-							"Piano",
-						],
-					},
+				],
+			},
+		],
+		credits: [
+			{
+				who: `Scott Fletcher`,
+				did: [
+					"Lead Vocals",
+					"B.U. Vocals",
+					"Harmonica",
+					"Guitar",
+				],
+			},
+			{
+				who: `S.V. Morley`,
+				did: [
+					"Piano",
+					"Vocals",
 				],
 			},
 		],
@@ -1945,6 +2028,12 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				date: '2020-01-28',
 				price: '$150.00',
 				said: `some yellow (stain on pic sleeve)`,
+			},
+			{
+				where: 'discogs',
+				date: '2022-12-30',
+				price: '$369.00',
+				said: `Very Good Plus (VG+). signed by all 4 members`,
 			},
 		],
 		addendum: [
@@ -2190,7 +2279,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `Dixie Peach`,
 		id: `061075`,
-		published: `1975`,
+		published: `1975-06-01`,
 		publicity: [
 		],
 		tracks: [
