@@ -15552,4 +15552,143 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 			},
 		],
 	},
+	{
+		type: "album",
+		artist: `Ernie Mindel`,
+		title: `Until Jesus`,
+		label: `Jedsem Records`,
+		id: `SO 165361`,
+		published: `1980`,
+		publicity: [
+		],
+		sheets: [
+			//{ image: '700West_Mistreater_Session_1980_2', width: 500, height: 775 }
+		],
+		tracks: [
+			{
+				side: `A`,
+				tracknum: 1,
+				title: `In My Home`,
+				time: `3:21`,
+				writer: `Ernie Mindel`,
+			},
+			{
+				side: `A`,
+				tracknum: 2,
+				title: `Until Jesus`,
+				time: `2:38`,
+				writer: `Ernie Mindel`,
+			},
+			{
+				side: `A`,
+				tracknum: 3,
+				title: `What A Friend`,
+				time: `4:23`,
+			},
+			{
+				side: `A`,
+				tracknum: 4,
+				title: `Jesus Put A Song In My Heart`,
+				time: `2:28`,
+				writer: `Ernie Mindel`,
+			},
+			{
+				side: `A`,
+				tracknum: 5,
+				title: `All To the Glory`,
+				time: `3:08`,
+				writer: `Ernie Mindel`,
+			},
+			{
+				side: `B`,
+				tracknum: 1,
+				title: `Light Of The Light`,
+				time: `2:30`,
+				writer: `Ernie Mindel`,
+			},
+			{
+				side: `B`,
+				tracknum: 2,
+				title: `Unseen Hand`,
+				time: `2:40`,
+			},
+			{
+				side: `B`,
+				tracknum: 3,
+				title: `He Hideth My Soul`,
+				time: `2:23`,
+			},
+			{
+				side: `B`,
+				tracknum: 4,
+				title: `Give Them All`,
+				time: `2:28`,
+			},
+			{
+				side: `B`,
+				tracknum: 5,
+				title: `He Was There All the Time`,
+				time: `3:08`,
+			},
+		],
+		credits: [
+			{
+				did: [ `Bass Guitar` ],
+				who: `Dallas Sutherland`,
+			},
+			{
+				did: [ `Brass` ],
+				who: `Craig Parmerlee`,
+			},
+			{
+				did: [ `Engineer, Synthesizer` ],
+				who: `M.J. Whittemore*`,
+			},
+			{
+				did: [ `Piano` ],
+				who: `Larry Bassett`,
+			},
+			{
+				did: [ `Producer, Guitar` ],
+				who: `Doug Enoch`,
+			},
+			{
+				did: [ `Steel Guitar` ],
+				who: `Rex Thomas`,
+			},
+		],
+		addendum: [
+		],
+		sales: [],
+		image: [
+			{
+				file: `mindel_front.jpg`,
+				thumb: `thumbs/mindel_front_250.jpg`,
+				name: `front`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `mindel_back.jpg`,
+				thumb: `thumbs/mindel_back_250.jpg`,
+				name: `back`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `mindel_A.jpg`,
+				thumb: `thumbs/mindel_A_250.jpg`,
+				name: `A`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `mindel_B.jpg`,
+				thumb: `thumbs/mindel_B_250.jpg`,
+				name: `B`,
+				width: `125`,
+				height: `125`,
+			},
+		],
+	},
 ];
