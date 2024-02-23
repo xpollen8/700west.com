@@ -58,7 +58,7 @@ const Covers = (release) => {
 		{release?.image?.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
 			className="avatar"
-			style={{ margin: '10px' }}
+			style={{ margin: '5px' }}
 			src={`/images/covers/${i.thumb}`}
 			height="250"
 			width="250"
@@ -299,7 +299,7 @@ const YellowSheets = ({ sheets = [] }) => {
 			<SectionHeader text="Mo's 'yellow sheets' for this recording session" />
 			<div className="avatar center">
 			{sheets.map(({ image, width, height, caption }, key) => (
-				<span style={{ margin: '10px' }}>
+				<span style={{ margin: '5px' }}>
 					<Link key={key} href={`/images/sessions/${image}.jpg`}><Image
 						src={`/images/sessions/${image}_thumb.jpg`}
 						alt="Mo's Session Sheets"
@@ -338,7 +338,7 @@ const Promo = ({ publicity = [] }) => {
 			<SectionHeader text="Promotional Material" />
 			<p className="row avatar center">
 			{publicity.map(({ image, width, height, caption }, key) => (
-				<span key={key} style={{ margin: '10px' }}>
+				<span key={key} style={{ margin: '5px' }}>
 					<Link href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
