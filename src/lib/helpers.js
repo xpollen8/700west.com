@@ -86,7 +86,7 @@ lps.forEach(({ artist, title }) => {
 });
 
 // now sort
-const autoLinkList = lizt.sort((a, b) => b.orig.length - a.orig.length);
+const autoLinkList = lizt.sort((a, b) => b.orig?.length - a.orig?.length);
 
 const autoLink = (str, ignore = false) => _autoLink(autoLinkList, str, ignore);
 	
