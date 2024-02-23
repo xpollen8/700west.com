@@ -58,6 +58,7 @@ const Covers = (release) => {
 		{release?.image?.map((i, key) => (
 		<a key={key} href={`/images/covers/${i.file}`}><Image
 			className="avatar"
+			style={{ marginRight: '10px' }}
 			src={`/images/covers/${i.thumb}`}
 			height="250"
 			width="250"
