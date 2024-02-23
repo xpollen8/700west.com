@@ -157,7 +157,7 @@ const releasesByMusician = (mus) => {
 	}));
 	const ret = [];
 	uniqueReleases.filter(f => f).forEach(({ artist, title, type, roles }) => {
-		const existing = ret.find(u => u.artist === artist && u.title == title && u.type === type);
+		const existing = ret.find(u => u.artist === artist && u.title == title && u.type === type) | [];
 		if (existing) { // combine onto existing roles
 			existing.roles = [...new Set (existing.roles.concat(roles))];
 		} else {
