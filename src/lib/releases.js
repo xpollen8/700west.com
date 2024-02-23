@@ -668,6 +668,9 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		published: `1980`,
 		publicity: [
 		],
+		sheets: [
+			{ image: '700West_Mistreater_Session_1980_2', width: 500, height: 775 }
+		],
 		tracks: [
 			{
 				artist: `Mistreater`,
@@ -11925,7 +11928,7 @@ it is also a damn fine record for your average funk listener.
 			artist: `Epoxy`,
 			credits: [
 				{
-					who: `Unknown "Matthew"`,
+					who: `Matthew Watson`,
 				},
 				{
 					who: `Unknown "Buddy"`,
@@ -14568,6 +14571,9 @@ And the walls came tumbling down
 		id: `CPI 1280`,
 		published: `1981`,
 		reissue: ``,
+		sheets: [
+			{ image: '700West_Mistreater_Session_1980_2', width: 500, height: 775 }
+		],
 		tracks: [
 			{
 				side: 'A',
