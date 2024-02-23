@@ -304,7 +304,7 @@ const YellowSheets = ({ sheets = [] }) => {
 						src={`/images/sessions/${image}_thumb.jpg`}
 						alt="Mo's Session Sheets"
 						width={width} height={height} /></Link>
-					{(caption) && <i>{caption}</i>}
+					{(caption) && <div dangerouslySetInnerHTML={{ __html: caption}} />}
 				</li>
 			))}
 			</ul>
@@ -336,17 +336,17 @@ const Promo = ({ publicity = [] }) => {
 	if (publicity.length) {
 		return <>
 			<SectionHeader text="Promotional Material" />
-			<ul>
+			<p className="row avatar center">
 			{publicity.map(({ image, width, height, caption }, key) => (
-				<li key={key} className="row">
+				<span key={key} style={{ marginRight: '10px' }}>
 					<Link href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
 						width={width} height={height} /></Link>
-					{(caption) && <i>{caption}</i>}
-				</li>
+					{(caption) && <div dangerouslySetInnerHTML={{ __html: caption}} />}
+				</span>
 			))}
-			</ul>
+			</p>
 		</>
 	}
 	return <></>;
