@@ -5,6 +5,7 @@ export default [
 		type: "single",
 		label: `Not On Label`,
 		id: `761020`,
+		dtadded: `2024-02-23`,
 		sessions: [ `1976-09-18`, `1976-09-19`, `1976-09-20` ],
 		published: `1976`,
 		publicity: [
@@ -16,7 +17,6 @@ export default [
 				tracknum: 1,
 				title: `He's My Everything`,
 				time: `4:52`,
-				writer: `Marvin Crowe`,
 				mastering: ``,
 				audio: ``,
 				comments: [
@@ -49,10 +49,6 @@ export default [
 				who: `Mo Whittemore`,
 				did: [ `Engineer` ],
 			},
-			{
-				who: `Marvin Crowe`,
-				did: [ `Writer` ],
-			}
 		],
 		sales: [
 		],
