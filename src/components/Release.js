@@ -297,17 +297,17 @@ const YellowSheets = ({ sheets = [] }) => {
 	if (sheets.length) {
 		return <>
 			<SectionHeader text="Mo's 'yellow sheets' for this recording session" />
-			<ul>
+			<div className="avatar">
 			{sheets.map(({ image, width, height, caption }, key) => (
-				<li key={key}>
-					<Link href={`/images/sessions/${image}.jpg`}><Image
+				<span style={{ marginRight: '10px' }}>
+					<Link key={key} href={`/images/sessions/${image}.jpg`}><Image
 						src={`/images/sessions/${image}_thumb.jpg`}
 						alt="Mo's Session Sheets"
 						width={width} height={height} /></Link>
 					{(caption) && <div dangerouslySetInnerHTML={{ __html: caption}} />}
-				</li>
+				</span>
 			))}
-			</ul>
+			</div>
 		</>
 	}
 	return <></>;
@@ -394,7 +394,7 @@ const Comments = ({ comments = [] }) => {
 			{comments.map(({ who, date, said, source }, key) => (
 				<p key={key} className="row">
 					<div style={{ padding: '10px' }}>
-						<i>{said}</i>
+						<i dangerouslySetInnerHTML={{ __html: said }} />
 						<div style={{ padding: '10px' }}>
 							<Who who={who} />
 							{exists(date) && MakeDate(date)}
