@@ -3,6 +3,82 @@ const	AUDIO_BOX = `https://tapes.700west.com/api/audio`;
 export default [
 	{
 		type: "single",
+		label: `Not On Label`,
+		id: `761020`,
+		sessions: [ `1976-09-18`, `1976-09-19`, `1976-09-20` ],
+		published: `1976`,
+		publicity: [
+		],
+		tracks: [
+			{
+				artist: `Metro Male Ensemble`,
+				side: 'A',
+				tracknum: 1,
+				title: `He's My Everything`,
+				time: `4:52`,
+				writer: `Marvin Crowe`,
+				mastering: ``,
+				audio: ``,
+				comments: [
+				],
+				credits: [
+					{
+						did: [ `Writer` ],
+						who: `Marvin Crowe`,
+					},
+				],
+			},
+			{
+				artist: `Metro Male Ensemble`,
+				side: 'B',
+				tracknum: 2,
+				title: `I Say Yes To My Lord`,
+				time: `3:55`,
+				mastering: ``,
+				audio: `MetroMaleEnsemble/Metro_Male_Ensemble-I_Say_Yes_To_My_Lord.mp3`,
+				comments: [
+				],
+				credits: [
+				],
+			},
+		],
+		addendum: [
+		],
+		credits: [
+			{
+				who: `Mo Whittemore`,
+				did: [ `Engineer` ],
+			},
+			{
+				who: `Marvin Crowe`,
+				did: [ `Writer` ],
+			}
+		],
+		sales: [
+		],
+		image: [
+			{
+				file: `metro_male_A.jpg`,
+				thumb: `thumbs/metro_male_A_250.jpg`,
+				name: `A`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+			{
+				file: `metro_male_B.jpg`,
+				thumb: `thumbs/metro_male_B_250.jpg`,
+				name: `B`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+		],
+	},
+	{
+		type: "single",
 		label: `Sunnyside Records`,
 		id: `SS 802`,
 		published: `1979`,
@@ -58,7 +134,7 @@ export default [
 		],
 		credits: [
 			{
-				who: `Ms Whittemore`,
+				who: `Mo Whittemore`,
 				did: [ `Produced` ],
 			},
 			{
