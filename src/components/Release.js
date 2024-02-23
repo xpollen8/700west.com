@@ -213,6 +213,7 @@ const HeaderData = (release) => {
 			<Datum k="Serial" v={release.id} />
 			<Datum k="Contact" v={release.url} />
 			<Datum k="Purchase" v={release.store} />
+			<Datum k="Session Date(s)" v={release.sessions?.map(MakeDate)} />
 		</div>
 	</>)
 }
