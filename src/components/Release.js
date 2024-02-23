@@ -297,7 +297,7 @@ const YellowSheets = ({ sheets = [] }) => {
 	if (sheets.length) {
 		return <>
 			<SectionHeader text="Mo's 'yellow sheets' for this recording session" />
-			<div className="avatar">
+			<div className="avatar center">
 			{sheets.map(({ image, width, height, caption }, key) => (
 				<span style={{ marginRight: '10px' }}>
 					<Link key={key} href={`/images/sessions/${image}.jpg`}><Image
