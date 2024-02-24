@@ -3,7 +3,94 @@ const	AUDIO_BOX = `https://tapes.700west.com/api/audio`;
 export default [
 	{
 		type: "single",
+		discogs: `https://www.discogs.com/release/9995925-The-Gospel-Ramblers-I-Heard-About-Jesus`,
+		label: `Char-Dol Records`,
+		artist: `The Gospel Ramblers`,
+		id: `CH-201`,
+		dtadded: `2024-02-23`,
+		sessions: [ `1980-10-08`, `1980-10-14` ],
+		published: `1980`,
+		publicity: [
+		],
+		tracks: [
+			{
+				side: `A`,
+				tracknum: 1,
+				title: `I Heard About Jesus`,
+				time: `2:49`,
+			},
+			{
+				side: `A`,
+				tracknum: 2,
+				title: `Hallelujah Hill`,
+				time: `2:24`,
+			},
+			{
+				side: `A`,
+				tracknum: 3,
+				title: `Won't You Say A Little Prayer For Me?`,
+				time: `2:33`,
+			},
+			{
+				side: `B`,
+				tracknum: 1,
+				title: `Walking In Heavenly Places`,
+				time: `3:06`,
+			},
+			{
+				side: `B`,
+				tracknum: 2,
+				title: `Sinner, What You Gonna Do?`,
+				time: `2:18`,
+			},
+			{
+				side: `B`,
+				tracknum: 3,
+				title: `Jesus, How Can They Do This To You?`,
+				time: `2:32`,
+			},
+		],
+		addendum: [
+		],
+		credits: [
+			{
+				who: `Mo Whittemore`,
+				did: [ `Engineer` ],
+			},
+			/*
+			{
+				who: `Turner`,
+				did: [ `Writer` ],
+			},
+			{
+				who: `Japhet`,
+				did: [ `Writer` ],
+			},
+			*/
+		],
+		sales: [
+		],
+		image: [
+			{
+				file: `gospel_ramblers_A.jpg`,
+				thumb: `thumbs/gospel_ramblers_A_250.jpg`,
+				name: `A`,
+				width: `250`,
+				height: `250`,
+			},
+			{
+				file: `gospel_ramblers_B.jpg`,
+				thumb: `thumbs/gospel_ramblers_B_250.jpg`,
+				name: `B`,
+				width: `250`,
+				height: `250`,
+			},
+		],
+	},
+	{
+		type: "single",
 		discogs: `https://www.discogs.com/release/28186252-Jay-Big-Daddy-Vincent-Im-Lost-Inside-Of-You`,
+		artist: `Jay (Big Daddy) Vincent`,
 		label: `Kappalcorn`,
 		id: `SO 16400/SO 16401`,
 		dtadded: `2024-02-23`,
@@ -13,7 +100,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Jay (Big Daddy) Vincent`,
 				side: 'A',
 				tracknum: 1,
 				title: `	I'm Lost Inside Of You Part 1`,
@@ -26,7 +112,6 @@ export default [
 				],
 			},
 			{
-				artist: `Jay (Big Daddy) Vincent`,
 				side: 'B',
 				tracknum: 2,
 				title: `	I'm Lost Inside Of You Part 2`,
@@ -57,6 +142,7 @@ export default [
 	{
 		type: "single",
 		discogs: `https://www.discogs.com/release/18081082-Echoes-Of-Joy-Climbin-On-Up`,
+		artist: `Echoes of Joy`,
 		label: `Not On Label`,
 		id: `771215`,
 		dtadded: `2024-02-23`,
@@ -66,7 +152,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Echoes of Joy`,
 				side: 'A',
 				tracknum: 1,
 				title: `Climbin' On Up`,
@@ -79,7 +164,6 @@ export default [
 				],
 			},
 			{
-				artist: `Echoes of Joy`,
 				side: 'B',
 				tracknum: 2,
 				title: `Just In Time`,
@@ -128,6 +212,7 @@ export default [
 	{
 		type: "single",
 		discogs: `https://www.discogs.com/release/6877732-White-Bird-Love-Outlaw`,
+		artist: `White Bird`,
 		label: `White Bird`,
 		id: `770725`,
 		dtadded: `2024-02-23`,
@@ -137,7 +222,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `White Bird`,
 				side: 'A',
 				tracknum: 1,
 				title: `Love Outlaw`,
@@ -154,7 +238,6 @@ export default [
 				],
 			},
 			{
-				artist: `White Bird`,
 				side: 'B',
 				tracknum: 2,
 				title: `Music Man`,
@@ -213,6 +296,7 @@ export default [
 	{
 		type: "single",
 		label: `Not On Label`,
+		artist: `Metro Male Ensemble`,
 		id: `761020`,
 		dtadded: `2024-02-23`,
 		sessions: [ `1976-09-18`, `1976-09-19`, `1976-09-20` ],
@@ -221,7 +305,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Metro Male Ensemble`,
 				side: 'A',
 				tracknum: 1,
 				title: `He's My Everything`,
@@ -238,7 +321,6 @@ export default [
 				],
 			},
 			{
-				artist: `Metro Male Ensemble`,
 				side: 'B',
 				tracknum: 2,
 				title: `I Say Yes To My Lord`,
@@ -286,6 +368,7 @@ export default [
 		type: "single",
 		label: `Sunnyside Records`,
 		discogs: `https://www.discogs.com/release/25950805-Sonny-JacobsSunnysiders-Oklahoma-Twister`,
+		artist: `Sonny Jacobs and his The Sonnysiders`,
 		id: `SS 802`,
 		published: `1979`,
 		sessions: [ `1979-06-02`, `1979-06-03`, `1979-06-30`, `1979-07-13`, `1979-07-19`, `1979-07-21`, `1979-07-25`, `1979-07-28`, `1979-07-29`, `1979-07-30` ],
@@ -293,7 +376,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Sonny Jacobs and his The Sonnysiders`,
 				side: 'A',
 				tracknum: 1,
 				title: `Oklahoma Twister`,
@@ -313,7 +395,6 @@ export default [
 				],
 			},
 			{
-				artist: `Sonny Jacobs and his The Sonnysiders`,
 				side: 'B',
 				tracknum: 2,
 				title: `Fort Worth Feather Bed`,
@@ -363,13 +444,13 @@ export default [
 	{
 		type: "single",
 		label: `Shirley Records`,
+		artist: `Vanguards and The Lady`,
 		id: `66`,
 		published: `1975`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Vanguards and The Lady`,
 				side: 'A',
 				tracknum: 1,
 				title: `All The Women I've Wanted`,
@@ -385,7 +466,6 @@ export default [
 				],
 			},
 			{
-				artist: `Vanguards and The Lady`,
 				side: 'B',
 				tracknum: 2,
 				title: `Blue Star Rising`,
@@ -432,6 +512,7 @@ export default [
 		type: "single",
 		label: `Not On Label`,
 		discogs: `https://www.discogs.com/release/5453091-Scarem-Feeling-Grave-Misery`,
+		artist: `Scarem`,
 		id: `16592/16593`,
 		sessions: [ `1980-12-27` ],
 		published: `1981`,
@@ -439,7 +520,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Scarem`,
 				side: 'A',
 				tracknum: 1,
 				title: `Feeling Grave`,
@@ -455,7 +535,6 @@ export default [
 				],
 			},
 			{
-				artist: 'Scarem',
 				side: 'B',
 				tracknum: 2,
 				title: `Misery`,
@@ -535,13 +614,13 @@ export default [
 	{
 		type: "single",
 		label: `Shirley`,
+		artist: `Good Day`,
 		id: `99`,
 		published: ``,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Good Day`,
 				side: 'A',
 				tracknum: 1,
 				title: `So Fine`,
@@ -557,7 +636,6 @@ export default [
 				],
 			},
 			{
-				artist: `Good Day`,
 				side: 'B',
 				tracknum: 2,
 				title: `She's A Woman - She's My Girl`,
@@ -587,6 +665,7 @@ export default [
 	},
 	{
 		type: "single",
+		artist: `Ezekial Longspur`,
 		label: `700 West`,
 		id: `730911`,
 		published: `1973-09-11`,
@@ -594,7 +673,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Ezekial Longspur`,
 				side: 'A',
 				tracknum: 1,
 				title: `Rollin' Down the Highway`,
@@ -610,9 +688,8 @@ export default [
 				],
 			},
 			{
-				artist: `Ezekial Longspur`,
 				side: 'B',
-				tracknum: 2,
+				tracknum: 1,
 				title: `Cloud Rider`,
 				time: `4:00`,
 				publisher: ``,
@@ -702,7 +779,7 @@ export default [
 	},
 	{
 		type: "single",
-			artist: `Granite`,
+		artist: `Granite`,
 		label: `Broken Wrekurds`,
 		id: `731125`,
 		published: `1973-11-25`,
@@ -710,7 +787,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Granite`,
 				side: 'A',
 				tracknum: 1,
 				title: `You Got Me Anyway`,
@@ -734,7 +810,6 @@ export default [
 				],
 			},
 			{
-				artist: `Granite`,
 				side: 'B',
 				tracknum: 2,
 				title: `Who Can Blame You`,
@@ -771,7 +846,6 @@ export default [
 		],
 		tracks: [
 			{
-				artist: `Stone's Crossing`,
 				side: 'A',
 				tracknum: 1,
 				title: `No Contest`,
@@ -795,7 +869,6 @@ export default [
 				],
 			},
 			{
-				artist: `Stone's Crossing`,
 				side: 'B',
 				tracknum: 2,
 				title: `Wedding Day`,
@@ -886,7 +959,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Rebirth`,
 				side: 'A',
 				tracknum: 1,
 				title: `I Get High`,
@@ -911,7 +983,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Rebirth`,
 				side: 'B',
 				tracknum: 2,
 				title: `Fear`,
@@ -967,6 +1038,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Mistreater`,
 		id: `SO 16507/16508`,
 		published: `1980`,
 		publicity: [
@@ -977,7 +1049,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Mistreater`,
 				side: 'A',
 				tracknum: 1,
 				title: `Hell's Fire`,
@@ -997,7 +1068,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Mistreater`,
 				side: 'B',
 				tracknum: 2,
 				title: `Baby Blue`,
@@ -1122,7 +1192,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	},
 	{
 		type: "single",
-			artist: `Little Murray & the 'Mantics`,
+		artist: `Little Murray & the 'Mantics`,
 		label: `700 West`,
 		id: `730215`,
 		published: `1973-02-15`,
@@ -1130,7 +1200,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Little Murray & the 'Mantics`,
 				side: 'A',
 				tracknum: 1,
 				title: `Don't Leave Me, Mama`,
@@ -1150,7 +1219,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Little Murray & the 'Mantics`,
 				side: 'B',
 				tracknum: 2,
 				title: `Goddess Above`,
@@ -1235,7 +1303,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Mr. Feelgood`,
 				side: 'A',
 				tracknum: 1,
 				title: `Fool Number Two`,
@@ -1254,7 +1321,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Mr. Feelgood`,
 				side: 'B',
 				tracknum: 2,
 				title: `Everybody's Talking About It`,
@@ -1292,7 +1358,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Match I`,
 				side: 'A',
 				tracknum: 1,
 				title: `People Do Not Change`,
@@ -1315,7 +1380,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Match I`,
 				side: 'B',
 				tracknum: 2,
 				title: `(Life's Like a) Keyhole`,
@@ -1351,7 +1415,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Match II`,
 				side: 'A',
 				tracknum: 1,
 				title: `Make A Little Wine`,
@@ -1387,7 +1450,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Match II`,
 				side: 'B',
 				tracknum: 2,
 				title: `Incident`,
@@ -1425,13 +1487,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Soapstick`,
 		id: `740920`,
 		published: `1974-09-20`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Soapstick`,
 				side: 'A',
 				tracknum: 1,
 				title: `Paper With Lines`,
@@ -1457,7 +1519,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Soapstick`,
 				side: 'B',
 				tracknum: 2,
 				title: `Annie Porpoise Song`,
@@ -1493,13 +1554,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Malachi`,
 		id: `761105`,
 		published: `1976-11-05`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Malachi`,
 				side: 'A',
 				tracknum: 1,
 				title: `That Same Song You Sing`,
@@ -1523,7 +1584,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Malachi`,
 				side: 'B',
 				tracknum: 2,
 				title: `Citizen`,
@@ -1622,7 +1682,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `John L. Riley`,
 				side: 'A',
 				tracknum: 1,
 				title: `Dreams Of a Dreamer`,
@@ -1642,7 +1701,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `John L. Riley`,
 				side: 'B',
 				tracknum: 2,
 				title: `Sweet Memories`,
@@ -1676,13 +1734,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `RoseBud`,
+		artist: `Special Delivery`,
 		id: ``,
 		published: ``,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Special Delivery`,
 				side: 'A',
 				tracknum: 1,
 				title: `Big Brown Eyes`,
@@ -1698,7 +1756,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Special Delivery`,
 				side: 'B',
 				tracknum: 2,
 				title: `Gloria`,
@@ -1731,7 +1788,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Charlie Crosby`,
 				side: 'A',
 				tracknum: 1,
 				title: `Baby, I Know`,
@@ -1751,7 +1807,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Charlie Crosby`,
 				side: 'B',
 				tracknum: 2,
 				title: `A Good Friend Is So Hard To Find`,
@@ -1781,6 +1836,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Funk St. Workshop`,
 		id: `800401`,
 		published: `1980-04-01`,
 		publicity: [
@@ -1793,7 +1849,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Funk St. Workshop`,
 				side: 'A',
 				tracknum: 1,
 				title: `The Erroll Flynn - I`,
@@ -1817,7 +1872,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Funk St. Workshop`,
 				side: 'B',
 				tracknum: 2,
 				title: `The Erroll Flynn - II`,
@@ -1860,7 +1914,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Jim Hubler`,
 				side: 'A',
 				tracknum: 1,
 				title: `Big Bruce, the Big Blue Spruce`,
@@ -1884,7 +1937,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Jim Hubler`,
 				side: 'B',
 				tracknum: 2,
 				title: `All I Want For X'mas Is a C.B.`,
@@ -1932,13 +1984,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Kevin Stonerock`,
 		id: `800225`,
 		published: `1980-02-25`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Kevin Stonerock`,
 				side: 'A',
 				tracknum: 1,
 				title: `Isn't It Nice To Dream`,
@@ -1958,7 +2010,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Kevin Stonerock`,
 				side: 'B',
 				tracknum: 2,
 				title: `To The Mill House`,
@@ -2027,13 +2078,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Blunderbuss`,
+		artist: `Buccaneer`,
 		id: `SO 16473`,
 		published: `1980`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Buccaneer`,
 				side: 'A',
 				tracknum: 1,
 				title: `Follow Me`,
@@ -2053,7 +2104,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Buccaneer`,
 				side: 'B',
 				tracknum: 2,
 				title: `Won't Bow My Head`,
@@ -2086,7 +2136,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `The Beatsters`,
 				side: 'A',
 				tracknum: 1,
 				title: `Merseybeat`,
@@ -2115,7 +2164,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `The Beatsters`,
 				side: 'B',
 				tracknum: 2,
 				title: `Take Me Into Your Heart`,
@@ -2200,7 +2248,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `The Memories Band`,
 				side: 'A',
 				tracknum: 1,
 				title: `Midnight Hour`,
@@ -2220,7 +2267,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `The Memories Band`,
 				side: 'B',
 				tracknum: 2,
 				title: `Only You`,
@@ -2255,13 +2301,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Blunderbuss`,
+		artist: `Buccaneer`,
 		id: ``,
 		published: `1980`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Buccaneer`,
 				side: 'A',
 				tracknum: 1,
 				title: `Sharkbait`,
@@ -2281,7 +2327,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Buccaneer`,
 				side: 'B',
 				tracknum: 2,
 				title: `Wasted Nights`,
@@ -2314,7 +2359,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Promise`,
 				side: 'A',
 				tracknum: 1,
 				title: `Watch Out`,
@@ -2334,7 +2378,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Promise`,
 				side: 'B',
 				tracknum: 2,
 				title: `Pay The Price`,
@@ -2369,13 +2412,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Bob Arnold`,
+		artist: `Bob Arnold`,
 		id: `1275`,
 		published: `1975-12-01`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Bob Arnold`,
 				side: 'A',
 				tracknum: 1,
 				title: `Family Of Love`,
@@ -2395,7 +2438,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Bob Arnold`,
 				side: 'B',
 				tracknum: 2,
 				title: `Fly Away`,
@@ -2425,13 +2467,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Dixie Peach`,
+		artist: `Poor Richard`,
 		id: `061075`,
 		published: `1975-06-01`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Poor Richard`,
 				side: 'A',
 				tracknum: 1,
 				title: `Justa Rock'n Roll`,
@@ -2447,7 +2489,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Poor Richard`,
 				side: 'B',
 				tracknum: 2,
 				title: `Supposed To Love`,
@@ -2473,13 +2514,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `David Fuqua`,
 		id: `731002`,
 		published: `1973-10-02`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `David Fuqua`,
 				side: 'A',
 				tracknum: 1,
 				title: `Sunny Day Lady`,
@@ -2499,7 +2540,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `David Fuqua`,
 				side: 'B',
 				tracknum: 2,
 				title: `Only You`,
@@ -2530,12 +2570,12 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `700 West`,
 		id: `740915`,
+		artist: `Norm Crail`,
 		published: `1974-09-15`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Norm Crail`,
 				side: 'A',
 				tracknum: 1,
 				title: `Gettin' High`,
@@ -2555,7 +2595,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Norm Crail`,
 				side: 'B',
 				tracknum: 2,
 				title: `Street Lady`,
@@ -2594,6 +2633,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `700 West`,
 		id: `731120`,
+		artist: `Amnesty`,
 		published: `1973-11-20`,
 		publicity: [
 		{
@@ -2611,7 +2651,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Amnesty`,
 				side: 'A',
 				tracknum: 1,
 				title: `Three Cheers For My Baby`,
@@ -2625,7 +2664,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Amnesty`,
 				side: 'B',
 				tracknum: 2,
 				title: `Lord, Help Me`,
@@ -2750,13 +2788,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Effort`,
+		artist: `Love Machine`,
 		id: `1001`,
 		published: `1975`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Love Machine`,
 				side: 'A',
 				tracknum: 1,
 				title: `Tell Me`,
@@ -2772,7 +2810,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Love Machine`,
 				side: 'B',
 				tracknum: 2,
 				title: `Dunlop Song`,
@@ -2798,13 +2835,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Lights Of Dawn`,
 		id: `761205`,
 		published: `1976-12-05`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Lights Of Dawn`,
 				side: 'A',
 				tracknum: 1,
 				title: `Ooo-Wee`,
@@ -2820,7 +2857,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Lights Of Dawn`,
 				side: 'B',
 				tracknum: 2,
 				title: `I Hope It's Me`,
@@ -2882,13 +2918,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		artist: `Funk St. Workshop`,
 		id: `751005`,
 		published: `1975-10-05`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Funk St. Workshop`,
 				side: 'A',
 				tracknum: 1,
 				title: `Git On Up`,
@@ -2904,7 +2940,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Funk St. Workshop`,
 				side: 'B',
 				tracknum: 2,
 				title: `Girl I Know What You're Thinking`,
@@ -2990,13 +3025,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West/Enigma`,
+		artist: `Ed Ott`,
 		id: `761115`,
 		published: `1976-11-15`,
 		publicity: [
 		],
 		tracks: [
 			{
-				artist: `Ed Ott`,
 				side: 'A',
 				tracknum: 1,
 				title: `Scatter Me`,
@@ -3044,7 +3079,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Ed Ott`,
 				side: 'B',
 				tracknum: 2,
 				title: `Belinda`,
@@ -3149,6 +3183,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Estey Records`,
+		artist: `Scofield And Toffolo`,
 		id: `770727`,
 		sessions: [ `1977-07-10`, `1977-07-11`, `1977-07-13`, `1977-07-17` ],
 		published: `1977-07-27`,
@@ -3156,7 +3191,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		tracks: [
 			{
-				artist: `Scofield And Toffolo`,
 				side: 'A',
 				tracknum: 1,
 				title: `Poor Johnny`,
@@ -3187,7 +3221,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 			{
-				artist: `Scofield And Toffolo`,
 				side: 'B',
 				tracknum: 2,
 				title: `Clare's Song`,
