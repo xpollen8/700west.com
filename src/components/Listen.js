@@ -62,7 +62,7 @@ const Listen = (props) => (
 
 	<SectionHeader text='7" Tracks' />
 		<>
-			{releases.filter(r => r.type === 'single' && r.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => a.tracks[0].artist.localeCompare(b.tracks[0].artist, undefined, { numeric: true })).map(makeListenSingle)}
+			{releases.filter(r => r.type === 'single' && r.tracks.find(t => (t.audio && t.audio.length))).sort((a, b) => (a?.artist || a.tracks[0].artist).localeCompare(b?.artist || b.tracks[0].artist, undefined, { numeric: true })).map(makeListenSingle)}
 		</>
 
 	<SectionHeader text='Demo Session Tracks' />
