@@ -4,12 +4,12 @@ import Item from './Item';
 import SectionHeader from './SectionHeader';
 
 const makeSingleBlurb = (item, key) => {
-	const artistA = item.tracks[0].artist;
-	const artistB = item.tracks[1].artist;
+	const artistA = item?.artist || item.tracks[0].artist;
+	const artistB = item?.artist || item.tracks[1].artist;
 	const alsoAlbum = releases.find(r => r.type === 'album' && r.artist === item.tracks[0].artist && r.title === item.tracks[0].title);
 	// if there are both an album and single by the same artist/title,
 	// then apend '-7' onto the URL for the single
-	const href = makeReleaseLink(item.tracks[0].artist, item.tracks[0].title) + `${alsoAlbum ? '-7' : ''}`;
+	const href = makeReleaseLink(artistA, item.tracks[0].title) + `${alsoAlbum ? '-7' : ''}`;
 	return <Item key={key}
 		extra={<>
 			<a className="single artist" href={href}>{artistA}</a> {item.published && <span className="date ago">{item.published}</span>}
