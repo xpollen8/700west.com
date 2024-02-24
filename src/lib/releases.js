@@ -3,6 +3,77 @@ const	AUDIO_BOX = `https://tapes.700west.com/api/audio`;
 export default [
 	{
 		type: "single",
+		discogs: `https://www.discogs.com/release/18081082-Echoes-Of-Joy-Climbin-On-Up`,
+		label: `Not On Label`,
+		id: `771215`,
+		dtadded: `2024-02-23`,
+		sessions: [ `1977-11-30` ],
+		published: `1977-12-15`,
+		publicity: [
+		],
+		tracks: [
+			{
+				artist: `Echoes of Joy`,
+				side: 'A',
+				tracknum: 1,
+				title: `Climbin' On Up`,
+				time: `3:19`,
+				mastering: ``,
+				audio: ``,
+				comments: [
+				],
+				credits: [
+				],
+			},
+			{
+				artist: `Echoes of Joy`,
+				side: 'B',
+				tracknum: 2,
+				title: `Just In Time`,
+				time: `4:17`,
+				mastering: ``,
+				audio: ``,
+				credits: [
+				],
+				comments: [
+				],
+				credits: [
+				],
+			},
+		],
+		addendum: [
+		],
+		credits: [
+			{
+				who: `Mo Whittemore`,
+				did: [ `Engineer` ],
+			},
+		],
+		sales: [
+		],
+		image: [
+			{
+				file: `echoes_of_joy_A.jpg`,
+				thumb: `thumbs/echoes_of_joy_A_250.jpg`,
+				name: `A`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+			{
+				file: `echoes_of_joy_B.jpg`,
+				thumb: `thumbs/echoes_of_joy_B_250.jpg`,
+				name: `B`,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+		],
+	},
+	{
+		type: "single",
 		discogs: `https://www.discogs.com/release/6877732-White-Bird-Love-Outlaw`,
 		label: `White Bird`,
 		id: `770725`,
@@ -3003,6 +3074,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `Estey Records`,
 		id: `770727`,
+		sessions: [ `1977-07-10`, `1977-07-11`, `1977-07-13`, `1977-07-17` ],
 		published: `1977-07-27`,
 		publicity: [
 		],
