@@ -242,8 +242,8 @@ const HeaderData = (release) => {
 }
 
 const CommonHeader = (release) => {
-	const artist = (release.type === 'single') ? release.tracks[0].artist : release.artist;
-	const title = (release.type === 'single') ? release.tracks[0].title : release.title;
+	const artist = (release.type === 'single' && release.tracks[0].artist) ? release.tracks[0].artist : release.artist;
+	const title = (release.type === 'single' && release.tracks[0].title) ? release.tracks[0].title : release.title;
 	const titles = (release.type === 'single') ?
 		<>
 				<div className="release artist">{artist}</div>
@@ -252,7 +252,7 @@ const CommonHeader = (release) => {
 				{!!(artist !== release.tracks[1].artist) &&
 					<div className="release artist">{release.tracks[1].artist}</div>
 				}
-				<div className="release title">"{release.tracks[1].title}"</div>
+				<div className="release title">"{release.tracks.find(t => t?.side === 'B')?.title}"</div>
 		</>
 		:
 		<>
