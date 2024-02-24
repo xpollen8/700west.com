@@ -204,7 +204,7 @@ const AudioTeaser = ({ tracks = [] }) => {
 }
 
 const HeaderData = (release) => {
-	if (!(release.published || release.mastering || release.label || release.id || release.url || release.store || release.sessions)) return <></>;
+	if (!(release.published || release.mastering || release.label || release.id || release.url || release.store || release.sessions || release.discogs)) return <></>;
 	return (<>
 		<div className="row">
 			<Datum k="Published" v={release.published} />
@@ -214,6 +214,7 @@ const HeaderData = (release) => {
 			<Datum k="Contact" v={release.url} />
 			<Datum k="Purchase" v={release.store} />
 			<Datum k="Session Date(s)" v={release.sessions?.map(MakeDate)} />
+			<Datum k="Discogs" v={release.discogs} />
 		</div>
 	</>)
 }
