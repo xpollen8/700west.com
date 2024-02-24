@@ -430,8 +430,10 @@ export default [
 	},
 	{
 		type: "single",
-		label: `X`,
+		label: `Not On Label`,
+		discogs: `https://www.discogs.com/release/5453091-Scarem-Feeling-Grave-Misery`,
 		id: `16592/16593`,
+		sessions: [ `1980-12-27` ],
 		published: `1981`,
 		publicity: [
 		],
@@ -446,7 +448,7 @@ export default [
 				affiliation: ``,
 				writer: `L. Nottingham`,
 				mastering: ``,
-				audio: ``,
+				audio: `Scarem/Scarem-Feeling_Grave.mp3`,
 				comments: [
 				],
 				credits: [
@@ -462,7 +464,7 @@ export default [
 				affiliation: ``,
 				writer: `L. Nottingham`,
 				mastering: ``,
-				audio: ``,
+				audio: `Scarem/Scarem-Misery.mp3`,
 				comments: [
 				],
 				credits: [
@@ -485,7 +487,7 @@ export default [
 				who: `Larry Nottingham`,
 			},
 			{
-				did: [ `Engineered` ],
+				did: [ `Recorded`, `Engineered` ],
 				who: `M. Whittemore, Jr`, // (1980-12)`,
 			},
 		],
@@ -510,6 +512,24 @@ export default [
 			},
 		],
 		image: [
+			{
+				file: `scarem_A.jpg`,
+				thumb: `thumbs/scarem_A_250.jpg`,
+				name: ``,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
+			{
+				file: `scarem_B.jpg`,
+				thumb: `thumbs/scarem_B_250.jpg`,
+				name: ``,
+				width: `250`,
+				height: `250`,
+				credit: ``,
+				source: ``,
+			},
 		],
 	},
 	{
