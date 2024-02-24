@@ -3,6 +3,59 @@ const	AUDIO_BOX = `https://tapes.700west.com/api/audio`;
 export default [
 	{
 		type: "single",
+		discogs: `https://www.discogs.com/release/28186252-Jay-Big-Daddy-Vincent-Im-Lost-Inside-Of-You`,
+		label: `Kappalcorn`,
+		id: `SO 16400/SO 16401`,
+		dtadded: `2024-02-23`,
+		sessions: [ `1980-01-17`, `1980-02-16`, `1980-02-17`, `1980-02-29` ],
+		published: `1980`,
+		publicity: [
+		],
+		tracks: [
+			{
+				artist: `Jay (Big Daddy) Vincent`,
+				side: 'A',
+				tracknum: 1,
+				title: `	I'm Lost Inside Of You Part 1`,
+				time: ``,
+				mastering: ``,
+				audio: ``,
+				comments: [
+				],
+				credits: [
+				],
+			},
+			{
+				artist: `Jay (Big Daddy) Vincent`,
+				side: 'B',
+				tracknum: 2,
+				title: `	I'm Lost Inside Of You Part 2`,
+				time: ``,
+				mastering: ``,
+				audio: ``,
+				credits: [
+				],
+				comments: [
+				],
+				credits: [
+				],
+			},
+		],
+		addendum: [
+		],
+		credits: [
+			{
+				who: `Mo Whittemore`,
+				did: [ `Engineer` ],
+			},
+		],
+		sales: [
+		],
+		image: [
+		],
+	},
+	{
+		type: "single",
 		discogs: `https://www.discogs.com/release/18081082-Echoes-Of-Joy-Climbin-On-Up`,
 		label: `Not On Label`,
 		id: `771215`,
@@ -232,8 +285,10 @@ export default [
 	{
 		type: "single",
 		label: `Sunnyside Records`,
+		discogs: `https://www.discogs.com/release/25950805-Sonny-JacobsSunnysiders-Oklahoma-Twister`,
 		id: `SS 802`,
 		published: `1979`,
+		sessions: [ `1979-06-02`, `1979-06-03`, `1979-06-30`, `1979-07-13`, `1979-07-19`, `1979-07-21`, `1979-07-25`, `1979-07-28`, `1979-07-29`, `1979-07-30` ],
 		publicity: [
 		],
 		tracks: [
@@ -10560,6 +10615,158 @@ Manufactured & Distributed by Obie Records
 	},
 	{
 		type: "album",
+		artist: `The Tharp Brothers Band`,
+		label: `Programme Audio`,
+		liner: ``,
+		mastering: ``,
+		title: `The Tharp Brothers Band`,
+		id: ``,
+		published: `1980`,
+		sessions: [ `1980-07-13` ],
+		reissue: ``,
+		tracks: [
+		{
+			side: `A`,
+			tracknum: 1,
+			title: `Pain In My Heart`,
+		Written-By – Osborne*, Richardson*
+			time: `2:22`,
+		},
+		{
+			side: `A`,
+			tracknum: 2,
+			title: `Only The Wind`,
+			time: `4:38`,
+		},
+		{
+			side: `A`,
+			tracknum: 3,
+			title: `Black Diamond`,
+			time: `3:22`,
+		},
+		{
+			side: `A`,
+			tracknum: 4,
+			title: `Over The Hill To The Poorhouse`,
+			time: `2:43`,
+		},
+		{
+			side: `A`,
+			tracknum: 5,
+			title: `I Am The Man Thomas`,
+			time: `2:42`,
+		},
+		{
+			side: `B`,
+			tracknum: 1,
+			title: `Love Of The Mountains`,
+			time: `2:40`,
+		},
+		{
+			side: `B`,
+			tracknum: 2,
+			title: `Just The Thought Of Losing You`,
+			time: `3:50`,
+		},
+		{
+			side: `B`,
+			tracknum: 3,
+			title: `Pike County Breakdown`,
+			time: `2:23`,
+		},
+		{
+			side: `B`,
+			tracknum: 4,
+			title: `Medals For Mothers`,
+			time: `2:35`,
+		},
+		{
+			side: `B`,
+			tracknum: 5,
+			title: `Toil, Tears And Troubles`,
+			time: `2:01`,
+		},
+
+		],
+		credits: [
+			{
+				did: [ `Guitar`, `Lead Vocals` ],
+				who: `Ben Tharp`,
+			},
+			{
+				did: [ `Banjo` ],
+				who: `Ray Ferrebee`,
+			},
+			{
+				did: [ `Bass`, `Tenor Vocals`, `Album Layout` ],
+				who: `Tom Tharp`,
+			},
+			{
+				did: [ `Mixing` ],
+				who: `Moe Whittemore`,
+			},
+			{
+				did: [ `Fiddle` ],
+				who: `Robbie Brake`,
+			},
+			{
+				did: [ `Mandolin` ],
+				who: `Jerry Butler`,
+			},
+			{
+				did: [ `Photography` ],
+				who: `David S. Blair`,
+			},
+			{
+				did: [ `Liner Notes` ],
+				who: `Jake Hutchinson`,
+			},
+		],
+		addendum: [
+		],
+		comments: [
+		],
+		sales: [
+			{
+				date: `2022-02-23`,
+				where: 'discogs',
+				price: '$11.44',
+				said: `Good Plus (VG+) Cover shows slight wear.`,
+			},
+		],
+		image: [
+			{
+				file: `tharp_brothers_front.jpg`,
+				thumb: `thumbs/tharp_brothers_front_250.jpg`,
+				name: `cover`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `tharp_brothers_back.jpg`,
+				thumb: `thumbs/tharp_brothers_back_250.jpg`,
+				name: `back`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `tharp_brothers_A.jpg`,
+				thumb: `thumbs/tharp_brothers_A_250.jpg`,
+				name: `A`,
+				width: `125`,
+				height: `125`,
+			},
+			{
+				file: `tharp_brothers_B.jpg`,
+				thumb: `thumbs/tharp_brothers_B_250.jpg`,
+				name: `B`,
+				width: `125`,
+				height: `125`,
+			},
+		],
+	},
+	{
+		type: "album",
 		artist: `Golden Grass`,
 		label: ``,
 		liner: ``,
@@ -10567,6 +10774,7 @@ Manufactured & Distributed by Obie Records
 		title: `Batteries Not Included`,
 		id: `CPI 3208`,
 		published: `1980-10-01`,
+		sessions: [ `1980-10-25`, `1980-10-26` ],
 		reissue: ``,
 		tracks: [
 			{
