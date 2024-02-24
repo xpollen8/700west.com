@@ -8,7 +8,7 @@ import releases from '../lib/releases';
 import { makeMusicianLink, getBodyHTML, makeReleaseLink, typeToDisplay, makeBandLink } from '../lib/helpers';
 import AudioPlayer from './AudioPlayer';
 import Lyrics from './Lyrics';
-import MakeDate from './MakeDate';
+import MakeDate, { MakeDateAgo } from './MakeDate';
 import MakeSource from './MakeSource';
 import MakeAuthor from './MakeAuthor';
 import MakeSubject from './MakeSubject';
@@ -203,6 +203,23 @@ const AudioTeaser = ({ tracks = [] }) => {
 	}
 }
 
+const CollapseDates = (dates = []) => {
+	const ret = {};
+	dates?.forEach(date => {
+		const [ y, m, d ] = date.split('-');
+		if (!ret[y]) {
+			ret[y] = {};
+		}
+		if (!ret[y][m]) {
+			ret[y][m] = [];
+		}
+		ret[y][m].push(d);
+	});
+	const rett = [];
+	Object.keys(ret).forEach(y => Object.keys(ret[y]).forEach(m => rett.push([ y, m, ret[y][m] ])));
+	return rett.sort(([ay, am], [by, bm]) => am - bm);
+}
+
 const HeaderData = (release) => {
 	if (!(release.published || release.mastering || release.label || release.id || release.url || release.store || release.sessions || release.discogs)) return <></>;
 	return (<>
@@ -213,7 +230,12 @@ const HeaderData = (release) => {
 			<Datum k="Serial" v={release.id} />
 			<Datum k="Contact" v={release.url} />
 			<Datum k="Purchase" v={release.store} />
-			<Datum k="Session Date(s)" v={release.sessions?.map(MakeDate)} />
+			{(release.sessions?.length) && <Datum k="Session Date(s)" v=<blockquote>{CollapseDates(release.sessions).map(([ y, m, days ], key) => {
+				const dt = new Date(`${y}-${m}-${days[0]}`);
+				return <div key={key}>
+					{y}: {dt.toLocaleString('default', { month: 'long' })} {days?.map(d => parseInt(d, 10))?.join(', ')}
+				</div>
+			})} <span className="date ago">{MakeDateAgo(release.sessions[0])}</span></blockquote> />}
 			<Datum k="Discogs" v={release.discogs} />
 		</div>
 	</>)
