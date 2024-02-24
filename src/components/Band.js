@@ -67,7 +67,7 @@ const Musicians = ({ band }) => {
 	if (!musicians?.length) { return <></> }
 	return (
 			<>
-				<h3>Musicians</h3>
+				<h3>Credits</h3>
 				<div className="row">
 				{musicians.map((mus, key) => {
 					return (
