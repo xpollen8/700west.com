@@ -37,8 +37,8 @@ const Releases = ({ band }) => {
 			<h3>{label}</h3>
 				<div className="row">
 				{data.map((r, key) => {
-				const title = (r.type === 'single') ? (r?.tracks[0]?.title) : r?.title;
-				const useBand = (r.type === 'single') ? (r?.tracks[0]?.artist) : r?.artist;
+				const title = (r.type === 'single') ? (r?.title || r?.tracks[0]?.title) : r?.title;
+				const useBand = (r.type === 'single') ? (r?.artist || r?.tracks[0]?.artist) : r?.artist;
 				return (
 					<li key={key}>
 						<a href={makeReleaseLink(useBand, title)}>

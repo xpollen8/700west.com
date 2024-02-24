@@ -246,11 +246,11 @@ const CommonHeader = (release) => {
 	const title = (release.type === 'single' && release.tracks[0].title) ? release.tracks[0].title : release.title;
 	const titles = (release.type === 'single') ?
 		<>
-				<div className="release artist">{artist}</div>
+				<div className="release artist"><Link href={makeBandLink(artist)}>{artist}</Link></div>
 				<div className="release title">"{title}"</div>
 				<div><i>b/w</i></div>
-				{!!(artist !== release.tracks[1].artist) &&
-					<div className="release artist">{release.tracks[1].artist}</div>
+				{!!(release.tracks[1].artist && artist !== release.tracks[1].artist) &&
+					<div className="release artist"><Link href={makeBandLink(release.tracks[1].artist)}>{release.tracks[1].artist}</Link></div>
 				}
 				<div className="release title">"{release.tracks.find(t => t?.side === 'B')?.title}"</div>
 		</>
