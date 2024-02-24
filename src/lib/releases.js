@@ -10629,7 +10629,6 @@ Manufactured & Distributed by Obie Records
 			side: `A`,
 			tracknum: 1,
 			title: `Pain In My Heart`,
-		Written-By – Osborne*, Richardson*
 			time: `2:22`,
 		},
 		{
