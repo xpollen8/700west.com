@@ -25,10 +25,10 @@ const makeListenAlbum = ({ type, artist, title, tracks, multiArtist = false }, k
 	</div>
 )
 
-const makeListenSingle = ({ tracks, multiArtist = false }, key) => {
-	const artist = tracks[0].artist;
+const makeListenSingle = ({ tracks, multiArtist = false, artist }, key) => {
+	const useArtist = artist || tracks[0].artist;
 	const title = tracks[0].title;
-	return makeListenAlbum({ artist, title, tracks, multiArtist }, key);
+	return makeListenAlbum({ artist: useArtist, title, tracks, multiArtist }, key);
 }
 
 const Listen = (props) => (
