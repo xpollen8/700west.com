@@ -971,6 +971,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		published: `1980`,
 		publicity: [
 		],
+		sessions: [ `1980-09-06` ],
 		sheets: [
 			{ image: '700West_Mistreater_Session_1980_2', width: 500, height: 775 }
 		],
