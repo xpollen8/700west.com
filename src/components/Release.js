@@ -217,7 +217,7 @@ const CollapseDates = (dates = []) => {
 	});
 	const rett = [];
 	Object.keys(ret).forEach(y => Object.keys(ret[y]).forEach(m => rett.push([ y, m, ret[y][m] ])));
-	return rett.sort(([ay, am], [by, bm]) => am - bm);
+	return rett.sort(([ay, am], [by, bm]) => (ay - by) || (am - bm));
 }
 
 const HeaderData = (release) => {
@@ -235,7 +235,7 @@ const HeaderData = (release) => {
 				return <div key={key}>
 					{y}: {dt.toLocaleString('default', { month: 'long' })} {days?.map(d => parseInt(d, 10))?.join(', ')}
 				</div>
-			})} <span className="date ago">{MakeDateAgo(release.sessions[0])}</span></blockquote> />}
+			})} <span className="date ago">Total of {release.sessions.length} day{(release.sessions.length > 1) ? 's' : ''}, {MakeDateAgo(release.sessions[0])}</span></blockquote> />}
 			<Datum k="Discogs" v={release.discogs} />
 		</div>
 	</>)
