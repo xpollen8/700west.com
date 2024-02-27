@@ -207,6 +207,8 @@ const memoriam = [
 	played: 'drums',
 	date: '2019-09-07',
 	for: 'Ebony Rhythm Funk Campaign, Epoxy, 700 West session musician.',
+	link: 'https://www.youtube.com/watch?v=NdBmu_sqsH0',
+	linkText: '2007 ERFC Reunion drum solo.',
 	}
 ];
 
