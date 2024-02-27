@@ -28,7 +28,7 @@ const Memoriam = (mem: any, key: number) =>
 
 const App = () =>
 	<Page link='/memoriam'>
-		<div className="panelContainer">{memoriam.map(Memoriam)}</div>
+		<div className="panelContainer">{memoriam.sort((a, b) => new Date(b?.date) - new Date(a?.date)).map(Memoriam)}</div>
 	</Page>
 
 export default App;
