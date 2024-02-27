@@ -24,7 +24,7 @@ const MakeDate = (date) => {
 				return <span className="date ago">{ret}</span>
 			}
 		} catch {
-			return <span className="date">date</span>;
+			return <span className="date">{date}</span>;
 		}
 	}
 }
