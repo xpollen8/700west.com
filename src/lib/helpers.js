@@ -135,7 +135,7 @@ const releasesByMusician = (mus) => {
 		}).filter(f => f) || [];
 		const tracks = r?.tracks.map(t => t?.credits?.filter(c => isAKA(c.who) === mus)?.map(c => {
 			return ({
-				artist: (r.type !== 'single') ? r.artist : r.tracks[0]?.artist,
+				artist: (r.type !== 'single') ? r.artist : r.artist || r.tracks[0]?.artist,
 				title: (r.type !== 'single') ? r.title : r.tracks[0]?.title,
 				type: r.type,
 				roles: c?.did,
@@ -147,7 +147,7 @@ const releasesByMusician = (mus) => {
 			const aliases = AKAs[mus] || [];
 			return [ mus, ...aliases].find(a => t.writer.includes(a));
 		}).filter(f => f).map(t => ({
-			artist: (r.type !== 'single') ? r.artist : r.tracks[0]?.artist,
+			artist: (r.type !== 'single') ? r.artist : r.artist || r.tracks[0]?.artist,
 			title: (r.type !== 'single') ? r.title : r.tracks[0]?.title,
 			type: r.type,
 			roles: [ 'Writer' ],
@@ -164,7 +164,16 @@ const releasesByMusician = (mus) => {
 			ret.push({ artist, title, type, compilation: (artist === 'Various Artists'), roles });
 		}
 	});
-	return ret.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
+	const deduped = [];
+	for (let i in ret) {
+		const { artist, title, type } = ret[i];
+		deduped[ artist + title + type ] = ret[i];
+	}
+	const reallyRet = [];
+	for (let i in deduped) {
+		reallyRet.push(deduped[i]);
+	}
+	return reallyRet?.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
 }
 
 const knownForsByMusician = (mus) => {
