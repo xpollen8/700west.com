@@ -1794,7 +1794,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: ``,
 				publisher: ``,
 				affiliation: ``,
-				writer: `Charlie Crosby`,
 				mastering: `Chumley Productions`,
 				audio: ``,
 				comments: [
@@ -1804,6 +1803,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 					}
 				],
 				credits: [
+					{
+						who: `Charlie Crosby`,
+						did: [ `Writer`, `Keyboards`, `Vocals` ],
+					},
+					{
+						who: `Geoff Wilcox`,
+						did: [ `Guitar` ],
+					},
 				],
 			},
 			{
@@ -1813,7 +1820,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: ``,
 				publisher: ``,
 				affiliation: ``,
-				writer: `Charlie Crosby`,
 				mastering: `Chumley Productions`,
 				audio: ``,
 				comments: [
@@ -1821,8 +1827,12 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				credits: [
 					{
 						who: `Charlie Crosby`,
-						did: [ `Writer` ],
-					}
+						did: [ `Writer`, `Keyboards`, `Vocals` ],
+					},
+					{
+						who: `Geoff Wilcox`,
+						did: [ `Guitar` ],
+					},
 				],
 			},
 		],
