@@ -1,7 +1,7 @@
 import releases from './releases';
 import AKAs from './AKAs';
 
-const cleanName = (value) => value.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
+const cleanName = (value) => value?.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
 
 const isAKA = (name = '') => {
 	const hasAKA = Object.keys(AKAs).find(a => {
