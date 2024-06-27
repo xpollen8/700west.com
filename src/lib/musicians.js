@@ -9,6 +9,12 @@ export default {
 			home: '(765) 448-6249',
 		},
 	},
+	'Geoff Wilcox': {
+		online: {
+			email: 'gtrgeoff@aol.com',
+			contacted: '2024-06-26',
+		},
+	},
 	'Mark Sipe': {
 		online: {
 			email: 'aquadock@bellsouth.net'
