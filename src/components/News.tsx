@@ -22,6 +22,15 @@ type ItemType = {
 
 const newsItems: ItemType[] = [
 	{
+	date: '2024-06-26',
+	title: 'Site Updates',
+	body: `
+		<p>
+		Added partial credits to <a href="/band/Charlie_Crosby">Charlie Crosby</a> band.
+		</p>
+		`
+	},
+	{
 	date: '2024-02-19',
 	title: 'Site Updates',
 	body: `
