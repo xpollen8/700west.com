@@ -1,4 +1,14 @@
 export default {
+	'Charlie Crosby': {
+		online: {
+			email: 'charlescrosby44@hotmail.com',
+			contacted: '2024-06-26',
+		},
+		phone: {
+			cell: '765) 656-6661',
+			home: '(765) 448-6249',
+		},
+	},
 	'Mark Sipe': {
 		online: {
 			email: 'aquadock@bellsouth.net'
