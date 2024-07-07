@@ -2053,6 +2053,11 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		sales: [
 			{
+				date: `2024-07-07`,
+				where: 'ebay',
+				price: `$25.02`,
+			},
+			{
 				date: `2020-06-06`,
 				where: 'ebay',
 				price: `$8.00`,
@@ -4392,6 +4397,11 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		sales: [
 
+			{
+				date: `2024-07-07`,
+				where: 'ebay',
+				price: `$23.19`,
+			},
 			{
 				date: `2016-09-26`,
 				where: 'ebay',
@@ -10639,6 +10649,12 @@ Manufactured & Distributed by Obie Records
 			},
 		],
 		sales: [
+			{
+				date: `2024-07-07`,
+				price: '$10.89',
+				where: 'ebay',
+				said: `SEALED!`,
+			},
 			{
 				date: `2021-07-31`,
 				price: '$40.00',
