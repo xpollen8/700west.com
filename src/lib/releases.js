@@ -444,6 +444,7 @@ export default [
 	{
 		type: "single",
 		label: `Shirley Records`,
+		discogs: `https://www.discogs.com/release/9566231-Vanguards-and-The-Lady-All-The-Women-Ive-Wanted`,
 		artist: `Vanguards and The Lady`,
 		id: `66`,
 		published: `1975`,
@@ -614,6 +615,7 @@ export default [
 	{
 		type: "single",
 		label: `Shirley`,
+		discogs: `https://www.discogs.com/release/14746981-Good-Day-So-Fine-Shes-A-Woman-Shes-My-Girl`,
 		artist: `Good Day`,
 		id: `99`,
 		published: ``,
@@ -666,6 +668,7 @@ export default [
 	{
 		type: "single",
 		artist: `Ezekial Longspur`,
+		discogs: `https://www.discogs.com/release/14337951-Ezekial-Longspur-Rollin-Down-The-Highway`,
 		label: `700 West`,
 		id: `730911`,
 		published: `1973-09-11`,
@@ -720,6 +723,7 @@ export default [
 	},
 	{
 		type: "single",
+		discogs: `https://www.discogs.com/release/14345310-Stan-Collins-Ray-Gooliak-An-Americans-View-Of-Canada-Jack-McGrew`,
 		label: `700 West`,
 		multiArtist: true,
 		id: `740120`,
@@ -780,6 +784,7 @@ export default [
 	{
 		type: "single",
 		artist: `Granite`,
+		discogs: `https://www.discogs.com/release/4068101-Granite-Who-Can-Blame-You-You-Got-Me-Anyway`,
 		label: `Broken Wrekurds`,
 		id: `731125`,
 		published: `1973-11-25`,
@@ -839,6 +844,7 @@ export default [
 	{
 		type: "single",
 		artist: `Stone's Crossing`,
+		discogs: `https://www.discogs.com/release/7281013-Stones-Crossing-No-Contest-Country-Music-Sure-Beats-Rock-Roll-Wedding-Day`,
 		label: `700 West`,
 		id: `740930`,
 		published: `1974-09-30`,
@@ -952,6 +958,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Rebirth`,
+		discogs: `https://www.discogs.com/release/14345337-Rebirth-I-Get-High`,
 		label: `700 West`,
 		id: `760120`,
 		published: `1976-01-20`,
@@ -1038,6 +1045,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/3779520-Mistreater-Hells-Fire-Baby-Blue`,
 		artist: `Mistreater`,
 		id: `SO 16507/16508`,
 		published: `1980`,
@@ -1193,6 +1201,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Little Murray & the 'Mantics`,
+		discogs: `https://www.discogs.com/release/14337970-Little-Murray-And-The-Mantics-Dont-Leave-Me-Mama-Goddess-Above`,
 		label: `700 West`,
 		id: `730215`,
 		published: `1973-02-15`,
@@ -1296,8 +1305,9 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Mr. Feelgood`,
+		discogs: `https://www.discogs.com/release/14699669-Mr-Feelgood-Fool-Number-Two-Everybodys-Talking-About-It`,
 		label: `Intro`,
-		id: `C)-007`,
+		id: `CO-007`,
 		published: `1972`,
 		publicity: [
 		],
@@ -1350,6 +1360,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Match I`,
+		discogs: `https://www.discogs.com/release/14337935-Jerry-Griffith-2-Match-I-People-Do-Not-Change-Lifes-Like-A-Keyhole`,
 		label: `700 West`,
 		id: `730515`,
 		mastering: `McGrew Records`,
@@ -1408,6 +1419,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Match II`,
+		discogs: `https://www.discogs.com/release/4246853-Match-II-Make-A-Little-Wine`,
 		label: `700 West`,
 		id: `730820`,
 		published: `1973-08-20`,
@@ -1487,6 +1499,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/14345672-Soapstick-Paper-With-Lines`,
 		artist: `Soapstick`,
 		id: `740920`,
 		published: `1974-09-20`,
@@ -1554,6 +1567,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/14345466-Malachi-That-Same-Song-You-Sing-Citizen`,
 		artist: `Malachi`,
 		id: `761105`,
 		published: `1976-11-05`,
@@ -1734,6 +1748,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `RoseBud`,
+		discogs: `https://www.discogs.com/release/30327749-Special-Delivery-Big-Brown-Eyes-Gloria`,
 		artist: `Special Delivery`,
 		id: ``,
 		published: ``,
@@ -1781,6 +1796,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Charlie Crosby`,
+		discogs: `https://www.discogs.com/release/14338024-Charlie-Crosby-Baby-I-Know`,
 		label: `700 West`,
 		id: `780815`,
 		published: `1978-08-15`,
@@ -1917,6 +1933,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Jim Hubler`,
+		discogs: `https://www.discogs.com/release/14430568-Jim-Hubler-Big-BruceBig-Blue-Spruce`,
 		label: `UnDun`,
 		id: `9977S`,
 		published: `1981-09-10`,
@@ -1994,6 +2011,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/7280975-Kevin-Stonerock-Isnt-It-Nice-To-Dream-To-The-Mill-House`,
 		artist: `Kevin Stonerock`,
 		id: `800225`,
 		published: `1980-02-25`,
@@ -2093,6 +2111,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Blunderbuss`,
+		discogs: `https://www.discogs.com/release/10208584-Buccaneer-Follow-Me-Wont-Bow-My-Head`,
 		artist: `Buccaneer`,
 		id: `SO 16473`,
 		published: `1980`,
@@ -2144,6 +2163,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `The Beatsters`,
+		discogs: `https://www.discogs.com/release/14714352-The-Beatsters-Merseybeat-Take-Me-Into-Your-Heart`,
 		label: `Cavern`,
 		id: `830242`,
 		published: `1982`,
@@ -2316,6 +2336,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `Blunderbuss`,
+		discogs: `https://www.discogs.com/release/7527708-Buccaneer-Sharkbait`,
 		artist: `Buccaneer`,
 		id: ``,
 		published: `1980`,
@@ -2367,6 +2388,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		artist: `Promise`,
+		discogs: `https://www.discogs.com/release/7227089-Promise-Watch-Out-Pay-The-Price`,
 		label: `Promise`,
 		id: `760227`,
 		published: `1976-02-27`,
@@ -2585,6 +2607,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `700 West`,
 		id: `740915`,
+		discogs: `https://www.discogs.com/release/14345632-Norm-Crail-Gettin-High-`,
 		artist: `Norm Crail`,
 		published: `1974-09-15`,
 		publicity: [
@@ -2649,6 +2672,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		label: `700 West`,
 		id: `731120`,
 		artist: `Amnesty`,
+		discogs: `https://www.discogs.com/release/4141999-Amnesty-Three-Cheers-For-My-Baby-Lord-Help-Me`,
 		published: `1973-11-20`,
 		publicity: [
 		{
@@ -2777,7 +2801,6 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				price: '$300.00',
 				said: `Record is shiny strong VG+/ VG light scuffs Clean labels Plays nice`,
 			},
-
 		],
 		image: [
 			{
@@ -2804,6 +2827,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `Effort`,
 		artist: `Love Machine`,
+		discogs: `https://www.discogs.com/release/11243091-Love-Machine-Tell-Me-Dunlop-Song`,
 		id: `1001`,
 		published: `1975`,
 		publicity: [
@@ -2850,6 +2874,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/14338076-Lights-Of-Dawn-Ooo-Wee`,
 		artist: `Lights Of Dawn`,
 		id: `761205`,
 		published: `1976-12-05`,
@@ -2934,6 +2959,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "single",
 		label: `700 West`,
 		artist: `Funk St. Workshop`,
+		discogs: `https://www.discogs.com/release/9817356-Funk-St-Workshop-Girl-I-Know-What-Youre-Thinkin-`,
 		id: `751005`,
 		published: `1975-10-05`,
 		publicity: [
@@ -3040,6 +3066,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "single",
 		label: `700 West/Enigma`,
+		discogs: `https://www.discogs.com/release/14345561-Ed-Ott-Scatter-Me`,
 		artist: `Ed Ott`,
 		id: `761115`,
 		published: `1976-11-15`,
@@ -3291,6 +3318,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "album",
 		artist: `Bronco`,
 		label: `Earthwood Records`,
+		discogs: `https://www.discogs.com/release/5498895-Bronco-Bronco`,
 		liner: ``,
 		mastering: ``,
 		title: `Bronco`,
@@ -3612,6 +3640,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "album",
 		artist: `Buccaneer`,
+		discogs: `https://www.discogs.com/master/585186-Buccaneer-Buccaneer`,
 		label: `Blunderbuss Records`,
 		liner: ``,
 		mastering: ``,
@@ -3752,6 +3781,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "album",
 		artist: `Ray Gooliak`,
 		label: `Silver Sidewalk`,
+		discogs: `https://www.discogs.com/release/3016975-Ray-Gooliak-Home-Away-From-Home`,
 		liner: `Special thanks to: victoria Fini, John Venus, J. Boy, Rick Ryan, The Maui Bluebird, Bills Eich and Gutherie, Frank Kattus, Gar Rovang Co., Sharon Celani, Pamelo Poland, Scot Freeman, Skip Hopper, Dr. & Mrs. G2. Bo Gooliak, Ka Oi, Bill Scanion, B. L.`,
 		mastering: ``,
 		title: `Home Away From Home`,
@@ -4064,6 +4094,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "album",
 		artist: `J. Michael Henderson`,
+		discogs: `https://www.discogs.com/release/6326790-Michael-Henderson-To-Make-The-Night-Complete`,
 		label: `JMH`,
 		liner: ``,
 		mastering: ``,
@@ -4444,6 +4475,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	{
 		type: "album",
 		artist: `Maelstrom`,
+		discogs: `https://www.discogs.com/release/6004616-Maelstrom-Paradigms`,
 		label: ``,
 		liner: `Recorded January 2 & 8, 1975`,
 		mastering: ``,
@@ -4704,6 +4736,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "album",
 		artist: `Mo`,
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/7659003-Mo-First-Album`,
 		liner: `Thanx to: Mookie, Goog, Busk & Boo for the cover art. Betty for the above.`,
 		mastering: `LH-15462`,
 		title: `First Album`,
@@ -5676,6 +5709,12 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 				price: '$250.00',
 				said: `Very Good Plus (VG+)  Sleeve: Very Good Plus (VG+)`,
 			},
+			{
+				where: 'discogs',
+				date: '2024-05-16',
+				price: '$200.00',
+				said: `Very Good Plus (VG+) Sleeve: Very Good (VG) Record is warped but plays great on our Technics SL1200, still in shrin but wavy , maybe was sealed too tightly for a long time`,
+			},
 		],
 		image: [
 			{
@@ -5698,6 +5737,7 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 		type: "album",
 		artist: `Ed Ott`,
 		label: ``,
+		discogs: `https://www.discogs.com/release/5957425-Ed-Ott-Potential-Collectors-Item`,
 		liner: ``,
 		mastering: ``,
 		affiliation: `ASCAP`,
@@ -5841,6 +5881,7 @@ And the oboe? That's an early <a href="http://alaubin.com/" target="new">Laubin<
 		type: "album",
 		artist: `Primevil`,
 		label: `700 West`,
+		discogs: `https://www.discogs.com/master/554946-Primevil-Smokin-Bats-At-Camptons`,
 		liner: `(baddest band what am)`,
 		mastering: `LH-11531`,
 		title: `Smokin' Bats At Campton's`,
@@ -6271,6 +6312,7 @@ value of among both psych and heavy rock collectors.
 		type: "album",
 		artist: `Roberts Owen`,
 		label: `Mortsleam Records`,
+		discogs: `https://www.discogs.com/release/7954914-Roberts-Owen-Immature-Oocytes`,
 		liner: `
 <p>
 This album was composed, performed and produced by
@@ -6578,6 +6620,7 @@ This album is dedicated to all the oppressed people in the world - especially ch
 		type: "album",
 		artist: `Sailor`,
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/3846781-Sailor-Sailor`,
 		liner: ``,
 		mastering: ``,
 		title: `Sailor`,
@@ -6915,6 +6958,7 @@ This album is dedicated to all the oppressed people in the world - especially ch
 		type: "album",
 		artist: `Scott & Modlin`,
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/6951373-Dan-Modlin-Dave-Scott-The-Train-Dont-Stop-Here-Anymore`,
 		liner: `Dedicated to the memory of Rollin C. Scott who never saw the record but who heard the album long before the rest of us.`,
 		mastering: ``,
 		title: `The Train Don't Stop Here Anymore`,
@@ -7497,6 +7541,7 @@ you saw that red recording light go on..........
 		type: "album",
 		artist: `Sequoiah`,
 		label: `700 West`,
+		discogs: `https://www.discogs.com/release/3703867-Sequoiah-Sequoiah`,
 		liner: `This album is dedicated to: Allyson, Brenda, Veronika`,
 		mastering: ``,
 		title: `Sequoiah`,
@@ -7897,6 +7942,7 @@ you saw that red recording light go on..........
 	{
 		type: "album",
 		artist: `Kevin Stonerock`,
+		discogs: `https://www.discogs.com/release/3421075-Kevin-Stonerock-Day-Before-Tomorrow`,
 		label: `700 West`,
 		liner: `Special thanks to Carl and Betty Stonerock, Alice Varez, Ted, Dave, and Gabe`,
 		mastering: ``,
@@ -8668,6 +8714,7 @@ Kevin Stonerock in the studio
 	{
 		type: "album",
 		artist: `Zerfas`,
+		discogs: `https://www.discogs.com/release/5269126-Zerfas-Zerfas`,
 		label: `700 West`,
 		liner: `Author's Note: This album was recorded on full dimensional purpose, this way.  More later ...`,
 		mastering: ``,
@@ -10078,7 +10125,12 @@ album that justifies their quest. I've found mine.
 				price: `$950.00`,
 				said: `Vinyl plays without any noise on my Ortofon 2m Blue stylus. The jacket is rough, but not awful. No seam splits. Very Good Plus (VG+)  Sleeve: Good Plus (G+)`,
 			},
-
+			{
+				date: `2023-07-25`,
+				where: `discogs`,
+				price: `$950.00`,
+				said: `Vinyl plays without any noise on my Ortofon 2m Blue stylus. The jacket is rough, but not awful. No seam splits. Very Good Plus (VG+)  Sleeve: Good Plus (G+)`,
+			},
 		],
 		image: [
 			{
@@ -10100,6 +10152,7 @@ album that justifies their quest. I've found mine.
 	{
 		type: "album",
 		artist: `J. Michael Henderson`,
+		discogs: `https://www.discogs.com/release/3012065-J-Michael-Henderson-Nite-People`,
 		label: `JMH`,
 		liner: ``,
 		mastering: ``,
@@ -10549,6 +10602,7 @@ album that justifies their quest. I've found mine.
 	{
 		type: "album",
 		artist: `Rex Thomas Community Council`,
+		discogs: `https://www.discogs.com/release/13777234-Rex-Thomas-Community-Council-Levels`,
 		label: ``,
 		liner: `
 Band members: Rex Thomas, Jim Sanders, Steve Walker
@@ -10696,6 +10750,7 @@ Manufactured & Distributed by Obie Records
 	{
 		type: "album",
 		artist: `The Tharp Brothers Band`,
+		discogs: `https://www.discogs.com/release/8525387-The-Tharp-Brothers-Band-The-Tharp-Brothers-Band`,
 		label: `Programme Audio`,
 		liner: ``,
 		mastering: ``,
@@ -10847,6 +10902,7 @@ Manufactured & Distributed by Obie Records
 	{
 		type: "album",
 		artist: `Golden Grass`,
+		discogs: `https://www.discogs.com/release/8286350-Golden-Grass-Batteries-Not-Included`,
 		label: ``,
 		liner: ``,
 		mastering: ``,
@@ -10975,12 +11031,13 @@ Manufactured & Distributed by Obie Records
 	{
 		type: "album",
 		artist: `Ray Pierle`,
+		discogs: `https://www.discogs.com/release/4097594-Ray-Pierle-Time-And-Money`,
 		label: ``,
 		liner: ``,
 		mastering: ``,
 		title: `Time and Money`,
 		id: ``,
-		published: `1980`,
+		published: `1980-03-11`,
 		reissue: ``,
 		tracks: [
 		],
@@ -11052,6 +11109,7 @@ It’s a desperate LP in many aspects, and one of them had been its desire to be
 	{
 		type: "album",
 		artist: `Don Huntsinger`,
+		discogs: `https://www.discogs.com/release/8736075-Don-Huntsinger-If-Dreams-Were-True`,
 		label: `Bliss Records`,
 		liner: `<p>
 Front porch guitar playing and singing in church was the extent of my musical
@@ -11744,6 +11802,7 @@ Thank you... Bill for being a believer.
 	{
 		type: "album",
 		artist: `Various Artists`,
+		discogs: `https://www.discogs.com/release/14429771-Various-The-Best-Of-700-West-Volume-1`,
 		multiArtist: true,
 		label: `700 West`,
 		liner: ``,
@@ -12018,6 +12077,7 @@ to offer.
 		type: "album",
 		artist: `Amnesty`,
 		label: `Now-Again Records`,
+		discogs: `https://www.discogs.com/master/156205-Amnesty-Free-Your-Mind-The-700-West-Sessions`,
 		liner: ``,
 		mastering: ``,
 		title: `Free Your Mind`,
@@ -12248,6 +12308,7 @@ it is also a damn fine record for your average funk listener.
 	{
 		type: "album",
 		artist: `Various Artists`,
+		discogs: `https://www.discogs.com/release/20262316-Various-The-Best-Of-700-West-Volume-2`,
 		multiArtist: true,
 		label: `700 West`,
 		store: `https://700west.bandcamp.com/album/best-of-700-west-volume-2`,
@@ -12976,6 +13037,7 @@ it is also a damn fine record for your average funk listener.
 	{
 		type: "album",
 		artist: `J.D. Redmon`,
+		discogs: `https://www.discogs.com/release/8351627-J-D-Redmon-Let-Me-Live`,
 		label: `Redmon Records`,
 		liner: ``,
 		mastering: ``,
@@ -13163,6 +13225,7 @@ it is also a damn fine record for your average funk listener.
 	{
 		type: "album",
 		artist: `The Believers`,
+		discogs: `https://www.discogs.com/release/12183622-The-Believers-Sailing-Towards-Home`,
 		label: ``,
 		liner: ``,
 		mastering: ``,
@@ -13281,10 +13344,11 @@ it is also a damn fine record for your average funk listener.
 	{
 		type: "album",
 		artist: `Jerry Lowe`,
+		discogs: `https://www.discogs.com/release/9430047-Jerry-Lowe-Dont-Look-Like-Babys-Comin-Home`,
 		label: ``,
 		liner: `IICC`,
 		mastering: `LH-12845`,
-		title: `Don't Look Like Baby's Coming Home`,
+		title: `Don't Look Like Baby's Comin' Home`,
 		id: `S 101`,
 		published: `1974`,
 		reissue: ``,
@@ -13483,6 +13547,7 @@ it is also a damn fine record for your average funk listener.
 	{
 		type: "album",
 		artist: `Jim Sturgis`,
+		discogs: `https://www.discogs.com/release/6637432-Jim-Sturgis-Sun-Run`,
 		label: `J J. P. Records`,
 		liner: `A special thanks to Mo Wittemore* for his engineering expertise`,
 		mastering: ``,
@@ -13628,6 +13693,7 @@ it is also a damn fine record for your average funk listener.
 		type: "album",
 		artist: `First Annual Farewell Reunion`,
 		label: `Programme Audio`,
+		discogs: `https://www.discogs.com/release/3062662-First-Annual-Farewell-Reunion-First-Time-Around`,
 		liner: ``,
 		mastering: ``,
 		title: `First Time Around`,
@@ -14485,6 +14551,7 @@ And the walls came tumbling down
 	{
 		type: "album",
 		artist: `Terry Kimbrell`,
+		discogs: `https://www.discogs.com/release/3141952-Terry-Kimbrell-Distant-Dream`,
 		label: `Obie Records`,
 		liner: ``,
 		mastering: ``,
@@ -14609,6 +14676,12 @@ And the walls came tumbling down
 		sales: [
 			{
 				where: 'discogs',
+				date: '2024-07-22',
+				price: '$24.00',
+				said: `Very Good Plus (VG+) Sleeve: Very Good Plus (VG+) Nice copy!`,
+			},
+			{
+				where: 'discogs',
 				date: '2019-09-18',
 				price: '$25.00',
 				said: `Vinyl Ex. Cover is nice but has some paint splatter on the front. Pics available on request. The paint actually almost looks like it belongs there...`,
@@ -14638,6 +14711,7 @@ And the walls came tumbling down
 	{
 		type: "album",
 		artist: `Ed Hamilton and Bluegrass`,
+		discogs: `https://www.discogs.com/release/5948489-Ed-Hamilton-And-Bluegrass-A-Letter-To-Mama`,
 		label: `Programme Audio`,
 		liner: ``,
 		mastering: ``,
@@ -14793,6 +14867,7 @@ And the walls came tumbling down
 	{
 		type: "album",
 		artist: `Doug Enoch`,
+		discogs: `https://www.discogs.com/release/16110224-Doug-Enoch-Light-At-The-End-Of-The-Darkness`,
 		label: `Enoch Records`,
 		liner: ``,
 		mastering: ``,
@@ -14941,6 +15016,7 @@ And the walls came tumbling down
 	{
 		type: "album",
 		artist: `Carlos Silva & Twice`,
+		discogs: `https://www.discogs.com/release/3351161-Carlos-Silva-3-Twice-Carlos-Silva-Twice`,
 		label: `Shock`,
 		liner: ``,
 		mastering: ``,
@@ -15085,6 +15161,7 @@ And the walls came tumbling down
 	{
 		type: "album",
 		artist: `Mistreater`,
+		discogs: `https://www.discogs.com/master/304311-Mistreater-HellsFire`,
 		label: ``,
 		liner: ``,
 		mastering: ``,
@@ -16078,6 +16155,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 		type: "album",
 		artist: `Ernie Mindel`,
 		title: `Until Jesus`,
+		discogs: `https://www.discogs.com/release/19181266-Ernie-Mindel-Until-Jesus`,
 		label: `Jedsem Records`,
 		id: `SO 165361`,
 		published: `1980`,
