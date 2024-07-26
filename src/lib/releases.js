@@ -11258,7 +11258,7 @@ Thank you... Bill for being a believer.
 						who: `Stan Mickel`,
 						did: [
 							"Bass Guitar",
-							"CLassical Guitar",
+							"Classical Guitar",
 						],
 					},
 				],
