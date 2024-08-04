@@ -4351,77 +4351,383 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		type: "album",
 		artist: `Iron Horse`,
 		label: `Iron Horse Records`,
-		liner: ``,
+		liner: `This album is dedicated to our families for their faith and encouragement in all phases of this project`,
 		mastering: ``,
 		title: `Iron Horse`,
 		id: `CPI 9987`,
 		published: `1981`,
+		affiliation: `ASCAP`,
 		reissue: ``,
 		tracks: [
 			{
 				side: 'A',
 				trackbum: 1,
 				title: `Cowboy Day`,
+				credits: [
+					{
+						who: `Ken Scheidler`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Electric Guitar` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Background Vocal`, `Bass` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Acoustic Rhythm Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Michael Clark`,
+						did: [ `Acoustic Lead Guitar` ],
+					},
+					{
+						who: `Mark Hancock`,
+						did: [ `Words`, `Music`, `Mellotron` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+					{
+						who: `P. Welch`,
+						did: [ `Words`, `Music` ],
+					},
+				],
 			},
 			{
 				side: 'A',
 				trackbum: 2,
 				title: `Circle Of Gold`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Bass`, `Background Vocal`, ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic Guitar`, `Background Vocal`, ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Background Vocal` ],
+					},
+					{
+						who: `Michael Clark`,
+						did: [ `Acoustic Guitar` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+					{
+						who: `Mo Whittemore`,
+						did: [ `Synthesizer` ],
+					},
+				],
 			},
 			{
 				side: 'A',
 				trackbum: 3,
 				title: `Sleep`,
+				credits: [
+					{
+						who: `Mike Yates`,
+						did: [ `Lead Vocal`, `Acoustic 6-string Guitar`, ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic 6-string Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Background Vocal`, `Bass` ],
+					},
+				],
 			},
 			{
 				side: 'A',
 				trackbum: 4,
 				title: `Down In The Canyon`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Bass`, `Background Vocal`, ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `6-string Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Pedal Steel Guitar`, `High String Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Michael Clark`,
+						did: [ `Background Vocal` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 			{
 				side: 'A',
 				trackbum: 5,
 				title: `I Wanna Go To War`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Bass` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `6-string Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Background Vocal`, `Assorted Shouts` ],
+					},
+					{
+						who: `Dave Meadows`,
+						did: [ `Acoustic Guitar`, `Mandolin`, `Fiddle` ],
+					},
+					{
+						who: `Mark Cutsinger`,
+						did: [ `Drums` ],
+					},
+					{
+						who: `Steve Lester`,
+						did: [ `Produced` ],
+					},
+				],
 			},
 			{
 				side: 'A',
 				trackbum: 6,
 				title: `Fly Away`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal (third verse)`, `Bass` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Lead Vocal (first verse)`, `Acoustic Guitar` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Lead Vocal (second verse)`, `Banjo` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 1,
 				title: `Peaceful Life`,
+				credits: [
+					{
+						who: `Mike Yates`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Pedal Steel`, `High String Guitar` ],
+					},
+					{
+						who: `Bill Hahn`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Bass`, `Background Vocal` ],
+					},
+					{
+						who: `Mark Hancock`,
+						did: [ `Mellotron` ],
+					},
+					{
+						who: `Robin Steele`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 2,
 				title: `Morocco`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Bass` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Pedal Steel`, `Background Vocal` ],
+					},
+					{
+						who: `Michael Clark`,
+						did: [ `Electric Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Dan Groves`,
+						did: [ `Accordion` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 3,
 				title: `North Dakota Reel`,
+				credits: [
+					{
+						who: `Ken Scheidler`,
+						did: [ `Music`, `Acoustic Guitar`, `Dulcimer` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Dulcimer`, `Banjo` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Bass` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 4,
 				title: `North Dakota Morning`,
+				credits: [
+					{
+						who: `Mike Yates`,
+						did: [ `Lead Vocal`, `Banjo`, `Tambourine` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Bass`, `Background Vocal` ],
+					},
+					{
+						who: `N. Knight`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `D. Vincent`,
+						did: [ `Words`, `Music` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 5,
 				title: `Run For Cover`,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `Background Vocal`, `Bass` ],
+					},
+					{
+						who: `Ken Scheidler`,
+						did: [ `Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Banjo`, `Background Vocal` ],
+					},
+					{
+						who: `Michael Clark`,
+						did: [ `Acoustic Guitar`, `Background Vocal` ],
+					},
+					{
+						who: `Jim Dicks Sr.`,
+						did: [ `Background Vocal` ],
+					},
+					{
+						who: `Jim Benton`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 			{
 				side: 'B',
 				trackbum: 6,
 				title: `One Last Ride`,
+				credits: [
+					{
+						who: `Ken Scheidler`,
+						did: [ `Words`, `Music`, `Lead Vocal`, `12 & 6-String Acoustic Guitars` ],
+					},
+					{
+						who: `Mike Yates`,
+						did: [ `Pedal Steel`, `Background Vocal` ],
+					},
+					{
+						who: `Jim Dicks`,
+						did: [ `Bass`, `Background Vocal` ],
+					},
+					{
+						who: `Karen Scheidler`,
+						did: [ `Piano` ],
+					},
+					{
+						who: `Mark Hancock`,
+						did: [ `Mellotron` ],
+					},
+					{
+						who: `Robin Steele`,
+						did: [ `Drums` ],
+					},
+				],
 			},
 		],
 		credits: [
 			{
-				who: `Jim Dicks`
+				who: `Jim Dicks`,
+				did: [ `Final Mixdown`, `Produced` ],
+			},
+			{
+				who: `Ken Scheidler`,
+				did: [ `Art Direction and Design`, `Final Mixdown`, `Produced` ],
+			},
+			{
+				who: `Mike Yates`,
+				did: [ `Final Mixdown`, `Produced` ],
+			},
+			{
+				who: `Steve Lester`,
+				did: [ `Produced` ],
+			},
+			{
+				who: `Mo Whittemore`,
+				did: [ `Final Mixdown` ],
+			},
+			{
+				who: `Charlie Largent`,
+				did: [ `Art Direction and Design`, `Front Cover Artwork` ],
+			},
+			{
+				who: `John Bradberry`,
+				did: [ `Art Direction and Design` ],
+			},
+			{
+				who: `Tom Stockton`,
+				did: [ `Back Cover Photograph` ],
 			},
 		],
 		addendum: [
