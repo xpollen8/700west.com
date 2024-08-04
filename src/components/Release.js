@@ -225,6 +225,7 @@ const HeaderData = (release) => {
 	return (<>
 		<div className="row">
 			<Datum k="Published" v={release.published} />
+			<Datum k="Affiliation" v={release.affiliation} />
 			<Datum k="Mastering" v={release.mastering} />
 			<Datum k="Label" v={release.label} />
 			<Datum k="Serial" v={release.id} />
