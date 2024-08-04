@@ -51,7 +51,7 @@ const Listen = (props) => (
 		<blockquote className="row">
 			<AudioPlayer mp3='2010_DanModlin_700West_Interview.mp3'
 				title='Interview'
-				time='13:29'
+				time='16:21'
 				/>
 		</blockquote>
 
