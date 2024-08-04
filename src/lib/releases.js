@@ -3351,7 +3351,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `2:49`,
 				publisher: `Earthwood Music`,
 				affiliation: `ASCAP`,
-				writer: `M. Yakes/B. Hahn`,
+				writer: `M. Yates/B. Hahn`,
 				audio: ``,
 				comments: [
 					{
@@ -3387,7 +3387,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `3:30`,
 				publisher: `Earthwood Music`,
 				affiliation: `ASCAP`,
-				writer: `M. Yakes`,
+				writer: `M. Yates`,
 				audio: ``,
 				comments: [
 					{
@@ -3515,25 +3515,25 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				affiliation: `ASCAP`,
 				writer: `Jim Dicks/Norman Knight/Dan Vincent`,
 				audio: ``,
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Norman Knight`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Dan Vincent`,
+						did: [ `Words`, `Music` ],
+					},
+				],
 				comments: [
 					{
 						who: ``,
 						said: `North Dakota Morning was written by Jim Dicks, Norman Knight, and Dan Vincent, in the back of a van full of equipment as they were on their way to a job in North Dakota.  Jim, Dan, and Norman are friends of BRONCO, and the band liked this song so much they thought they should include it on their first album.`,
 					}
-				],
-				credits: [
-					{
-						who: `Jim Dicks`,
-						did: [ `Writer` ],
-					},
-					{
-						who: `Norman Knight`,
-						did: [ `Writer` ],
-					},
-					{
-						who: `Jim Dicks`,
-						did: [ `Dan Vincent` ],
-					},
 				],
 			},
 		],
@@ -4624,11 +4624,11 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 						did: [ `Words`, `Music`, `Bass`, `Background Vocal` ],
 					},
 					{
-						who: `N. Knight`,
+						who: `Norman Knight`,
 						did: [ `Words`, `Music` ],
 					},
 					{
-						who: `D. Vincent`,
+						who: `Dan Vincent`,
 						did: [ `Words`, `Music` ],
 					},
 				],
@@ -7016,6 +7016,18 @@ This album is dedicated to all the oppressed people in the world - especially ch
 				comments: [
 				],
 				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Norman Knight`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Dan Vincent`,
+						did: [ `Words`, `Music` ],
+					},
 				],
 			},
 			{
@@ -12318,6 +12330,20 @@ Thank you... Bill for being a believer.
 				artist: `Bronco`,
 				title: `North Dakota Morning`,
 				time: '02:31',
+				credits: [
+					{
+						who: `Jim Dicks`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Norman Knight`,
+						did: [ `Words`, `Music` ],
+					},
+					{
+						who: `Dan Vincent`,
+						did: [ `Words`, `Music` ],
+					},
+				],
 			},
 			{
 				tracknum: '23',
