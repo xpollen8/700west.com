@@ -33,7 +33,7 @@ const memoriam = [
 	{
 	name: 'Jim Dicks',
 	played: 'Bass, Vocals, Songwriter',
-	for: 'Granite, Sailor, Iron Horse',
+	for: 'Bronco, Granite, Sailor, Iron Horse',
 	date: '1984',
 	},
 	{
