@@ -16360,6 +16360,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 				},
 				{
 					who: `Herman Walker`,
+					did: [ `Trumpet`, `Vocals` ],
 				},
 				{
 					who: `Gino Johnson`,
