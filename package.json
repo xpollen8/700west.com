@@ -14,7 +14,7 @@
     "chart.js": "^4.4.3",
     "mywrap": "github:xpollen8/mywrap",
     "react": "^18.3.1",
-    "next": "^14.2.5",
+    "next": "^14.2.15",
     "react-chartkick": "^0.5.3",
     "react-dom": "^18.3.1"
   },
