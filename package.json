@@ -14,14 +14,14 @@
     "chart.js": "^4.4.6",
     "mywrap": "github:xpollen8/mywrap",
     "react": "^18.3.1",
-    "next": "^15.0.1",
     "react-chartkick": "^0.5.4",
+    "next": "^15.1.2",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
     "@types/node": "^22.9.0",
-    "eslint-config-next": "^15.0.2",
+    "eslint-config-next": "^15.1.2",
     "typescript": "^5.6.3"
   }
 }
