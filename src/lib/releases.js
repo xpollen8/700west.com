@@ -15798,7 +15798,7 @@ And the walls came tumbling down
 				date: `2019-12-07`,
 				who: `David Whittemore`,
 				said: `
-				Digitized from 1/2" master. 192kHz/24bit.
+				Digitized from 1/4" master. 192kHz/24bit.
 				(box #59)
 				`,
 			},
@@ -15897,7 +15897,7 @@ And the walls came tumbling down
 				date: `2019-12-01`,
 				who: `David Whittemore`,
 				said: `
-				Digitized from 1/2" master. 192kHz/24bit.
+				Digitized from 1/4" master. 192kHz/24bit.
 				(box #50)
 				`,
 			},
@@ -15971,7 +15971,7 @@ And the walls came tumbling down
 				date: `2019-11-30`,
 				who: `David Whittemore`,
 				said: `
-				Digitized from 1/2" master. 192kHz/24bit.
+				Digitized from 1/4" master. 192kHz/24bit.
 				`,
 			},
 			{
