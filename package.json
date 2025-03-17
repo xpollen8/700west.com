@@ -15,7 +15,7 @@
     "mywrap": "github:xpollen8/mywrap",
     "react": "^19.0.0",
     "react-chartkick": "^0.5.4",
-    "next": "^15.1.6",
+    "next": "^15.2.2",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
