@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.8",
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.13.13",
     "eslint-config-next": "^15.2.2",
     "typescript": "^5.7.3"
   }
