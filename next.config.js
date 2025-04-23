@@ -79,7 +79,7 @@ module.exports = {
 				permanent: false,
 			},
 			{
-				source: '/releases',
+				source: '/release',
 				destination: '/albums',
 				permanent: false,
 			},
