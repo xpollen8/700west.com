@@ -78,6 +78,11 @@ module.exports = {
 				destination: '/release/:path*',
 				permanent: false,
 			},
+			{
+				source: '/releases',
+				destination: '/albums',
+				permanent: false,
+			},
 		]
   }
 }
