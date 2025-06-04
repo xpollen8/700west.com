@@ -1,4 +1,17 @@
 export default {
+	'DeMorris C Smith': {
+		bio: {
+			body: `
+				<a href="/images/dgsmith_1.jpg"><img src="/images/dgsmith_1.jpg" width="250" alt="dg smith"></a>
+				<a href="/images/dgsmith_2.jpg"><img src="/images/dgsmith_2.jpg" width="250" alt="dg smith"></a>
+				<a href="/images/dgsmith_3.jpg"><img src="/images/dgsmith_3.jpg" width="250" alt="dg smith"></a>
+			`,
+			attribution: {
+				original: 'Obituary',
+				added: '2025-06-03',
+			}
+		}
+	},
 	'Charlie Crosby': {
 		online: {
 			email: 'charlescrosby44@hotmail.com',
