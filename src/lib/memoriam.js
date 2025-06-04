@@ -1,11 +1,11 @@
 const memoriam = [
 	{
-	name: 'DeMorris "DeGe" Smith',
+	name: 'DeMorris "DeGe" C Smith',
 	played: 'Keyboards',
 	for: 'Epoxy, Ultimate Force',
 	forLink: '/band/Epoxy',
 	age: '71',
-	date: '2025-05',
+	date: '2025-05-22',
 	},
 	{
 	name: 'Rick Booher',

@@ -12851,7 +12851,7 @@ it is also a damn fine record for your average funk listener.
 					who: `Unknown "James"`,
 				},
 				{
-					who: `DeMorris "DeGe" Smith`,
+					who: `D.G. Smith`,
 					did: [ `Keyboards` ],
 				},
 				{
@@ -16351,7 +16351,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 					who: `Unknown "James"`,
 				},
 				{
-					who: `DeMorris "DeGe" Smith`,
+					who: `D.G. Smith`,
 					did: [ `Keyboards` ],
 				},
 				{
