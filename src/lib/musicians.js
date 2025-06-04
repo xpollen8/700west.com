@@ -5,9 +5,15 @@ export default {
 				<a href="/images/dgsmith_1.jpg"><img src="/images/dgsmith_1.jpg" width="250" alt="dg smith"></a>
 				<a href="/images/dgsmith_2.jpg"><img src="/images/dgsmith_2.jpg" width="250" alt="dg smith"></a>
 				<a href="/images/dgsmith_3.jpg"><img src="/images/dgsmith_3.jpg" width="250" alt="dg smith"></a>
+<p />
+ In May of 2025, the Indianapolis keyboardist DeMorris “DeGe” Smith passed away. Smith was a beloved figure in the Naptown funk scene, known for his soulful keyboard work and his dedication to the local music community.  Join us as we pay tribute to Smith with music featuring his work as a funk keyboardist. 
+<p />
+Smith’s career spanned generations. He worked extensively with Indianapolis bands, like Epoxy, Redd Hott, Klas, Below Zero, and The Downstroke Band. He also performed and recorded with national acts too, including The Bar-Kays, The Deele and R.J’s Latest Arrival. Outside of his work in music, Smith was a successful radio producer, working for WIBC for two decades. 
+<p />
+Smith came from a musical family. His father Sonny Smith was a drummer who performed on the Avenue for decades with his band The Original Chromatics. Over the years, Sonny played with legendary Naptown musicians like David Baker and Erroll Grandy. Sonny was also a professional athlete, who played basketball with the Harlem Globetrotters and played baseball in the Negro Leagues with the Chicago American Giants. Smith’s mother Margaret Smith was a music teacher in the Indianapolis Public School system. His brother Sparky Smith achieved success as a flute player in the local jazz scene. Sparky played with many local jazz legends, including David Young, Pookie Johnson, and Billy Wooten.
 			`,
 			attribution: {
-				original: 'Obituary',
+				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/remembering-naptown-funk-musician-demorris-dege-smith',
 				added: '2025-06-03',
 			}
 		}
