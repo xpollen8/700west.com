@@ -1,4 +1,5 @@
 const AKAs = {
+	'DeMorris Smith': [ 'DeGe', 'D.G.' ],
 	'Jay Vincent': [ 'Jay (Big Daddy) Vincent' ],
 	'Dave Meador': [ 'Elliott Meadows' ],
 	'Steve Morley': [ 'S.V. Morley' ],

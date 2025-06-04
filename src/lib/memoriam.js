@@ -1,5 +1,12 @@
 const memoriam = [
 	{
+	name: 'DeMorris "DeGe" Smith',
+	played: 'Keyboards',
+	for: 'Epoxy',
+	forLink: '/band/Epoxy',
+	date: '2025-05',
+	},
+	{
 	name: 'Rick Booher',
 	played: 'Drums',
 	for: 'J. Michael Henderson',
