@@ -4,6 +4,7 @@ const memoriam = [
 	played: 'Keyboards',
 	for: 'Epoxy, Ultimate Force',
 	forLink: '/band/Epoxy',
+	age: '71',
 	date: '2025-05',
 	},
 	{
