@@ -1,6 +1,6 @@
 const memoriam = [
 	{
-	name: 'DeMorris "DeGe" C Smith',
+	name: 'DeMorris C Smith',
 	played: 'Keyboards',
 	for: 'Epoxy, Ultimate Force',
 	forLink: '/band/Epoxy',
