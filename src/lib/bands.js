@@ -25,7 +25,15 @@ export default {
 			},
 		],
 		videos: [],
-		bio: {},
+		bio: {
+			body: `
+			Ebony Rhythm Funk Campaign was one of the most important bands in Naptown music. The group achieved their greatest success during the 1970s performing with some of the biggest stars in American music, including B.B. King, Earth, Wind, and Fire, and Jackie Wilson. Their recordings received serious airplay and appeared on Billboard’s R&B Hot 100 Chart. 
+			`,
+			attribution: {
+				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/ebony-rhythm-funk-campaign-pt-1',
+				added: '2025-06-04',
+			},
+		},
 	},
 	'Ebony Rhythm Funk Campaign': {
 		images: [
@@ -122,7 +130,7 @@ export default {
 			`,
 			attribution: {
 				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/50th-anniversary-of-amnestys-700-west-sessions--part-1',
-				added: '2025-06-03',
+				added: '2025-06-04',
 			},
 		},
 	},
@@ -135,7 +143,7 @@ export default {
 				},
 				attribution: {
 					original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/the-blakey-specials',
-					added: '2025-06-03',
+					added: '2025-06-04',
 				},
 				caption: ``,
 			},
@@ -147,7 +155,7 @@ export default {
 			`,
 			attribution: {
 				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/the-blakey-specials',
-				added: '2025-06-03',
+				added: '2025-06-04',
 			}
 		}
 	},
