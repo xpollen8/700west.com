@@ -24,7 +24,19 @@ export default {
 		bio: {},
 	},
 	'Blakey Special': {
-		images: [],
+		images: [
+		{
+				src: `/images/10-08-2023-echoes-of-indiana-avenue-podcast-graphic.jpg`,
+				thumb: {
+					src: `/images/10-08-2023-echoes-of-indiana-avenue-podcast-graphic.jpg`,
+				},
+				attribution: {
+					original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/the-blakey-specials',
+					added: '2025-06-03',
+				}
+				caption: ``,
+			},
+		],
 		videos: [],
 		bio: {
 			body: `
