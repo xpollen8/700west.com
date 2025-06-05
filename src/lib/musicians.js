@@ -1,11 +1,36 @@
 export default {
 	'DeMorris C Smith': {
+		images: [
+			{
+				date: '2025-06-03',
+				src: `/images/dgsmith_1.jpg`,
+				thumb: {
+					src: `/images/dgsmith_1.jpg`,
+					width: 500,
+				},
+				caption: `Young DeGe`,
+			},
+			{
+				date: '2025-06-03',
+				src: `/images/dgsmith_2.jpg`,
+				thumb: {
+					src: `/images/dgsmith_2.jpg`,
+					width: 500,
+				},
+				caption: `Older DeGe`,
+			},
+			{
+				date: '2025-06-03',
+				src: `/images/dgsmith_3.jpg`,
+				thumb: {
+					src: `/images/dgsmith_3.jpg`,
+					width: 500,
+				},
+				caption: `Performing`,
+			},
+		],
 		bio: {
 			body: `
-				<a href="/images/dgsmith_1.jpg"><img src="/images/dgsmith_1.jpg" width="250" alt="dg smith"></a>
-				<a href="/images/dgsmith_2.jpg"><img src="/images/dgsmith_2.jpg" width="250" alt="dg smith"></a>
-				<a href="/images/dgsmith_3.jpg"><img src="/images/dgsmith_3.jpg" width="250" alt="dg smith"></a>
-<p />
  In May of 2025, the Indianapolis keyboardist DeMorris “DeGe” Smith passed away. Smith was a beloved figure in the Naptown funk scene, known for his soulful keyboard work and his dedication to the local music community.  Join us as we pay tribute to Smith with music featuring his work as a funk keyboardist. 
 <p />
 Smith’s career spanned generations. He worked extensively with Indianapolis bands, like Epoxy, Redd Hott, Klas, Below Zero, and The Downstroke Band. He also performed and recorded with national acts too, including The Bar-Kays, The Deele and R.J’s Latest Arrival. Outside of his work in music, Smith was a successful radio producer, working for WIBC for two decades. 
