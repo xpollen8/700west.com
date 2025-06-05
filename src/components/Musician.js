@@ -243,7 +243,7 @@ const Shares = ({ musician }) => {
 						</div>
 						{subject}
 						{' '}
-						{(track?.artist && track?.title) && (<>{MaybeReleaseLink(track?.artist, track?.title)}</>)}
+						{(track?.artist && (track?.title || release?.title)) && (<>{MaybeReleaseLink(track?.artist || release?.title, track?.title)}</>)}
 						{' '}
 						{(release?.artist && release?.title) && (<>({MaybeReleaseLink(release?.artist, release?.title)})</>)}
 						<div className="row">
