@@ -1,4 +1,5 @@
 const AKAs = {
+	'Joseph Stanley Trotter, III', : [ 'Joe Trotter', 'Joseph Trotter' ],
 	'James Johnson': [ 'James "Gino" Johnson', 'Gino Johnson' ],
 	'DeMorris C Smith': [ 'DeMorris "DeGe" Smith', 'D.G.', 'D.G. Smith' ],
 	'Jay Vincent': [ 'Jay (Big Daddy) Vincent' ],

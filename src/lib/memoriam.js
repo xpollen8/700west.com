@@ -1,5 +1,13 @@
 const memoriam = [
 	{
+	name: 'Joseph Stanley Trotter, III',
+	played: 'Keyboards',
+	for: 'Amnesty',
+	forLink: '/band/Amnesty',
+	age: '72',
+	date: '2021-08-29',
+	},
+	{
 	name: 'DeMorris C Smith',
 	played: 'Keyboards',
 	for: 'Epoxy, Ultimate Force',
