@@ -2723,15 +2723,15 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		credits: [
 			{
 				who: `Red Massie`,
-				did: [ `Vocals`, `Bass` ],
+				did: [ `Bass` ],
 			},
 			{
 				who: `Kirk Alexander`,
-				did: [ `Vocals`, `Drums` ],
+				did: [ `Drums` ],
 			},
 			{
 				who: `Gino Johnson`,
-				did: [ `Vocals`, `Reeds` ],
+				did: [ `Reeds` ],
 			},
 			{
 				who: `Herman Walker`,
@@ -2743,15 +2743,15 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 			{
 				who: `Raphael Barnes`,
-				did: [ `Vocals`, `Percussion` ],
+				did: [ `Percussion` ],
 			},
 			{
 				who: `Joseph Trotter`,
-				did: [ `Vocals`, `Keyboards` ],
+				did: [ `Vocals`, `Percussion`, `Keyboards` ],
 			},
 			{
 				who: `Damon Malone`,
-				did: [ `Vocals`, `Percussion `],
+				did: [ `Lead Vocals`, `Percussion `],
 			},
 		],
 		addendum: [
@@ -12674,15 +12674,15 @@ it is also a damn fine record for your average funk listener.
 			credits: [
 				{
 					who: `Red Massie`,
-					did: [ `Vocals`, `Bass` ],
+					did: [ `Bass` ],
 				},
 				{
 					who: `Kirk Alexander`,
-					did: [ `Vocals`, `Drums` ],
+					did: [ `Drums` ],
 				},
 				{
 					who: `Gino Johnson`,
-					did: [ `Vocals`, `Reeds` ],
+					did: [ `Reeds` ],
 				},
 				{
 					who: `Herman Walker`,
@@ -12694,15 +12694,15 @@ it is also a damn fine record for your average funk listener.
 				},
 				{
 					who: `Raphael Barnes`,
-					did: [ `Vocals`, `Percussion` ],
+					did: [ `Percussion` ],
 				},
 				{
 					who: `Joseph Trotter`,
-					did: [ `Vocals`, `Keyboards` ],
+					did: [ `Vocals`, `Percussion`, `Keyboards` ],
 				},
 				{
 					who: `Damon Malone`,
-					did: [ `Vocals`, `Percussion `],
+					did: [ `Lead Vocals`, `Percussion `],
 				},
 			],
 			time: `4:10`,
