@@ -1,8 +1,21 @@
 export default {
+	'Paul Thomas': {
+		bio: {
+			body: `
+			Paul Thomas is best known for his work with the Circle City Band. The group's 1983 single "Magic" is an underground soul classic with over a million streams online. 
+			<p />
+			Thomas played some of his first gigs on the Avenue, performing at clubs like the Blue Eagle with Billy Wooten and Harvey Cook. Thomas' family has a deep history on the Avenue. His mother Hazell Ann Hurt owned an influential beauty salon in the Avenue neighborhood.
+			`,
+			attribution: {
+				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/paul-thomas',
+				added: '2025-06-04',
+			}
+		},
+	},
 	'DeMorris C Smith': {
 		images: [
 			{
-				date: '2025-06-03',
+				date: '2025-06-04',
 				src: `/images/dgsmith_1.jpg`,
 				thumb: {
 					src: `/images/dgsmith_1.jpg`,
@@ -11,7 +24,7 @@ export default {
 				caption: `Young DeGe`,
 			},
 			{
-				date: '2025-06-03',
+				date: '2025-06-04',
 				src: `/images/dgsmith_2.jpg`,
 				thumb: {
 					src: `/images/dgsmith_2.jpg`,
@@ -20,7 +33,7 @@ export default {
 				caption: `Older DeGe`,
 			},
 			{
-				date: '2025-06-03',
+				date: '2025-06-04',
 				src: `/images/dgsmith_3.jpg`,
 				thumb: {
 					src: `/images/dgsmith_3.jpg`,
@@ -39,7 +52,7 @@ Smith came from a musical family. His father Sonny Smith was a drummer who perfo
 			`,
 			attribution: {
 				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/remembering-naptown-funk-musician-demorris-dege-smith',
-				added: '2025-06-03',
+				added: '2025-06-04',
 			}
 		}
 	},
