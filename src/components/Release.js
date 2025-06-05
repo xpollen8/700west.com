@@ -236,7 +236,7 @@ const HeaderData = (release) => {
 				return <div key={key}>
 					{y}: {dt.toLocaleString('default', { month: 'long' })} {days?.map(d => parseInt(d, 10))?.join(', ')}
 				</div>
-			})} <span className="date ago">Total of {release.sessions.length} day{(release.sessions.length > 1) ? 's' : ''}, {MakeDateAgo(release.sessions[0])}</span></blockquote> />}
+			})} <span className="date ago">Over a total of {release.sessions.length} day{(release.sessions.length > 1) ? 's' : ''}, {MakeDateAgo(release.sessions[0])}</span></blockquote> />}
 			<Datum k="Discogs" v={release.discogs} />
 		</div>
 	</>)
@@ -257,7 +257,7 @@ const CommonHeader = (release) => {
 		</>
 		:
 		<>
-				<div className="release artist">{artist}</div>
+				<div className="release artist"><Link href={makeBandLink(artist)}>{artist}</Link></div>
 				<div className="release title">"{title}"</div>
 		</>
 	return (<>
