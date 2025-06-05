@@ -1866,12 +1866,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		id: `800401`,
 		published: `1980-04-01`,
 		publicity: [
+		/*
 			{
 				image: `funk_street`,
 				width: `500`,
 				height: `340`,
 				caption: ``,
 			}
+			*/
 		],
 		tracks: [
 			{
@@ -2675,6 +2677,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		discogs: `https://www.discogs.com/release/4141999-Amnesty-Three-Cheers-For-My-Baby-Lord-Help-Me`,
 		published: `1973-11-20`,
 		publicity: [
+		/*
 		{
 			image: `amnesty2`,
 			width: `152`,
@@ -2687,6 +2690,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			height: `140`,
 			caption: ``,
 		},
+		*/
 		],
 		tracks: [
 			{
@@ -3055,12 +3059,14 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 			},
 		],
 		publicity: [
+		/*
 			{
 				image: `funk_street`,
 				width: `500`,
 				height: `340`,
 				caption: ``,
 			}
+		*/
 		],
 	},
 	{
@@ -16112,6 +16118,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 		sales: [
 		],
 		publicity: [
+		/*
 		{
 			image: `SpectrePhoto`,
 			width: `200`,
@@ -16131,6 +16138,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 				</p>
 			`,
 		},
+		*/
 		],
 		image: [],
 	},
@@ -16301,12 +16309,14 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 		comments: [
 		],
 		publicity: [
+		/*
 			{
 				image: `funk_street`,
 				width: `500`,
 				height: `340`,
 				caption: ``,
 			}
+		*/
 		],
 	},
 	{
@@ -16438,6 +16448,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 			}
 		],
 		publicity: [
+		/*
 			{
 				image: `malachi_expanded`,
 				width: `500`,
@@ -16445,6 +16456,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 				caption: `
 				`,
 			},
+		*/
 		],
 	},
 	{
@@ -16466,6 +16478,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 			}
 		],
 		publicity: [
+			/*
 			{
 				image: 'echoes-ebony-rhythm-funk',
 				width: `250`,
@@ -16484,6 +16497,7 @@ It was an experience not to be forgotten. Our first visit to a real studio. This
 				height: `140`,
 				caption: ``
 			},
+			*/
 		],
 	},
 	{

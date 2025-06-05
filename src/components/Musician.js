@@ -85,43 +85,9 @@ export const AKA = ({ musician }) => {
 	);
 }
 
-/*
-const exists = (v) => v && v.length;
-
-const smartLink = (v) => {
-	if (typeof v === 'string' && v?.includes('http')) {
-		return <Link href={v} target="new">{v}</Link>
-	}
-	return v;
-}
-
-const Datum = ({ k, v, className }) => {
-	if (exists(v) || typeof v === 'object') {
-		return <div>
-			<span className="datum"> {k} </span>:
-			<span className={className}> {smartLink(v)} </span>
-		</div>
-	}
-	return <>{v}</>
-}
-
-const showAttribution = (attr, className) => {
-	const { original, who, date, added } = attr || {};
-	if (!(original || who || date)) return <></>;
-	return (
-		<div className={`${className} attribution`}>
-			{exists(date) && MakeDate(date)}
-			<Datum k="Source" v={original} />
-			{who && <Datum k="Author" v=<Who who={who} /> />}
-			{added && <Datum k="Added" v={MakeDate(added)} />}
-		</div>
-	);
-}
-*/
-
 const Bio = ({ musician }) => {
 	const bio = musicians[musician]?.bio;
-	if (!bio) return <></>;
+	if (!bio?.body) return <></>;
 	return (
 		<div>
 			<h3>Bio</h3>

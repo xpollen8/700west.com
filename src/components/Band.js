@@ -85,7 +85,7 @@ const Musicians = ({ band }) => {
 
 const Bio = ({ band }) => {
 	const bio = bands[band]?.bio;
-	if (!bio) return <></>;
+	if (!bio?.body) return <></>;
 	return (
 		<div>
 			<h3>Bio</h3>

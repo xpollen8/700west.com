@@ -1,4 +1,95 @@
 export default {
+	'Spectre': {
+		images: [
+			{
+				src: `/images/publicity/SpectrePhoto.jpg`,
+				thumb: {
+					src: `/images/publicity/SpectrePhoto_thumb.jpg`,
+					width: `400`,
+					height: `400`,
+				},
+				caption: `
+					<p>
+					Top - left to right:<br/>
+					Mark Hudson - Drums<br/>
+					Dan Gustin - Vocals<br/>
+					John Moore - Bass guitar<br/>
+					</p>
+
+					<p>
+					Bottom - left to right:<br/>
+					Mike Carper - Lead guitar<br/>
+					Rick Blackford - Rhythm guitar<br/>
+					</p>
+				`,
+			},
+		],
+		videos: [],
+		bio: {},
+	},
+	'Ebony Rhythm Funk Campaign': {
+		images: [
+			{
+				src: `/images/publicity/echoes-ebony-rhythm-funk.jpg`,
+				thumb: {
+					src: `/images/publicity/echoes-ebony-rhythm-funk_thumb.jpg`,
+					width: `500`,
+					height: `280`,
+				},
+				caption: ``,
+			},
+			{
+				src: `/images/publicity/echoes-ebony-rhythm-funk-campaign-pt-2.jpg`,
+				thumb: {
+					src: `/images/publicity/echoes-ebony-rhythm-funk-campaign-pt-2.jpg`,
+					width: `500`,
+					height: `280`,
+				},
+				caption: ``,
+			},
+			{
+				src: `/images/publicity/echoes-ebony-rhythm-funk-pt-3.jpg`,
+				thumb: {
+					src: `/images/publicity/echoes-ebony-rhythm-funk-pt-3_thumb.jpg`,
+					width: `500`,
+					height: `280`,
+				},
+				caption: ``,
+			},
+		],
+		videos: [],
+		bio: {},
+	},
+	'Malachi': {
+		images: [
+			{
+				src: `/images/publicity/malachi_expanded.jpg`,
+				thumb: {
+					src: `/images/publicity/malachi_expanded_thumb.jpg`,
+					width: `500`,
+					height: `373`,
+				},
+				caption: `Promo picture`,
+			},
+		],
+		videos: [],
+		bio: {},
+	},
+	'Funk St. Workshop': {
+		images: [
+			{
+				src: `/images/publicity/funk_street.jpg`,
+				thumb: {
+					src: `/images/publicity/funk_street_thumb.jpg`,
+					width: `500`,
+					height: `340`,
+				},
+				caption: `Promo picture`,
+			},
+		],
+		videos: [],
+		bio: {},
+	},
 	'Amnesty': {
 		images: [
 			{
