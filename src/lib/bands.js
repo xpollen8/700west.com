@@ -21,15 +21,7 @@ export default {
 			},
 		],
 		videos: [],
-		bio: {
-			body: `
-			The Blakey Specials were founded in 1967 by the pianist, composer, and vocalist Eugene Blakey.
-			`,
-			attribution: {
-				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/the-blakey-specials',
-				added: '2025-06-03',
-			}
-		}
+		bio: {},
 	},
 	'Blakey Special': {
 		images: [],
