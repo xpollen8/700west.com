@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Page from './Page';
 import bands from '../lib/bands';
 
-import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
+import { getBodyHTML, publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
 
 const Publicity = (band) => {
 	const publicity = publicityByBand(band)[0]?.publicity;
