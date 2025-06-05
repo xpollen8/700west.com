@@ -4,7 +4,7 @@ export default {
 			{
 				src: `/images/publicity/amnesty2.jpg`,
 				thumb: {
-					src: `/images/publicity/amnesty2_250.jpg`,
+					src: `/images/publicity/amnesty2_thumb.jpg`,
 					width: `152`,
 					height: `200`,
 				},
@@ -13,7 +13,7 @@ export default {
 			{
 				src: `/images/publicity/07-16-2023-echoes-of-indiana-avenue-podcast-graphic.jpg`,
 				thumb: {
-					src: `/images/publicity/07-16-2023-echoes-of-indiana-avenue-podcast-graphic_250.jpg`,
+					src: `/images/publicity/07-16-2023-echoes-of-indiana-avenue-podcast-graphic_thumb.jpg`,
 					width: `250`,
 					height: `140`,
 				},
