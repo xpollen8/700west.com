@@ -102,9 +102,9 @@ export default {
 				caption: ``,
 			},
 			{
-				src: `/images/https://www.wfyi.org/programs/echoes-indiana-avenue/radio/50th-anniversary-of-amnestys-700-west-sessions--part-1.jpg`,
+				src: `/images/07-16-2023-echoes-of-indiana-avenue-podcast-graphic.jpg`,
 				thumb: {
-					src: `/images/https://www.wfyi.org/programs/echoes-indiana-avenue/radio/50th-anniversary-of-amnestys-700-west-sessions--part-1.jpg`,
+					src: `/images/07-16-2023-echoes-of-indiana-avenue-podcast-graphic.jpg`,
 					width: `250`,
 					height: `140`,
 				},
