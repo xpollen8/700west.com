@@ -2916,6 +2916,13 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				],
 			},
 		],
+		credits: [
+			{ who: `Dave Moore`, did: [ `Acoustic Guitar`, `Lead Guitar` ] },
+			{ who: `Stony Roberts`, did: [ `Bass` ] },
+			{ who: `Dave Anderson`, did: [ `Drums` ] },
+			{ who: `Steve Moore`, did: [ `Lead Vocals`, `Rhythm Guitar` ] },
+			{ who: `Harlan Wix`, did: [ `Rhythm Guitar` ] },
+		],
 		addendum: [
 		],
 		sales: [
