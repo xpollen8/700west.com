@@ -16,7 +16,7 @@ const AKAs = {
 	'Carlos Silva': [ 'Silva' ],
 	'Dan Gustin': [ 'Danny Gustin' ],
 	'David Zerfas': [ 'Dave Zerfas' ],
-	'James Massie': [ 'Red Massie' ],
+	'James Massie': [ 'James "Red" Massie', 'Red Massie' ],
 	'Jack Schaefele': [ 'Jack Schafele*', 'Jack Schfele*' ],
 	'Boobie Townsend': [ 'Master "Boobie" Townsend' ],
 	'Jim Hubler': [ 'W.J. Hubler, Jr.' ],
