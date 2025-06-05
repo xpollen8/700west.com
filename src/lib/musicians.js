@@ -1,4 +1,30 @@
 export default {
+	'Joseph Stanley Trotter, III': {
+		images: [
+			{
+				date: '2025-06-04',
+				src: `/images/Trotter-Joseph-pic-for-cover.jpg`,
+				thumb: {
+					src: `/images/Trotter-Joseph-pic-for-cover.jpg`,
+					width: 500,
+				},
+				caption: ``,
+				attribution: {
+					original: 'https://albertsonsmortuary.com/joseph-stanley-trotter-iii/',
+					added: '2025-06-04',
+				}
+			},
+		],
+		bio: {
+			body: `
+			Joseph Stanley Trotter III, affectionately called JoJo by his family, was born August 19, 1948 in Indianapolis, Indiana to Lillian Ruth (Mitchell)Trotter and Joseph S. Trotter Jr.. Joseph was the first born of the four children. Joseph received both his elementary and secondary education from Indianapolis Public Schools #41, #26, and graduated in 1966 from the legendary Crisps Attucks High School, which influenced his life tremendously. Joseph actively engaged in athletics of running track and playing basketball. His beautiful tenor voice was a member of the outstanding Crisps Attucks A Cappella Choir. He was also a member of the Glee Club and the Boys Ensemble. Joseph received a music award for his participation. Joseph engaged in other activities, but his heart and true love was singing and music. Joseph’s love for music propelled him to learn to play the keyboard, and be a member of the Indianapolis eight piece live music ensemble “Amnesty”. They produced an album in 1973 with Lamp Records. Amnesty traveled the country performing and being the opening act for other noted performers and bands as: Jackson 5, O’Jays, Kool and the Gang, Bobby Womack, and Al Green. Following Joseph’s music career, he used his abilities to work a variety of jobs as a machinist for General Motors, a medical phlebotomist, and a popular cook and chef for Eskenazi Hospital and Meridian Hills Country Club. In Joseph’s youth, he attended and confessed Christ at Mt.Moriah Baptist Church. Throughout his life, he referenced his thankfulness for all life afforded him. Joseph was gifted with many skills and talents of being artistic in illustrating, creating, and dancing. Joseph would cut the hair of the young men and boys in the neighborhood. Joseph never met a stranger. He had quick wit and a warm personality. Joseph shared his skills, knowledge, and wisdom with others, especially younger men. Joseph loved his wife, children, and family. Joseph boasted and bragged on each child individually, giving updates regarding their lives, talents, and accomplishments. He loved spending time with his brothers for countless hours discussing sports and current events. Conversations of past events and activities always resulted in loud laughter and co-signing. Joseph spent many holidays with his siblings breaking bread and having a great time reminiscing times of old. In Joseph’s latter years he enjoyed having his very large and beautiful cat “Shoes” in his lap or sitting on the back of his chair, watching cowboys, mysteries, thrillers, and sports on television. He loved listening and singing old school jams from the 60’s thru 2000. At the age of 73, Joseph transitioned from this life Sunday, August 29, 2021. He was preceded in death by his parents, grandparents, brother, grandson, and a host of relatives and friends. Joseph leaves to cherish his memories, wife of 31 years, Penny Trotter, daughters Dionna Jo Hill, Dietra Trotter, Allison Gilliam, Lillian Waller (Jason), step-daughter Shannon Williams(Charles), sons Joseph S. Trotter IV (Autumn), Jason Trotter(Jasmine), brother Gerald Trotter(Toni), sister Janice Glenn(Steven), 17 grandchildren,11 great-grandchildren, and a host of nieces and nephews, and great-nieces and nephews.
+			`,
+			attribution: {
+				original: 'https://albertsonsmortuary.com/joseph-stanley-trotter-iii/',
+				added: '2025-06-04',
+			},
+		},
+	},
 	'Paul Thomas': {
 		bio: {
 			body: `

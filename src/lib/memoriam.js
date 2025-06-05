@@ -4,7 +4,7 @@ const memoriam = [
 	played: 'Keyboards',
 	for: 'Amnesty',
 	forLink: '/band/Amnesty',
-	age: '72',
+	age: '73',
 	date: '2021-08-29',
 	},
 	{
