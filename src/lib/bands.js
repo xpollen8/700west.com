@@ -112,7 +112,19 @@ export default {
 			},
 		],
 		videos: [],
-		bio: {},
+		bio: {
+			body: `
+			Amnesty was a legendary Indianapolis funk band, known for their hard-hitting grooves and soaring vocal harmonies. The music Amnesty recorded at 700 West has been streamed millions of times online and sampled in hip-hop tracks by Jay-Z, Snoop Dogg, and Ye - the artist formerly known as Kanye West.
+			<p />
+			 In 1973, Amnesty traveled to New Palestine, Indiana – a small town east of Indianapolis. Their destination was 700 West, a modest recording studio located in the home of Moe Whittemore. 
+			<p />
+			 Amnesty recorded 10 tracks at 700 West. Two of those recordings were issued on Whittemore’s 700 West label – but the full sessions remained unreleased for over 30 years. In 2007 the California-based label Now Again issued the complete Amnesty 700 West sessions. The album was titled “Free Your Mind” and it became an instant classic among funk and soul music fans.       
+			`,
+			attribution: {
+				original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/50th-anniversary-of-amnestys-700-west-sessions--part-1',
+				added: '2025-06-03',
+			},
+		},
 	},
 	'Blakey Special': {
 		images: [
