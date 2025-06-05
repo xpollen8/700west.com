@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Page from './Page';
 
-import { getBandNames, knownForsByMusician, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink } from '../lib/helpers';
+import { getBandNames, knownForsByMusician, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink, Datum, showAttribution } from '../lib/helpers';
 import musicians from '../lib/musicians';
 import AKAs from '../lib/AKAs';
 import memoriam from '../lib/memoriam';
@@ -85,6 +85,16 @@ export const AKA = ({ musician }) => {
 	);
 }
 
+/*
+const exists = (v) => v && v.length;
+
+const smartLink = (v) => {
+	if (typeof v === 'string' && v?.includes('http')) {
+		return <Link href={v} target="new">{v}</Link>
+	}
+	return v;
+}
+
 const Datum = ({ k, v, className }) => {
 	if (exists(v) || typeof v === 'object') {
 		return <div>
@@ -107,6 +117,7 @@ const showAttribution = (attr, className) => {
 		</div>
 	);
 }
+*/
 
 const Bio = ({ musician }) => {
 	const bio = musicians[musician]?.bio;
@@ -144,15 +155,6 @@ const Gallery = ({ musician }) => {
 		})}
 		</div>
 	);
-}
-
-const exists = (v) => v && v.length;
-
-const smartLink = (v) => {
-	if (typeof v === 'string' && v?.includes('http')) {
-		return <Link href={v} target="new">{v}</Link>
-	}
-	return v;
 }
 
 const Who = ({ who = '' }) => {

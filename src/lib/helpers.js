@@ -1,7 +1,40 @@
 import releases from './releases';
 import AKAs from './AKAs';
+import MakeDate from '../components/MakeDate';
 
 const cleanName = (value) => value?.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
+
+const exists = (v) => v && v.length;
+
+const smartLink = (v) => {
+	if (typeof v === 'string' && v?.includes('http')) {
+		return <Link href={v} target="new">{v}</Link>
+	}
+	return v;
+}
+
+const Datum = ({ k, v, className }) => {
+	if (exists(v) || typeof v === 'object') {
+		return <div>
+			<span className="datum"> {k} </span>:
+			<span className={className}> {smartLink(v)} </span>
+		</div>
+	}
+	return <>{v}</>
+}
+
+const showAttribution = (attr, className) => {
+	const { original, who, date, added } = attr || {};
+	if (!(original || who || date)) return <></>;
+	return (
+		<div className={`${className} attribution`}>
+			{exists(date) && MakeDate(date)}
+			<Datum k="Source" v={original} />
+			{who && <Datum k="Author" v=<Who who={who} /> />}
+			{added && <Datum k="Added" v={MakeDate(added)} />}
+		</div>
+	);
+}
 
 const isAKA = (name = '') => {
 	const hasAKA = Object.keys(AKAs).find(a => {
@@ -259,4 +292,5 @@ const publicityByBand = ({ band }) => {
 
 export { autoLink, getBodyHTML, makeReleaseLink, typeToDisplay, dateCompare, makeBandLink };
 export { isRelease, getReleasedBandNames, getAlbumNames, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, knownForsByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+export { Datum, showAttribution };
 

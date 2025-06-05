@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Page from './Page';
+import MakeDate from './MakeDate';
 import bands from '../lib/bands';
 
-import { getBodyHTML, publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
+import { getBodyHTML, publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink, showAttribution, Datum } from '../lib/helpers';
 
 const Publicity = (band) => {
 	const publicity = publicityByBand(band)[0]?.publicity;
@@ -119,6 +120,7 @@ const Gallery = ({ band }) => {
 		</div>
 	);
 }
+
 const Band = ({ url }) => {
 	const band = getBandNames().find(b => makeBandLink(b) === `/band/${url}`);
 	if (!band) { return <>404</> }
