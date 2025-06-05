@@ -124,7 +124,7 @@ export default {
 				attribution: {
 					original: 'https://www.wfyi.org/programs/echoes-indiana-avenue/radio/the-blakey-specials',
 					added: '2025-06-03',
-				}
+				},
 				caption: ``,
 			},
 		],
