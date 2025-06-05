@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Page from './Page';
+import bands from '../lib/bands';
 
 import { publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink } from '../lib/helpers';
 
@@ -81,6 +82,43 @@ const Musicians = ({ band }) => {
 		)
 };
 
+const Bio = ({ band }) => {
+	const bio = bands[band]?.bio;
+	if (!bio) return <></>;
+	return (
+		<div>
+			<h3>Bio</h3>
+			<li className="row">
+				<div dangerouslySetInnerHTML={ { __html: getBodyHTML(bio.body) } }></div>
+				{showAttribution(bio?.attribution, 'row')}
+			</li>
+		</div>
+	);
+}
+
+const Gallery = ({ band }) => {
+	const images = bands[band]?.images;
+	if (!(images?.length)) return <></>;
+	return (
+		<div>
+		<h3>Gallery</h3>
+		{images.map(({ date, src, thumb, caption, attribution }, key) => {
+			return (
+				<div key={key} className="row">
+					<Link href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></Link>
+					<li>
+						<i>
+						{caption}
+						</i>
+					{showAttribution(attribution)}
+					{date && <Datum k="Added" v={MakeDate(date)} />}
+					</li>
+				</div>
+			);
+		})}
+		</div>
+	);
+}
 const Band = ({ url }) => {
 	const band = getBandNames().find(b => makeBandLink(b) === `/band/${url}`);
 	if (!band) { return <>404</> }
@@ -88,6 +126,8 @@ const Band = ({ url }) => {
 		<Page link="/bands" description={`Band: ${band}`}>
 			<div className="artist"><b>{band}</b></div>
 			<div className="row">
+			<Bio band={band} />
+			<Gallery band={band} />
 			<Publicity band={band} />
 			<Releases band={band} />
 			<Musicians band={band} />
