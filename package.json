@@ -11,7 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "chart.js": "^4.5.0",
+    "chart.js": "^4.5.1",
     "mywrap": "github:xpollen8/mywrap",
     "react": "^19.2.0",
     "react-chartkick": "^0.5.4",
@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.2",
     "eslint-config-next": "^16.0.8",
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   }
 }
