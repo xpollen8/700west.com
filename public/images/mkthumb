@@ -1,0 +1,1 @@
+convert $1.jpg -resize 250x250^ thumbs/$1_250.jpg
