@@ -3329,6 +3329,375 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 	},
 	{
 		type: "album",
+		artist: `Indiana Grass`,
+		label: `Not On Label`,
+		discogs: `https://www.discogs.com/release/5978003-Indiana-Grass-Indiana-Grass-Its-Blue`,
+		liner: ``,
+		mastering: ``,
+		title: `it's blue`,
+		id: `CP1-111581`,
+		published: `1981-11-15`,
+		reissue: ``,
+		tracks: [
+			{
+				side: `A`,
+				tracknum: `1`,
+				title: `Will You Be Lonesome Too`,
+				time: `2:43`,
+				writer: `Alton Delmore`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `A`,
+				tracknum: `2`,
+				title: `Little Georgia Rose`,
+				time: `2:47`,
+				publisher: `Ft. Know Music Co.`,
+				affiliation: ``,
+				writer: `William York`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+					who: `Don Peyton`,
+					did: [ `Guitar` ],
+				],
+			},
+			{
+				side: `A`,
+				tracknum: `3`,
+				title: `Panhandle Country`,
+				time: `2:55`,
+				publisher: ``,
+				affiliation: ``,
+				writer: `Martin Haerle`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `A`,
+				tracknum: `4`,
+				title: `I Wonder How The Old Folks Are At Home`,
+				time: `2:32`,
+				publisher: `Silverhill Music`,
+				affiliation: ``,
+				writer: ``Martin Haerle`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `A`,
+				tracknum: `5`,
+				title: `Happy I'll Be`,
+				time: `2:09`,
+				publisher: ``,
+				affiliation: ``,
+				writer: `Ray Williams/Vern Park`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `A`,
+				tracknum: `6`,
+				title: `Don's Tune`,
+				time: `2:00`,
+				publisher: ``,
+				affiliation: ``,
+				writer: `Donald R. Peyton`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `7`,
+				title: `Big Cross Tie`,
+				time: `3:16`,
+				publisher: ``,
+				affiliation: ``,
+				writer: `Marvin C. Davis`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+					{
+						who: `Tom Clawson`,
+						did: [ `Additional verse` ],
+					}
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `8`,
+				title: `Groundspeed`,
+				time: `2:59`,
+				publisher: `Peer International`,
+				affiliation: ``,
+				writer: `Earl Scruggs`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `9`,
+				title: `The Old Homeplace`,
+				time: `2:44`,
+				publisher: `Lansdown-Winston`,
+				affiliation: ``,
+				writer: `Dean Webb/Mitch Jayne`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `10`,
+				title: `Tennessee`,
+				time: `2:06`,
+				publisher: `Champion Music Corp.`,
+				affiliation: ``,
+				writer: `Doyle Neikirk/Jimmy Martin`,
+				audio: ``,
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+				credits: [
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `11`,
+				title: `Catfish John`,
+				time: `2:34`,
+				publisher: ``,
+				affiliation: ``,
+				writer: `Bob McDill/Allen Reynolds`,
+				audio: ``,
+				credits: [
+					{
+						who: `Donald R. Payton`,
+						did: [ `arrangement` ],
+					},
+				],
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+			},
+			{
+				side: `B`,
+				tracknum: `12`,
+				title: `Midnight On The Highway`,
+				time: `2:30`,
+				publisher: `Flying Fish Music`,
+				affiliation: ``,
+				writer: `Forster/Wernick/O'Brien`,
+				audio: ``,
+				credits: [
+					{
+						who: ``,
+						did: [],
+					},
+				],
+				comments: [
+					{
+						who: ``,
+						said: ``,
+					}
+				],
+			},
+		],
+		credits: [
+			{
+				who: `Dave Scott`,
+				did: [ `Produced` ],
+			},
+			{
+				who: `Mo Whittemore`,
+				did: [ `Produced`, `Engineered` ],
+			},
+			{
+				who: `John Hurst`,
+				did: [ `Album Photo` ],
+			},
+			{
+				who: `Tom Clawson`,
+				did: [ `Bass`, `Lead Vocal` ],
+			},
+			{
+				who: `Kim Peyton`,
+				did: [ `Tenor Vocal` ],
+			},
+			{
+				who: `Don Peyton`,
+				did: [ `Dobro`, `Baritone Vocal` ],
+			},
+			{
+				who: `Donald R. Peyton`,
+				did: [ `Banjo`, `Bass Vocal` ],
+			},
+		],
+		addendum: [
+		],
+		sales: [
+
+			{
+				date: `2005-07-25`,
+				where: 'ebay',
+				price: `$51.00`,
+			},
+
+			{
+				date: `2006-03-28`,
+				where: 'ebay',
+				price: `$15.49`,
+			},
+
+			{
+				date: `2012-11-28`,
+				where: 'ebay',
+				price: `$16.30`,
+			},
+			{
+				where: 'discogs',
+				date: '2020-09-22',
+				price: '$12.00',
+				said: `With lyric insert.`,
+			},
+			{
+				where: 'discogs',
+				date: '2020-03-08',
+				price: '$12.04',
+				said: `With insert. Very nice copy, still in the original shrink wrap.`,
+			},
+			{
+				where: 'discogs',
+				date: '2019-08-18',
+				price: '$17.49',
+				said: `Lp is clean. Plain inner sleeve. Lyric sheet. Jacket in shrink . Slight corner songs.`,
+			},
+			{
+				where: 'discogs',
+				date: '2018-02-12',
+				price: '$24.99',
+				said: `Vinyl has very light scuffs that should not impact play. Jacket has light ring wear. Small pen park on cover.`,
+			},
+			{
+				where: 'discogs',
+				date: '2018-01-17',
+				price: '$30.00',
+				said: `Record close to NM! Sleeve in fantastic shape! Still in shrink, but shrink is coming off. Comes with original lyric sheet!`,
+			},
+			{
+				where: 'discogs',
+				date: '2017-10-22',
+				price: '$29.41',
+			},
+			{
+				where: 'discogs',
+				date: `2023-08-30`,
+				price: `$9.00`,
+				said: `Very Good Plus (VG+) contains insert...in shrink`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-12-05`,
+				price: `$7.00`,
+				said: `Very Good (VG)`,
+			},
+			{
+				where: 'discogs',
+				date: `2022-09-27`,
+				price: `$8.00`,
+				said: `Very Good Plus (VG+) cut corner`,
+			},
+			{
+				where: 'discogs',
+				date: `2021-12-23`,
+				price: `$32.65`,
+				said: `Mint (M)  SEALED / UN-OPENED COPY - very clean appearance cover`,
+			},
+		],
+		image: [
+			{
+				file: `bronco_front.jpg`,
+				thumb: `thumbs/bronco_front_250.jpg`,
+				name: `cover`,
+				width: `125`,
+				height: `128`,
+			},
+			{
+				file: `bronco_back.jpg`,
+				thumb: `thumbs/bronco_back_250.jpg`,
+				name: `back`,
+				width: `125`,
+				height: `128`,
+			},
+		],
+	},
+	{
+		type: "album",
 		artist: `Bronco`,
 		label: `Earthwood Records`,
 		discogs: `https://www.discogs.com/release/5498895-Bronco-Bronco`,
