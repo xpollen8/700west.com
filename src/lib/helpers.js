@@ -74,6 +74,13 @@ const dateCompare = (a, b) => {
 	return new Date(a.published || '1900-01-01') - new Date(b.published || '1900-01-01');
 }
 
+const Who = ({ who = '' }) => {
+	if (!who?.length) return <></>;
+	return (
+			<Link href={makeMusicianLink(who)}>{who}</Link>
+	);
+}
+
 const getAlbumNames = () => releases.filter(r => r?.type === 'album');
 
 const	getMusicianNames = () => {

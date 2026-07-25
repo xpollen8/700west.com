@@ -123,13 +123,6 @@ const Gallery = ({ musician }) => {
 	);
 }
 
-const Who = ({ who = '' }) => {
-	if (!who?.length) return <></>;
-	return (
-			<Link href={makeMusicianLink(who)}>{who}</Link>
-	);
-}
-
 const TrackComments = ({ comments = [] }) => {
 	if (comments.length) {
 		return <div>
