@@ -147,7 +147,7 @@ const Published = ({ publisher = '', affiliation = '' }) => {
 }
 
 const Track = (data, key) => (
-	<p value={data.tracknum} key={key}>
+	<div value={data.tracknum} key={key}>
 		{key + 1}. <Title {...data} />
 		{(exists(data.audio) || exists(data.credits) || exists(data.comments) || exists(data.writer)) &&
 		<div className="row">
@@ -173,7 +173,7 @@ const Track = (data, key) => (
 		}
 		<Lyrics {...data} />
 		</div>}
-	</p>
+	</div>
 )
 
 const TrackPanel = ({ side, tracks }) => {
@@ -399,12 +399,12 @@ const Sales = ({ sales = [] }) => {
 				<div className="chart"><LineChart width={'100%'} data={[reissue]} prefix="$" round={2} zeros={true} /></div>}
 			<ul className="panelContainer">
 			{sorted.map(({ date, said, price, where }, key) => exists(date) && (
-				<p key={key} className="row">
+				<div key={key} className="row">
 						{price && <b>{price}</b>}<br/>
 						{said && <i>{said}</i>} {where && <span>({where})</span>}
 						<p/>
 						{MakeDate(date)}
-				</p>
+				</div>
 			))}
 			</ul>
 		</>
@@ -440,9 +440,9 @@ const Auxiliary = ({ type, artist, title, tracks, addendum = [] }) => {
 			<SectionHeader text="Auxiliary Materials" />
 			<div className="panelContainer">
 			{addendum.map((props, key) => (
-				<p key={key} className="row">
+				<div key={key} className="row">
 					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{MakeSubject(props)}</Link>
-				</p>
+				</div>
 			))}
 			</div>
 		</>
