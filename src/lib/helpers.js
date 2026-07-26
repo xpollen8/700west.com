@@ -174,14 +174,14 @@ const releasesByMusician = (mus) => {
 				roles: c?.did,
 			})
 		}).filter(f => f) || [];
-		const tracks = r?.tracks.map(t => t?.credits?.filter(c => isAKA(c.who) === mus)?.map(c => {
+		const tracks = r?.tracks.map(t => t?.credits?.filter(cr => isAKA(cr.who) === mus)?.map(c => {
 			return ({
 				artist: (r.type !== 'single') ? r.artist : r.artist || r.tracks[0]?.artist,
 				title: (r.type !== 'single') ? r.title : r.tracks[0]?.title,
 				type: r.type,
 				roles: c?.did,
 			})
-		})).filter(f => f) || [];
+		})).flat().filter(f => f) || [];
 		const writers = r?.tracks.filter(t => {
 			if (!t.writer) return false;
 			// are any aliases found in the writers string?
@@ -198,8 +198,10 @@ const releasesByMusician = (mus) => {
 	}));
 	const ret = [];
 	uniqueReleases.filter(f => f).forEach(({ artist, title, type, roles }) => {
-		const existing = ret.find(u => u.artist === artist && u.title == title && u.type === type) | [];
-		if (existing) { // combine onto existing roles
+		const existing = ret.find(u => {
+			return (u.artist === artist && u.title == title && u.type === type);
+		}) || { roles: []}
+		if (existing?.roles?.length) { // combine onto existing roles
 			existing.roles = [...new Set (existing.roles.concat(roles))];
 		} else {
 			ret.push({ artist, title, type, compilation: (artist === 'Various Artists'), roles });
