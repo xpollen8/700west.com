@@ -112,7 +112,7 @@ const TrackCredits = ({ credits = [] }) => {
 }
 
 const TrackComments = ({ comments = [] }) => {
-	if (comments.length) {
+	if (comments.length && comments[0]?.who && comments[0]?.said) {
 		return <>
 			<div className="datum">Comments</div>
 				{comments.map((c, key) => {
