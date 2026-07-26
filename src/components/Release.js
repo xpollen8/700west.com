@@ -96,14 +96,14 @@ const Who = ({ who = '' }) => {
 }
 
 const TrackCredits = ({ credits = [] }) => {
-	if (credits.length) {
+	if (credits.length && credits[0]?.who) {
 		return <>
 			<div className="datum">Credits</div>
 			<div className="row">
 				{credits.map((c, key) => {
-					return <p key={key}>
-						<Who {...c} /> {!!c?.did?.length && <p className="played">"{c?.did?.join('", "')}"</p>}
-					</p>
+					return <div key={key}>
+						<Who {...c} /> {!!c?.did?.length && <div className="played">"{c?.did?.join('", "')}"</div>}
+					</div>
 				})}
 			</div>
 		</>
@@ -294,13 +294,13 @@ const Credits = ({ credits = [] }) => {
 	if (credits.length) {
 		return <>
 			<SectionHeader text="Credits" />
-			<p className="panelContainer">
+			<div className="panelContainer">
 			{credits.map(({ who, did }, key) => (
-				<p key={key} className="row">
-					<Who who={who} /> {!!did?.length && <p className="played">"{did?.join('", "')}"</p>}
-				</p>
+				<div key={key} className="row">
+					<Who who={who} /> {!!did?.length && <div className="played">"{did?.join('", "')}"</div>}
+				</div>
 			))}
-			</p>
+			</div>
 		</>
 	}
 	return <></>;
