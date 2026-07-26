@@ -3371,8 +3371,10 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 					}
 				],
 				credits: [
-					who: `Don Peyton`,
-					did: [ `Guitar` ],
+					{
+						who: `Donald R. Peyton`,
+						did: [ `Dobro`, `Baritone Vocal` ],
+					},
 				],
 			},
 			{
@@ -3400,7 +3402,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				time: `2:32`,
 				publisher: `Silverhill Music`,
 				affiliation: ``,
-				writer: ``Martin Haerle`,
+				writer: `Martin Haerle`,
 				audio: ``,
 				comments: [
 					{
@@ -3534,7 +3536,7 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				audio: ``,
 				credits: [
 					{
-						who: `Donald R. Payton`,
+						who: `Donald R. Peyton`,
 						did: [ `arrangement` ],
 					},
 				],
@@ -3590,8 +3592,8 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 				did: [ `Tenor Vocal` ],
 			},
 			{
-				who: `Don Peyton`,
-				did: [ `Dobro`, `Baritone Vocal` ],
+				who: `Bill Wigley`,
+				did: [ `Guitar` ],
 			},
 			{
 				who: `Donald R. Peyton`,
