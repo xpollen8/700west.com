@@ -3602,97 +3602,33 @@ Eventually our paths diverged and after twelve years the studio closed down. Moe
 		],
 		addendum: [
 		],
-		sales: [
-
-			{
-				date: `2005-07-25`,
-				where: 'ebay',
-				price: `$51.00`,
-			},
-
-			{
-				date: `2006-03-28`,
-				where: 'ebay',
-				price: `$15.49`,
-			},
-
-			{
-				date: `2012-11-28`,
-				where: 'ebay',
-				price: `$16.30`,
-			},
-			{
-				where: 'discogs',
-				date: '2020-09-22',
-				price: '$12.00',
-				said: `With lyric insert.`,
-			},
-			{
-				where: 'discogs',
-				date: '2020-03-08',
-				price: '$12.04',
-				said: `With insert. Very nice copy, still in the original shrink wrap.`,
-			},
-			{
-				where: 'discogs',
-				date: '2019-08-18',
-				price: '$17.49',
-				said: `Lp is clean. Plain inner sleeve. Lyric sheet. Jacket in shrink . Slight corner songs.`,
-			},
-			{
-				where: 'discogs',
-				date: '2018-02-12',
-				price: '$24.99',
-				said: `Vinyl has very light scuffs that should not impact play. Jacket has light ring wear. Small pen park on cover.`,
-			},
-			{
-				where: 'discogs',
-				date: '2018-01-17',
-				price: '$30.00',
-				said: `Record close to NM! Sleeve in fantastic shape! Still in shrink, but shrink is coming off. Comes with original lyric sheet!`,
-			},
-			{
-				where: 'discogs',
-				date: '2017-10-22',
-				price: '$29.41',
-			},
-			{
-				where: 'discogs',
-				date: `2023-08-30`,
-				price: `$9.00`,
-				said: `Very Good Plus (VG+) contains insert...in shrink`,
-			},
-			{
-				where: 'discogs',
-				date: `2022-12-05`,
-				price: `$7.00`,
-				said: `Very Good (VG)`,
-			},
-			{
-				where: 'discogs',
-				date: `2022-09-27`,
-				price: `$8.00`,
-				said: `Very Good Plus (VG+) cut corner`,
-			},
-			{
-				where: 'discogs',
-				date: `2021-12-23`,
-				price: `$32.65`,
-				said: `Mint (M)  SEALED / UN-OPENED COPY - very clean appearance cover`,
-			},
-		],
+		sales: [],
 		image: [
 			{
-				file: `bronco_front.jpg`,
-				thumb: `thumbs/bronco_front_250.jpg`,
+				file: `indiana_grass_front.jpg`,
+				thumb: `thumbs/indiana_grass_front_250.jpg`,
 				name: `cover`,
 				width: `125`,
 				height: `128`,
 			},
 			{
-				file: `bronco_back.jpg`,
-				thumb: `thumbs/bronco_back_250.jpg`,
+				file: `indiana_grass_back.jpg`,
+				thumb: `thumbs/indiana_grass_back_250.jpg`,
 				name: `back`,
+				width: `125`,
+				height: `128`,
+			},
+			{
+				file: `indiana_grass_A.jpg`,
+				thumb: `thumbs/indiana_grass_A_250.jpg`,
+				name: `A`,
+				width: `125`,
+				height: `128`,
+			},
+			{
+				file: `indiana_grass_B.jpg`,
+				thumb: `thumbs/indiana_grass_B_250.jpg`,
+				name: `B`,
 				width: `125`,
 				height: `128`,
 			},
