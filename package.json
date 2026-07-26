@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "engines": {
-    "node": ">=v20.x.x"
+    "node": ">=v24.x.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -16,15 +16,15 @@
     "chart.js": "latest",
     "date-fns": "^4.4.0",
     "mywrap": "github:xpollen8/mywrap",
-    "next": "^16.0.8",
-    "react": "^19.2.0",
+    "next": "^16.2.2",
+    "react": "^19.2.5",
     "react-chartkick": "latest",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@types/node": "^24.10.2",
-    "@types/react": "^19.2.7",
-    "eslint-config-next": "^16.0.8",
-    "typescript": "^5.9.3"
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "eslint-config-next": "^16.2.4",
+    "typescript": "^6.0.2"
   }
 }
