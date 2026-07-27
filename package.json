@@ -11,7 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "baseline-browser-mapping": "^2.11.3",
+    "baseline-browser-mapping": "^2.11.5",
     "chart.js": "latest",
     "date-fns": "^4.4.0",
     "mywrap": "github:xpollen8/mywrap",
