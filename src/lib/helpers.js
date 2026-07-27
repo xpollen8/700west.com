@@ -53,7 +53,6 @@ const isAKA = (name = '') => {
 
 const makeBandLink = (band) => `/band/${cleanName(band)}`;
 const makeMusicianLink = (musician) => `/musician/` + cleanName(isAKA(musician));
-//const makeMusicianLink = (musician) => `/musician/${cleanName(musician)}`;
 const makeReleaseLink = (artist='', title='') => `/release/${cleanName(artist)}-${cleanName(title)}`;
 
 const typeToDisplay = (type) => {
@@ -117,6 +116,12 @@ musicians.forEach(m => {
 		maybeAdd(a, link);
 	});
 });
+
+const makeMusicianCreditCount = (item = '') => {
+	return 0;
+	// too expensive!
+	return releasesByMusician(item)?.length;
+}
 
 bands.forEach(b => {
 	maybeAdd(b, makeBandLink(b));
@@ -219,6 +224,27 @@ const releasesByMusician = (mus) => {
 	return reallyRet?.sort((a, b) => ('' + a.artist).localeCompare(b.artist))
 }
 
+const bandsByMusician = (mus) => {
+	const bands = [];
+	releases.forEach(r => r?.credits?.forEach(t => {
+		if (t?.who && isAKA(t?.who) === mus) {
+			if (!bands.length || !bands.find(([type, artist]) => artist === r.artist && type === r.type)) {
+				bands.push([ r.type, r.artist ]);
+			}
+		}
+	}));
+	releases.forEach(r => r?.tracks?.forEach(t => {
+		t?.credits?.forEach(c => {
+			if (c?.who && isAKA(c?.who) === mus) {
+				if (!bands.length || !bands.find(([type, artist]) => artist === r.artist && type === r.type)) {
+					bands.push([ r.type, r.artist ]);
+				}
+			}
+		});
+	}));
+	return bands;
+}
+
 const knownForsByMusician = (mus) => {
 	let known;
 	releases.forEach(r => !known && r?.credits?.filter(t => {
@@ -301,6 +327,6 @@ const publicityByBand = ({ band }) => {
 }
 
 export { autoLink, getBodyHTML, makeReleaseLink, typeToDisplay, dateCompare, makeBandLink };
-export { isRelease, getReleasedBandNames, getAlbumNames, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, knownForsByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA }
+export { isRelease, getReleasedBandNames, getAlbumNames, publicityByBand, getMusicianNames, commentsByMusician, releasesByMusician, knownForsByMusician, musiciansByBand, releasesByBand, AKAs, getBandNames, makeMusicianLink, cleanName, isAKA, makeMusicianCreditCount, bandsByMusician }
 export { Datum, showAttribution };
 

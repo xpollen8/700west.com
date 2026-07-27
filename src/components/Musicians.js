@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getMusicianNames, makeMusicianLink } from '../lib/helpers';
+import { getMusicianNames, makeMusicianLink, makeMusicianCreditCount, bandsByMusician } from '../lib/helpers';
 import Item from './Item';
 import AKAs from '../lib/AKAs';
 import SectionHeader from './SectionHeader';
@@ -10,14 +10,20 @@ const makeAKA = (name) => {
 	return <div>(<b>AKA</b>: "{akas?.filter(a => a !== name).join('", "')}")</div>;
 }
 
-const makeMusicianBlurb = (item, key) => (
-	<div className="row" key={key}>
-		<div className="artist">
-			<Link href={`${makeMusicianLink(item)}`}>{item}</Link>
+const makeMusicianBlurb = (item, key) => {
+	const creditCount = makeMusicianCreditCount(item);
+	const bands = bandsByMusician(item);
+	return (
+		<div className="row" key={key}>
+			<div className="artist">
+				<Link href={`${makeMusicianLink(item)}`}>{item}</Link>
+				{(creditCount > 0) && ` (credits on: ${creditCount})`}
+			</div>
+			{makeAKA(item)}
+			{JSON.stringify(bands)}
 		</div>
-		{makeAKA(item)}
-	</div>
-);
+	)
+}
 
 const Musicians = () => {
 	const musicians = getMusicianNames();
