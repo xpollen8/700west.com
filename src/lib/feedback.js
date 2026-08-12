@@ -8,9 +8,9 @@ const	fetchFeedback = async (uri) => {
 	if (!db) { db = await new Db({
 		host: process.env['DATABASE_HOST'],
 		user: process.env['DATABASE_USER'],
-		username: process.env['DATABASE_USERNAME'],
 		password: process.env['DATABASE_PASSWORD'],
 		database: process.env['DATABASE_DATABASE'],
+		port: process.env['DATABASE_PORT'],
 	}).start(); }
 	return (await db.query(`select * from feedback where uri = ? and isdeleted='F' order by dtcreated desc`, uri)).map(f => JSON.parse(cleanValue(JSON.stringify(f))));
 }
@@ -19,9 +19,9 @@ const writeFeedback = async (body) => {
 	if (!db) { db = await new Db({
 		host: process.env['DATABASE_HOST'],
 		user: process.env['DATABASE_USER'],
-		username: process.env['DATABASE_USERNAME'],
 		password: process.env['DATABASE_PASSWORD'],
 		database: process.env['DATABASE_DATABASE'],
+		port: process.env['DATABASE_PORT'],
 	}).start(); }
 	return await db.query(`insert into feedback set dtcreated=now(), uri = ?, subject = ?, who = ?, whence = ?, comments = ?`,
 		[ 'htdb/index.html',
