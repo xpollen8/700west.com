@@ -1,4 +1,10 @@
 module.exports = {
+	viewTransitions: true,
+	experimental: {
+		cacheComponents: true,
+		clientSegmentCache: true,
+		turbopackPersistentCaching: true,
+	},
 	images: {
 			remotePatterns: [
 				{
