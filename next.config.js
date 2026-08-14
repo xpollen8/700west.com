@@ -1,9 +1,9 @@
 module.exports = {
-	viewTransitions: true,
+	//viewTransition: true,
+	// cacheComponents: true, // new Date() blows up
 	experimental: {
-		cacheComponents: true,
-		clientSegmentCache: true,
-		turbopackPersistentCaching: true,
+		//clientSegmentCache: true,
+		turbopackFileSystemCacheForDev: true,
 	},
 	images: {
 			remotePatterns: [
