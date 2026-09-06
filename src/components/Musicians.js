@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { getMusicianNames, makeMusicianLink, makeMusicianCreditCount, bandsByMusician } from '../lib/helpers';
-import Item from './Item';
-import AKAs from '../lib/AKAs';
-import SectionHeader from './SectionHeader';
+import MyLink from '@/components/MyLink';
+import { getMusicianNames, makeMusicianLink, makeMusicianCreditCount, bandsByMusician } from '@/lib/helpers';
+import Item from '@/components/Item';
+import AKAs from '@/lib/AKAs';
+import SectionHeader from '@/components/SectionHeader';
 
 const makeAKA = (name) => {
 	const akas = AKAs[name];
@@ -16,7 +16,7 @@ const makeMusicianBlurb = (item, key) => {
 	return (
 		<div className="row" key={key}>
 			<div className="artist">
-				<Link href={`${makeMusicianLink(item)}`}>{item}</Link>
+				<MyLink href={`${makeMusicianLink(item)}`}>{item}</MyLink>
 				{(creditCount > 0) && ` (credits on: ${creditCount})`}
 			</div>
 			{makeAKA(item)}

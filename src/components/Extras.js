@@ -1,8 +1,8 @@
-import releases from '../lib/releases';
-import { makeReleaseLink, typeToDisplay } from '../lib/helpers';
-import Item from './Item';
-import MakeSubject from './MakeSubject';
-import SectionHeader from './SectionHeader';
+import releases from '@/lib/releases';
+import { makeReleaseLink, typeToDisplay } from '@/lib/helpers';
+import Item from '@/components/Item';
+import MakeSubject from '@/components/MakeSubject';
+import SectionHeader from '@/components/SectionHeader';
 
 const Extras = (props) => {
 	const types = {};

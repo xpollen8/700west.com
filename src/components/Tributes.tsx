@@ -1,6 +1,6 @@
-import releases from '../lib/releases';
-import Item from './Item';
-import MakeAuthor from './MakeAuthor';
+import releases from '@/lib/releases';
+import Item from '@/components/Item';
+import MakeAuthor from '@/components/MakeAuthor';
 
 const makeTribute = (item: any, key: number) => <Item key={key} bold={MakeAuthor(item.author, item.authorContact)} info={(item.source || item.title)} date={item.date} body={item.body} lyrics={item.lyrics} audio={item.audio} />
 

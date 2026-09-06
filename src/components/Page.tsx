@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-import Topper from './Topper';
-import SectionHeader from './SectionHeader';
+import MyLink from '@/components/MyLink';
+import Topper from '@/components/Topper';
+import SectionHeader from '@/components/SectionHeader';
 
 const links: any  = {
 	'/': [ 'Home', '700 West Recording!' ],
@@ -43,7 +43,7 @@ export const setTitleFromURL = (url: string): Metadata => setTitle(links[url][0]
 const Navigation = ({ link = '' }) => (
 	<div className="nav">
 		<div style={{ textAlign: 'center', marginTop: '6px', marginBottom: '2px' }}>
-			<Link href="/"><Image width="168" height="90" src="https://700west.com/images/logoModern.gif" alt="logo" /></Link>
+			<MyLink href="/"><Image width="168" height="90" src="https://700west.com/images/logoModern.gif" alt="logo" /></MyLink>
 		</div>
 		<SectionHeader text="Choose" />
 		<ul>
@@ -51,7 +51,7 @@ const Navigation = ({ link = '' }) => (
 				const cls = (k === link) ? 'navActive' : 'navInactive';
 				return (
 					<li key={i}>
-						<span className={cls}></span><Link href={k}>{links[k][0]}</Link>
+						<span className={cls}></span><MyLink href={k}>{links[k][0]}</MyLink>
 					</li>
 				)
 			})}

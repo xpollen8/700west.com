@@ -1,7 +1,7 @@
-import { getBodyHTML } from '../lib/helpers';
-import MakeDate from './MakeDate';
-import Lyrics from './Lyrics';
-import AudioPlayer from './AudioPlayer';
+import { getBodyHTML } from '@/lib/helpers';
+import MakeDate from '@/components/MakeDate';
+import Lyrics from '@/components/Lyrics';
+import AudioPlayer from '@/components/AudioPlayer';
 
 type Props ={
 	children?: React.ReactNode

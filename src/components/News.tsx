@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { autoLink, getBodyHTML } from '../lib/helpers.js';
-import AudioPlayer from './AudioPlayer';
-import Item from './Item';
+import { autoLink, getBodyHTML } from '@/lib/helpers.js';
+import AudioPlayer from '@/components/AudioPlayer';
+import Item from '@/components/Item';
 
 type ItemType = {
 	slug?: string

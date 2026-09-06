@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import MyLink from '@/components/MyLink';
 
 const	ImageRotate = () => {
 	switch (Math.floor(Math.random() * 4)) {
@@ -22,7 +22,7 @@ const History = () => (
 		<Image {...ImageRotate()} />
 	</div>
 	<p>
-	The demo tape was our specialty, although many <Link href="/albums">albums</Link> & <a href="/singles">singles</a> were generated during 
+	The demo tape was our specialty, although many <MyLink href="/albums">albums</MyLink> & <a href="/singles">singles</a> were generated during 
 	our 12 years of existence.  And with my 
 	electronics background, I wound up doing my share of instrument and amp repair - many 
 	times before sessions. I also did a bit of custom electronics fabrication for our clients.  
@@ -41,7 +41,7 @@ const History = () => (
 	the best material with major publishers by keeping countless demo tapes in circulation.
 	</p>
 	<div style={{ display: 'inline-block', float: 'left', padding: '10px' }}>
-		<Link href={`/images/20161007_700WestTapes.jpg`}><Image src={`/images/20161007_700WestTapes_500.jpg`} width="500" height="670" alt="The Master Tapes" /></Link>
+		<MyLink href={`/images/20161007_700WestTapes.jpg`}><Image src={`/images/20161007_700WestTapes_500.jpg`} width="500" height="670" alt="The Master Tapes" /></MyLink>
 	</div>
 	<p>
 	We did all types of material at 700 West: funk; hard rock; country rock; gospel (all styles!), 

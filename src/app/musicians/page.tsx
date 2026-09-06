@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import Page, { setTitleFromURL } from '../../components/Page';
-import Musicians from '../../components/Musicians';
+import Page, { setTitleFromURL } from '@/components/Page';
+import Musicians from '@/components/Musicians';
 
 export const metadata: Metadata = setTitleFromURL('/musicians');
 

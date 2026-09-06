@@ -1,14 +1,14 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import Page from './Page';
+import MyLink from '@/components/MyLink';
+import Page from '@/components/Page';
 
-import { getBandNames, knownForsByMusician, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink, Datum, showAttribution } from '../lib/helpers';
-import musicians from '../lib/musicians';
-import AKAs from '../lib/AKAs';
-import memoriam from '../lib/memoriam';
-import AudioPlayer from './AudioPlayer';
-import MaybeReleaseLink from './MaybeReleaseLink';
-import MakeDate from './MakeDate';
+import { getBandNames, knownForsByMusician, getMusicianNames, bandsByMusician, commentsByMusician, releasesByMusician, makeMusicianLink, isAKA, cleanName, getBodyHTML, makeReleaseLink, makeBandLink, Datum, showAttribution } from '@/lib/helpers';
+import musicians from '@/lib/musicians';
+import AKAs from '@/lib/AKAs';
+import memoriam from '@/lib/memoriam';
+import AudioPlayer from '@/components/AudioPlayer';
+import MaybeReleaseLink from '@/components/MaybeReleaseLink';
+import MakeDate from '@/components/MakeDate';
 
 const Memoriam = ({ musician }) => {
 	const aka = AKAs[musician];
@@ -32,11 +32,11 @@ const Release = (release, key) => {
 	const type = (release?.type !== 'album') ? `(${release?.type})` : '';
 	return (
 		<li key={key}>
-			<Link href={makeBandLink(release?.artist)}>
+			<MyLink href={makeBandLink(release?.artist)}>
 				{release?.artist}
-			</Link>
+			</MyLink>
 				-
-				<Link href={href}>{title}</Link> {type}
+				<MyLink href={href}>{title}</MyLink> {type}
 				{release?.roles && <p className="played">
 					"{release?.roles?.join('", "')}"
 					</p>
@@ -108,7 +108,7 @@ const Gallery = ({ musician }) => {
 		{images.map(({ date, src, thumb, caption, attribution }, key) => {
 			return (
 				<div key={key} className="row">
-					<Link href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></Link>
+					<MyLink href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></MyLink>
 					<li>
 						<i>
 						{caption}
@@ -172,8 +172,8 @@ const Online = ({ musician }) => {
 	return (
 		<div>
 			<h3>Online</h3>
-			{online?.website && <li className="row"><Link href={online.website}>{online.website}</Link></li>}
-			{online?.youtube && <li className="row"><Link href={online.youtube}>{online.youtube}</Link></li>}
+			{online?.website && <li className="row"><MyLink href={online.website}>{online.website}</MyLink></li>}
+			{online?.youtube && <li className="row"><MyLink href={online.youtube}>{online.youtube}</MyLink></li>}
 			{online?.email && <li className="row">Email available upon request</li>}
 		</div>
 	);

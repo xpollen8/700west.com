@@ -1,10 +1,10 @@
+import MyLink from '@/components/MyLink';
 import Image from 'next/image';
-import Link from 'next/link';
-import Page from './Page';
-import MakeDate from './MakeDate';
-import bands from '../lib/bands';
+import Page from '@/components/Page';
+import MakeDate from '@/components/MakeDate';
+import bands from '@/lib/bands';
 
-import { getBodyHTML, publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink, showAttribution, Datum } from '../lib/helpers';
+import { getBodyHTML, publicityByBand, getBandNames, releasesByBand, musiciansByBand, makeMusicianLink, makeBandLink, makeReleaseLink, showAttribution, Datum } from '@/lib/helpers';
 
 const Publicity = (band) => {
 	const publicity = publicityByBand(band)[0]?.publicity;
@@ -14,10 +14,10 @@ const Publicity = (band) => {
 			<ul className="row">
 			{publicity.map(({ image, width, height, caption }, key) => (
 				<li key={key}>
-					<Link href={`/images/publicity/${image}.jpg`}><Image
+					<MyLink href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
-						width={width} height={height} /></Link>
+						width={width} height={height} /></MyLink>
 					{(caption) && <i>{caption}</i>}
 				</li>
 			))}
@@ -106,7 +106,7 @@ const Gallery = ({ band }) => {
 		{images.map(({ date, src, thumb, caption, attribution }, key) => {
 			return (
 				<div key={key} className="row">
-					<Link href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></Link>
+					<MyLink href={src}><Image src={thumb?.src} layout='responsive' width={thumb?.width} height={thumb?.height} /></MyLink>
 					<li>
 						<i>
 						{caption}

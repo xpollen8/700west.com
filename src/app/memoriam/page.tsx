@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
-import Page, { setTitleFromURL } from '../../components/Page';
-import { makeMusicianLink, getBodyHTML } from '../../lib/helpers';
-import memoriam from '../../lib/memoriam';
-import { AKA } from '../../components/Musician';
-import Item from '../../components/Item';
+import Page, { setTitleFromURL } from '@/components/Page';
+import { makeMusicianLink, getBodyHTML } from '@/lib/helpers';
+import memoriam from '@/lib/memoriam';
+import { AKA } from '@/components/Musician';
+import Item from '@/components/Item';
 
 export const metadata: Metadata = setTitleFromURL('/memoriam');
 

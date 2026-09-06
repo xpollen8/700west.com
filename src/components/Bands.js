@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import { getBandNames, makeBandLink } from '../lib/helpers';
-import Item from './Item';
-import SectionHeader from './SectionHeader';
+import MyLink from '@/components/MyLink';
+import { getBandNames, makeBandLink } from '@/lib/helpers';
+import Item from '@/components/Item';
+import SectionHeader from '@/components/SectionHeader';
 
 const MakeBandBlurb = (item, key) => {
 	return (<Item key={key} extra={(
 		<div className="artist">
-			<Link href={makeBandLink(item)}>{item}</Link>
+			<MyLink href={makeBandLink(item)}>{item}</MyLink>
 		</div>
 	)} />)
 }

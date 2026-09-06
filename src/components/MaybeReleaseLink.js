@@ -1,4 +1,4 @@
-import { isRelease, makeReleaseLink, autoLink } from '../lib/helpers';
+import { isRelease, makeReleaseLink, autoLink } from '@/lib/helpers';
 
 const MaybeReleaseLink = (artist='', title='') => {
 	if (!isRelease(artist, title)) return <><b><span dangerouslySetInnerHTML={ { __html: autoLink(artist) }} ></span></b> - {title}</>;

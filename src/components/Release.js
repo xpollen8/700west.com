@@ -1,31 +1,31 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { LineChart } from 'react-chartkick'
 import 'chartkick/chart.js'
-import Page from './Page';
+import Page from '@/components/Page';
+import MyLink from '@/components/MyLink';
 
-import releases from '../lib/releases';
-import { makeMusicianLink, getBodyHTML, makeReleaseLink, typeToDisplay, makeBandLink } from '../lib/helpers';
-import AudioPlayer from './AudioPlayer';
-import Lyrics from './Lyrics';
-import MakeDate, { MakeDateAgo } from './MakeDate';
-import MakeSource from './MakeSource';
-import MakeAuthor from './MakeAuthor';
-import MakeSubject from './MakeSubject';
-import SectionHeader from './SectionHeader';
-import Albums from './Albums';
+import releases from '@/lib/releases';
+import { makeMusicianLink, getBodyHTML, makeReleaseLink, typeToDisplay, makeBandLink } from '@/lib/helpers';
+import AudioPlayer from '@/components/AudioPlayer';
+import Lyrics from '@/components/Lyrics';
+import MakeDate, { MakeDateAgo } from '@/components/MakeDate';
+import MakeSource from '@/components/MakeSource';
+import MakeAuthor from '@/components/MakeAuthor';
+import MakeSubject from '@/components/MakeSubject';
+import SectionHeader from '@/components/SectionHeader';
+import Albums from '@/components/Albums';
 
 const makeOriginal = (original) => {
 	if (original) {
 		return <span className="original">
-			<Link href={original} target="new">{original}</Link>
+			<MyLink href={original} target="new">{original}</MyLink>
 		</span>
 	}
 }
 
 const Addendum = ({ location, original, source, credit, date, type, author, authorContact, title, body, lyrics, artist, release, releaseLink, number }) => (
 	<>
-		<span className="artist">{artist}</span> : <Link href={releaseLink} className="title">{release}</Link>
+		<span className="artist">{artist}</span> : <MyLink href={releaseLink} className="title">{release}</MyLink>
 		<div className="row">
 			<Datum k="Source" v={source} />
 			<Datum k="Location" v={location} />
@@ -71,7 +71,7 @@ const exists = (v) => v && v.length;
 
 const smartLink = (v) => {
 	if (typeof v === 'string' && v?.includes('http')) {
-		return <Link href={v} target="new">{v}</Link>
+		return <MyLink href={v} target="new">{v}</MyLink>
 	}
 	return v;
 }
@@ -90,7 +90,7 @@ const Who = ({ who = '' }) => {
 	if (!who?.length) return <></>;
 	return (
 		<div className="who">
-			<Link href={makeMusicianLink(who)}>{who}</Link>
+			<MyLink href={makeMusicianLink(who)}>{who}</MyLink>
 		</div>
 	);
 }
@@ -129,7 +129,7 @@ const TrackComments = ({ comments = [] }) => {
 
 const Title = ({ artist, title = '', time }) => {
 		return <>
-		{artist && artist.length && <span className="artist"><Link href={makeBandLink(artist)}>{artist}</Link> - </span>}
+		{artist && artist.length && <span className="artist"><MyLink href={makeBandLink(artist)}>{artist}</MyLink> - </span>}
 		<span className="title">{title}</span>
 		{time && <span className="date ago">{time}</span>}
 	</>
@@ -247,17 +247,17 @@ const CommonHeader = (release) => {
 	const title = (release.type === 'single' && release.tracks[0].title) ? release.tracks[0].title : release.title;
 	const titles = (release.type === 'single') ?
 		<>
-				<div className="release artist"><Link href={makeBandLink(artist)}>{artist}</Link></div>
+				<div className="release artist"><MyLink href={makeBandLink(artist)}>{artist}</MyLink></div>
 				<div className="release title">"{title}"</div>
 				<div><i>b/w</i></div>
 				{!!(release.tracks[1].artist && artist !== release.tracks[1].artist) &&
-					<div className="release artist"><Link href={makeBandLink(release.tracks[1].artist)}>{release.tracks[1].artist}</Link></div>
+					<div className="release artist"><MyLink href={makeBandLink(release.tracks[1].artist)}>{release.tracks[1].artist}</MyLink></div>
 				}
 				<div className="release title">"{release.tracks.find(t => t?.side === 'B')?.title}"</div>
 		</>
 		:
 		<>
-				<div className="release artist"><Link href={makeBandLink(artist)}>{artist}</Link></div>
+				<div className="release artist"><MyLink href={makeBandLink(artist)}>{artist}</MyLink></div>
 				<div className="release title">"{title}"</div>
 		</>
 	return (<>
@@ -325,10 +325,10 @@ const YellowSheets = ({ sheets = [] }) => {
 			<div className="avatar center" style={{ margin: '5px' }}>
 			{sheets.map(({ image, width, height, caption }, key) => (
 				<span style={{ margin: '5px' }}>
-					<Link key={key} href={`/images/sessions/${image}.jpg`}><Image
+					<MyLink key={key} href={`/images/sessions/${image}.jpg`}><Image
 						src={`/images/sessions/${image}_thumb.jpg`}
 						alt="Mo's Session Sheets"
-						width={width} height={height} /></Link>
+						width={width} height={height} /></MyLink>
 					{(caption) && <div dangerouslySetInnerHTML={{ __html: caption}} />}
 				</span>
 			))}
@@ -345,10 +345,10 @@ const Reels = ({ reels = [] }) => {
 			<ul>
 			{reels.map((i, key) => (
 				<li key={key}>
-					<Link href={`https://tapes.700west.com/api/reels/${i}`}><Image
+					<MyLink href={`https://tapes.700west.com/api/reels/${i}`}><Image
 						src={`https://tapes.700west.com/api/reels/250/${i}`}
 						caption="Da master tape"
-						width={250} height={250} /></Link>
+						width={250} height={250} /></MyLink>
 				</li>
 			))}
 			</ul>
@@ -364,10 +364,10 @@ const Promo = ({ publicity = [] }) => {
 			<p className="row avatar center">
 			{publicity.map(({ image, width, height, caption }, key) => (
 				<span key={key} style={{ margin: '5px' }}>
-					<Link href={`/images/publicity/${image}.jpg`}><Image
+					<MyLink href={`/images/publicity/${image}.jpg`}><Image
 						src={`/images/publicity/${image}_thumb.jpg`}
 						alt="publicity shot"
-						width={width} height={height} /></Link>
+						width={width} height={height} /></MyLink>
 					{(caption) && <div dangerouslySetInnerHTML={{ __html: caption}} />}
 				</span>
 			))}
@@ -441,7 +441,7 @@ const Auxiliary = ({ type, artist, title, tracks, addendum = [] }) => {
 			<div className="panelContainer">
 			{addendum.map((props, key) => (
 				<div key={key} className="row">
-					<span className="datum">{typeToDisplay(props.type)}</span> : <Link href={`${href}?addendum=${key + 1}`}>{MakeSubject(props)}</Link>
+					<span className="datum">{typeToDisplay(props.type)}</span> : <MyLink href={`${href}?addendum=${key + 1}`}>{MakeSubject(props)}</MyLink>
 				</div>
 			))}
 			</div>
@@ -474,7 +474,7 @@ const matchReleaseName = (url = '', artist = '', title = '') => {
 	return (useUrl === useTest);
 }
 
-//import musicians from '../lib/musicians';
+//import musicians from '@/lib/musicians';
 
 const Release = ({ url = '', addendum }) => {
 	let item;

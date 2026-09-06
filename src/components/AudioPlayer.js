@@ -1,4 +1,4 @@
-import { getBodyHTML } from '../lib/helpers';
+import { getBodyHTML } from '@/lib/helpers';
 
 const AudioPlayer = (props) => {
 	const GetTitle = ({ title, band, href, audio, mp3, author, comment, date, time }) => {

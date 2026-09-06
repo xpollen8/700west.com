@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import releases from './releases';
-import AKAs from './AKAs';
-import MakeDate from '../components/MakeDate';
+import MyLink from '@/components/MyLink';
+import releases from '@/lib/releases';
+import AKAs from '@/lib/AKAs';
+import MakeDate from '@/components/MakeDate';
 
 const cleanName = (value) => value?.replace(/["?'/]/gmi, '').replace(/[^a-z0-9]/gmi, "_").replace(/\s+/g, "_").replace(/__/g, '_').replace(/_$/, '');
 
@@ -9,7 +9,7 @@ const exists = (v) => v && v.length;
 
 const smartLink = (v) => {
 	if (typeof v === 'string' && v?.includes('http')) {
-		return <Link href={v} target="new">{v}</Link>
+		return <MyLink href={v} target="new">{v}</MyLink>
 	}
 	return v;
 }
@@ -76,7 +76,7 @@ const dateCompare = (a, b) => {
 const Who = ({ who = '' }) => {
 	if (!who?.length) return <></>;
 	return (
-			<Link href={makeMusicianLink(who)}>{who}</Link>
+			<MyLink href={makeMusicianLink(who)}>{who}</MyLink>
 	);
 }
 

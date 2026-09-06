@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { getAlbumNames, dateCompare, makeReleaseLink } from '../lib/helpers';
-import Item from './Item';
-import SectionHeader from './SectionHeader';
+import { getAlbumNames, dateCompare, makeReleaseLink } from '@/lib/helpers';
+import Item from '@/components/Item';
+import SectionHeader from '@/components/SectionHeader';
 
 const makeAlbumBlurb = (item, key) => {
 	const thumb = item.image[0]?.thumb || `missingCover.jpg`;

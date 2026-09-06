@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import MyLink from '@/components/MyLink';
 import Image from 'next/image';
-import Page, { setTitleFromURL } from '../../components/Page';
-import { autoLink } from '../../lib/helpers';
-import Item from '../../components/Item';
+import Page, { setTitleFromURL } from '@/components/Page';
+import { autoLink } from '@/lib/helpers';
+import Item from '@/components/Item';
 
 export const metadata: Metadata = setTitleFromURL('/photos');
 
@@ -122,7 +122,7 @@ const Photos = () =>
 			{data.map(({ src, thumb, width, height, caption, date }: Photo, key) => (
 				<Item key={key} extra={
 					<div style={{ textAlign: 'center' }}>
-						<Link href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></Link>
+						<MyLink href={src}><Image className="image" src={thumb} width={width} height={height} alt={`photo ${key}`} /></MyLink>
 						<br/>
 						{date}
 					</div>
