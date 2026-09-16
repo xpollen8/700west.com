@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 		width: 'device-width',
 	},
 	*/
-	description: "Curated archive of Mo WHittemore's 700 West Recording studio",
+	description: "Curated archive of Mo Whittemore's 700 West Recording studio",
 	keywords: [
 		"700 West", "Mo Whittemore", "Moe Whittemore", "Zerfas", "Primevil", "Indiana music", "70's & 80's"
 	],
