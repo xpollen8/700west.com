@@ -22,13 +22,14 @@ type ItemType = {
 
 const newsItems: ItemType[] = [
 	{
+		slug: 'ISEE',
 		title: "VW ad using sample from Mo's 'Check Me Out'",
 		date: '2026-09-15',
 		extra: <div className="video"><video width="100%" controls={true} preload="none" poster="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out_thumb_500.jpg" src="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out.mp4" /></div>,
 		body: `
 				<p>
 					The <a href="https://archil-lab.com">French musical duo "Archil"</a> licensed the <a href="/release/Mo-First_Album">Mo</a> track "Check Me Out" and used a vocal sample
-					in a composition which was used in an advertisement for the 2026 Volkswagen Tiagua.
+					in their composition "I See" which was used in an advertisement for the 2026 Volkswagen Tiagua.
 				</p>
 		`
 	},

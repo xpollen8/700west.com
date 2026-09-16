@@ -9,6 +9,8 @@ export const metadata: Metadata = setTitleFromURL('/');
 
 const Home = () => (
 	<Page link="/">
+		<SectionHeader text="Recent News" />
+		<News slug="ISEE" />
 		<SectionHeader text="A short history of 700 West Recording" />
 		<History />
 		<SectionHeader text="Maurice James Whittemore, Jr." />
