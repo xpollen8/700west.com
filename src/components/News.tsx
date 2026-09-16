@@ -24,7 +24,7 @@ const newsItems: ItemType[] = [
 	{
 		title: "VW ad using sample from Mo's 'Check Me Out'",
 		date: '2026-09-15',
-		extra: <video width={560} controls={true} preload="none" className="video" poster="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out_thumb_500.jpg"><source src="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out.mp4" type="video/mp4" /></video>,
+		extra: <div className="video"><video width="100%" controls={true} preload="none" poster="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out_thumb_500.jpg" src="https://old.700west.com/video/20260901_Archil_VWAd-Mo_Check_Me_Out.mp4" type="video/mp4" /></div>,
 		body: `
 				<p>
 					The <a href="https://archil-lab.com">French musical duo "Archil"</a> licensed the Mo track "Check Me Out" and used a vocal sample
@@ -355,9 +355,9 @@ const News = ({ slug, num }: { slug?: string, num?: number }) => {
 	} else if (num) {
 		return NewsItem(newsItems[num - 1] || {})
 	} else {
-		return <blockquote className="panelContainer">
+		return <div className="panelContainer">
 			{newsItems.sort((a: any, b: any): any => (new Date(b.date)).getTime() - (new Date(a.date)).getTime()).map(NewsItem)}
-		</blockquote>
+		</div>
 	}
 }
 
